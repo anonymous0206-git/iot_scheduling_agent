@@ -1,0 +1,41 @@
+{
+  "all_valid": true,
+  "completed_at_utc": "2026-09-11T08:53:05Z",
+  "experiment_format": "agentic_anex.topology_scaling_experiment.v1",
+  "no_language_model_involved": true,
+  "outputs": {
+    "paired_bootstrap.json": {
+      "path": "paired_bootstrap.json",
+      "sha256": "27b46fe080ef05dd42c94e568c1fa760084d4fb0e3291776ad92d3c323d9dad9"
+    },
+    "runs.csv": {
+      "path": "runs.csv",
+      "sha256": "a5a227a6778c96728fb4e528889d58826e2e32ce3c05ac96b45842abe1405f91"
+    },
+    "summary.csv": {
+      "path": "summary.csv",
+      "sha256": "7397d7095d98fc601ee2dffeba24ddf1a4401873501cdd7b0572c010309d6110"
+    }
+  },
+  "runs": 1260,
+  "settings": {
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 0,
+    "catalogue": "benchmarks/topologies/fixed_area100_r20/catalogue.json",
+    "catalogue_format": "agentic_anex.topology_catalogue.v1",
+    "catalogue_sha256": "774929acd77d30da2f522058b2ecc8f2793ee2eea2dd420afe689b0892b9206a",
+    "channels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "collision_model": "legacy_neighbor",
+    "interference_ratio": 1.0,
+    "reference_channels": 2,
+    "topologies": 180
+  }
+}

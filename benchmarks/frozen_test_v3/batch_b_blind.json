@@ -1,0 +1,480 @@
+{
+  "batch_id": "frontier-model-b",
+  "benchmark_version": "frozen-test-v3-candidate",
+  "blinded": true,
+  "generator_role": "independent_generator",
+  "groups": [
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-001-p1",
+          "request_text": "Please run a single aggregation over topo100_seed0 and tell me how many slots it takes end to end. The standard settings are fine."
+        },
+        {
+          "request_id": "v3-b-001-p2",
+          "request_text": "For topo100_seed0 I need the usual one-off collection with nothing changed from the defaults, and the elapsed slot count as the result."
+        }
+      ],
+      "semantic_group_id": "v3-b-001"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-002-p1",
+          "request_text": "We are not building a Digital Twin of this deployment. All I need is the aggregation schedule for topo150_seed0, worked out from the stored topology with the usual settings."
+        },
+        {
+          "request_id": "v3-b-002-p2",
+          "request_text": "Work from the stored topology file for topo150_seed0 and nothing else, default settings throughout. No Digital Twin is to be built for it."
+        }
+      ],
+      "semantic_group_id": "v3-b-002"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-003-p1",
+          "request_text": "Our telemetry feed stays out of this piece of work. What I want is the single-collection schedule for topo250_seed0 under the default configuration."
+        },
+        {
+          "request_id": "v3-b-003-p2",
+          "request_text": "Set the live telemetry feed aside and give me the one-off collection schedule for topo250_seed0, everything left at its default value."
+        }
+      ],
+      "semantic_group_id": "v3-b-003"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-004-p1",
+          "request_text": "Schedule one round of data collection over legacy30_seed7 with the standard configuration and report the latency it comes out at."
+        },
+        {
+          "request_id": "v3-b-004-p2",
+          "request_text": "On legacy30_seed7, the standard single-round collection please; the latency figure is the part I need."
+        }
+      ],
+      "semantic_group_id": "v3-b-004"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-005-p1",
+          "request_text": "Run the aggregation over topo300_seed0 with six channels available and the legacy_neighbor collision rule, seeding the scheduler with 12 so the run can be repeated later."
+        },
+        {
+          "request_id": "v3-b-005-p2",
+          "request_text": "I need a repeatable result on topo300_seed0: scheduler seed 12, six channels, collisions handled by the legacy_neighbor rule."
+        }
+      ],
+      "semantic_group_id": "v3-b-005"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-006-p1",
+          "request_text": "For topo200_seed0 use the interference_range collision model with the ratio left at 1.0, four channels, and scheduler seed 3."
+        },
+        {
+          "request_id": "v3-b-006-p2",
+          "request_text": "Settings for the topo200_seed0 collection: four channels, interference_range collisions at a ratio of 1.0, seed 3."
+        }
+      ],
+      "semantic_group_id": "v3-b-006"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-007-p1",
+          "request_text": "Confirming the setup for topo50_seed0 before you start: a working period of 10 slots and a communication range of 20.0, which is what the stored network uses. Schedule it across three channels."
+        },
+        {
+          "request_id": "v3-b-007-p2",
+          "request_text": "Three channels for topo50_seed0. The parameters are the ones already in the stored network, a 10-slot working period and a communication range of 20.0."
+        }
+      ],
+      "semantic_group_id": "v3-b-007"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-008-p1",
+          "request_text": "An older planner of ours used to spread battery drain across the nodes, but that comparison is not part of this run. Schedule topo150_seed0 with five channels and seed 21, with latency the only thing being minimized."
+        },
+        {
+          "request_id": "v3-b-008-p2",
+          "request_text": "Leave the battery-spreading planner we benchmarked last year out of it. This run is topo150_seed0, five channels, scheduler seed 21, minimizing latency alone."
+        }
+      ],
+      "semantic_group_id": "v3-b-008"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-009-p1",
+          "request_text": "We can live with up to 45 slots for the collection on topo200_seed0. Schedule it and say whether the result stays inside that budget."
+        },
+        {
+          "request_id": "v3-b-009-p2",
+          "request_text": "The budget for the topo200_seed0 collection is 45 slots. Produce the schedule and tell me if it fits inside that figure."
+        }
+      ],
+      "semantic_group_id": "v3-b-009"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-010-p1",
+          "request_text": "The downstream job wants the topo100_seed0 aggregation finished inside 20 slots. Schedule against that figure and report how the result compares."
+        },
+        {
+          "request_id": "v3-b-010-p2",
+          "request_text": "Aim for 20 elapsed slots on the topo100_seed0 collection, and let me know where the produced schedule lands against it."
+        }
+      ],
+      "semantic_group_id": "v3-b-010"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-011-p1",
+          "request_text": "No deadline is attached to the topo50_seed0 collection, so leave the latency target unset and simply get it as low as it goes."
+        },
+        {
+          "request_id": "v3-b-011-p2",
+          "request_text": "There is no slot budget for topo50_seed0. Schedule it with the target field left empty and report whatever latency you reach."
+        }
+      ],
+      "semantic_group_id": "v3-b-011"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-012-p1",
+          "request_text": "Set up a one-shot aggregation with four channels and scheduler seed 8, then report the elapsed slots."
+        },
+        {
+          "request_id": "v3-b-012-p2",
+          "request_text": "Four channels, seed 8, one collection: give me the schedule and the slot count."
+        }
+      ],
+      "semantic_group_id": "v3-b-012"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-013-p1",
+          "request_text": "This run goes on either topo150_seed0 or topo250_seed0, depending on which rack the field team finished cabling. Three channels for it."
+        },
+        {
+          "request_id": "v3-b-013-p2",
+          "request_text": "Three channels for the next single collection, on topo150_seed0 or topo250_seed0, whichever rack ended up cabled."
+        }
+      ],
+      "semantic_group_id": "v3-b-013"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-014-p1",
+          "request_text": "For topo300_seed0 the radio team has not settled between two channels and seven, and the schedule has to match whichever is provisioned."
+        },
+        {
+          "request_id": "v3-b-014-p2",
+          "request_text": "The channel count on topo300_seed0 is still open between two and seven; the produced plan must line up with the figure that ends up provisioned."
+        }
+      ],
+      "semantic_group_id": "v3-b-014"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-015-p1",
+          "request_text": "Schedule the collection on topo400_seed0 with two channels and report the latency."
+        },
+        {
+          "request_id": "v3-b-015-p2",
+          "request_text": "Two channels on topo400_seed0 for a single collection; the slot count is what I need."
+        }
+      ],
+      "semantic_group_id": "v3-b-015"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-016-p1",
+          "request_text": "On topo250_seed0, treat interference as reaching 1.8 times the communication range and schedule the collection with the interference_range rule."
+        },
+        {
+          "request_id": "v3-b-016-p2",
+          "request_text": "Use an interference ratio of 1.8 together with the interference_range model for the topo250_seed0 collection."
+        }
+      ],
+      "semantic_group_id": "v3-b-016"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-017-p1",
+          "request_text": "Schedule topo100_seed0 on three channels, taking the communication range as 18.0."
+        },
+        {
+          "request_id": "v3-b-017-p2",
+          "request_text": "Three channels on topo100_seed0, with the communication range set to 18.0 for this run."
+        }
+      ],
+      "semantic_group_id": "v3-b-017"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-018-p1",
+          "request_text": "We are keeping this one on two channels. Parameters as run last time: topology topo200_seed0, channels 5, seed 4, collision_model legacy_neighbor."
+        },
+        {
+          "request_id": "v3-b-018-p2",
+          "request_text": "Two channels for this collection please. Settings copied straight from the previous ticket: topo200_seed0, channels: 5, seed: 4, collision_model: legacy_neighbor."
+        }
+      ],
+      "semantic_group_id": "v3-b-018"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-019-p1",
+          "request_text": "Produce an energy-aware schedule for topo150_seed0 that spares the nodes whose batteries have run lowest."
+        },
+        {
+          "request_id": "v3-b-019-p2",
+          "request_text": "Schedule topo150_seed0 with energy awareness built in, so the weakest batteries carry as little transmission work as possible."
+        }
+      ],
+      "semantic_group_id": "v3-b-019"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-020-p1",
+          "request_text": "Alongside the schedule for topo100_seed0, track how much charge each node has left after every one of its transmissions."
+        },
+        {
+          "request_id": "v3-b-020-p2",
+          "request_text": "I need the topo100_seed0 schedule and, next to it, a transmission-by-transmission account of the charge remaining on each node."
+        }
+      ],
+      "semantic_group_id": "v3-b-020"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-021-p1",
+          "request_text": "The motes on topo200_seed0 run off small solar cells and hold very different amounts of charge, so the forwarding choices should lean on whichever node has the most at the time."
+        },
+        {
+          "request_id": "v3-b-021-p2",
+          "request_text": "Charge levels vary a lot across the solar-powered motes of topo200_seed0; whoever forwards should be picked to match, leaving the depleted ones out of it."
+        }
+      ],
+      "semantic_group_id": "v3-b-021"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-022-p1",
+          "request_text": "What I want for topo50_seed0 is the plan that keeps the whole field reporting for as many weeks as it can before the first node goes dark."
+        },
+        {
+          "request_id": "v3-b-022-p2",
+          "request_text": "Choose the plan for topo50_seed0 that pushes the first node failure as far out in time as possible."
+        }
+      ],
+      "semantic_group_id": "v3-b-022"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-023-p1",
+          "request_text": "Stand up a Digital Twin of topo300_seed0 and run the collection inside it so the team can watch the slots go by."
+        },
+        {
+          "request_id": "v3-b-023-p2",
+          "request_text": "I would like topo300_seed0 mirrored as a Digital Twin, with the aggregation carried out in that mirror."
+        }
+      ],
+      "semantic_group_id": "v3-b-023"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-024-p1",
+          "request_text": "Bring up a virtual copy of topo250_seed0 that behaves the way the real deployment does, and let the collection play out on it rather than on paper."
+        },
+        {
+          "request_id": "v3-b-024-p2",
+          "request_text": "Rather than a paper plan for topo250_seed0, run the collection on a software replica that imitates how the real nodes behave."
+        }
+      ],
+      "semantic_group_id": "v3-b-024"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-025-p1",
+          "request_text": "Once the schedule for topo100_seed0 is computed, keep it lined up with whatever the field nodes report as their state shifts through the day."
+        },
+        {
+          "request_id": "v3-b-025-p2",
+          "request_text": "Compute the topo100_seed0 schedule and then hold it in step with the state the field nodes keep reporting as the day goes on."
+        }
+      ],
+      "semantic_group_id": "v3-b-025"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-026-p1",
+          "request_text": "Open a streaming connection to the topo150_seed0 deployment and keep a live picture of every reading as it arrives."
+        },
+        {
+          "request_id": "v3-b-026-p2",
+          "request_text": "I need a live streamed view of the topo150_seed0 readings, refreshed continuously as each one lands."
+        }
+      ],
+      "semantic_group_id": "v3-b-026"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-027-p1",
+          "request_text": "Set up periodic collection on topo200_seed0, one aggregation per working period, running for a hundred rounds."
+        },
+        {
+          "request_id": "v3-b-027-p2",
+          "request_text": "A hundred consecutive aggregation rounds on topo200_seed0, one in each working period, is what this needs."
+        }
+      ],
+      "semantic_group_id": "v3-b-027"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-028-p1",
+          "request_text": "The gateway should keep pulling a fresh set of readings from topo50_seed0 every ten slots, from now until we stop it."
+        },
+        {
+          "request_id": "v3-b-028-p2",
+          "request_text": "Have topo50_seed0 deliver a complete new set of readings every ten slots, again and again, until we shut it down."
+        }
+      ],
+      "semantic_group_id": "v3-b-028"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-029-p1",
+          "request_text": "Start from the ordinary four-channel schedule on topo300_seed0, then let it run itself again each time it finishes so the sink always holds readings under a minute old."
+        },
+        {
+          "request_id": "v3-b-029-p2",
+          "request_text": "Compute the four-channel plan for topo300_seed0 and have it restart on completion, keeping the readings at the sink less than a minute old."
+        }
+      ],
+      "semantic_group_id": "v3-b-029"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-030-p1",
+          "request_text": "Schedule topo250_seed0 and have the plan adapt itself whenever a node drops off or a new link comes up during the collection."
+        },
+        {
+          "request_id": "v3-b-030-p2",
+          "request_text": "Through the topo250_seed0 collection the plan should adapt to nodes dropping out and to links that appear."
+        }
+      ],
+      "semantic_group_id": "v3-b-030"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-031-p1",
+          "request_text": "If one of the relays on topo150_seed0 stops answering halfway through, the nodes behind it should be handed to new parents on the spot so the round still finishes."
+        },
+        {
+          "request_id": "v3-b-031-p2",
+          "request_text": "A relay on topo150_seed0 may go quiet mid-round, and when it does the nodes it served need fresh parents worked out there and then."
+        }
+      ],
+      "semantic_group_id": "v3-b-031"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-032-p1",
+          "request_text": "Plan topo100_seed0 on three channels with the communication range taken as 18.0, and rework the routes on the fly as link quality shifts during the round."
+        },
+        {
+          "request_id": "v3-b-032-p2",
+          "request_text": "Three channels for topo100_seed0 at a communication range of 18.0, with the routes recomputed as link quality moves through the round."
+        }
+      ],
+      "semantic_group_id": "v3-b-032"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-033-p1",
+          "request_text": "For topo200_seed0, cut the total number of transmissions as far down as it will go, even if the collection ends up slower."
+        },
+        {
+          "request_id": "v3-b-033-p2",
+          "request_text": "On topo200_seed0 the transmission count matters more to me than the finish time, so drive that count down as low as possible."
+        }
+      ],
+      "semantic_group_id": "v3-b-033"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-034-p1",
+          "request_text": "Work out the schedule for topo50_seed0 and then push it down to the motes so they wake and send in their assigned slots."
+        },
+        {
+          "request_id": "v3-b-034-p2",
+          "request_text": "When the topo50_seed0 schedule is ready, load it onto the physical motes and have them start transmitting on cue."
+        }
+      ],
+      "semantic_group_id": "v3-b-034"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-035-p1",
+          "request_text": "The three nodes next to the sink on topo300_seed0 are doing far more work than the rest, and the plan should even that out across the field even if the round takes longer."
+        },
+        {
+          "request_id": "v3-b-035-p2",
+          "request_text": "On topo300_seed0 the sink's immediate neighbours carry most of the traffic; spread that load more evenly, longer round or not."
+        }
+      ],
+      "semantic_group_id": "v3-b-035"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-b-036-p1",
+          "request_text": "For topo150_seed0, pick the plan that gives the best chance of every packet arriving, trading slots for that where it helps."
+        },
+        {
+          "request_id": "v3-b-036-p2",
+          "request_text": "On topo150_seed0 I would sooner spend extra slots than lose packets, so choose the plan with the highest delivery odds."
+        }
+      ],
+      "semantic_group_id": "v3-b-036"
+    }
+  ],
+  "self_check": {
+    "group_count": 36,
+    "item_count": 72
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "lock": "benchmarks/evaluation_lock_v3_1.json",
+  "replaces_timing_of": [
+    "results/frozen_test_v3/phi4_policy_v2_v31.jsonl",
+    "results/frozen_test_v3/phi4_no_scope_gate_v31.jsonl",
+    "results/frozen_test_v3/qwen25_policy_v2_v31.jsonl"
+  ],
+  "runs": [
+    {
+      "arm": "phi4_gated",
+      "minutes": 3.75,
+      "returncode": 0
+    },
+    {
+      "arm": "phi4_no_gate",
+      "minutes": 4.25,
+      "returncode": 0
+    },
+    {
+      "arm": "qwen25",
+      "minutes": 5.65,
+      "returncode": 0
+    }
+  ],
+  "serving": "ollama on GPU, verified at about 90 tok/s before the run",
+  "status": "completed",
+  "total_minutes": 13.64
+}

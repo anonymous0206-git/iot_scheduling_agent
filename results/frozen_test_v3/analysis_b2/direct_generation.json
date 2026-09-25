@@ -1,0 +1,159 @@
+{
+  "agent_ledger": "results/frozen_test_v3/gpt55_no_scope_gate_v31.jsonl",
+  "analysis_format": "agentic_anex.direct_generation.v1",
+  "by_network_size": {
+    "100": {
+      "first_try": 0,
+      "items": 4,
+      "valid": 2
+    },
+    "150": {
+      "first_try": 2,
+      "items": 3,
+      "valid": 2
+    },
+    "200": {
+      "first_try": 0,
+      "items": 3,
+      "valid": 1
+    },
+    "250": {
+      "first_try": 0,
+      "items": 3,
+      "valid": 0
+    },
+    "30": {
+      "first_try": 1,
+      "items": 3,
+      "valid": 1
+    },
+    "300": {
+      "first_try": 0,
+      "items": 3,
+      "valid": 1
+    },
+    "50": {
+      "first_try": 0,
+      "items": 4,
+      "valid": 4
+    }
+  },
+  "cost": {
+    "attempts": 43,
+    "completion_tokens": 519601,
+    "mean_wall_seconds": 280.7
+  },
+  "excluded_provider_refusals": [],
+  "failures": {
+    "produced_exactly_the_expected_transmission_count": "22/23",
+    "violation_codes": {
+      "MISSING_TRANSMISSION": 1,
+      "NON_NEIGHBOR_LINK": 9,
+      "PRECEDENCE_VIOLATION": 3,
+      "PRIMARY_COLLISION": 2,
+      "SECONDARY_COLLISION": 1
+    },
+    "violations_on_final_attempt": {
+      "max": 11,
+      "median": 2.0,
+      "min": 1
+    }
+  },
+  "items_run": 23,
+  "items_usable": 23,
+  "latency_against_the_solver": {
+    "compared": 11,
+    "mean_penalty": 84.46,
+    "median_penalty": 13.34,
+    "per_request": [
+      {
+        "direct_latency_slots": 637,
+        "nodes": 150,
+        "penalty": 21.97,
+        "request_id": "ft3-r0016",
+        "solver_latency_slots": 29
+      },
+      {
+        "direct_latency_slots": 1997,
+        "nodes": 200,
+        "penalty": 53.97,
+        "request_id": "ft3-r0018",
+        "solver_latency_slots": 37
+      },
+      {
+        "direct_latency_slots": 39,
+        "nodes": 50,
+        "penalty": 1.44,
+        "request_id": "ft3-r0020",
+        "solver_latency_slots": 27
+      },
+      {
+        "direct_latency_slots": 77,
+        "nodes": 50,
+        "penalty": 2.85,
+        "request_id": "ft3-r0025",
+        "solver_latency_slots": 27
+      },
+      {
+        "direct_latency_slots": 387,
+        "nodes": 100,
+        "penalty": 13.34,
+        "request_id": "ft3-r0035",
+        "solver_latency_slots": 29
+      },
+      {
+        "direct_latency_slots": 179,
+        "nodes": 50,
+        "penalty": 6.63,
+        "request_id": "ft3-r0037",
+        "solver_latency_slots": 27
+      },
+      {
+        "direct_latency_slots": 649,
+        "nodes": 150,
+        "penalty": 22.38,
+        "request_id": "ft3-r0040",
+        "solver_latency_slots": 29
+      },
+      {
+        "direct_latency_slots": 419,
+        "nodes": 100,
+        "penalty": 14.45,
+        "request_id": "ft3-r0041",
+        "solver_latency_slots": 29
+      },
+      {
+        "direct_latency_slots": 39,
+        "nodes": 50,
+        "penalty": 1.44,
+        "request_id": "ft3-r0043",
+        "solver_latency_slots": 27
+      },
+      {
+        "direct_latency_slots": 36,
+        "nodes": 30,
+        "penalty": 1.38,
+        "request_id": "ft3-r0050",
+        "solver_latency_slots": 26
+      },
+      {
+        "direct_latency_slots": 22887,
+        "nodes": 300,
+        "penalty": 789.21,
+        "request_id": "ft3-r0051",
+        "solver_latency_slots": 29
+      }
+    ],
+    "worst_penalty": 789.21
+  },
+  "ledger": "results/frozen_test_v3/b2_direct_generation.jsonl",
+  "no_language_model_invoked": true,
+  "validity": {
+    "first_attempt_rate": 0.1304,
+    "items": 23,
+    "rate": 0.4783,
+    "valid": 11,
+    "valid_on_first_attempt": 3,
+    "valid_only_after_validator_feedback": 8
+  }
+}

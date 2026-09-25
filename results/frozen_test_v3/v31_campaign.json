@@ -1,0 +1,43 @@
+{
+  "lock": "benchmarks/evaluation_lock_v3_1.json",
+  "runs": [
+    {
+      "arm": "rule_based",
+      "minutes": 0.32,
+      "returncode": 0,
+      "stdout_tail": "{\n  \"completed\": 144,\n  \"expected\": 144,\n  \"raw_output\": \"results/frozen_test_v3/rule_based_v31.jsonl\",\n  \"skipped\": 0,\n  \"status\": \"completed\",\n  \"topologies_available\": 7,\n  \"written\": 144\n}\n"
+    },
+    {
+      "arm": "phi4_gated",
+      "minutes": 59.3,
+      "returncode": 0,
+      "stdout_tail": "{\n  \"completed\": 144,\n  \"expected\": 144,\n  \"raw_output\": \"results/frozen_test_v3/phi4_policy_v2_v31.jsonl\",\n  \"skipped\": 0,\n  \"status\": \"completed\",\n  \"topologies_available\": 7,\n  \"written\": 144\n}\n"
+    },
+    {
+      "arm": "phi4_no_gate",
+      "minutes": 66.83,
+      "returncode": 0,
+      "stdout_tail": "{\n  \"arm\": \"llm_agent_no_scope_gate\",\n  \"completed\": 144,\n  \"expected\": 144,\n  \"policy_version_recorded\": \"paper1-scope-policy.v2-ABLATED\",\n  \"raw_output\": \"results/frozen_test_v3/phi4_no_scope_gate_v31.jsonl\",\n  \"scope_gate\": \"DISABLED\",\n  \"skipped\": 0,\n  \"status\": \"completed\",\n  \"warning\": \"This arm has no independent scope gate and must never be reported as the production system.\",\n  \"written\": 144\n}\n"
+    },
+    {
+      "arm": "qwen25",
+      "minutes": 68.04,
+      "returncode": 0,
+      "stdout_tail": "{\n  \"completed\": 144,\n  \"expected\": 144,\n  \"raw_output\": \"results/frozen_test_v3/qwen25_policy_v2_v31.jsonl\",\n  \"skipped\": 0,\n  \"status\": \"completed\",\n  \"topologies_available\": 7,\n  \"written\": 144\n}\n"
+    },
+    {
+      "arm": "gpt55_gated",
+      "minutes": 9.3,
+      "returncode": 0,
+      "stdout_tail": "{\n  \"completed\": 144,\n  \"expected\": 144,\n  \"raw_output\": \"results/frozen_test_v3/gpt55_policy_v2_v31.jsonl\",\n  \"skipped\": 0,\n  \"status\": \"completed\",\n  \"topologies_available\": 7,\n  \"written\": 144\n}\n"
+    },
+    {
+      "arm": "gpt55_no_gate",
+      "minutes": 9.9,
+      "returncode": 0,
+      "stdout_tail": "{\n  \"arm\": \"llm_agent_no_scope_gate\",\n  \"completed\": 144,\n  \"expected\": 144,\n  \"policy_version_recorded\": \"paper1-scope-policy.v2-ABLATED\",\n  \"raw_output\": \"results/frozen_test_v3/gpt55_no_scope_gate_v31.jsonl\",\n  \"scope_gate\": \"DISABLED\",\n  \"skipped\": 0,\n  \"status\": \"completed\",\n  \"warning\": \"This arm has no independent scope gate and must never be reported as the production system.\",\n  \"written\": 144\n}\n"
+    }
+  ],
+  "status": "completed",
+  "total_minutes": 213.69
+}

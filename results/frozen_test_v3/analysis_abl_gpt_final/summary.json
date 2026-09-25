@@ -1,0 +1,765 @@
+{
+  "analysis_format": "agentic_anex.frozen_test_analysis.v1",
+  "arms": {
+    "gpt55_gated": {
+      "action_accuracy": {
+        "correct": 122,
+        "items": 144,
+        "rate": 0.8472
+      },
+      "categories_with_errors": {
+        "above_topology_baseline": {
+          "correct": 1,
+          "items": 2
+        },
+        "catalogue_range_mismatch": {
+          "correct": 0,
+          "items": 2
+        },
+        "communication_range_mismatch": {
+          "correct": 0,
+          "items": 2
+        },
+        "contradictory_channel_specification": {
+          "correct": 0,
+          "items": 2
+        },
+        "device_control_precedes_bad_channel_value": {
+          "correct": 0,
+          "items": 2
+        },
+        "digital_twin_explicitly_excluded": {
+          "correct": 0,
+          "items": 2
+        },
+        "explicit_channels_and_seed": {
+          "correct": 1,
+          "items": 2
+        },
+        "historical_battery_objective_excluded": {
+          "correct": 1,
+          "items": 2
+        },
+        "negated_digital_twin_hard_negative": {
+          "correct": 0,
+          "items": 2
+        },
+        "nonexistent_topology_id": {
+          "correct": 0,
+          "items": 2
+        },
+        "past_continuous_collection_context": {
+          "correct": 0,
+          "items": 2
+        },
+        "prose_parameter_channel_conflict": {
+          "correct": 1,
+          "items": 2
+        },
+        "unlisted_topology": {
+          "correct": 0,
+          "items": 2
+        }
+      },
+      "confusion_gold_by_predicted": {
+        "CLARIFY": {
+          "CLARIFY": 12,
+          "EXECUTE": 0,
+          "REJECT": 0,
+          "UNSUPPORTED": 0
+        },
+        "EXECUTE": {
+          "CLARIFY": 0,
+          "EXECUTE": 35,
+          "REJECT": 2,
+          "UNSUPPORTED": 7
+        },
+        "REJECT": {
+          "CLARIFY": 7,
+          "EXECUTE": 3,
+          "REJECT": 5,
+          "UNSUPPORTED": 1
+        },
+        "UNSUPPORTED": {
+          "CLARIFY": 0,
+          "EXECUTE": 0,
+          "REJECT": 2,
+          "UNSUPPORTED": 70
+        }
+      },
+      "error_codes": {
+        "INVALID_CHANNEL_COUNT": 1,
+        "MISSING_TOPOLOGY": 12,
+        "REQUEST_FIELD_MISMATCH": 3,
+        "UNSUPPORTED_DIGITAL_TWIN": 8,
+        "UNSUPPORTED_OBJECTIVE": 5,
+        "UNSUPPORTED_WORKLOAD": 5,
+        "VALIDATION_CERTIFICATE_FAILED": 3
+      },
+      "failure_taxonomy": {
+        "infrastructure": 0,
+        "infrastructure_request_ids": [],
+        "schedule": 0,
+        "schedule_request_ids": [],
+        "semantic": 22
+      },
+      "false_acceptance": {
+        "count": 3,
+        "rate": 0.0208,
+        "request_ids": [
+          "ft3-r0033",
+          "ft3-r0130",
+          "ft3-r0141"
+        ]
+      },
+      "field_exact_match": {
+        "bound_fields_excluded": {
+          "fields": [
+            "topology_id",
+            "working_period",
+            "communication_range"
+          ],
+          "matched": 0,
+          "note": "bound or echoed by the runner rather than parsed from the request",
+          "rate": 0.0,
+          "total": 132
+        },
+        "definition": "gold-EXECUTE items, contract fields the system parses",
+        "matched": 246,
+        "per_field": {
+          "channels": {
+            "matched": 34,
+            "rate": 0.7727,
+            "total": 44
+          },
+          "collision_model": {
+            "matched": 35,
+            "rate": 0.7955,
+            "total": 44
+          },
+          "communication_range": {
+            "matched": 0,
+            "rate": 0.0,
+            "total": 44
+          },
+          "interference_ratio": {
+            "matched": 35,
+            "rate": 0.7955,
+            "total": 44
+          },
+          "latency_target_slots": {
+            "matched": 37,
+            "rate": 0.8409,
+            "total": 44
+          },
+          "objective": {
+            "matched": 35,
+            "rate": 0.7955,
+            "total": 44
+          },
+          "seed": {
+            "matched": 35,
+            "rate": 0.7955,
+            "total": 44
+          },
+          "topology_id": {
+            "matched": 0,
+            "rate": 0.0,
+            "total": 44
+          },
+          "working_period": {
+            "matched": 0,
+            "rate": 0.0,
+            "total": 44
+          },
+          "workload": {
+            "matched": 35,
+            "rate": 0.7955,
+            "total": 44
+          }
+        },
+        "rate": 0.7987,
+        "total": 308
+      },
+      "overhead": {
+        "mean_wall_seconds": 3.741,
+        "model_calls": 127,
+        "retries": 14,
+        "total_tokens": 170363,
+        "total_wall_seconds": 538.6
+      },
+      "paraphrase_consistency": {
+        "consistent_groups": 67,
+        "groups": 72,
+        "inconsistent_groups": [
+          "v3-a-007",
+          "v3-a-009",
+          "v3-a-017",
+          "v3-a-018",
+          "v3-b-005"
+        ],
+        "rate": 0.9306
+      },
+      "per_batch": {
+        "frontier-model-a": {
+          "correct": 59,
+          "items": 72,
+          "rate": 0.8194
+        },
+        "frontier-model-b": {
+          "correct": 63,
+          "items": 72,
+          "rate": 0.875
+        }
+      },
+      "per_gold_action": {
+        "CLARIFY": {
+          "correct": 12,
+          "items": 12,
+          "rate": 1.0
+        },
+        "EXECUTE": {
+          "correct": 35,
+          "items": 44,
+          "rate": 0.7955
+        },
+        "REJECT": {
+          "correct": 5,
+          "items": 16,
+          "rate": 0.3125
+        },
+        "UNSUPPORTED": {
+          "correct": 70,
+          "items": 72,
+          "rate": 0.9722
+        }
+      },
+      "records": 144,
+      "schedule_validity_on_gold_execute": {
+        "items": 44,
+        "rate": 0.7955,
+        "valid": 35
+      },
+      "systems": [
+        [
+          "llm_agent",
+          "gpt-5.5-2026-04-23"
+        ]
+      ],
+      "task_completion": {
+        "completed": 122,
+        "items": 144,
+        "rate": 0.8472
+      },
+      "wrong_items": [
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0004"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0014"
+        },
+        {
+          "error_code": "UNSUPPORTED_OBJECTIVE",
+          "gold": "EXECUTE",
+          "group": "v3-a-007",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0017"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0026"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-b-002",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0032"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0033"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-b-002",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0040"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0052"
+        },
+        {
+          "error_code": "INVALID_CHANNEL_COUNT",
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0053"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-005",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0059"
+        },
+        {
+          "error_code": "UNSUPPORTED_WORKLOAD",
+          "gold": "EXECUTE",
+          "group": "v3-a-004",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0060"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-a-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0069"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-a-003",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0083"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0098"
+        },
+        {
+          "error_code": "UNSUPPORTED_WORKLOAD",
+          "gold": "EXECUTE",
+          "group": "v3-a-004",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0105"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-017",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0106"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0113"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-a-003",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0118"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0121"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0130"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0133"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0141"
+        }
+      ]
+    },
+    "gpt55_no_gate": {
+      "action_accuracy": {
+        "correct": 130,
+        "items": 144,
+        "rate": 0.9028
+      },
+      "categories_with_errors": {
+        "above_topology_baseline": {
+          "correct": 1,
+          "items": 2
+        },
+        "catalogue_range_mismatch": {
+          "correct": 1,
+          "items": 2
+        },
+        "communication_range_mismatch": {
+          "correct": 0,
+          "items": 2
+        },
+        "contradictory_channel_specification": {
+          "correct": 0,
+          "items": 2
+        },
+        "device_control_precedes_bad_channel_value": {
+          "correct": 0,
+          "items": 2
+        },
+        "nonexistent_topology_id": {
+          "correct": 0,
+          "items": 2
+        },
+        "prose_parameter_channel_conflict": {
+          "correct": 0,
+          "items": 2
+        },
+        "unlisted_topology": {
+          "correct": 0,
+          "items": 2
+        }
+      },
+      "confusion_gold_by_predicted": {
+        "CLARIFY": {
+          "CLARIFY": 12,
+          "EXECUTE": 0,
+          "REJECT": 0,
+          "UNSUPPORTED": 0
+        },
+        "EXECUTE": {
+          "CLARIFY": 0,
+          "EXECUTE": 43,
+          "REJECT": 1,
+          "UNSUPPORTED": 0
+        },
+        "REJECT": {
+          "CLARIFY": 8,
+          "EXECUTE": 2,
+          "REJECT": 5,
+          "UNSUPPORTED": 1
+        },
+        "UNSUPPORTED": {
+          "CLARIFY": 0,
+          "EXECUTE": 0,
+          "REJECT": 2,
+          "UNSUPPORTED": 70
+        }
+      },
+      "error_codes": {
+        "INVALID_CHANNEL_COUNT": 1,
+        "MISSING_TOPOLOGY": 12,
+        "REQUEST_FIELD_MISMATCH": 2,
+        "VALIDATION_CERTIFICATE_FAILED": 3
+      },
+      "failure_taxonomy": {
+        "infrastructure": 0,
+        "infrastructure_request_ids": [],
+        "schedule": 0,
+        "schedule_request_ids": [],
+        "semantic": 14
+      },
+      "false_acceptance": {
+        "count": 2,
+        "rate": 0.0139,
+        "request_ids": [
+          "ft3-r0033",
+          "ft3-r0106"
+        ]
+      },
+      "field_exact_match": {
+        "bound_fields_excluded": {
+          "fields": [
+            "topology_id",
+            "working_period",
+            "communication_range"
+          ],
+          "matched": 0,
+          "note": "bound or echoed by the runner rather than parsed from the request",
+          "rate": 0.0,
+          "total": 132
+        },
+        "definition": "gold-EXECUTE items, contract fields the system parses",
+        "matched": 293,
+        "per_field": {
+          "channels": {
+            "matched": 42,
+            "rate": 0.9545,
+            "total": 44
+          },
+          "collision_model": {
+            "matched": 43,
+            "rate": 0.9773,
+            "total": 44
+          },
+          "communication_range": {
+            "matched": 0,
+            "rate": 0.0,
+            "total": 44
+          },
+          "interference_ratio": {
+            "matched": 43,
+            "rate": 0.9773,
+            "total": 44
+          },
+          "latency_target_slots": {
+            "matched": 37,
+            "rate": 0.8409,
+            "total": 44
+          },
+          "objective": {
+            "matched": 43,
+            "rate": 0.9773,
+            "total": 44
+          },
+          "seed": {
+            "matched": 42,
+            "rate": 0.9545,
+            "total": 44
+          },
+          "topology_id": {
+            "matched": 0,
+            "rate": 0.0,
+            "total": 44
+          },
+          "working_period": {
+            "matched": 0,
+            "rate": 0.0,
+            "total": 44
+          },
+          "workload": {
+            "matched": 43,
+            "rate": 0.9773,
+            "total": 44
+          }
+        },
+        "rate": 0.9513,
+        "total": 308
+      },
+      "overhead": {
+        "mean_wall_seconds": 3.967,
+        "model_calls": 145,
+        "retries": 14,
+        "total_tokens": 191030,
+        "total_wall_seconds": 571.3
+      },
+      "paraphrase_consistency": {
+        "consistent_groups": 69,
+        "groups": 72,
+        "inconsistent_groups": [
+          "v3-a-009",
+          "v3-a-017",
+          "v3-b-017"
+        ],
+        "rate": 0.9583
+      },
+      "per_batch": {
+        "frontier-model-a": {
+          "correct": 64,
+          "items": 72,
+          "rate": 0.8889
+        },
+        "frontier-model-b": {
+          "correct": 66,
+          "items": 72,
+          "rate": 0.9167
+        }
+      },
+      "per_gold_action": {
+        "CLARIFY": {
+          "correct": 12,
+          "items": 12,
+          "rate": 1.0
+        },
+        "EXECUTE": {
+          "correct": 43,
+          "items": 44,
+          "rate": 0.9773
+        },
+        "REJECT": {
+          "correct": 5,
+          "items": 16,
+          "rate": 0.3125
+        },
+        "UNSUPPORTED": {
+          "correct": 70,
+          "items": 72,
+          "rate": 0.9722
+        }
+      },
+      "records": 144,
+      "schedule_validity_on_gold_execute": {
+        "items": 44,
+        "rate": 0.9773,
+        "valid": 43
+      },
+      "systems": [
+        [
+          "llm_agent_no_scope_gate",
+          "gpt-5.5-2026-04-23"
+        ]
+      ],
+      "task_completion": {
+        "completed": 130,
+        "items": 144,
+        "rate": 0.9028
+      },
+      "wrong_items": [
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0004"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0014"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0026"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0033"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0052"
+        },
+        {
+          "error_code": "INVALID_CHANNEL_COUNT",
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0053"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-a-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0069"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0098"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0106"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0112"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0113"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0121"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0130"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0133"
+        }
+      ]
+    }
+  },
+  "harness": {
+    "items": 144,
+    "path": "benchmarks/frozen_test_v3/harness/frozen_test_v3_harness.jsonl",
+    "per_gold_action": {
+      "CLARIFY": 12,
+      "EXECUTE": 44,
+      "REJECT": 16,
+      "UNSUPPORTED": 72
+    }
+  },
+  "ledgers": {
+    "gpt55_gated": "results/frozen_test_v3/gpt55_policy_v2_v31.jsonl",
+    "gpt55_no_gate": "results/frozen_test_v3/gpt55_no_scope_gate_v31.jsonl"
+  },
+  "no_language_model_or_scheduler_invoked": true,
+  "paired_comparisons": {
+    "gpt55_no_gate minus gpt55_gated": {
+      "bootstrap_samples": 10000,
+      "bootstrap_seed": 0,
+      "ci95": [
+        0.0139,
+        0.0972
+      ],
+      "mean_difference": 0.0556,
+      "pairs": 144
+    }
+  },
+  "title": "GPT ablation final"
+}

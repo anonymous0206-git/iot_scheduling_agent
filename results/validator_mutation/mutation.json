@@ -1,0 +1,237 @@
+{
+  "by_condition": {
+    "(i)": {
+      "kill_rate": 1.0,
+      "mutants": 168,
+      "rejected": 168,
+      "survivors": [],
+      "targeted": 168,
+      "targeted_rate": 1.0
+    },
+    "(ii)": {
+      "kill_rate": 1.0,
+      "mutants": 84,
+      "rejected": 84,
+      "survivors": [],
+      "targeted": 84,
+      "targeted_rate": 1.0
+    },
+    "(iii)": {
+      "kill_rate": 1.0,
+      "mutants": 26,
+      "rejected": 26,
+      "survivors": [],
+      "targeted": 26,
+      "targeted_rate": 1.0
+    },
+    "(iv)": {
+      "kill_rate": 1.0,
+      "mutants": 247,
+      "rejected": 247,
+      "survivors": [],
+      "targeted": 247,
+      "targeted_rate": 1.0
+    },
+    "(v)": {
+      "kill_rate": 1.0,
+      "mutants": 84,
+      "rejected": 84,
+      "survivors": [],
+      "targeted": 84,
+      "targeted_rate": 1.0
+    },
+    "beyond": {
+      "kill_rate": 1.0,
+      "mutants": 336,
+      "rejected": 336,
+      "survivors": [],
+      "targeted": 336,
+      "targeted_rate": 1.0
+    }
+  },
+  "by_operator": {
+    "active_slot_field_mismatch": {
+      "condition": "beyond",
+      "expected_code": "ACTIVE_SLOT_FIELD_MISMATCH",
+      "kill_rate": 1.0,
+      "mutants": 84,
+      "rejected": 84,
+      "survivors": [],
+      "targeted": 84,
+      "targeted_rate": 1.0
+    },
+    "channel_out_of_range": {
+      "condition": "beyond",
+      "expected_code": "INVALID_CHANNEL",
+      "kill_rate": 1.0,
+      "mutants": 84,
+      "rejected": 84,
+      "survivors": [],
+      "targeted": 84,
+      "targeted_rate": 1.0
+    },
+    "drop_transmission": {
+      "condition": "(i)",
+      "expected_code": "MISSING_TRANSMISSION",
+      "kill_rate": 1.0,
+      "mutants": 84,
+      "rejected": 84,
+      "survivors": [],
+      "targeted": 84,
+      "targeted_rate": 1.0
+    },
+    "duplicate_transmission": {
+      "condition": "(i)",
+      "expected_code": "DUPLICATE_TRANSMISSION",
+      "kill_rate": 1.0,
+      "mutants": 84,
+      "rejected": 84,
+      "survivors": [],
+      "targeted": 84,
+      "targeted_rate": 1.0
+    },
+    "half_duplex": {
+      "condition": "(iv)",
+      "expected_code": "HALF_DUPLEX_VIOLATION",
+      "kill_rate": 1.0,
+      "mutants": 84,
+      "rejected": 84,
+      "survivors": [],
+      "targeted": 84,
+      "targeted_rate": 1.0
+    },
+    "non_neighbour_receiver": {
+      "condition": "(ii)",
+      "expected_code": "NON_NEIGHBOR_LINK",
+      "kill_rate": 1.0,
+      "mutants": 84,
+      "rejected": 84,
+      "survivors": [],
+      "targeted": 84,
+      "targeted_rate": 1.0
+    },
+    "parent_cycle": {
+      "condition": "beyond",
+      "expected_code": "PARENT_CYCLE",
+      "kill_rate": 1.0,
+      "mutants": 84,
+      "rejected": 84,
+      "survivors": [],
+      "targeted": 84,
+      "targeted_rate": 1.0
+    },
+    "precedence_inversion": {
+      "condition": "(v)",
+      "expected_code": "PRECEDENCE_VIOLATION",
+      "kill_rate": 1.0,
+      "mutants": 84,
+      "rejected": 84,
+      "survivors": [],
+      "targeted": 84,
+      "targeted_rate": 1.0
+    },
+    "primary_collision": {
+      "condition": "(iv)",
+      "expected_code": "PRIMARY_COLLISION",
+      "kill_rate": 1.0,
+      "mutants": 79,
+      "rejected": 79,
+      "survivors": [],
+      "targeted": 79,
+      "targeted_rate": 1.0
+    },
+    "secondary_collision": {
+      "condition": "(iv)",
+      "expected_code": "SECONDARY_COLLISION",
+      "kill_rate": 1.0,
+      "mutants": 84,
+      "rejected": 84,
+      "survivors": [],
+      "targeted": 84,
+      "targeted_rate": 1.0
+    },
+    "sink_transmits": {
+      "condition": "(iii)",
+      "expected_code": "SINK_TRANSMISSION",
+      "kill_rate": 1.0,
+      "mutants": 26,
+      "rejected": 26,
+      "survivors": [],
+      "targeted": 26,
+      "targeted_rate": 1.0
+    },
+    "unknown_receiver": {
+      "condition": "beyond",
+      "expected_code": "UNKNOWN_RECEIVER",
+      "kill_rate": 1.0,
+      "mutants": 84,
+      "rejected": 84,
+      "survivors": [],
+      "targeted": 84,
+      "targeted_rate": 1.0
+    }
+  },
+  "catalogue": "benchmarks/topologies/frozen_test_v3_llm_catalogue.json",
+  "channels": 2,
+  "conditions": {
+    "(i)": "every non-sink node transmits exactly once",
+    "(ii)": "a transmission uses a communication link",
+    "(iii)": "the sink never transmits",
+    "(iv)": "no two transmissions sharing a slot and a channel collide",
+    "(v)": "a node transmits only after every node it receives from",
+    "beyond": "checks the validator makes beyond conditions (i)-(v)"
+  },
+  "mutants_per_operator_per_topology": 12,
+  "mutation_format": "agentic_anex.validator_mutation.v1",
+  "survivors": [],
+  "topologies": {
+    "legacy30_seed7": {
+      "entries": 29,
+      "mutants": 135,
+      "nodes": 30,
+      "rejected": 135
+    },
+    "topo100_seed0": {
+      "entries": 99,
+      "mutants": 135,
+      "nodes": 100,
+      "rejected": 135
+    },
+    "topo150_seed0": {
+      "entries": 149,
+      "mutants": 135,
+      "nodes": 150,
+      "rejected": 135
+    },
+    "topo200_seed0": {
+      "entries": 199,
+      "mutants": 136,
+      "nodes": 200,
+      "rejected": 136
+    },
+    "topo250_seed0": {
+      "entries": 249,
+      "mutants": 135,
+      "nodes": 250,
+      "rejected": 135
+    },
+    "topo300_seed0": {
+      "entries": 299,
+      "mutants": 134,
+      "nodes": 300,
+      "rejected": 134
+    },
+    "topo50_seed0": {
+      "entries": 49,
+      "mutants": 135,
+      "nodes": 50,
+      "rejected": 135
+    }
+  },
+  "totals": {
+    "mutants": 945,
+    "rejected": 945,
+    "survivors": 0,
+    "targeted": 945
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "base_url": null,
+  "decoding": {
+    "note": "greedy decoding; repeats measure provider nondeterminism, not sampling diversity",
+    "temperature": 0
+  },
+  "runs": [
+    {
+      "arm": "gpt55_advisory_scope_gate",
+      "device": {
+        "serving_device": "openai"
+      },
+      "elapsed_seconds": 602.145,
+      "items": 144,
+      "ledger": "<repository>/results/frozen_test_v3/gpt55_advisory_scope_gate_seed11.jsonl",
+      "model": "gpt-5.5-2026-04-23",
+      "provider_error_rate": 0.0,
+      "provider_errors": 0,
+      "returncode": 0,
+      "seed": 11,
+      "stdout_tail": "{\n  \"arm\": \"llm_agent_advisory_scope_gate\",\n  \"completed\": 144,\n  \"expected\": 144,\n  \"policy_version_recorded\": null,\n  \"prompt_version_on_matched_requests\": \"paper1-requirements-v4-advisory\",\n  \"raw_output\": \"<repository>/results/frozen_test_v3/gpt55_advisory_scope_gate_seed11.jsonl\",\n  \"scope_gate\": \"ADVISORY, NOT BINDING\",\n  \"scope_mode\": \"advisory\",\n  \"skipped\": 0,\n  \"status\": \"completed\",\n  \"warning\": \"In this arm the scope gate cannot refuse a request on its own and must never be reported as the production system.\",\n  \"written\": 144\n}\n"
+    },
+    {
+      "arm": "gpt55_no_scope_gate",
+      "device": {
+        "serving_device": "openai"
+      },
+      "elapsed_seconds": 559.492,
+      "items": 144,
+      "ledger": "<repository>/results/frozen_test_v3/gpt55_no_scope_gate_seed13.jsonl",
+      "model": "gpt-5.5-2026-04-23",
+      "provider_error_rate": 0.0,
+      "provider_errors": 0,
+      "returncode": 0,
+      "seed": 13,
+      "stdout_tail": "{\n  \"arm\": \"llm_agent_no_scope_gate\",\n  \"completed\": 144,\n  \"expected\": 144,\n  \"policy_version_recorded\": \"paper1-scope-policy.v2-ABLATED\",\n  \"prompt_version_on_matched_requests\": null,\n  \"raw_output\": \"<repository>/results/frozen_test_v3/gpt55_no_scope_gate_seed13.jsonl\",\n  \"scope_gate\": \"DISABLED\",\n  \"scope_mode\": \"off\",\n  \"skipped\": 0,\n  \"status\": \"completed\",\n  \"warning\": \"This arm has no independent scope gate and must never be reported as the production system.\",\n  \"written\": 144\n}\n"
+    },
+    {
+      "arm": "gpt55_advisory_scope_gate",
+      "device": {
+        "serving_device": "openai"
+      },
+      "elapsed_seconds": 583.556,
+      "items": 144,
+      "ledger": "<repository>/results/frozen_test_v3/gpt55_advisory_scope_gate_seed13.jsonl",
+      "model": "gpt-5.5-2026-04-23",
+      "provider_error_rate": 0.0,
+      "provider_errors": 0,
+      "returncode": 0,
+      "seed": 13,
+      "stdout_tail": "{\n  \"arm\": \"llm_agent_advisory_scope_gate\",\n  \"completed\": 144,\n  \"expected\": 144,\n  \"policy_version_recorded\": null,\n  \"prompt_version_on_matched_requests\": \"paper1-requirements-v4-advisory\",\n  \"raw_output\": \"<repository>/results/frozen_test_v3/gpt55_advisory_scope_gate_seed13.jsonl\",\n  \"scope_gate\": \"ADVISORY, NOT BINDING\",\n  \"scope_mode\": \"advisory\",\n  \"skipped\": 0,\n  \"status\": \"completed\",\n  \"warning\": \"In this arm the scope gate cannot refuse a request on its own and must never be reported as the production system.\",\n  \"written\": 144\n}\n"
+    }
+  ],
+  "seeds_added": [
+    11,
+    12,
+    13
+  ],
+  "serving_devices": [
+    "openai"
+  ],
+  "status": "completed",
+  "total_minutes": 29.09,
+  "worst_provider_error_rate": 0.0
+}

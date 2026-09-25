@@ -1,0 +1,1737 @@
+{
+  "gpt55_gated": {
+    "arm": "gpt55_gated",
+    "by_category": {
+      "catalogue_range_mismatch": 1,
+      "communication_range_mismatch": 2
+    },
+    "count": 3,
+    "items": [
+      {
+        "batch_id": "frontier-model-b",
+        "category": "communication_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-b-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0033"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "communication_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-b-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0130"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "catalogue_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-a-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0141"
+      }
+    ]
+  },
+  "gpt55_no_gate": {
+    "arm": "gpt55_no_gate",
+    "by_category": {
+      "catalogue_range_mismatch": 1,
+      "communication_range_mismatch": 1
+    },
+    "count": 2,
+    "items": [
+      {
+        "batch_id": "frontier-model-b",
+        "category": "communication_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-b-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0033"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "catalogue_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-a-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0106"
+      }
+    ]
+  },
+  "phi4_gated": {
+    "arm": "phi4_gated",
+    "by_category": {
+      "ambiguous_channel_count": 1,
+      "catalogue_range_mismatch": 1,
+      "charge_constrained_latency": 2,
+      "charge_driven_forwarding_compositional": 2,
+      "communication_range_mismatch": 1,
+      "continuous_state_alignment_compositional_mixed": 1,
+      "delivery_reliability_compositional": 2,
+      "live_route_replacement": 1,
+      "live_state_updates_after_schedule": 1,
+      "load_balancing_compositional": 1,
+      "mid_round_reparenting_compositional": 1,
+      "minimax_sender_load": 1,
+      "minimize_transmission_count": 1,
+      "ongoing_deadline_collection": 2,
+      "packet_level_network_emulation": 2,
+      "per_transmission_charge_accounting": 1,
+      "periodic_rounds": 1,
+      "physical_device_control_mixed": 1,
+      "repeating_pull_compositional": 1,
+      "replan_on_node_departure": 1,
+      "restart_after_completion": 2,
+      "self_repeating_schedule_compositional_mixed": 1,
+      "software_replica_compositional": 2
+    },
+    "count": 30,
+    "items": [
+      {
+        "batch_id": "frontier-model-b",
+        "category": "physical_device_control_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-034",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0001"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "ongoing_deadline_collection",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-029",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0003"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "charge_driven_forwarding_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0005"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "delivery_reliability_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-036",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0009"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "self_repeating_schedule_compositional_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-029",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0010"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "ongoing_deadline_collection",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-029",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0019"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "live_route_replacement",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-031",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0024"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "live_state_updates_after_schedule",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-025",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0038"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "restart_after_completion",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-028",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0047"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "ambiguous_channel_count",
+        "gold_action": "CLARIFY",
+        "paraphrase_group_id": "v3-b-014",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0048"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "per_transmission_charge_accounting",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-020",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0057"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "charge_constrained_latency",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0068"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "periodic_rounds",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-027",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0071"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "replan_on_node_departure",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-030",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0079"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "charge_constrained_latency",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0081"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "repeating_pull_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-028",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0086"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "minimax_sender_load",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-034",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0094"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "packet_level_network_emulation",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0101"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "software_replica_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0104"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "catalogue_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-a-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0106"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "minimize_transmission_count",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-033",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0107"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "charge_driven_forwarding_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0109"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "continuous_state_alignment_compositional_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-025",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0116"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "load_balancing_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-035",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0123"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "mid_round_reparenting_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-031",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0126"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "communication_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-b-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0130"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "restart_after_completion",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-028",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0131"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "packet_level_network_emulation",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0135"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "software_replica_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0139"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "delivery_reliability_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-036",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0140"
+      }
+    ]
+  },
+  "phi4_no_gate": {
+    "arm": "phi4_no_gate",
+    "by_category": {
+      "ambiguous_channel_count": 1,
+      "catalogue_range_mismatch": 1,
+      "charge_constrained_latency": 2,
+      "charge_driven_forwarding_compositional": 2,
+      "communication_range_mismatch": 1,
+      "continuous_state_alignment_compositional_mixed": 1,
+      "delivery_reliability_compositional": 2,
+      "finite_periodic_collection": 2,
+      "live_route_replacement": 1,
+      "live_state_updates_after_schedule": 1,
+      "load_balancing_compositional": 1,
+      "mid_round_reparenting_compositional": 1,
+      "minimax_sender_load": 1,
+      "minimize_transmission_count": 1,
+      "ongoing_deadline_collection": 2,
+      "packet_level_network_emulation": 2,
+      "per_transmission_charge_accounting": 1,
+      "periodic_rounds": 2,
+      "physical_device_control_mixed": 1,
+      "repeating_pull_compositional": 1,
+      "replan_on_node_departure": 1,
+      "restart_after_completion": 2,
+      "self_repeating_schedule_compositional_mixed": 1,
+      "software_replica_compositional": 2
+    },
+    "count": 33,
+    "items": [
+      {
+        "batch_id": "frontier-model-b",
+        "category": "physical_device_control_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-034",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0001"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "ongoing_deadline_collection",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-029",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0003"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "charge_driven_forwarding_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0005"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "periodic_rounds",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-027",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0008"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "delivery_reliability_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-036",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0009"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "self_repeating_schedule_compositional_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-029",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0010"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "ongoing_deadline_collection",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-029",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0019"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "live_route_replacement",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-031",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0024"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "live_state_updates_after_schedule",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-025",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0038"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "restart_after_completion",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-028",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0047"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "ambiguous_channel_count",
+        "gold_action": "CLARIFY",
+        "paraphrase_group_id": "v3-b-014",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0048"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "per_transmission_charge_accounting",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-020",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0057"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "charge_constrained_latency",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0068"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "periodic_rounds",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-027",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0071"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "replan_on_node_departure",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-030",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0079"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "charge_constrained_latency",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0081"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "repeating_pull_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-028",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0086"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "minimax_sender_load",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-034",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0094"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "packet_level_network_emulation",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0101"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "software_replica_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0104"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "catalogue_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-a-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0106"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "minimize_transmission_count",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-033",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0107"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "charge_driven_forwarding_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0109"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "continuous_state_alignment_compositional_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-025",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0116"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "finite_periodic_collection",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-027",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0122"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "load_balancing_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-035",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0123"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "finite_periodic_collection",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-027",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0124"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "mid_round_reparenting_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-031",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0126"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "communication_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-b-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0130"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "restart_after_completion",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-028",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0131"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "packet_level_network_emulation",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0135"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "software_replica_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0139"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "delivery_reliability_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-036",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0140"
+      }
+    ]
+  },
+  "qwen25": {
+    "arm": "qwen25",
+    "by_category": {
+      "ambiguous_channel_count": 2,
+      "catalogue_range_mismatch": 1,
+      "charge_constrained_latency": 2,
+      "charge_driven_forwarding_compositional": 2,
+      "communication_range_mismatch": 2,
+      "continuous_state_alignment_compositional_mixed": 2,
+      "delivery_reliability_compositional": 2,
+      "integrate_joining_nodes": 1,
+      "live_route_replacement": 1,
+      "live_state_updates_after_schedule": 2,
+      "load_balancing_compositional": 2,
+      "mid_round_reparenting_compositional": 2,
+      "minimax_sender_load": 2,
+      "minimize_channel_usage_objective": 2,
+      "minimize_transmission_count": 2,
+      "minimize_transmission_total": 2,
+      "network_lifetime_objective_compositional": 2,
+      "ongoing_deadline_collection": 2,
+      "packet_level_network_emulation": 2,
+      "per_transmission_charge_accounting": 2,
+      "periodic_rounds": 1,
+      "physical_device_control_mixed": 2,
+      "prose_parameter_channel_conflict": 1,
+      "repeating_pull_compositional": 2,
+      "replan_on_node_departure": 2,
+      "residual_battery_evolution_mixed": 2,
+      "restart_after_completion": 2,
+      "runtime_adaptation": 2,
+      "runtime_rerouting_with_invalid_range": 1,
+      "software_replica_compositional": 2
+    },
+    "count": 54,
+    "items": [
+      {
+        "batch_id": "frontier-model-b",
+        "category": "physical_device_control_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-034",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0001"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "ongoing_deadline_collection",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-029",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0003"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "charge_driven_forwarding_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0005"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "physical_device_control_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-034",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0007"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "delivery_reliability_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-036",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0009"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "residual_battery_evolution_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-020",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0013"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "ongoing_deadline_collection",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-029",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0019"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "minimax_sender_load",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-034",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0023"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "live_route_replacement",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-031",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0024"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "runtime_adaptation",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-030",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0030"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "communication_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-b-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0033"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "network_lifetime_objective_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-022",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0036"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "live_state_updates_after_schedule",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-025",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0038"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "minimize_transmission_count",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-033",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0039"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "load_balancing_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-035",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0042"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "restart_after_completion",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-028",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0047"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "ambiguous_channel_count",
+        "gold_action": "CLARIFY",
+        "paraphrase_group_id": "v3-b-014",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0048"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "runtime_rerouting_with_invalid_range",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-032",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0054"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "network_lifetime_objective_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-022",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0056"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "per_transmission_charge_accounting",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-020",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0057"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "minimize_channel_usage_objective",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-036",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0063"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "runtime_adaptation",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-030",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0066"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "charge_constrained_latency",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0068"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "periodic_rounds",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-027",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0071"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "minimize_transmission_total",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-033",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0072"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "minimize_channel_usage_objective",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-036",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0073"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "ambiguous_channel_count",
+        "gold_action": "CLARIFY",
+        "paraphrase_group_id": "v3-b-014",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0075"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "replan_on_node_departure",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-030",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0079"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "charge_constrained_latency",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0081"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "replan_on_node_departure",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-030",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0082"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "per_transmission_charge_accounting",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-020",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0084"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "continuous_state_alignment_compositional_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-025",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0085"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "repeating_pull_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-028",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0086"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "minimax_sender_load",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-034",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0094"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "packet_level_network_emulation",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0101"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "software_replica_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0104"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "catalogue_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-a-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0106"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "minimize_transmission_count",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-033",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0107"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "charge_driven_forwarding_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0109"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "continuous_state_alignment_compositional_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-025",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0116"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "repeating_pull_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-028",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0120"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "prose_parameter_channel_conflict",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-a-018",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0121"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "load_balancing_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-035",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0123"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "mid_round_reparenting_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-031",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0126"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "mid_round_reparenting_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-031",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0127"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "residual_battery_evolution_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-020",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0129"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "communication_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-b-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0130"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "restart_after_completion",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-028",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0131"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "packet_level_network_emulation",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0135"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "minimize_transmission_total",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-033",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0137"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "software_replica_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0139"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "delivery_reliability_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-036",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0140"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "live_state_updates_after_schedule",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-025",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0143"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "integrate_joining_nodes",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-032",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0144"
+      }
+    ]
+  },
+  "rule_based": {
+    "arm": "rule_based",
+    "by_category": {
+      "ambiguous_channel_count": 2,
+      "catalogue_range_mismatch": 2,
+      "charge_constrained_latency": 2,
+      "charge_driven_forwarding_compositional": 2,
+      "communication_range_mismatch": 2,
+      "continuous_state_alignment_compositional_mixed": 2,
+      "contradictory_channel_specification": 2,
+      "delivery_reliability_compositional": 2,
+      "device_control_precedes_bad_channel_value": 1,
+      "explicit_streaming_mirror": 2,
+      "integrate_joining_nodes": 2,
+      "interference_ratio_above_one": 2,
+      "live_route_replacement": 2,
+      "live_state_updates_after_schedule": 2,
+      "load_balancing_compositional": 2,
+      "mid_round_reparenting_compositional": 2,
+      "minimax_sender_load": 2,
+      "minimize_channel_usage_objective": 2,
+      "minimize_transmission_count": 2,
+      "minimize_transmission_total": 2,
+      "network_lifetime_objective_compositional": 2,
+      "ongoing_deadline_collection": 2,
+      "packet_level_network_emulation": 2,
+      "per_transmission_charge_accounting": 2,
+      "periodic_rounds": 1,
+      "physical_device_control_mixed": 2,
+      "prose_parameter_channel_conflict": 2,
+      "repeating_pull_compositional": 2,
+      "replan_on_node_departure": 2,
+      "residual_battery_evolution_mixed": 2,
+      "restart_after_completion": 2,
+      "runtime_adaptation": 2,
+      "runtime_rerouting_with_invalid_range": 2,
+      "self_repeating_schedule_compositional_mixed": 2,
+      "software_replica_compositional": 2,
+      "streaming_view": 2,
+      "unequal_interference_range": 2,
+      "unresolved_material_channel_setting": 2
+    },
+    "count": 74,
+    "items": [
+      {
+        "batch_id": "frontier-model-b",
+        "category": "physical_device_control_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-034",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0001"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "ongoing_deadline_collection",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-029",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0003"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "contradictory_channel_specification",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-b-018",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0004"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "charge_driven_forwarding_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0005"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "interference_ratio_above_one",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-b-016",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0006"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "physical_device_control_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-034",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0007"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "delivery_reliability_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-036",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0009"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "self_repeating_schedule_compositional_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-029",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0010"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "interference_ratio_above_one",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-b-016",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0011"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "unresolved_material_channel_setting",
+        "gold_action": "CLARIFY",
+        "paraphrase_group_id": "v3-a-014",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0012"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "residual_battery_evolution_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-020",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0013"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "ongoing_deadline_collection",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-029",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0019"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "minimax_sender_load",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-034",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0023"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "live_route_replacement",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-031",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0024"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "runtime_rerouting_with_invalid_range",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-032",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0027"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "runtime_adaptation",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-030",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0030"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "explicit_streaming_mirror",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-026",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0031"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "communication_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-b-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0033"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "network_lifetime_objective_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-022",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0036"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "live_state_updates_after_schedule",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-025",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0038"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "minimize_transmission_count",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-033",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0039"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "load_balancing_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-035",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0042"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "streaming_view",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-026",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0046"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "restart_after_completion",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-028",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0047"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "ambiguous_channel_count",
+        "gold_action": "CLARIFY",
+        "paraphrase_group_id": "v3-b-014",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0048"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "device_control_precedes_bad_channel_value",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-035",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0053"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "runtime_rerouting_with_invalid_range",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-032",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0054"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "unresolved_material_channel_setting",
+        "gold_action": "CLARIFY",
+        "paraphrase_group_id": "v3-a-014",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0055"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "network_lifetime_objective_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-022",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0056"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "per_transmission_charge_accounting",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-020",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0057"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "unequal_interference_range",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-a-016",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0062"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "minimize_channel_usage_objective",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-036",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0063"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "runtime_adaptation",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-030",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0066"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "charge_constrained_latency",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0068"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "periodic_rounds",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-027",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0071"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "minimize_transmission_total",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-033",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0072"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "minimize_channel_usage_objective",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-036",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0073"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "ambiguous_channel_count",
+        "gold_action": "CLARIFY",
+        "paraphrase_group_id": "v3-b-014",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0075"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "live_route_replacement",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-031",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0076"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "replan_on_node_departure",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-030",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0079"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "charge_constrained_latency",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0081"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "replan_on_node_departure",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-030",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0082"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "per_transmission_charge_accounting",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-020",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0084"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "continuous_state_alignment_compositional_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-025",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0085"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "repeating_pull_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-028",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0086"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "minimax_sender_load",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-034",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0094"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "unequal_interference_range",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-a-016",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0097"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "packet_level_network_emulation",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0101"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "software_replica_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0104"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "catalogue_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-a-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0106"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "minimize_transmission_count",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-033",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0107"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "charge_driven_forwarding_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-021",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0109"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "integrate_joining_nodes",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-032",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0111"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "prose_parameter_channel_conflict",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-a-018",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0112"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "contradictory_channel_specification",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-b-018",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0113"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "continuous_state_alignment_compositional_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-025",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0116"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "repeating_pull_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-028",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0120"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "prose_parameter_channel_conflict",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-a-018",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0121"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "load_balancing_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-035",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0123"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "mid_round_reparenting_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-031",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0126"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "mid_round_reparenting_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-031",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0127"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "explicit_streaming_mirror",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-026",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0128"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "residual_battery_evolution_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-020",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0129"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "communication_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-b-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0130"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "restart_after_completion",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-028",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0131"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "self_repeating_schedule_compositional_mixed",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-029",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0132"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "streaming_view",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-026",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0134"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "packet_level_network_emulation",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0135"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "minimize_transmission_total",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-033",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0137"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "software_replica_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-024",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0139"
+      },
+      {
+        "batch_id": "frontier-model-b",
+        "category": "delivery_reliability_compositional",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-b-036",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0140"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "catalogue_range_mismatch",
+        "gold_action": "REJECT",
+        "paraphrase_group_id": "v3-a-017",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0141"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "live_state_updates_after_schedule",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-025",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0143"
+      },
+      {
+        "batch_id": "frontier-model-a",
+        "category": "integrate_joining_nodes",
+        "gold_action": "UNSUPPORTED",
+        "paraphrase_group_id": "v3-a-032",
+        "reason": "executed a request whose gold action is not EXECUTE",
+        "request_id": "ft3-r0144"
+      }
+    ]
+  }
+}

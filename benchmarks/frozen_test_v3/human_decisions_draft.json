@@ -1,0 +1,163 @@
+{
+  "decisions_version": "frozen-test-v2-decisions/1",
+  "decided_by": "draft prepared by claude-opus-5, pending operator approval",
+  "decided_at": "2026-09-14T00:00:00Z",
+  "draft_status": "NOT APPROVED. Every decision below concerns Batch B, which this same model generated, so the proposals come from the party being criticised. Review them before pointing seal at this file, and rename it to human_decisions.json once approved.",
+  "decisions": [
+    {
+      "semantic_group_id": "v3-b-002",
+      "resolution": "keep_with_edits",
+      "final_action": "EXECUTE",
+      "final_fields": {
+        "topology_id": "topo150_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 2,
+        "interference_ratio": 1.0,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": null,
+        "seed": 0,
+        "working_period": 10,
+        "communication_range": 20.0
+      },
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": true,
+      "paraphrase_overrides": {
+        "v3-b-002-p2": "Work from the stored topology file for topo150_seed0 and nothing else, default settings throughout, and give me the aggregation schedule that comes out. No Digital Twin is to be built for it."
+      },
+      "rationale": "The reviewer is right that the second wording never stated the deliverable, so on its own it asked for an input and a configuration but not a schedule. The edit restores the deliverable; the action and configuration are unchanged, and the negated Digital Twin remains the point of the group."
+    },
+    {
+      "semantic_group_id": "v3-b-008",
+      "resolution": "keep_with_edits",
+      "final_action": "EXECUTE",
+      "final_fields": {
+        "topology_id": "topo150_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 5,
+        "interference_ratio": 1.0,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": null,
+        "seed": 21,
+        "working_period": 10,
+        "communication_range": 20.0
+      },
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": true,
+      "paraphrase_overrides": {
+        "v3-b-008-p2": "Leave the older planner that used to spread battery drain out of this one. The run is topo150_seed0, five channels, scheduler seed 21, minimizing latency alone."
+      },
+      "rationale": "The second wording introduced a benchmarking date that the first does not mention. The edit drops that added fact, leaving both texts with the same historical mention and the same configuration."
+    },
+    {
+      "semantic_group_id": "v3-b-010",
+      "resolution": "keep_with_edits",
+      "final_action": "EXECUTE",
+      "final_fields": {
+        "topology_id": "topo100_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 2,
+        "interference_ratio": 1.0,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": 20,
+        "seed": 0,
+        "working_period": 10,
+        "communication_range": 20.0
+      },
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": true,
+      "paraphrase_overrides": {
+        "v3-b-010-p2": "Twenty elapsed slots is what the downstream job needs from the topo100_seed0 collection, so aim for that and tell me where the produced schedule lands against it."
+      },
+      "rationale": "The second wording dropped the origin of the deadline. The edit restores it while keeping a different sentence structure from the first, and the below-baseline target of 20 slots stays a valid EXECUTE case."
+    },
+    {
+      "semantic_group_id": "v3-b-018",
+      "resolution": "keep_with_edits",
+      "final_action": "REJECT",
+      "final_fields": {
+        "topology_id": "topo200_seed0",
+        "channels": null,
+        "seed": 4,
+        "collision_model": "legacy_neighbor"
+      },
+      "final_invalid_fields": {
+        "channels": {
+          "observed": {
+            "prose": 2,
+            "parameter_block": 5
+          },
+          "reason": "The sentence and the accompanying run-settings block give different channel counts for the same run."
+        }
+      },
+      "paraphrase_equivalent": true,
+      "paraphrase_overrides": {
+        "v3-b-018-p1": "We are keeping this one on two channels. Run settings for it: topology topo200_seed0, channels 5, seed 4, collision_model legacy_neighbor.",
+        "v3-b-018-p2": "Two channels for this collection please. Its run settings are topo200_seed0, channels: 5, seed: 4, collision_model: legacy_neighbor."
+      },
+      "rationale": "This is the substantive catch of the review. Both original texts marked the five-channel block as coming from an earlier run, which lets a reader treat the prose as a current override and read the item as EXECUTE with two channels, so the contradiction was not clean. The edit presents the block as the settings for this run in both texts, which leaves two definite and incompatible channel counts. Excluding the group instead would drop invalid_parameter to three and break the protocol stratification, so editing is preferable."
+    },
+    {
+      "semantic_group_id": "v3-b-021",
+      "resolution": "keep_with_edits",
+      "final_action": "UNSUPPORTED",
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": true,
+      "paraphrase_overrides": {
+        "v3-b-021-p2": "Charge levels vary a lot across the solar-powered motes of topo200_seed0, so forwarding should fall to whichever node is holding the most charge at that moment."
+      },
+      "rationale": "The reviewer is right that preferring the best-charged node and excluding depleted nodes are different selection rules. The edit gives both texts the same rule, the time-dependent maximum-charge preference, which stays outside the supported scope."
+    },
+    {
+      "semantic_group_id": "v3-b-022",
+      "resolution": "keep_with_edits",
+      "final_action": "UNSUPPORTED",
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": true,
+      "paraphrase_overrides": {
+        "v3-b-022-p2": "Choose the plan for topo50_seed0 that keeps the whole field reporting for as long as it can, pushing the first node failure as far out in time as possible."
+      },
+      "rationale": "The second wording asked only for delayed failure, which a silent network would satisfy. The edit restores the continued-reporting requirement so both texts state the same lifetime objective."
+    },
+    {
+      "semantic_group_id": "v3-b-023",
+      "resolution": "keep_with_edits",
+      "final_action": "UNSUPPORTED",
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": true,
+      "paraphrase_overrides": {
+        "v3-b-023-p2": "I would like topo300_seed0 mirrored as a Digital Twin, with the aggregation carried out in that mirror so the team can follow the slots as they pass."
+      },
+      "rationale": "The observable execution in the first wording was missing from the second. The edit restores it; the Digital Twin and the execution inside it were already common to both."
+    },
+    {
+      "semantic_group_id": "v3-b-034",
+      "resolution": "keep_with_edits",
+      "final_action": "UNSUPPORTED",
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": true,
+      "paraphrase_overrides": {
+        "v3-b-034-p2": "When the topo50_seed0 schedule is ready, load it onto the physical motes so they wake and transmit in their assigned slots."
+      },
+      "rationale": "The first wording required scheduled waking as well as sending, the second only sending on cue. The edit gives both the same device-control requirement."
+    },
+    {
+      "semantic_group_id": "v3-b-035",
+      "resolution": "keep_with_edits",
+      "final_action": "UNSUPPORTED",
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": true,
+      "paraphrase_overrides": {
+        "v3-b-035-p2": "On topo300_seed0 the three nodes next to the sink carry far more of the work than the rest; spread that load more evenly across the field, longer round or not."
+      },
+      "rationale": "The reviewer is right that the sink's immediate neighbours and the three nodes next to the sink are not established as the same set, and that carrying most of the traffic is a stronger claim than doing far more work. The edit makes both texts name the same three nodes and the same claim."
+    }
+  ]
+}

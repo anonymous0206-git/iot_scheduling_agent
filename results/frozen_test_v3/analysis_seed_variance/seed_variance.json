@@ -1,0 +1,225 @@
+{
+  "analysis_format": "agentic_anex.frozen_test_seed_variance.v1",
+  "arm_differences": {
+    "phi4_no_scope_gate minus phi4_policy_v2": {
+      "mean_difference": 0.0162,
+      "noise_floor": 0.0138,
+      "verdict": "exceeds the noise floor"
+    },
+    "qwen25_policy_v2 minus phi4_no_scope_gate": {
+      "mean_difference": -0.0695,
+      "noise_floor": 0.0,
+      "verdict": "exceeds the noise floor"
+    },
+    "qwen25_policy_v2 minus phi4_policy_v2": {
+      "mean_difference": -0.0533,
+      "noise_floor": 0.0138,
+      "verdict": "exceeds the noise floor"
+    }
+  },
+  "arms": {
+    "phi4_no_scope_gate": {
+      "accuracy_max": 0.4514,
+      "accuracy_mean": 0.4514,
+      "accuracy_min": 0.4514,
+      "accuracy_range": 0.0,
+      "accuracy_stdev": 0.0,
+      "items": 144,
+      "majority_accuracy": 0.4514,
+      "majority_correct": 65,
+      "per_repeat": [
+        {
+          "accuracy": 0.4514,
+          "correct": 65,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/phi4_no_scope_gate.jsonl",
+          "seeds": [
+            0
+          ]
+        },
+        {
+          "accuracy": 0.4514,
+          "correct": 65,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/phi4_no_scope_gate_seed1.jsonl",
+          "seeds": [
+            1
+          ]
+        },
+        {
+          "accuracy": 0.4514,
+          "correct": 65,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/phi4_no_scope_gate_seed2.jsonl",
+          "seeds": [
+            2
+          ]
+        }
+      ],
+      "repeats": 3,
+      "stable_fraction": 1.0,
+      "stable_items": 144,
+      "unstable_items": [],
+      "unstable_per_gold_action": {}
+    },
+    "phi4_policy_v2": {
+      "accuracy_max": 0.4444,
+      "accuracy_mean": 0.4352,
+      "accuracy_min": 0.4306,
+      "accuracy_range": 0.0138,
+      "accuracy_stdev": 0.008,
+      "items": 144,
+      "majority_accuracy": 0.4306,
+      "majority_correct": 62,
+      "per_repeat": [
+        {
+          "accuracy": 0.4444,
+          "correct": 64,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/phi4_policy_v2.jsonl",
+          "seeds": [
+            0
+          ]
+        },
+        {
+          "accuracy": 0.4306,
+          "correct": 62,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/phi4_policy_v2_seed1.jsonl",
+          "seeds": [
+            1
+          ]
+        },
+        {
+          "accuracy": 0.4306,
+          "correct": 62,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/phi4_policy_v2_seed2.jsonl",
+          "seeds": [
+            2
+          ]
+        }
+      ],
+      "repeats": 3,
+      "stable_fraction": 0.9861,
+      "stable_items": 142,
+      "unstable_items": [
+        {
+          "actions": [
+            "UNSUPPORTED",
+            "REJECT",
+            "REJECT"
+          ],
+          "gold_action": "UNSUPPORTED",
+          "request_id": "ft3-r0036"
+        },
+        {
+          "actions": [
+            "UNSUPPORTED",
+            "REJECT",
+            "REJECT"
+          ],
+          "gold_action": "UNSUPPORTED",
+          "request_id": "ft3-r0127"
+        }
+      ],
+      "unstable_per_gold_action": {
+        "UNSUPPORTED": 2
+      }
+    },
+    "qwen25_policy_v2": {
+      "accuracy_max": 0.3819,
+      "accuracy_mean": 0.3819,
+      "accuracy_min": 0.3819,
+      "accuracy_range": 0.0,
+      "accuracy_stdev": 0.0,
+      "items": 144,
+      "majority_accuracy": 0.3819,
+      "majority_correct": 55,
+      "per_repeat": [
+        {
+          "accuracy": 0.3819,
+          "correct": 55,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/qwen25_policy_v2.jsonl",
+          "seeds": [
+            0
+          ]
+        },
+        {
+          "accuracy": 0.3819,
+          "correct": 55,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/qwen25_policy_v2_seed1.jsonl",
+          "seeds": [
+            1
+          ]
+        },
+        {
+          "accuracy": 0.3819,
+          "correct": 55,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/qwen25_policy_v2_seed2.jsonl",
+          "seeds": [
+            2
+          ]
+        }
+      ],
+      "repeats": 3,
+      "stable_fraction": 0.9722,
+      "stable_items": 140,
+      "unstable_items": [
+        {
+          "actions": [
+            "REJECT",
+            "EXECUTE",
+            "EXECUTE"
+          ],
+          "gold_action": "UNSUPPORTED",
+          "request_id": "ft3-r0001"
+        },
+        {
+          "actions": [
+            "REJECT",
+            "EXECUTE",
+            "EXECUTE"
+          ],
+          "gold_action": "UNSUPPORTED",
+          "request_id": "ft3-r0003"
+        },
+        {
+          "actions": [
+            "EXECUTE",
+            "REJECT",
+            "REJECT"
+          ],
+          "gold_action": "EXECUTE",
+          "request_id": "ft3-r0090"
+        },
+        {
+          "actions": [
+            "REJECT",
+            "EXECUTE",
+            "EXECUTE"
+          ],
+          "gold_action": "EXECUTE",
+          "request_id": "ft3-r0138"
+        }
+      ],
+      "unstable_per_gold_action": {
+        "EXECUTE": 2,
+        "UNSUPPORTED": 2
+      }
+    }
+  },
+  "decoding": {
+    "note": "greedy decoding; repeats measure provider nondeterminism",
+    "temperature": 0
+  },
+  "harness": {
+    "items": 144,
+    "path": "benchmarks/frozen_test_v3/harness/frozen_test_v3_harness.jsonl"
+  },
+  "no_language_model_or_scheduler_invoked": true,
+  "title": "Frozen Test v3 run-to-run variance"
+}

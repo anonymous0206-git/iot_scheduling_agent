@@ -1,0 +1,10 @@
+# Items added to balance network-size coverage of the direct-generation
+# baseline, chosen to bring every topology size to at least three usable
+# items. Selected before the run, from the benchmark order, without
+# reference to any result.
+ft3-r0050
+ft3-r0089
+ft3-r0045
+ft3-r0051
+ft3-r0067
+ft3-r0061

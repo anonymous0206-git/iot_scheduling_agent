@@ -1,0 +1,94 @@
+{
+  "computed_from": {
+    "harness": "benchmarks/frozen_test_v3/harness/frozen_test_v3_harness.jsonl",
+    "results_dir": "results/frozen_test_v3"
+  },
+  "points": [
+    {
+      "direct_slots": 36,
+      "nodes": 30,
+      "penalty": 1.38,
+      "request_id": "ft3-r0050",
+      "solver_slots": 26
+    },
+    {
+      "direct_slots": 39,
+      "nodes": 50,
+      "penalty": 1.44,
+      "request_id": "ft3-r0020",
+      "solver_slots": 27
+    },
+    {
+      "direct_slots": 39,
+      "nodes": 50,
+      "penalty": 1.44,
+      "request_id": "ft3-r0043",
+      "solver_slots": 27
+    },
+    {
+      "direct_slots": 77,
+      "nodes": 50,
+      "penalty": 2.85,
+      "request_id": "ft3-r0025",
+      "solver_slots": 27
+    },
+    {
+      "direct_slots": 179,
+      "nodes": 50,
+      "penalty": 6.63,
+      "request_id": "ft3-r0037",
+      "solver_slots": 27
+    },
+    {
+      "direct_slots": 387,
+      "nodes": 100,
+      "penalty": 13.34,
+      "request_id": "ft3-r0035",
+      "solver_slots": 29
+    },
+    {
+      "direct_slots": 419,
+      "nodes": 100,
+      "penalty": 14.45,
+      "request_id": "ft3-r0041",
+      "solver_slots": 29
+    },
+    {
+      "direct_slots": 637,
+      "nodes": 150,
+      "penalty": 21.97,
+      "request_id": "ft3-r0016",
+      "solver_slots": 29
+    },
+    {
+      "direct_slots": 649,
+      "nodes": 150,
+      "penalty": 22.38,
+      "request_id": "ft3-r0040",
+      "solver_slots": 29
+    },
+    {
+      "direct_slots": 1997,
+      "nodes": 200,
+      "penalty": 53.97,
+      "request_id": "ft3-r0018",
+      "solver_slots": 37
+    },
+    {
+      "direct_slots": 22887,
+      "nodes": 300,
+      "penalty": 789.21,
+      "request_id": "ft3-r0051",
+      "solver_slots": 29
+    }
+  ],
+  "shows": "the span of every certified direct schedule against the solver's on the same request, by network size",
+  "validity": {
+    "first_attempt_rate": 0.1304,
+    "items": 23,
+    "rate": 0.4783,
+    "valid": 11,
+    "valid_on_first_attempt": 3,
+    "valid_only_after_validator_feedback": 8
+  }
+}

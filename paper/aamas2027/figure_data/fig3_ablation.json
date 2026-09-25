@@ -1,0 +1,75 @@
+{
+  "computed_from": {
+    "harness": "benchmarks/frozen_test_v3/harness/frozen_test_v3_harness.jsonl",
+    "results_dir": "results/frozen_test_v3"
+  },
+  "series": {
+    "gpt-5.5": {
+      "per_gold_action": {
+        "CLARIFY": {
+          "change": 0,
+          "items": 12,
+          "with the gate": 12,
+          "without the gate": 12
+        },
+        "EXECUTE": {
+          "change": 8,
+          "items": 44,
+          "with the gate": 35,
+          "without the gate": 43
+        },
+        "REJECT": {
+          "change": 0,
+          "items": 16,
+          "with the gate": 5,
+          "without the gate": 5
+        },
+        "UNSUPPORTED": {
+          "change": 0,
+          "items": 72,
+          "with the gate": 70,
+          "without the gate": 70
+        }
+      },
+      "total": {
+        "change": 8,
+        "with the gate": 122,
+        "without the gate": 130
+      }
+    },
+    "phi4:14b": {
+      "per_gold_action": {
+        "CLARIFY": {
+          "change": 0,
+          "items": 12,
+          "with the gate": 8,
+          "without the gate": 8
+        },
+        "EXECUTE": {
+          "change": 7,
+          "items": 44,
+          "with the gate": 22,
+          "without the gate": 29
+        },
+        "REJECT": {
+          "change": 0,
+          "items": 16,
+          "with the gate": 10,
+          "without the gate": 10
+        },
+        "UNSUPPORTED": {
+          "change": -4,
+          "items": 72,
+          "with the gate": 24,
+          "without the gate": 20
+        }
+      },
+      "total": {
+        "change": 3,
+        "with the gate": 64,
+        "without the gate": 67
+      }
+    }
+  },
+  "shows": "removing the scope gate is close to even for the weak agent and a gain on every action for the strong one, which is the sign change the paper reports"
+}

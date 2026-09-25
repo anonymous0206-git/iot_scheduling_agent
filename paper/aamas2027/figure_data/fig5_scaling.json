@@ -1,0 +1,278 @@
+{
+  "computed_from": {
+    "harness": "benchmarks/frozen_test_v3/harness/frozen_test_v3_harness.jsonl",
+    "results_dir": "results/frozen_test_v3"
+  },
+  "configurations": 42,
+  "runs": 1260,
+  "series": {
+    "1": [
+      {
+        "latency_ci95": 1.868,
+        "latency_mean": 33.067,
+        "nodes": 50,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.263,
+        "latency_mean": 37.6,
+        "nodes": 100,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.048,
+        "latency_mean": 42.8,
+        "nodes": 150,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.171,
+        "latency_mean": 50.3,
+        "nodes": 200,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.611,
+        "latency_mean": 56.867,
+        "nodes": 250,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.048,
+        "latency_mean": 64.633,
+        "nodes": 300,
+        "valid_rate": 1.0
+      }
+    ],
+    "2": [
+      {
+        "latency_ci95": 1.883,
+        "latency_mean": 31.4,
+        "nodes": 50,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.515,
+        "latency_mean": 30.933,
+        "nodes": 100,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.173,
+        "latency_mean": 34.467,
+        "nodes": 150,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.195,
+        "latency_mean": 36.5,
+        "nodes": 200,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.143,
+        "latency_mean": 40.267,
+        "nodes": 250,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.08,
+        "latency_mean": 42.3,
+        "nodes": 300,
+        "valid_rate": 1.0
+      }
+    ],
+    "3": [
+      {
+        "latency_ci95": 1.886,
+        "latency_mean": 31.267,
+        "nodes": 50,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.262,
+        "latency_mean": 31.667,
+        "nodes": 100,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 0.87,
+        "latency_mean": 32.567,
+        "nodes": 150,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.024,
+        "latency_mean": 34.567,
+        "nodes": 200,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.253,
+        "latency_mean": 36.867,
+        "nodes": 250,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.228,
+        "latency_mean": 37.533,
+        "nodes": 300,
+        "valid_rate": 1.0
+      }
+    ],
+    "4": [
+      {
+        "latency_ci95": 1.886,
+        "latency_mean": 31.267,
+        "nodes": 50,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.378,
+        "latency_mean": 31.167,
+        "nodes": 100,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 0.974,
+        "latency_mean": 32.2,
+        "nodes": 150,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.073,
+        "latency_mean": 34.667,
+        "nodes": 200,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 0.842,
+        "latency_mean": 35.1,
+        "nodes": 250,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.173,
+        "latency_mean": 35.867,
+        "nodes": 300,
+        "valid_rate": 1.0
+      }
+    ],
+    "5": [
+      {
+        "latency_ci95": 1.886,
+        "latency_mean": 31.267,
+        "nodes": 50,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.377,
+        "latency_mean": 31.133,
+        "nodes": 100,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.193,
+        "latency_mean": 32.7,
+        "nodes": 150,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.015,
+        "latency_mean": 34.4,
+        "nodes": 200,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 0.944,
+        "latency_mean": 34.933,
+        "nodes": 250,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.076,
+        "latency_mean": 35.0,
+        "nodes": 300,
+        "valid_rate": 1.0
+      }
+    ],
+    "6": [
+      {
+        "latency_ci95": 1.886,
+        "latency_mean": 31.267,
+        "nodes": 50,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.377,
+        "latency_mean": 31.133,
+        "nodes": 100,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 0.962,
+        "latency_mean": 32.233,
+        "nodes": 150,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.015,
+        "latency_mean": 33.533,
+        "nodes": 200,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.081,
+        "latency_mean": 34.9,
+        "nodes": 250,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.003,
+        "latency_mean": 34.733,
+        "nodes": 300,
+        "valid_rate": 1.0
+      }
+    ],
+    "7": [
+      {
+        "latency_ci95": 1.886,
+        "latency_mean": 31.267,
+        "nodes": 50,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.377,
+        "latency_mean": 31.133,
+        "nodes": 100,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 1.053,
+        "latency_mean": 32.4,
+        "nodes": 150,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 0.984,
+        "latency_mean": 33.767,
+        "nodes": 200,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 0.932,
+        "latency_mean": 34.333,
+        "nodes": 250,
+        "valid_rate": 1.0
+      },
+      {
+        "latency_ci95": 0.889,
+        "latency_mean": 35.033,
+        "nodes": 300,
+        "valid_rate": 1.0
+      }
+    ]
+  },
+  "shows": "mean collection span against network size, one line per channel count, over the whole sweep",
+  "valid_rate_min": 1.0
+}

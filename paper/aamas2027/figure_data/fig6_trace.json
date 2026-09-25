@@ -1,0 +1,364 @@
+{
+  "certificate": {
+    "valid": true,
+    "violations": 0
+  },
+  "computed_from": {
+    "harness": "benchmarks/frozen_test_v3/harness/frozen_test_v3_harness.jsonl",
+    "results_dir": "results/frozen_test_v3"
+  },
+  "contract_defaults": {
+    "channels": 2,
+    "collision_model": "legacy_neighbor",
+    "interference_ratio": 1.0,
+    "latency_target_slots": null,
+    "seed": 0
+  },
+  "cost": {
+    "model_calls": 1,
+    "wall_seconds": 2.98
+  },
+  "latency_slots": 26,
+  "nodes": [
+    {
+      "id": 0,
+      "x": 20.0,
+      "y": 20.0
+    },
+    {
+      "id": 1,
+      "x": 25.0,
+      "y": 3.0
+    },
+    {
+      "id": 2,
+      "x": 23.0,
+      "y": 37.0
+    },
+    {
+      "id": 3,
+      "x": 2.0,
+      "y": 5.0
+    },
+    {
+      "id": 4,
+      "x": 4.0,
+      "y": 15.0
+    },
+    {
+      "id": 5,
+      "x": 3.0,
+      "y": 36.0
+    },
+    {
+      "id": 6,
+      "x": 40.0,
+      "y": 40.0
+    },
+    {
+      "id": 7,
+      "x": 3.0,
+      "y": 14.0
+    },
+    {
+      "id": 8,
+      "x": 18.0,
+      "y": 26.0
+    },
+    {
+      "id": 9,
+      "x": 36.0,
+      "y": 19.0
+    },
+    {
+      "id": 10,
+      "x": 6.0,
+      "y": 37.0
+    },
+    {
+      "id": 11,
+      "x": 6.0,
+      "y": 35.0
+    },
+    {
+      "id": 12,
+      "x": 39.0,
+      "y": 13.0
+    },
+    {
+      "id": 13,
+      "x": 20.0,
+      "y": 29.0
+    },
+    {
+      "id": 14,
+      "x": 19.0,
+      "y": 15.0
+    },
+    {
+      "id": 15,
+      "x": 5.0,
+      "y": 36.0
+    },
+    {
+      "id": 16,
+      "x": 21.0,
+      "y": 28.0
+    },
+    {
+      "id": 17,
+      "x": 7.0,
+      "y": 32.0
+    },
+    {
+      "id": 18,
+      "x": 21.0,
+      "y": 9.0
+    },
+    {
+      "id": 19,
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": 20,
+      "x": 21.0,
+      "y": 22.0
+    },
+    {
+      "id": 21,
+      "x": 4.0,
+      "y": 5.0
+    },
+    {
+      "id": 22,
+      "x": 4.0,
+      "y": 3.0
+    },
+    {
+      "id": 23,
+      "x": 18.0,
+      "y": 24.0
+    },
+    {
+      "id": 24,
+      "x": 29.0,
+      "y": 22.0
+    },
+    {
+      "id": 25,
+      "x": 31.0,
+      "y": 3.0
+    },
+    {
+      "id": 26,
+      "x": 8.0,
+      "y": 15.0
+    },
+    {
+      "id": 27,
+      "x": 31.0,
+      "y": 5.0
+    },
+    {
+      "id": 28,
+      "x": 25.0,
+      "y": 35.0
+    },
+    {
+      "id": 29,
+      "x": 27.0,
+      "y": 35.0
+    }
+  ],
+  "recomputed": "schedule entries recomputed from the ledger's typed request; latency and transmission count verified against the ledger",
+  "request_id": "ft3-r0029",
+  "schedule": [
+    {
+      "channel": 1,
+      "receiver": 0,
+      "sender": 1,
+      "slot": 12
+    },
+    {
+      "channel": 1,
+      "receiver": 29,
+      "sender": 2,
+      "slot": 6
+    },
+    {
+      "channel": 1,
+      "receiver": 7,
+      "sender": 3,
+      "slot": 0
+    },
+    {
+      "channel": 2,
+      "receiver": 17,
+      "sender": 4,
+      "slot": 6
+    },
+    {
+      "channel": 1,
+      "receiver": 11,
+      "sender": 5,
+      "slot": 0
+    },
+    {
+      "channel": 1,
+      "receiver": 2,
+      "sender": 6,
+      "slot": 0
+    },
+    {
+      "channel": 1,
+      "receiver": 4,
+      "sender": 7,
+      "slot": 1
+    },
+    {
+      "channel": 1,
+      "receiver": 20,
+      "sender": 8,
+      "slot": 7
+    },
+    {
+      "channel": 1,
+      "receiver": 24,
+      "sender": 9,
+      "slot": 1
+    },
+    {
+      "channel": 1,
+      "receiver": 8,
+      "sender": 10,
+      "slot": 1
+    },
+    {
+      "channel": 2,
+      "receiver": 16,
+      "sender": 11,
+      "slot": 1
+    },
+    {
+      "channel": 1,
+      "receiver": 1,
+      "sender": 12,
+      "slot": 8
+    },
+    {
+      "channel": 1,
+      "receiver": 2,
+      "sender": 13,
+      "slot": 3
+    },
+    {
+      "channel": 2,
+      "receiver": 23,
+      "sender": 14,
+      "slot": 0
+    },
+    {
+      "channel": 1,
+      "receiver": 17,
+      "sender": 15,
+      "slot": 2
+    },
+    {
+      "channel": 1,
+      "receiver": 29,
+      "sender": 16,
+      "slot": 4
+    },
+    {
+      "channel": 1,
+      "receiver": 0,
+      "sender": 17,
+      "slot": 15
+    },
+    {
+      "channel": 1,
+      "receiver": 21,
+      "sender": 18,
+      "slot": 4
+    },
+    {
+      "channel": 2,
+      "receiver": 22,
+      "sender": 19,
+      "slot": 4
+    },
+    {
+      "channel": 1,
+      "receiver": 26,
+      "sender": 20,
+      "slot": 8
+    },
+    {
+      "channel": 1,
+      "receiver": 26,
+      "sender": 21,
+      "slot": 6
+    },
+    {
+      "channel": 1,
+      "receiver": 26,
+      "sender": 22,
+      "slot": 16
+    },
+    {
+      "channel": 1,
+      "receiver": 0,
+      "sender": 23,
+      "slot": 5
+    },
+    {
+      "channel": 2,
+      "receiver": 12,
+      "sender": 24,
+      "slot": 6
+    },
+    {
+      "channel": 1,
+      "receiver": 1,
+      "sender": 25,
+      "slot": 1
+    },
+    {
+      "channel": 1,
+      "receiver": 0,
+      "sender": 26,
+      "slot": 22
+    },
+    {
+      "channel": 1,
+      "receiver": 24,
+      "sender": 27,
+      "slot": 2
+    },
+    {
+      "channel": 2,
+      "receiver": 0,
+      "sender": 28,
+      "slot": 2
+    },
+    {
+      "channel": 1,
+      "receiver": 0,
+      "sender": 29,
+      "slot": 25
+    }
+  ],
+  "sink": 0,
+  "topology_id": "legacy30_seed7",
+  "typed_request": {
+    "channels": 2,
+    "collision_model": "legacy_neighbor",
+    "interference_ratio": 1.0,
+    "latency_target_slots": null,
+    "objective": "minimize_latency",
+    "seed": 0,
+    "workload": "one_shot"
+  },
+  "user_text": "On legacy30_seed7, the standard single-round collection please; the latency figure is the part I need."
+}

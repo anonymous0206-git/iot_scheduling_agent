@@ -1,0 +1,71 @@
+{
+  "provenance_format": "agentic_anex.frozen_test_v3_generation_provenance.v1",
+  "purpose": "Record, per batch and per review, which model produced it and any deviation from the independence rules of docs/frozen_test_v3_generation.md. It is filled in as the four sessions happen and is hashed into the seal manifest.",
+  "independence_rule": "A generator or adjudicator must be a fresh session that receives only its rendered prompt, with no access to previous benchmarks, previous system failures, previous model responses, or this project's context.",
+  "batches": {
+    "frontier-model-a": {
+      "file": "benchmark_model_A_v3.json",
+      "generated": true,
+      "model_id": "chatgpt-6 Astra Light",
+      "interface": "ChatGPT desktop app",
+      "date": "2026-09-14",
+      "delivered_prompt": "docs/prompts/delivered/frozen_test_v3_generator_A.txt",
+      "delivered_prompt_sha256": "cc99f0db4cf374714c5dbd9f02030ba03eb41bb8013cc681d46fae4f78c400e5",
+      "independence": "CROSS_REVIEW_SATISFIED_AUTHORSHIP_DISCLOSED",
+      "notes": "Generated in a separate ChatGPT session that received only the rendered generator prompt, with no access to this project's context, so the independence rule holds for this batch as recorded by the operator. The blind cross-review of this batch reported no action disagreement, no field difference, and no paraphrase mismatch."
+    },
+    "frontier-model-b": {
+      "file": "benchmark_model_B_v3.json",
+      "generated": true,
+      "model_id": "claude-opus-5",
+      "interface": "Claude Code desktop app, the same session that authored the v3 contract, prompts, topology catalogue, and pipeline",
+      "date": "2026-09-14",
+      "delivered_prompt": "docs/prompts/delivered/frozen_test_v3_generator_B.txt",
+      "delivered_prompt_sha256": "25cd0d531f867e851d5f4cbc35be7200b00d072533bfe9b46106b6e01937d78b",
+      "independence": "VIOLATED_AND_DISCLOSED",
+      "notes": "The session was not independent: it authored the v3 specification and prompt, built the reconciliation and sealing pipeline, and produced the Frozen Test v2 failure taxonomy, so it knew which phrasings the target system mishandled. The batch was written from the specification and no group was aimed at a known weakness, but unconscious influence cannot be excluded. Most of what that session learned from v2 is already an explicit rule in the prompt (the construction rules, the fixed interference ratio, the topology selection rule), which limits but does not remove the contamination. Any paper using Frozen Test v3 must disclose this for Batch B, and results on Batch B should be reported separately from Batch A so a reader can see whether the two halves behave differently."
+    }
+  },
+  "reviews": {
+    "batch_a": {
+      "reviewed": true,
+      "review_file": "Model-B blind review of Batch A v3.json",
+      "blind_file": "benchmarks/frozen_test_v3/batch_a_blind.json",
+      "delivered_prompt": "docs/prompts/delivered/frozen_test_v3_reviewer_batch_A.txt",
+      "delivered_prompt_sha256": "0634d0cccf27a51cc0cb8369d349405cbf555571ae30641c91680ad06ed61d69",
+      "reviewer_model_id": "claude-opus-5",
+      "interface": "Claude Code desktop app, the session that authored the v3 contract, prompts, catalogue, and pipeline and that generated Batch B",
+      "date": "2026-09-14",
+      "independence": "CROSS_REVIEW_SATISFIED_AUTHORSHIP_DISCLOSED",
+      "notes": "The cross-review rule holds: this reviewer did not generate Batch A. The blinding was real, confirmed mechanically: the blind file equals blind_benchmark(benchmark_model_A_v3.json) and carries no generator annotation, so the reviewer saw only group ids and request texts. The residual concern is different from the Batch B one: the reviewer authored the specification it judged against and may read authorial intent into wording that another reader would find ambiguous. The review reported 36 of 36 actions and every EXECUTE field identical to the generator's gold, with no paraphrase mismatch and no item marked revise."
+    },
+    "batch_b": {
+      "reviewed": true,
+      "review_file": "Model-A blind review of Batch B v3.json",
+      "blind_file": "benchmarks/frozen_test_v3/batch_b_blind.json",
+      "delivered_prompt": "docs/prompts/delivered/frozen_test_v3_reviewer_batch_B.txt",
+      "delivered_prompt_sha256": "e220403bab01d581d9a5497f57180483877a99e3a1c52543a568186164d228b5",
+      "reviewer_model_id": "chatgpt-6 Astra Light",
+      "interface": "ChatGPT desktop app",
+      "date": "2026-09-14",
+      "independence": "CROSS_REVIEW_SATISFIED_AUTHORSHIP_DISCLOSED",
+      "notes": "Adjudicated by the model that did not generate Batch B, in a separate ChatGPT session receiving only the rendered reviewer prompt and the blind file, which carries no generator annotation. The review agreed with the generator on all 36 actions but flagged eight paraphrase mismatches and one defective item, every one of them in Batch B; all nine went to human adjudication and were kept with edits. Given the Batch B contamination recorded above, this independent scrutiny is the main safeguard for that half of the benchmark."
+    }
+  },
+  "batch_b_self_check": {
+    "validated_with": "frozen_test_v2.schemas.validate_benchmark, contract frozen-test-v3, catalogue benchmarks/topologies/frozen_test_v3_llm_catalogue.json",
+    "schema_errors": 0,
+    "group_defects": 0,
+    "warnings": 0,
+    "groups": 36,
+    "requests": 72,
+    "actions": {"EXECUTE": 11, "CLARIFY": 3, "REJECT": 4, "UNSUPPORTED": 18},
+    "protocol_category_counts_match_self_check": true,
+    "catalogue_topologies_named": {"EXECUTE": 7, "UNSUPPORTED": 6, "REJECT": 3},
+    "unsupported_groups_without_a_canonical_category_name": 15,
+    "duplicate_request_texts": 0,
+    "sentences_reused_across_groups": 0,
+    "requests_naming_an_expected_action": 0,
+    "requests_narrating_an_omission": 0
+  }
+}

@@ -1,0 +1,480 @@
+{
+  "batch_id": "frontier-model-a",
+  "benchmark_version": "frozen-test-v3-candidate",
+  "blinded": true,
+  "generator_role": "independent_generator",
+  "groups": [
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-001-p1",
+          "request_text": "Please calculate the ANEX aggregation schedule for topo50_seed0 with standard settings and include its elapsed duration."
+        },
+        {
+          "request_id": "v3-a-001-p2",
+          "request_text": "For topo50_seed0, I need the schedule produced by ANEX and the number of elapsed slots it takes; the usual settings suit this job."
+        }
+      ],
+      "semantic_group_id": "v3-a-001"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-002-p1",
+          "request_text": "Use legacy30_seed7 for a single collection planned by ANEX. Keep the standard configuration and check the schedule for collisions."
+        },
+        {
+          "request_id": "v3-a-002-p2",
+          "request_text": "A collision-validated ANEX plan for one collection on legacy30_seed7 is the deliverable, using the normal configuration."
+        }
+      ],
+      "semantic_group_id": "v3-a-002"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-003-p1",
+          "request_text": "Prepare the default ANEX plan for topo150_seed0 directly from the static network. Do not use a Digital Twin."
+        },
+        {
+          "request_id": "v3-a-003-p2",
+          "request_text": "No Digital Twin should be used in preparing this plan: apply ANEX to the static topo150_seed0 network with its default configuration."
+        }
+      ],
+      "semantic_group_id": "v3-a-003"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-004-p1",
+          "request_text": "Our previous campaign collected continuously; today's job is just one collection on topo300_seed0. Produce its ANEX schedule with the usual settings."
+        },
+        {
+          "request_id": "v3-a-004-p2",
+          "request_text": "Use the usual ANEX settings to plan a single collection for topo300_seed0 today. Continuous collection describes the previous campaign only."
+        }
+      ],
+      "semantic_group_id": "v3-a-004"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-005-p1",
+          "request_text": "Generate an ANEX plan on topo100_seed0 with one channel, collision_model legacy_neighbor, and scheduler seed 16."
+        },
+        {
+          "request_id": "v3-a-005-p2",
+          "request_text": "The topo100_seed0 experiment has one available channel; its ANEX configuration should use legacy_neighbor and scheduling seed 16."
+        }
+      ],
+      "semantic_group_id": "v3-a-005"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-006-p1",
+          "request_text": "Plan one aggregation on topo200_seed0 using ANEX, six channels, interference_range, interference_ratio 1.0, and scheduling seed 24. Set working_period to 10 and communication_range to 20.0."
+        },
+        {
+          "request_id": "v3-a-006-p2",
+          "request_text": "For topo200_seed0, configure ANEX with seed 24 and 6 channels for one aggregation. Use interference_range at ratio 1.0, a working period of 10 slots, and communication range 20.0."
+        }
+      ],
+      "semantic_group_id": "v3-a-006"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-007-p1",
+          "request_text": "The earlier analysis prioritized battery life; this calculation optimizes latency alone. On topo250_seed0, use ANEX with four channels, legacy_neighbor, interference_ratio 1.0, and scheduling seed 31."
+        },
+        {
+          "request_id": "v3-a-007-p2",
+          "request_text": "Run the latency-only ANEX calculation for topo250_seed0 with scheduler seed 31, 4 channels, and legacy_neighbor at ratio 1.0. Battery-life prioritization belongs to the earlier analysis."
+        }
+      ],
+      "semantic_group_id": "v3-a-007"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-008-p1",
+          "request_text": "For the static legacy30_seed7 network, give ANEX 48 channels and scheduling seed 5. Use interference_range with ratio 1.0 and communication_range 18.0."
+        },
+        {
+          "request_id": "v3-a-008-p2",
+          "request_text": "An ANEX schedule is needed for static legacy30_seed7 with interference_range at ratio 1.0. Its settings are communication range 18.0, scheduler seed 5, and 48 channels."
+        }
+      ],
+      "semantic_group_id": "v3-a-008"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-009-p1",
+          "request_text": "Produce the default ANEX schedule for topo100_seed0 with a target of 35 elapsed slots, and report whether it satisfies that target."
+        },
+        {
+          "request_id": "v3-a-009-p2",
+          "request_text": "Set the elapsed-slot target to 35 for topo100_seed0, leaving the other ANEX settings at their defaults; include a target-met result with the schedule."
+        }
+      ],
+      "semantic_group_id": "v3-a-009"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-010-p1",
+          "request_text": "Try a 32-elapsed-slot target for the ANEX collection on topo300_seed0 using default settings otherwise. Include the actual latency even if the plan misses the target."
+        },
+        {
+          "request_id": "v3-a-010-p2",
+          "request_text": "For topo300_seed0, return the ANEX plan and its actual elapsed latency against a target of 32 slots, including when that target is missed. All other settings should stay at their defaults."
+        }
+      ],
+      "semantic_group_id": "v3-a-010"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-011-p1",
+          "request_text": "No latency threshold applies to this topo200_seed0 run: set latency_target_slots to null and produce the default ANEX plan with its measured latency."
+        },
+        {
+          "request_id": "v3-a-011-p2",
+          "request_text": "Produce and measure the ANEX plan for topo200_seed0 using default settings and an explicitly null latency_target_slots field; there is no threshold for this run."
+        }
+      ],
+      "semantic_group_id": "v3-a-011"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-012-p1",
+          "request_text": "I need a collision-checked ANEX plan for one collection using three channels and scheduling seed 14."
+        },
+        {
+          "request_id": "v3-a-012-p2",
+          "request_text": "With 3 channels and scheduler seed 14, calculate a one-collection ANEX schedule and validate its collisions."
+        }
+      ],
+      "semantic_group_id": "v3-a-012"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-013-p1",
+          "request_text": "The handover sheet lists topo50_seed0 and topo150_seed0 as candidates for this single run, without marking which was selected. Prepare its two-channel ANEX schedule."
+        },
+        {
+          "request_id": "v3-a-013-p2",
+          "request_text": "Prepare one ANEX schedule with two channels for the handover-sheet run. Both topo150_seed0 and topo50_seed0 are listed as candidates, and neither is marked as the selected network."
+        }
+      ],
+      "semantic_group_id": "v3-a-013"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-014-p1",
+          "request_text": "For topo250_seed0, the approved radio allocation is either 3 or 7 channels; both values appear in the notes and the approved entry is unmarked. Plan one ANEX collection using that approved allocation."
+        },
+        {
+          "request_id": "v3-a-014-p2",
+          "request_text": "Plan a single ANEX collection on topo250_seed0 with the approved channel allocation. The notes contain 7 channels and 3 channels, but do not mark which entry was approved."
+        }
+      ],
+      "semantic_group_id": "v3-a-014"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-015-p1",
+          "request_text": "Calculate a two-channel ANEX aggregation schedule for topology_id topo175_seed0."
+        },
+        {
+          "request_id": "v3-a-015-p2",
+          "request_text": "The network identifier for this ANEX aggregation job is topo175_seed0, and the requested channel count is two."
+        }
+      ],
+      "semantic_group_id": "v3-a-015"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-016-p1",
+          "request_text": "Use interference_range for an ANEX schedule on topo100_seed0 with interference_ratio set to 1.25."
+        },
+        {
+          "request_id": "v3-a-016-p2",
+          "request_text": "For topo100_seed0, the requested ANEX collision configuration is interference_range at an interference ratio of 1.25."
+        }
+      ],
+      "semantic_group_id": "v3-a-016"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-017-p1",
+          "request_text": "Set communication_range to 18.0 and scheduling seed to 9 for the ANEX calculation on topo200_seed0."
+        },
+        {
+          "request_id": "v3-a-017-p2",
+          "request_text": "The ANEX calculation should use topo200_seed0 with scheduler seed 9; configure its communication range as 18.0."
+        }
+      ],
+      "semantic_group_id": "v3-a-017"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-018-p1",
+          "request_text": "This is the single-channel ANEX trial for legacy30_seed7. The attached run settings read: channels=4, seed=22, collision_model=legacy_neighbor."
+        },
+        {
+          "request_id": "v3-a-018-p2",
+          "request_text": "For legacy30_seed7, prepare the ANEX trial described as single-channel in the brief. Its run-settings block specifies legacy_neighbor, scheduling seed 22, and 4 channels."
+        }
+      ],
+      "semantic_group_id": "v3-a-018"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-019-p1",
+          "request_text": "Create an energy-aware aggregation plan for topo50_seed0 that selects transmissions according to each node's remaining charge."
+        },
+        {
+          "request_id": "v3-a-019-p2",
+          "request_text": "For topo50_seed0, use remaining node charge to choose transmissions in an energy-aware aggregation plan."
+        }
+      ],
+      "semantic_group_id": "v3-a-019"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-020-p1",
+          "request_text": "Compute the default one-shot ANEX schedule for topo100_seed0, then give each node a charge balance after every transmission by subtracting its sending and receiving costs."
+        },
+        {
+          "request_id": "v3-a-020-p2",
+          "request_text": "For topo100_seed0, return the default one-shot ANEX plan together with per-transmission charge balances for all nodes, deducting the costs of sending and receiving."
+        }
+      ],
+      "semantic_group_id": "v3-a-020"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-021-p1",
+          "request_text": "On topo150_seed0, minimize the aggregation latency subject to each node retaining at least 30 percent of its initial charge after the collection."
+        },
+        {
+          "request_id": "v3-a-021-p2",
+          "request_text": "Find the fastest aggregation plan for topo150_seed0 that leaves every node with no less than 30 percent of the charge it had before collection."
+        }
+      ],
+      "semantic_group_id": "v3-a-021"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-022-p1",
+          "request_text": "Using topo300_seed0, produce an ANEX aggregation schedule and simulate every node's residual-battery trajectory over its slots."
+        },
+        {
+          "request_id": "v3-a-022-p2",
+          "request_text": "An ANEX schedule for topo300_seed0 should be accompanied by a slot-by-slot simulation of the residual battery in every node."
+        }
+      ],
+      "semantic_group_id": "v3-a-022"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-023-p1",
+          "request_text": "Build a Digital Twin of topo150_seed0 and execute the planned aggregation inside it."
+        },
+        {
+          "request_id": "v3-a-023-p2",
+          "request_text": "Execute the planned collection in a Digital Twin that you construct for topo150_seed0."
+        }
+      ],
+      "semantic_group_id": "v3-a-023"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-024-p1",
+          "request_text": "Create a software replica of topo50_seed0 in which virtual nodes exchange packets according to the aggregation timetable, and record the packet events."
+        },
+        {
+          "request_id": "v3-a-024-p2",
+          "request_text": "For topo50_seed0, reproduce the nodes in software, make them exchange packets on the aggregation timetable, and return a record of those packet events."
+        }
+      ],
+      "semantic_group_id": "v3-a-024"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-025-p1",
+          "request_text": "Generate a one-shot ANEX schedule for topo200_seed0 using two channels and seed 10, then keep its stored sensor-state view updated whenever a reading arrives from the deployment."
+        },
+        {
+          "request_id": "v3-a-025-p2",
+          "request_text": "With scheduler seed 10 and 2 channels, produce the one-shot ANEX plan for topo200_seed0. Afterwards, update the stored view of sensor state on every incoming deployment reading."
+        }
+      ],
+      "semantic_group_id": "v3-a-025"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-026-p1",
+          "request_text": "Connect topo250_seed0 to a streaming feed and continuously synchronize a software copy of its sensor readings with that feed."
+        },
+        {
+          "request_id": "v3-a-026-p2",
+          "request_text": "Maintain a continuously synchronized software copy of the topo250_seed0 readings using a connected streaming feed."
+        }
+      ],
+      "semantic_group_id": "v3-a-026"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-027-p1",
+          "request_text": "Arrange periodic aggregation for topo100_seed0 every 40 slots for 12 rounds and return a latency for each round."
+        },
+        {
+          "request_id": "v3-a-027-p2",
+          "request_text": "For topo100_seed0, plan 12 periodic aggregation rounds spaced 40 slots apart, reporting the latency of every round."
+        }
+      ],
+      "semantic_group_id": "v3-a-027"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-028-p1",
+          "request_text": "On topo300_seed0, start a fresh collection as soon as the previous collection completes and keep doing so until 50 collections have finished."
+        },
+        {
+          "request_id": "v3-a-028-p2",
+          "request_text": "Keep topo300_seed0 collecting for 50 collections in sequence, beginning each new one immediately when its predecessor finishes."
+        }
+      ],
+      "semantic_group_id": "v3-a-028"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-029-p1",
+          "request_text": "Collect data from topo50_seed0 at slot 0 and every 25 slots thereafter without an end date, with each collection due before the next starts."
+        },
+        {
+          "request_id": "v3-a-029-p2",
+          "request_text": "For topo50_seed0, launch a collection every 25 slots beginning at slot 0 indefinitely; each launched collection must finish before the following launch."
+        }
+      ],
+      "semantic_group_id": "v3-a-029"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-030-p1",
+          "request_text": "Begin with topo150_seed0 and recalculate the remaining aggregation plan whenever a node disappears during the run."
+        },
+        {
+          "request_id": "v3-a-030-p2",
+          "request_text": "During a run that starts on topo150_seed0, a disappearing node should trigger recalculation of the unfinished aggregation plan."
+        }
+      ],
+      "semantic_group_id": "v3-a-030"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-031-p1",
+          "request_text": "Produce a three-channel one-shot ANEX plan for topo200_seed0 with seed 18, and replace a forwarding route during execution whenever its link becomes unavailable."
+        },
+        {
+          "request_id": "v3-a-031-p2",
+          "request_text": "For topo200_seed0, use scheduling seed 18 and 3 channels for a one-shot ANEX plan. While it runs, substitute a new forwarding route for any route whose link becomes unavailable."
+        }
+      ],
+      "semantic_group_id": "v3-a-031"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-032-p1",
+          "request_text": "Schedule topo250_seed0 and incorporate newly joining nodes into the unfinished collection while the schedule is running."
+        },
+        {
+          "request_id": "v3-a-032-p2",
+          "request_text": "As the topo250_seed0 collection executes, add any nodes that join to the remaining collection schedule."
+        }
+      ],
+      "semantic_group_id": "v3-a-032"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-033-p1",
+          "request_text": "For topo50_seed0, optimize the aggregation plan solely for the smallest total number of transmissions."
+        },
+        {
+          "request_id": "v3-a-033-p2",
+          "request_text": "Find the aggregation plan for topo50_seed0 with minimum total transmission count as its only optimization criterion."
+        }
+      ],
+      "semantic_group_id": "v3-a-033"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-034-p1",
+          "request_text": "Balance the topo100_seed0 aggregation by minimizing the largest transmission count assigned to any one node, with elapsed latency used only to break ties."
+        },
+        {
+          "request_id": "v3-a-034-p2",
+          "request_text": "For topo100_seed0, minimize the busiest node's number of transmissions first; among plans tied on that count, choose the one with the lowest elapsed latency."
+        }
+      ],
+      "semantic_group_id": "v3-a-034"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-035-p1",
+          "request_text": "Calculate an ANEX schedule for topo300_seed0 with channels=0, then upload it to the deployed sensors and command them to begin sampling."
+        },
+        {
+          "request_id": "v3-a-035-p2",
+          "request_text": "Use zero channels for the topo300_seed0 ANEX calculation, transfer the resulting timetable to the physical sensors, and issue their start-sampling command."
+        }
+      ],
+      "semantic_group_id": "v3-a-035"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "v3-a-036-p1",
+          "request_text": "On legacy30_seed7, allow up to eight channels and optimize for the fewest channels actually used, with no latency optimization criterion."
+        },
+        {
+          "request_id": "v3-a-036-p2",
+          "request_text": "Choose an aggregation plan for legacy30_seed7 that uses as few channels as possible from an allowance of eight; latency is not an optimization criterion."
+        }
+      ],
+      "semantic_group_id": "v3-a-036"
+    }
+  ],
+  "self_check": {
+    "group_count": 36,
+    "item_count": 72
+  }
+}

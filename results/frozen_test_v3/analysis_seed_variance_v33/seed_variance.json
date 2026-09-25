@@ -1,0 +1,223 @@
+{
+  "analysis_format": "agentic_anex.frozen_test_seed_variance.v1",
+  "arm_differences": {
+    "phi4_advisory minus phi4_no_scope_gate": {
+      "mean_difference": 0.0139,
+      "noise_floor": 0.0,
+      "verdict": "exceeds the noise floor"
+    },
+    "phi4_advisory minus phi4_policy_v2": {
+      "mean_difference": 0.0348,
+      "noise_floor": 0.0,
+      "verdict": "exceeds the noise floor"
+    },
+    "phi4_no_scope_gate minus phi4_policy_v2": {
+      "mean_difference": 0.0209,
+      "noise_floor": 0.0,
+      "verdict": "exceeds the noise floor"
+    },
+    "qwen25 minus phi4_advisory": {
+      "mean_difference": -0.1042,
+      "noise_floor": 0.0,
+      "verdict": "exceeds the noise floor"
+    },
+    "qwen25 minus phi4_no_scope_gate": {
+      "mean_difference": -0.0903,
+      "noise_floor": 0.0,
+      "verdict": "exceeds the noise floor"
+    },
+    "qwen25 minus phi4_policy_v2": {
+      "mean_difference": -0.0694,
+      "noise_floor": 0.0,
+      "verdict": "exceeds the noise floor"
+    }
+  },
+  "arms": {
+    "phi4_advisory": {
+      "accuracy_max": 0.4792,
+      "accuracy_mean": 0.4792,
+      "accuracy_min": 0.4792,
+      "accuracy_range": 0.0,
+      "accuracy_stdev": 0.0,
+      "items": 144,
+      "majority_accuracy": 0.4792,
+      "majority_correct": 69,
+      "per_repeat": [
+        {
+          "accuracy": 0.4792,
+          "correct": 69,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/phi4_advisory_scope_gate_seed11.jsonl",
+          "seeds": [
+            11
+          ]
+        },
+        {
+          "accuracy": 0.4792,
+          "correct": 69,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/phi4_advisory_scope_gate_seed12.jsonl",
+          "seeds": [
+            12
+          ]
+        },
+        {
+          "accuracy": 0.4792,
+          "correct": 69,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/phi4_advisory_scope_gate_seed13.jsonl",
+          "seeds": [
+            13
+          ]
+        }
+      ],
+      "repeats": 3,
+      "stable_fraction": 1.0,
+      "stable_items": 144,
+      "unstable_items": [],
+      "unstable_per_gold_action": {}
+    },
+    "phi4_no_scope_gate": {
+      "accuracy_max": 0.4653,
+      "accuracy_mean": 0.4653,
+      "accuracy_min": 0.4653,
+      "accuracy_range": 0.0,
+      "accuracy_stdev": 0.0,
+      "items": 144,
+      "majority_accuracy": 0.4653,
+      "majority_correct": 67,
+      "per_repeat": [
+        {
+          "accuracy": 0.4653,
+          "correct": 67,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/phi4_no_scope_gate_seed11.jsonl",
+          "seeds": [
+            11
+          ]
+        },
+        {
+          "accuracy": 0.4653,
+          "correct": 67,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/phi4_no_scope_gate_seed12.jsonl",
+          "seeds": [
+            12
+          ]
+        },
+        {
+          "accuracy": 0.4653,
+          "correct": 67,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/phi4_no_scope_gate_seed13.jsonl",
+          "seeds": [
+            13
+          ]
+        }
+      ],
+      "repeats": 3,
+      "stable_fraction": 1.0,
+      "stable_items": 144,
+      "unstable_items": [],
+      "unstable_per_gold_action": {}
+    },
+    "phi4_policy_v2": {
+      "accuracy_max": 0.4444,
+      "accuracy_mean": 0.4444,
+      "accuracy_min": 0.4444,
+      "accuracy_range": 0.0,
+      "accuracy_stdev": 0.0,
+      "items": 144,
+      "majority_accuracy": 0.4444,
+      "majority_correct": 64,
+      "per_repeat": [
+        {
+          "accuracy": 0.4444,
+          "correct": 64,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/phi4_policy_v2_seed11.jsonl",
+          "seeds": [
+            11
+          ]
+        },
+        {
+          "accuracy": 0.4444,
+          "correct": 64,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/phi4_policy_v2_seed12.jsonl",
+          "seeds": [
+            12
+          ]
+        },
+        {
+          "accuracy": 0.4444,
+          "correct": 64,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/phi4_policy_v2_seed13.jsonl",
+          "seeds": [
+            13
+          ]
+        }
+      ],
+      "repeats": 3,
+      "stable_fraction": 1.0,
+      "stable_items": 144,
+      "unstable_items": [],
+      "unstable_per_gold_action": {}
+    },
+    "qwen25": {
+      "accuracy_max": 0.375,
+      "accuracy_mean": 0.375,
+      "accuracy_min": 0.375,
+      "accuracy_range": 0.0,
+      "accuracy_stdev": 0.0,
+      "items": 144,
+      "majority_accuracy": 0.375,
+      "majority_correct": 54,
+      "per_repeat": [
+        {
+          "accuracy": 0.375,
+          "correct": 54,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/qwen25_policy_v2_seed11.jsonl",
+          "seeds": [
+            11
+          ]
+        },
+        {
+          "accuracy": 0.375,
+          "correct": 54,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/qwen25_policy_v2_seed12.jsonl",
+          "seeds": [
+            12
+          ]
+        },
+        {
+          "accuracy": 0.375,
+          "correct": 54,
+          "items": 144,
+          "ledger": "results/frozen_test_v3/qwen25_policy_v2_seed13.jsonl",
+          "seeds": [
+            13
+          ]
+        }
+      ],
+      "repeats": 3,
+      "stable_fraction": 1.0,
+      "stable_items": 144,
+      "unstable_items": [],
+      "unstable_per_gold_action": {}
+    }
+  },
+  "decoding": {
+    "note": "greedy decoding; repeats measure provider nondeterminism",
+    "temperature": 0
+  },
+  "harness": {
+    "items": 144,
+    "path": "benchmarks/frozen_test_v3/harness/frozen_test_v3_harness.jsonl"
+  },
+  "no_language_model_or_scheduler_invoked": true,
+  "title": "Frozen Test v3 run-to-run variance, three-seed GPU campaign"
+}

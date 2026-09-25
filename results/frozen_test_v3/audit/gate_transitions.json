@@ -1,0 +1,219 @@
+{
+  "gpt55_gated minus gpt55_no_gate": {
+    "correct_refusals_the_gate_was_carrying": 0,
+    "gated": "gpt55_gated",
+    "moves": [
+      {
+        "category": "historical_battery_objective_excluded",
+        "direction": "wrong_to_right",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "EXECUTE",
+        "request_id": "ft3-r0017",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "negated_digital_twin_hard_negative",
+        "direction": "wrong_to_right",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "EXECUTE",
+        "request_id": "ft3-r0032",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "negated_digital_twin_hard_negative",
+        "direction": "wrong_to_right",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "EXECUTE",
+        "request_id": "ft3-r0040",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "explicit_channels_and_seed",
+        "direction": "wrong_to_right",
+        "gated_action": "REJECT",
+        "gated_answer_from": "model",
+        "gold_action": "EXECUTE",
+        "request_id": "ft3-r0059",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "past_continuous_collection_context",
+        "direction": "wrong_to_right",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "EXECUTE",
+        "request_id": "ft3-r0060",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "digital_twin_explicitly_excluded",
+        "direction": "wrong_to_right",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "EXECUTE",
+        "request_id": "ft3-r0083",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "past_continuous_collection_context",
+        "direction": "wrong_to_right",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "EXECUTE",
+        "request_id": "ft3-r0105",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "prose_parameter_channel_conflict",
+        "direction": "right_to_wrong",
+        "gated_action": "REJECT",
+        "gated_answer_from": "model",
+        "gold_action": "REJECT",
+        "request_id": "ft3-r0112",
+        "ungated_action": "CLARIFY"
+      },
+      {
+        "category": "digital_twin_explicitly_excluded",
+        "direction": "wrong_to_right",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "EXECUTE",
+        "request_id": "ft3-r0118",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "catalogue_range_mismatch",
+        "direction": "wrong_to_right",
+        "gated_action": "EXECUTE",
+        "gated_answer_from": "model",
+        "gold_action": "REJECT",
+        "request_id": "ft3-r0141",
+        "ungated_action": "REJECT"
+      }
+    ],
+    "net": 8,
+    "pairs": 144,
+    "recovered_by_the_model_changing_its_answer": 2,
+    "recovered_from_a_gate_over_block": 7,
+    "regressions_the_model_owns": 1,
+    "right_to_wrong": 1,
+    "ungated": "gpt55_no_gate",
+    "wrong_to_right": 9
+  },
+  "phi4_gated minus phi4_no_gate": {
+    "correct_refusals_the_gate_was_carrying": 4,
+    "gated": "phi4_gated",
+    "moves": [
+      {
+        "category": "periodic_rounds",
+        "direction": "right_to_wrong",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "UNSUPPORTED",
+        "request_id": "ft3-r0008",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "historical_battery_objective_excluded",
+        "direction": "wrong_to_right",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "EXECUTE",
+        "request_id": "ft3-r0017",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "negated_digital_twin_hard_negative",
+        "direction": "wrong_to_right",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "EXECUTE",
+        "request_id": "ft3-r0032",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "negated_digital_twin_hard_negative",
+        "direction": "wrong_to_right",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "EXECUTE",
+        "request_id": "ft3-r0040",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "battery_trajectory_report",
+        "direction": "right_to_wrong",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "UNSUPPORTED",
+        "request_id": "ft3-r0049",
+        "ungated_action": "REJECT"
+      },
+      {
+        "category": "past_continuous_collection_context",
+        "direction": "wrong_to_right",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "EXECUTE",
+        "request_id": "ft3-r0060",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "digital_twin_explicitly_excluded",
+        "direction": "wrong_to_right",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "EXECUTE",
+        "request_id": "ft3-r0083",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "past_continuous_collection_context",
+        "direction": "wrong_to_right",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "EXECUTE",
+        "request_id": "ft3-r0105",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "digital_twin_explicitly_excluded",
+        "direction": "wrong_to_right",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "EXECUTE",
+        "request_id": "ft3-r0118",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "finite_periodic_collection",
+        "direction": "right_to_wrong",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "UNSUPPORTED",
+        "request_id": "ft3-r0122",
+        "ungated_action": "EXECUTE"
+      },
+      {
+        "category": "finite_periodic_collection",
+        "direction": "right_to_wrong",
+        "gated_action": "UNSUPPORTED",
+        "gated_answer_from": "gate",
+        "gold_action": "UNSUPPORTED",
+        "request_id": "ft3-r0124",
+        "ungated_action": "EXECUTE"
+      }
+    ],
+    "net": 3,
+    "pairs": 144,
+    "recovered_by_the_model_changing_its_answer": 0,
+    "recovered_from_a_gate_over_block": 7,
+    "regressions_the_model_owns": 0,
+    "right_to_wrong": 4,
+    "ungated": "phi4_no_gate",
+    "wrong_to_right": 7
+  }
+}

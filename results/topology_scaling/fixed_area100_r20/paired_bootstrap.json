@@ -1,0 +1,506 @@
+[
+  {
+    "node_count": 50,
+    "channels": 1,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": 1.667,
+    "ci95": [
+      0.6,
+      2.9
+    ],
+    "topologies_improved": 1,
+    "topologies_unchanged": 21,
+    "topologies_worse": 8
+  },
+  {
+    "node_count": 50,
+    "channels": 3,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -0.133,
+    "ci95": [
+      -0.4,
+      0.0
+    ],
+    "topologies_improved": 1,
+    "topologies_unchanged": 29,
+    "topologies_worse": 0
+  },
+  {
+    "node_count": 50,
+    "channels": 4,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -0.133,
+    "ci95": [
+      -0.4,
+      0.0
+    ],
+    "topologies_improved": 1,
+    "topologies_unchanged": 29,
+    "topologies_worse": 0
+  },
+  {
+    "node_count": 50,
+    "channels": 5,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -0.133,
+    "ci95": [
+      -0.4,
+      0.0
+    ],
+    "topologies_improved": 1,
+    "topologies_unchanged": 29,
+    "topologies_worse": 0
+  },
+  {
+    "node_count": 50,
+    "channels": 6,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -0.133,
+    "ci95": [
+      -0.4,
+      0.0
+    ],
+    "topologies_improved": 1,
+    "topologies_unchanged": 29,
+    "topologies_worse": 0
+  },
+  {
+    "node_count": 50,
+    "channels": 7,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -0.133,
+    "ci95": [
+      -0.4,
+      0.0
+    ],
+    "topologies_improved": 1,
+    "topologies_unchanged": 29,
+    "topologies_worse": 0
+  },
+  {
+    "node_count": 100,
+    "channels": 1,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": 6.667,
+    "ci95": [
+      4.633,
+      8.767
+    ],
+    "topologies_improved": 1,
+    "topologies_unchanged": 8,
+    "topologies_worse": 21
+  },
+  {
+    "node_count": 100,
+    "channels": 3,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": 0.733,
+    "ci95": [
+      -0.7,
+      2.167
+    ],
+    "topologies_improved": 5,
+    "topologies_unchanged": 16,
+    "topologies_worse": 9
+  },
+  {
+    "node_count": 100,
+    "channels": 4,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": 0.233,
+    "ci95": [
+      -1.033,
+      1.467
+    ],
+    "topologies_improved": 5,
+    "topologies_unchanged": 18,
+    "topologies_worse": 7
+  },
+  {
+    "node_count": 100,
+    "channels": 5,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": 0.2,
+    "ci95": [
+      -1.067,
+      1.467
+    ],
+    "topologies_improved": 6,
+    "topologies_unchanged": 17,
+    "topologies_worse": 7
+  },
+  {
+    "node_count": 100,
+    "channels": 6,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": 0.2,
+    "ci95": [
+      -1.067,
+      1.467
+    ],
+    "topologies_improved": 6,
+    "topologies_unchanged": 17,
+    "topologies_worse": 7
+  },
+  {
+    "node_count": 100,
+    "channels": 7,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": 0.2,
+    "ci95": [
+      -1.1,
+      1.5
+    ],
+    "topologies_improved": 6,
+    "topologies_unchanged": 17,
+    "topologies_worse": 7
+  },
+  {
+    "node_count": 150,
+    "channels": 1,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": 8.333,
+    "ci95": [
+      6.933,
+      9.633
+    ],
+    "topologies_improved": 0,
+    "topologies_unchanged": 2,
+    "topologies_worse": 28
+  },
+  {
+    "node_count": 150,
+    "channels": 3,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -1.9,
+    "ci95": [
+      -3.367,
+      -0.5
+    ],
+    "topologies_improved": 12,
+    "topologies_unchanged": 16,
+    "topologies_worse": 2
+  },
+  {
+    "node_count": 150,
+    "channels": 4,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -2.267,
+    "ci95": [
+      -3.733,
+      -0.9
+    ],
+    "topologies_improved": 13,
+    "topologies_unchanged": 14,
+    "topologies_worse": 3
+  },
+  {
+    "node_count": 150,
+    "channels": 5,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -1.767,
+    "ci95": [
+      -3.1,
+      -0.533
+    ],
+    "topologies_improved": 13,
+    "topologies_unchanged": 15,
+    "topologies_worse": 2
+  },
+  {
+    "node_count": 150,
+    "channels": 6,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -2.233,
+    "ci95": [
+      -3.567,
+      -1.0
+    ],
+    "topologies_improved": 14,
+    "topologies_unchanged": 15,
+    "topologies_worse": 1
+  },
+  {
+    "node_count": 150,
+    "channels": 7,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -2.067,
+    "ci95": [
+      -3.467,
+      -0.767
+    ],
+    "topologies_improved": 14,
+    "topologies_unchanged": 14,
+    "topologies_worse": 2
+  },
+  {
+    "node_count": 200,
+    "channels": 1,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": 13.8,
+    "ci95": [
+      12.4,
+      15.267
+    ],
+    "topologies_improved": 0,
+    "topologies_unchanged": 0,
+    "topologies_worse": 30
+  },
+  {
+    "node_count": 200,
+    "channels": 3,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -1.933,
+    "ci95": [
+      -3.5,
+      -0.333
+    ],
+    "topologies_improved": 13,
+    "topologies_unchanged": 14,
+    "topologies_worse": 3
+  },
+  {
+    "node_count": 200,
+    "channels": 4,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -1.833,
+    "ci95": [
+      -3.533,
+      -0.033
+    ],
+    "topologies_improved": 15,
+    "topologies_unchanged": 12,
+    "topologies_worse": 3
+  },
+  {
+    "node_count": 200,
+    "channels": 5,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -2.1,
+    "ci95": [
+      -3.9,
+      -0.2
+    ],
+    "topologies_improved": 15,
+    "topologies_unchanged": 12,
+    "topologies_worse": 3
+  },
+  {
+    "node_count": 200,
+    "channels": 6,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -2.967,
+    "ci95": [
+      -4.533,
+      -1.4
+    ],
+    "topologies_improved": 16,
+    "topologies_unchanged": 12,
+    "topologies_worse": 2
+  },
+  {
+    "node_count": 200,
+    "channels": 7,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -2.733,
+    "ci95": [
+      -4.3,
+      -1.2
+    ],
+    "topologies_improved": 16,
+    "topologies_unchanged": 12,
+    "topologies_worse": 2
+  },
+  {
+    "node_count": 250,
+    "channels": 1,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": 16.6,
+    "ci95": [
+      14.533,
+      18.733
+    ],
+    "topologies_improved": 0,
+    "topologies_unchanged": 0,
+    "topologies_worse": 30
+  },
+  {
+    "node_count": 250,
+    "channels": 3,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -3.4,
+    "ci95": [
+      -4.8,
+      -2.1
+    ],
+    "topologies_improved": 17,
+    "topologies_unchanged": 13,
+    "topologies_worse": 0
+  },
+  {
+    "node_count": 250,
+    "channels": 4,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -5.167,
+    "ci95": [
+      -6.7,
+      -3.667
+    ],
+    "topologies_improved": 20,
+    "topologies_unchanged": 10,
+    "topologies_worse": 0
+  },
+  {
+    "node_count": 250,
+    "channels": 5,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -5.333,
+    "ci95": [
+      -6.733,
+      -3.867
+    ],
+    "topologies_improved": 23,
+    "topologies_unchanged": 6,
+    "topologies_worse": 1
+  },
+  {
+    "node_count": 250,
+    "channels": 6,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -5.367,
+    "ci95": [
+      -6.8,
+      -3.9
+    ],
+    "topologies_improved": 23,
+    "topologies_unchanged": 6,
+    "topologies_worse": 1
+  },
+  {
+    "node_count": 250,
+    "channels": 7,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -5.933,
+    "ci95": [
+      -7.333,
+      -4.5
+    ],
+    "topologies_improved": 24,
+    "topologies_unchanged": 6,
+    "topologies_worse": 0
+  },
+  {
+    "node_count": 300,
+    "channels": 1,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": 22.333,
+    "ci95": [
+      21.2,
+      23.533
+    ],
+    "topologies_improved": 0,
+    "topologies_unchanged": 0,
+    "topologies_worse": 30
+  },
+  {
+    "node_count": 300,
+    "channels": 3,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -4.767,
+    "ci95": [
+      -6.433,
+      -2.933
+    ],
+    "topologies_improved": 20,
+    "topologies_unchanged": 9,
+    "topologies_worse": 1
+  },
+  {
+    "node_count": 300,
+    "channels": 4,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -6.433,
+    "ci95": [
+      -8.0,
+      -4.867
+    ],
+    "topologies_improved": 25,
+    "topologies_unchanged": 5,
+    "topologies_worse": 0
+  },
+  {
+    "node_count": 300,
+    "channels": 5,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -7.3,
+    "ci95": [
+      -8.667,
+      -5.9
+    ],
+    "topologies_improved": 29,
+    "topologies_unchanged": 1,
+    "topologies_worse": 0
+  },
+  {
+    "node_count": 300,
+    "channels": 6,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -7.567,
+    "ci95": [
+      -8.967,
+      -6.067
+    ],
+    "topologies_improved": 26,
+    "topologies_unchanged": 4,
+    "topologies_worse": 0
+  },
+  {
+    "node_count": 300,
+    "channels": 7,
+    "reference_channels": 2,
+    "pairs": 30,
+    "mean_latency_difference": -7.267,
+    "ci95": [
+      -8.6,
+      -5.867
+    ],
+    "topologies_improved": 29,
+    "topologies_unchanged": 1,
+    "topologies_worse": 0
+  }
+]

@@ -1,0 +1,487 @@
+{
+  "decided_at": "",
+  "decided_by": "",
+  "decisions": [
+    {
+      "context": {
+        "batch_id": "frontier-model-b",
+        "classification": "PARAPHRASE_MISMATCH",
+        "generator": {
+          "ambiguity_risk": "low",
+          "annotation_reason": "The Digital Twin appears only as something ruled out, which is a negated requirement rather than a requested capability. What remains is a default one-shot schedule on a catalogue topology.",
+          "capability_category": "negated_digital_twin_hard_negative",
+          "difficulty": "hard",
+          "invalid_fields": null,
+          "proposed_gold_action": "EXECUTE",
+          "proposed_gold_fields": {
+            "channels": 2,
+            "collision_model": "legacy_neighbor",
+            "communication_range": 20.0,
+            "interference_ratio": 1.0,
+            "latency_target_slots": null,
+            "objective": "minimize_latency",
+            "seed": 0,
+            "topology_id": "topo150_seed0",
+            "working_period": 10,
+            "workload": "one_shot"
+          }
+        },
+        "paraphrases": [
+          {
+            "request_id": "v3-b-002-p1",
+            "request_text": "We are not building a Digital Twin of this deployment. All I need is the aggregation schedule for topo150_seed0, worked out from the stored topology with the usual settings."
+          },
+          {
+            "request_id": "v3-b-002-p2",
+            "request_text": "Work from the stored topology file for topo150_seed0 and nothing else, default settings throughout. No Digital Twin is to be built for it."
+          }
+        ],
+        "reviewer": {
+          "adjudicated_action": "EXECUTE",
+          "adjudicated_fields": {
+            "channels": 2,
+            "collision_model": "legacy_neighbor",
+            "communication_range": 20.0,
+            "interference_ratio": 1.0,
+            "latency_target_slots": null,
+            "objective": "minimize_latency",
+            "seed": 0,
+            "topology_id": "topo150_seed0",
+            "working_period": 10,
+            "workload": "one_shot"
+          },
+          "item_quality": "revise",
+          "paraphrase_equivalent": false,
+          "reason": "EXECUTE is the natural scheduling-context reading, and Digital Twin construction is negated. However, p2 specifies the input and defaults without stating the aggregation-schedule deliverable requested in p1. In isolation its task is underspecified, making CLARIFY defensible. The fields describe the scheduling reading, not a silent repair of p2."
+        },
+        "signals": [
+          "reviewer judged the paraphrases not equivalent",
+          "reviewer item_quality=revise"
+        ]
+      },
+      "final_action": null,
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": null,
+      "paraphrase_overrides": {},
+      "rationale": "",
+      "resolution": null,
+      "semantic_group_id": "v3-b-002"
+    },
+    {
+      "context": {
+        "batch_id": "frontier-model-b",
+        "classification": "PARAPHRASE_MISMATCH",
+        "generator": {
+          "ambiguity_risk": "low",
+          "annotation_reason": "The battery-oriented planner is described as a past comparison that is explicitly excluded, so the positively requested objective remains latency minimization with valid explicit values.",
+          "capability_category": "historical_energy_mention_hard_negative",
+          "difficulty": "hard",
+          "invalid_fields": null,
+          "proposed_gold_action": "EXECUTE",
+          "proposed_gold_fields": {
+            "channels": 5,
+            "collision_model": "legacy_neighbor",
+            "communication_range": 20.0,
+            "interference_ratio": 1.0,
+            "latency_target_slots": null,
+            "objective": "minimize_latency",
+            "seed": 21,
+            "topology_id": "topo150_seed0",
+            "working_period": 10,
+            "workload": "one_shot"
+          }
+        },
+        "paraphrases": [
+          {
+            "request_id": "v3-b-008-p1",
+            "request_text": "An older planner of ours used to spread battery drain across the nodes, but that comparison is not part of this run. Schedule topo150_seed0 with five channels and seed 21, with latency the only thing being minimized."
+          },
+          {
+            "request_id": "v3-b-008-p2",
+            "request_text": "Leave the battery-spreading planner we benchmarked last year out of it. This run is topo150_seed0, five channels, scheduler seed 21, minimizing latency alone."
+          }
+        ],
+        "reviewer": {
+          "adjudicated_action": "EXECUTE",
+          "adjudicated_fields": {
+            "channels": 5,
+            "collision_model": "legacy_neighbor",
+            "communication_range": 20.0,
+            "interference_ratio": 1.0,
+            "latency_target_slots": null,
+            "objective": "minimize_latency",
+            "seed": 21,
+            "topology_id": "topo150_seed0",
+            "working_period": 10,
+            "workload": "one_shot"
+          },
+          "item_quality": "revise",
+          "paraphrase_equivalent": false,
+          "reason": "The execution requirements match and battery-based planning is excluded, so EXECUTE is stable. However, p2 adds that the older planner was benchmarked last year, a fact absent from p1. This violates the strict same-facts construction rule even though it does not change the configuration."
+        },
+        "signals": [
+          "reviewer judged the paraphrases not equivalent",
+          "reviewer item_quality=revise"
+        ]
+      },
+      "final_action": null,
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": null,
+      "paraphrase_overrides": {},
+      "rationale": "",
+      "resolution": null,
+      "semantic_group_id": "v3-b-008"
+    },
+    {
+      "context": {
+        "batch_id": "frontier-model-b",
+        "classification": "PARAPHRASE_MISMATCH",
+        "generator": {
+          "ambiguity_risk": "low",
+          "annotation_reason": "Twenty elapsed slots is a valid positive integer target even though it sits below the 29-slot baseline of this topology. Whether the target is met is a runtime outcome, not a validation failure.",
+          "capability_category": "latency_target_below_baseline",
+          "difficulty": "hard",
+          "invalid_fields": null,
+          "proposed_gold_action": "EXECUTE",
+          "proposed_gold_fields": {
+            "channels": 2,
+            "collision_model": "legacy_neighbor",
+            "communication_range": 20.0,
+            "interference_ratio": 1.0,
+            "latency_target_slots": 20,
+            "objective": "minimize_latency",
+            "seed": 0,
+            "topology_id": "topo100_seed0",
+            "working_period": 10,
+            "workload": "one_shot"
+          }
+        },
+        "paraphrases": [
+          {
+            "request_id": "v3-b-010-p1",
+            "request_text": "The downstream job wants the topo100_seed0 aggregation finished inside 20 slots. Schedule against that figure and report how the result compares."
+          },
+          {
+            "request_id": "v3-b-010-p2",
+            "request_text": "Aim for 20 elapsed slots on the topo100_seed0 collection, and let me know where the produced schedule lands against it."
+          }
+        ],
+        "reviewer": {
+          "adjudicated_action": "EXECUTE",
+          "adjudicated_fields": {
+            "channels": 2,
+            "collision_model": "legacy_neighbor",
+            "communication_range": 20.0,
+            "interference_ratio": 1.0,
+            "latency_target_slots": 20,
+            "objective": "minimize_latency",
+            "seed": 0,
+            "topology_id": "topo100_seed0",
+            "working_period": 10,
+            "workload": "one_shot"
+          },
+          "item_quality": "revise",
+          "paraphrase_equivalent": false,
+          "reason": "Both have the same valid 20-slot target and comparison requirement; a target below the 29-slot baseline remains EXECUTE. Under the strict same-facts rule, p2 drops p1's statement that the deadline comes from a downstream job. Preserve that context in both texts."
+        },
+        "signals": [
+          "reviewer judged the paraphrases not equivalent",
+          "reviewer item_quality=revise"
+        ]
+      },
+      "final_action": null,
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": null,
+      "paraphrase_overrides": {},
+      "rationale": "",
+      "resolution": null,
+      "semantic_group_id": "v3-b-010"
+    },
+    {
+      "context": {
+        "batch_id": "frontier-model-b",
+        "classification": "DEFECTIVE_ITEM",
+        "generator": {
+          "ambiguity_risk": "medium",
+          "annotation_reason": "The sentence and the copied parameter block each state a definite channel count and they disagree, so one configuration cannot be built from explicit values that conflict.",
+          "capability_category": "contradictory_channel_specification",
+          "difficulty": "hard",
+          "invalid_fields": {
+            "channels": {
+              "observed": {
+                "parameter_block": 5,
+                "prose": 2
+              },
+              "reason": "The prose and the pasted parameter block give different channel counts for the same run."
+            }
+          },
+          "proposed_gold_action": "REJECT",
+          "proposed_gold_fields": {
+            "channels": null,
+            "collision_model": "legacy_neighbor",
+            "seed": 4,
+            "topology_id": "topo200_seed0"
+          }
+        },
+        "paraphrases": [
+          {
+            "request_id": "v3-b-018-p1",
+            "request_text": "We are keeping this one on two channels. Parameters as run last time: topology topo200_seed0, channels 5, seed 4, collision_model legacy_neighbor."
+          },
+          {
+            "request_id": "v3-b-018-p2",
+            "request_text": "Two channels for this collection please. Settings copied straight from the previous ticket: topo200_seed0, channels: 5, seed: 4, collision_model: legacy_neighbor."
+          }
+        ],
+        "reviewer": {
+          "adjudicated_action": "REJECT",
+          "adjudicated_fields": {
+            "collision_model": "legacy_neighbor",
+            "seed": 4,
+            "topology_id": "topo200_seed0"
+          },
+          "item_quality": "revise",
+          "paraphrase_equivalent": true,
+          "reason": "REJECT applies when both prose and parameter block are current requirements. However, both texts explicitly identify the five-channel settings as historical, making EXECUTE with channels=2 defensible as a current override of the prior configuration. The contradiction is therefore not unambiguous. No scalar channels value has been silently selected."
+        },
+        "signals": [
+          "reviewer item_quality=revise",
+          "reviewer did not enumerate invalid_fields; only overlapping explicit values were compared",
+          "generator ambiguity_risk=medium"
+        ]
+      },
+      "final_action": null,
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": null,
+      "paraphrase_overrides": {},
+      "rationale": "",
+      "resolution": null,
+      "semantic_group_id": "v3-b-018"
+    },
+    {
+      "context": {
+        "batch_id": "frontier-model-b",
+        "classification": "PARAPHRASE_MISMATCH",
+        "generator": {
+          "ambiguity_risk": "low",
+          "annotation_reason": "The request drives forwarding decisions from stored charge without naming the capability, which is energy-aware scheduling expressed compositionally.",
+          "capability_category": "charge_driven_forwarding_compositional",
+          "difficulty": "hard",
+          "invalid_fields": null,
+          "proposed_gold_action": "UNSUPPORTED",
+          "proposed_gold_fields": null
+        },
+        "paraphrases": [
+          {
+            "request_id": "v3-b-021-p1",
+            "request_text": "The motes on topo200_seed0 run off small solar cells and hold very different amounts of charge, so the forwarding choices should lean on whichever node has the most at the time."
+          },
+          {
+            "request_id": "v3-b-021-p2",
+            "request_text": "Charge levels vary a lot across the solar-powered motes of topo200_seed0; whoever forwards should be picked to match, leaving the depleted ones out of it."
+          }
+        ],
+        "reviewer": {
+          "adjudicated_action": "UNSUPPORTED",
+          "adjudicated_fields": null,
+          "item_quality": "revise",
+          "paraphrase_equivalent": false,
+          "reason": "Both require charge-dependent forwarding and are unsupported. However, preferring the node with the most charge at the time does not impose the same selection rule as excluding depleted nodes. P2 also loses p1's explicit time-dependent maximum-charge preference. The pair needs a common forwarding requirement."
+        },
+        "signals": [
+          "reviewer judged the paraphrases not equivalent",
+          "reviewer item_quality=revise"
+        ]
+      },
+      "final_action": null,
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": null,
+      "paraphrase_overrides": {},
+      "rationale": "",
+      "resolution": null,
+      "semantic_group_id": "v3-b-021"
+    },
+    {
+      "context": {
+        "batch_id": "frontier-model-b",
+        "classification": "PARAPHRASE_MISMATCH",
+        "generator": {
+          "ambiguity_risk": "low",
+          "annotation_reason": "Maximizing the time before the first node is exhausted is a lifetime criterion driven by remaining energy, which the system does not model.",
+          "capability_category": "network_lifetime_objective_compositional",
+          "difficulty": "hard",
+          "invalid_fields": null,
+          "proposed_gold_action": "UNSUPPORTED",
+          "proposed_gold_fields": null
+        },
+        "paraphrases": [
+          {
+            "request_id": "v3-b-022-p1",
+            "request_text": "What I want for topo50_seed0 is the plan that keeps the whole field reporting for as many weeks as it can before the first node goes dark."
+          },
+          {
+            "request_id": "v3-b-022-p2",
+            "request_text": "Choose the plan for topo50_seed0 that pushes the first node failure as far out in time as possible."
+          }
+        ],
+        "reviewer": {
+          "adjudicated_action": "UNSUPPORTED",
+          "adjudicated_fields": null,
+          "item_quality": "revise",
+          "paraphrase_equivalent": false,
+          "reason": "Both prioritize time to first node failure rather than aggregation latency, so UNSUPPORTED is stable without assuming battery depletion causes failure. P1 additionally requires continued field reporting over weeks; p2 states only delayed failure and could permit inactivity. Preserve the reporting requirement in both."
+        },
+        "signals": [
+          "reviewer judged the paraphrases not equivalent",
+          "reviewer item_quality=revise"
+        ]
+      },
+      "final_action": null,
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": null,
+      "paraphrase_overrides": {},
+      "rationale": "",
+      "resolution": null,
+      "semantic_group_id": "v3-b-022"
+    },
+    {
+      "context": {
+        "batch_id": "frontier-model-b",
+        "classification": "PARAPHRASE_MISMATCH",
+        "generator": {
+          "ambiguity_risk": "none",
+          "annotation_reason": "Digital Twin construction and execution inside it are positively requested, and both are outside the supported scope.",
+          "capability_category": "digital_twin_construction",
+          "difficulty": "easy",
+          "invalid_fields": null,
+          "proposed_gold_action": "UNSUPPORTED",
+          "proposed_gold_fields": null
+        },
+        "paraphrases": [
+          {
+            "request_id": "v3-b-023-p1",
+            "request_text": "Stand up a Digital Twin of topo300_seed0 and run the collection inside it so the team can watch the slots go by."
+          },
+          {
+            "request_id": "v3-b-023-p2",
+            "request_text": "I would like topo300_seed0 mirrored as a Digital Twin, with the aggregation carried out in that mirror."
+          }
+        ],
+        "reviewer": {
+          "adjudicated_action": "UNSUPPORTED",
+          "adjudicated_fields": null,
+          "item_quality": "revise",
+          "paraphrase_equivalent": false,
+          "reason": "Both require a Digital Twin and aggregation inside it. P1 also requests that the team can watch the slots progress, which p2 does not preserve. The unsupported action remains unambiguous, but the observable-execution requirement should match."
+        },
+        "signals": [
+          "reviewer judged the paraphrases not equivalent",
+          "reviewer item_quality=revise"
+        ]
+      },
+      "final_action": null,
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": null,
+      "paraphrase_overrides": {},
+      "rationale": "",
+      "resolution": null,
+      "semantic_group_id": "v3-b-023"
+    },
+    {
+      "context": {
+        "batch_id": "frontier-model-b",
+        "classification": "PARAPHRASE_MISMATCH",
+        "generator": {
+          "ambiguity_risk": "none",
+          "annotation_reason": "The schedule is supported, but loading it onto the motes and driving them is physical-device control, which the system does not perform.",
+          "capability_category": "physical_device_control_mixed",
+          "difficulty": "easy",
+          "invalid_fields": null,
+          "proposed_gold_action": "UNSUPPORTED",
+          "proposed_gold_fields": null
+        },
+        "paraphrases": [
+          {
+            "request_id": "v3-b-034-p1",
+            "request_text": "Work out the schedule for topo50_seed0 and then push it down to the motes so they wake and send in their assigned slots."
+          },
+          {
+            "request_id": "v3-b-034-p2",
+            "request_text": "When the topo50_seed0 schedule is ready, load it onto the physical motes and have them start transmitting on cue."
+          }
+        ],
+        "reviewer": {
+          "adjudicated_action": "UNSUPPORTED",
+          "adjudicated_fields": null,
+          "item_quality": "revise",
+          "paraphrase_equivalent": false,
+          "reason": "Both require deploying a schedule to physical motes and controlling transmissions, so UNSUPPORTED is stable. P1 additionally requires scheduled waking; p2 only requires transmitting on cue and does not preserve wake control."
+        },
+        "signals": [
+          "reviewer judged the paraphrases not equivalent",
+          "reviewer item_quality=revise"
+        ]
+      },
+      "final_action": null,
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": null,
+      "paraphrase_overrides": {},
+      "rationale": "",
+      "resolution": null,
+      "semantic_group_id": "v3-b-034"
+    },
+    {
+      "context": {
+        "batch_id": "frontier-model-b",
+        "classification": "PARAPHRASE_MISMATCH",
+        "generator": {
+          "ambiguity_risk": "low",
+          "annotation_reason": "Evening out per-node work at the cost of a longer round makes load balancing the optimization objective instead of latency.",
+          "capability_category": "load_balancing_compositional",
+          "difficulty": "hard",
+          "invalid_fields": null,
+          "proposed_gold_action": "UNSUPPORTED",
+          "proposed_gold_fields": null
+        },
+        "paraphrases": [
+          {
+            "request_id": "v3-b-035-p1",
+            "request_text": "The three nodes next to the sink on topo300_seed0 are doing far more work than the rest, and the plan should even that out across the field even if the round takes longer."
+          },
+          {
+            "request_id": "v3-b-035-p2",
+            "request_text": "On topo300_seed0 the sink's immediate neighbours carry most of the traffic; spread that load more evenly, longer round or not."
+          }
+        ],
+        "reviewer": {
+          "adjudicated_action": "UNSUPPORTED",
+          "adjudicated_fields": null,
+          "item_quality": "revise",
+          "paraphrase_equivalent": false,
+          "reason": "Both request load balancing at the expense of latency, an unsupported objective. However, three nodes next to the sink and the sink's immediate neighbors need not denote the same set. The catalogue does not establish that equivalence. P2 also changes disproportionate work into carrying most traffic."
+        },
+        "signals": [
+          "reviewer judged the paraphrases not equivalent",
+          "reviewer item_quality=revise"
+        ]
+      },
+      "final_action": null,
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": null,
+      "paraphrase_overrides": {},
+      "rationale": "",
+      "resolution": null,
+      "semantic_group_id": "v3-b-035"
+    }
+  ],
+  "decisions_version": "frozen-test-v2-decisions/1"
+}

@@ -1,0 +1,28 @@
+{
+  "computed_from": {
+    "harness": "benchmarks/frozen_test_v3/harness/frozen_test_v3_harness.jsonl",
+    "results_dir": "results/frozen_test_v3"
+  },
+  "items": 144,
+  "series": {
+    "gpt55": {
+      "explicit-parameter check": 1,
+      "reached the model": 113,
+      "scope gate": 18,
+      "topology gate": 12
+    },
+    "phi4": {
+      "explicit-parameter check": 1,
+      "reached the model": 113,
+      "scope gate": 18,
+      "topology gate": 12
+    },
+    "qwen25": {
+      "explicit-parameter check": 1,
+      "reached the model": 113,
+      "scope gate": 18,
+      "topology gate": 12
+    }
+  },
+  "shows": "how many of the 144 requests each deterministic stage terminated before the model was consulted, and that the counts are identical across every gated arm"
+}

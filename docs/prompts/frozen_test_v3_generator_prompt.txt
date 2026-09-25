@@ -1,0 +1,451 @@
+You are Frontier Benchmark Generator {ROLE}.
+
+Your task is to independently generate one half of a held-out benchmark
+for an agentic IoT data-aggregation scheduling system.
+
+This benchmark will be sealed before the target system is evaluated.
+
+You must use only the scientific specification in this prompt. You do not
+have access to, and must not attempt to infer:
+
+- the target implementation;
+- source code;
+- policy rules or phrase-matching patterns;
+- the LLM orchestration prompt;
+- previous benchmarks;
+- previous system failures;
+- previous model responses;
+- results from another benchmark generator.
+
+Do not create requests specifically designed around an assumed
+implementation weakness.
+
+==================================================
+1. PAPER-1 SCIENTIFIC SCOPE
+==================================================
+
+The evaluated system supports only:
+
+1. One-shot sensory-data aggregation.
+2. A static network topology selected from the catalogue in section 3.
+3. Minimum-latency scheduling.
+4. The ANEX scheduling algorithm.
+5. One or more communication channels.
+6. Two collision models:
+   - legacy_neighbor
+   - interference_range
+   The interference range equals the communication range, so the two
+   models are equivalent; both names are accepted.
+7. Deterministic schedule validation and latency measurement.
+
+The system does not support:
+
+- Digital Twin construction or emulation;
+- streaming or continuous state synchronization;
+- energy-aware scheduling;
+- residual-battery evolution;
+- periodic or continuous aggregation;
+- runtime topology adaptation;
+- objectives other than minimizing aggregation latency;
+- physical-device or sensor control;
+- an interference range different from the communication range.
+
+==================================================
+2. ACTION LABELS
+==================================================
+
+EXECUTE:
+The request is within the Paper-1 scope and all explicitly supplied
+configuration values are valid. Values not explicitly supplied may use
+their documented defaults.
+
+CLARIFY:
+The requested task is within scope, but topology_id is missing or the
+request contains genuine ambiguity that prevents safe construction of
+one configuration.
+
+REJECT:
+The task itself is supported, but at least one explicitly supplied
+configuration value is invalid, contradictory, or inconsistent with
+the selected topology.
+
+UNSUPPORTED:
+The request positively requires at least one capability outside the
+Paper-1 scientific scope.
+
+Apply this precedence:
+
+1. Positively requested unsupported capability -> UNSUPPORTED.
+2. Otherwise, invalid or contradictory explicit configuration -> REJECT.
+3. Otherwise, missing required information or irreducible ambiguity
+   -> CLARIFY.
+4. Otherwise -> EXECUTE.
+
+Semantic requirements:
+
+- Do not classify requests using keywords alone.
+- Mentioning an unsupported concept is not necessarily requesting it.
+- Negated requirements such as "Do not use a Digital Twin" are not
+  unsupported requests.
+- Historical, explanatory, or comparative mentions must be distinguished
+  from requested execution capabilities.
+- If a request contains both a supported schedule and a positively requested
+  unsupported capability, classify it as UNSUPPORTED.
+- Omitted optional fields use defaults and do not require CLARIFY.
+- Do not infer the scheduling seed from a topology ID. Every topology ID
+  ends in a generation seed (seed7, seed0); that number never sets the
+  request field seed.
+
+Construction requirements:
+
+- A request must never name the action the system is expected to take.
+  Do not write meta-instructions such as "ask me before running",
+  "confirm this with me first", or "reject this request"; ambiguity must
+  follow from the situation described, not from an instruction.
+- A contradiction must arise the way it would in practice, for example
+  prose that conflicts with a pasted parameter block. Do not write
+  statements that two values must hold at the same time.
+- Do not narrate omissions. A request that lacks a topology simply does
+  not mention one; it must not say "I have not included the identifier".
+- The two paraphrases of a group must state the same facts and the same
+  requirements; a paraphrase must not add, drop, or weaken a requirement.
+- Do not reuse a sentence, in full or with small edits, across groups.
+
+==================================================
+3. AVAILABLE TOPOLOGIES
+==================================================
+
+Seven topologies are available. A request selects a topology only by
+writing its exact topology_id. A description that does not contain the
+id (for example "the 100-node network" or "the largest topology") does
+not select a topology, even if only one entry matches, and the request is
+CLARIFY. Any topology_id not listed here (for example topo120_seed0,
+topo100_seed3, or legacy30_seed8) is invalid and produces REJECT when
+explicitly supplied.
+
+Shared properties: sink_id 0, working_period 10 slots,
+scientific_active_slot_domain 0 through 9, generation_active_slot_mode
+legacy_exclude_final_slot (slots 0 through 8 used during generation),
+active_slots_per_node 2, node_id_domain 0 through node_count minus 1,
+every node reachable from the sink. Baselines below are the ANEX result
+with 2 channels and interference_ratio 1.0.
+
+| topology_id    | node_count | communication_range | coordinate_domain | generation_seed | edge_count | average_degree | maximum_degree | density | maximum_BFS_layer | baseline_max_timeslot_index | baseline_elapsed_latency |
+|----------------|-----------:|--------------------:|-------------------|----------------:|-----------:|---------------:|---------------:|--------:|------------------:|----------------------------:|-------------------------:|
+| legacy30_seed7 |         30 |                18.0 | 0 through 40      |               7 |        150 |          10.0  |             17 |  0.3448 |                 2 |                          25 |                       26 |
+| topo50_seed0   |         50 |                20.0 | 0 through 100     |               0 |        115 |           4.6  |             10 |  0.0939 |                 5 |                          26 |                       27 |
+| topo100_seed0  |        100 |                20.0 | 0 through 100     |               0 |        482 |           9.64 |             17 |  0.0974 |                 5 |                          28 |                       29 |
+| topo150_seed0  |        150 |                20.0 | 0 through 100     |               0 |       1113 |          14.84 |             26 |  0.0996 |                 5 |                          28 |                       29 |
+| topo200_seed0  |        200 |                20.0 | 0 through 100     |               0 |       2015 |          20.15 |             37 |  0.1013 |                 4 |                          36 |                       37 |
+| topo250_seed0  |        250 |                20.0 | 0 through 100     |               0 |       3242 |          25.94 |             48 |  0.1042 |                 4 |                          36 |                       37 |
+| topo300_seed0  |        300 |                20.0 | 0 through 100     |               0 |       4563 |          30.42 |             54 |  0.1017 |                 4 |                          46 |                       47 |
+
+Missing topology_id produces CLARIFY. A request that names two different
+topology_ids for one run is ambiguous and produces CLARIFY. The
+communication_range and working_period of a request must equal the
+values of the selected topology; note that legacy30_seed7 uses 18.0 while
+every other topology uses 20.0.
+
+==================================================
+4. VALID CONFIGURATION CONTRACT
+==================================================
+
+topology_id:
+- Type: string.
+- Valid values: exactly the seven ids listed in section 3.
+- No default.
+- Missing value -> CLARIFY. Unlisted explicit value -> REJECT.
+
+workload:
+- Type: string literal.
+- Valid value: "one_shot" only.
+- Default: "one_shot".
+- Any other explicit workload -> UNSUPPORTED if it requests another workload
+  capability, such as periodic or continuous aggregation.
+
+objective:
+- Type: string literal.
+- Valid value: "minimize_latency" only.
+- Default: "minimize_latency".
+- A positively requested different optimization objective -> UNSUPPORTED.
+
+channels:
+- Type: integer.
+- Valid: channels >= 1.
+- Default: 2.
+- Booleans, non-integers, zero, and negative values are invalid -> REJECT.
+- Arbitrary positive integer channel counts are supported.
+
+interference_ratio:
+- Type: number.
+- Valid value: exactly 1.0. The interference range equals the
+  communication range.
+- Default: 1.0.
+- Any other explicit value is invalid -> REJECT. This includes values
+  below 1.0, values above 1.0, NaN, infinity, and nonnumeric values.
+- A request that explicitly asks for an interference range different from
+  the communication range (for example "interference ratio 1.5" or
+  "interference range twice the communication range") is REJECT, not
+  UNSUPPORTED, because it is an invalid value of a supported field.
+
+collision_model:
+- Type: enum.
+- Valid values:
+  - "legacy_neighbor"
+  - "interference_range"
+- Default: "legacy_neighbor".
+- With interference_ratio fixed at 1.0 the two values describe the same
+  collision model; either literal is valid.
+- Any other explicit collision model is invalid -> REJECT.
+
+latency_target_slots:
+- Type: integer or null.
+- Valid: null or integer >= 1.
+- Default: null.
+- Unit: elapsed slots, not maximum timeslot index.
+- Booleans, zero, negative values, and non-integers are invalid -> REJECT.
+- A target below the selected topology's baseline latency is still
+  syntactically valid. It must not be rejected solely because it may not
+  be achieved.
+- Such a request remains EXECUTE when all other requirements are valid;
+  execution may later report that the target was not met.
+
+seed:
+- Type: integer.
+- Default: 0.
+- seed must be an integer >= 0
+- A boolean or non-integer value is invalid -> REJECT.
+- Never derive the seed from the topology_id.
+- If seed is omitted, the expected request seed is 0.
+
+working_period:
+- Type: integer.
+- Must be greater than zero.
+- Must exactly match the selected topology: 10 for every listed topology.
+- Default/source: the selected topology.
+- Any explicitly supplied value other than the topology's value is
+  inconsistent -> REJECT.
+
+communication_range:
+- Type: finite number.
+- Must be greater than zero.
+- Must exactly match the selected topology: 18.0 for legacy30_seed7, 20.0
+  for topo50_seed0 through topo300_seed0.
+- Default/source: the selected topology.
+- Any explicitly supplied value other than the topology's value is
+  inconsistent -> REJECT.
+
+When fields are omitted, use these defaults (topology-dependent fields
+take the values of the selected topology):
+
+{
+  "workload": "one_shot",
+  "objective": "minimize_latency",
+  "channels": 2,
+  "interference_ratio": 1.0,
+  "collision_model": "legacy_neighbor",
+  "latency_target_slots": null,
+  "seed": 0,
+  "working_period": 10,
+  "communication_range": <communication_range of the selected topology>
+}
+
+==================================================
+5. GENERATION TASK
+==================================================
+
+Create exactly 36 independent semantic groups. Each group carries one
+protocol_category from the closed list below, and the category fixes the
+gold action:
+
+| protocol_category                | groups | gold action |
+|----------------------------------|-------:|-------------|
+| supported_default                |      4 | EXECUTE     |
+| supported_configured             |      4 | EXECUTE     |
+| supported_latency_target         |      3 | EXECUTE     |
+| missing_information              |      3 | CLARIFY     |
+| invalid_parameter                |      4 | REJECT      |
+| unsupported_energy               |      4 | UNSUPPORTED |
+| unsupported_digital_twin_or_sync |      4 | UNSUPPORTED |
+| unsupported_periodic             |      3 | UNSUPPORTED |
+| unsupported_topology_adaptation  |      3 | UNSUPPORTED |
+| unsupported_other_objective      |      4 | UNSUPPORTED |
+
+That is 11 EXECUTE, 3 CLARIFY, 4 REJECT, and 18 UNSUPPORTED groups.
+
+Each semantic group must contain exactly two natural-language paraphrases.
+Therefore, the batch must contain exactly 72 individual requests.
+
+The two paraphrases must:
+
+- express the same intent;
+- preserve the same configuration;
+- have the same gold action;
+- differ in sentence structure, not only a few synonyms;
+- sound like realistic requests from system operators or researchers.
+
+Use a mixture of easy, medium, and hard cases.
+
+Topology use: the EXECUTE groups must name at least four different
+catalogue topologies; the UNSUPPORTED groups at least three; the REJECT
+groups at least two. Requests may name any listed topology.
+
+supported_default (EXECUTE) must include:
+- requests relying primarily on defaults;
+- at least one request selecting a topology without specifying a
+  scheduling seed, whose expected seed remains 0;
+- at least one hard negative that mentions an unsupported concept without
+  positively requesting it, including one that explicitly says not to use
+  a Digital Twin.
+
+supported_configured (EXECUTE) must include:
+- valid explicit channel counts;
+- both valid collision model names;
+- an explicit interference_ratio of 1.0;
+- explicit scheduling seeds;
+- at least one request stating the working period or communication range
+  that is consistent with the selected topology;
+- at least one further hard negative (historical or comparative mention of
+  an unsupported capability).
+
+supported_latency_target (EXECUTE) must include:
+- a target above and a target below the selected topology's baseline
+  latency;
+- an explicit null target or an explicit statement that no target applies.
+
+missing_information (CLARIFY) must include:
+- a missing topology_id;
+- an ambiguous topology selection (two ids for one run, or a description
+  without an id);
+- an ambiguity between two materially different configurations.
+Do not label an item CLARIFY merely because an optional field is omitted.
+
+invalid_parameter (REJECT) must include at least:
+- a topology_id that is not in the catalogue;
+- an interference_ratio other than 1.0;
+- a working_period or communication_range inconsistent with the selected
+  topology (for example 18.0 with topo100_seed0);
+and one more kind chosen from: zero or negative channel count, non-integer
+channel count, invalid collision model, invalid latency target,
+contradictory explicit supported fields.
+
+unsupported_energy: energy-aware scheduling or residual-battery
+evolution.
+unsupported_digital_twin_or_sync: Digital Twin, network emulation,
+streaming or continuous state synchronization.
+unsupported_periodic: periodic or continuous aggregation.
+unsupported_topology_adaptation: runtime topology or routing adaptation.
+unsupported_other_objective: optimization objectives other than latency,
+physical sensor or device control.
+
+Across the 18 UNSUPPORTED groups:
+- at least 6 groups must express the capability compositionally, without
+  using the canonical category name (no "Digital Twin", "energy-aware",
+  "periodic", "adaptation" wording);
+- at least 3 groups must be mixed requests that also contain a fully
+  supported schedule;
+- at least one group must contain a supported schedule whose configuration
+  would otherwise be REJECT, to exercise precedence rule 1.
+
+Do not copy sentences from this prompt as benchmark requests.
+
+==================================================
+6. OUTPUT SCHEMA
+==================================================
+
+Return valid JSON only, without Markdown or explanatory text.
+
+Use this structure:
+
+{
+  "benchmark_version": "frozen-test-v3-candidate",
+  "batch_id": "frontier-model-{ROLE_LOWER}",
+  "generator_role": "independent_generator",
+  "groups": [
+    {
+      "semantic_group_id": "v3-{ROLE_LOWER}-001",
+      "difficulty": "easy",
+      "protocol_category": "supported_default",
+      "capability_category": "default_execution",
+      "proposed_gold_action": "EXECUTE",
+      "proposed_gold_fields": {
+        "topology_id": "topo100_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 2,
+        "interference_ratio": 1.0,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": null,
+        "seed": 0,
+        "working_period": 10,
+        "communication_range": 20.0
+      },
+      "paraphrases": [
+        {
+          "request_id": "v3-{ROLE_LOWER}-001-p1",
+          "request_text": "..."
+        },
+        {
+          "request_id": "v3-{ROLE_LOWER}-001-p2",
+          "request_text": "..."
+        }
+      ],
+      "annotation_reason": "...",
+      "ambiguity_risk": "none"
+    }
+  ],
+  "self_check": {
+    "group_count": 36,
+    "item_count": 72,
+    "execute_groups": 11,
+    "clarify_groups": 3,
+    "reject_groups": 4,
+    "unsupported_groups": 18,
+    "protocol_category_counts": {
+      "supported_default": 4,
+      "supported_configured": 4,
+      "supported_latency_target": 3,
+      "missing_information": 3,
+      "invalid_parameter": 4,
+      "unsupported_energy": 4,
+      "unsupported_digital_twin_or_sync": 4,
+      "unsupported_periodic": 3,
+      "unsupported_topology_adaptation": 3,
+      "unsupported_other_objective": 4
+    }
+  }
+}
+
+capability_category is a free short label for the specific phenomenon
+tested; protocol_category must be one of the ten closed values.
+
+For CLARIFY and UNSUPPORTED requests, proposed_gold_fields may be null.
+
+For REJECT requests, proposed_gold_fields should preserve the explicitly
+requested values when possible and identify invalid fields separately:
+
+"invalid_fields": {
+  "field_name": {
+    "observed": "...",
+    "reason": "..."
+  }
+}
+
+Before returning, internally verify:
+
+- exactly 36 groups;
+- exactly 72 requests;
+- the protocol_category counts above, and 11 / 3 / 4 / 18 groups per
+  action;
+- every group's gold action matches its protocol_category;
+- all request IDs are unique;
+- every pair is semantically equivalent;
+- every label follows the precedence rules;
+- defaults are correctly represented, including the communication_range of
+  the selected topology;
+- every EXECUTE gold object has interference_ratio 1.0;
+- no seed was derived from a topology ID;
+- no request names the action the system should take;
+- no request depends on hidden implementation knowledge.
+
+Return JSON only.

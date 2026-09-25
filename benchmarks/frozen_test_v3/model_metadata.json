@@ -1,0 +1,31 @@
+{
+  "metadata_version": "frozen-test-v3-model-metadata/1",
+  "model_a": {
+    "model_id": "chatgpt-6-astra-light",
+    "display_name": "ChatGPT-6 Astra Light",
+    "provider": "OpenAI",
+    "version_or_snapshot": "",
+    "interface": "ChatGPT desktop app",
+    "decoding": {"temperature": null, "seed": null},
+    "roles": ["generator of frontier-model-a", "blind adjudicator of frontier-model-b"],
+    "generation_date": "2026-09-14",
+    "review_date": "2026-09-14",
+    "independence": "CROSS_REVIEW_SATISFIED",
+    "notes": "Both sessions were separate from the project context and received only their rendered prompt; the adjudication session additionally received the blind batch file."
+  },
+  "model_b": {
+    "model_id": "claude-opus-5",
+    "display_name": "Claude Opus 5",
+    "provider": "Anthropic",
+    "version_or_snapshot": "",
+    "interface": "Claude Code desktop app",
+    "decoding": {"temperature": null, "seed": null},
+    "roles": ["generator of frontier-model-b", "blind adjudicator of frontier-model-a"],
+    "generation_date": "2026-09-14",
+    "review_date": "2026-09-14",
+    "independence": "GENERATION_VIOLATED_AND_DISCLOSED_ADJUDICATION_CROSS_REVIEW_SATISFIED",
+    "notes": "This model ran in the session that authored the v3 contract, prompts, topology catalogue, and pipeline, and that produced the Frozen Test v2 failure taxonomy. Its generation of Batch B therefore breaks the independence rule and is disclosed in benchmarks/frozen_test_v3/generation_provenance.json. Its adjudication of Batch A satisfies the cross-review rule, since it did not generate Batch A, but it judged against a specification it had itself written."
+  },
+  "roles_summary": "Model A generated Batch A and adjudicated blind Batch B; Model B generated Batch B and adjudicated blind Batch A.",
+  "provenance_file": "benchmarks/frozen_test_v3/generation_provenance.json"
+}

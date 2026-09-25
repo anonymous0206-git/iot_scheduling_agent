@@ -1,0 +1,68 @@
+{
+  "decoding": {
+    "note": "greedy decoding; repeats measure provider nondeterminism, not sampling diversity",
+    "temperature": 0
+  },
+  "runs": [
+    {
+      "arm": "phi4_policy_v2",
+      "elapsed_seconds": 324.324,
+      "ledger": "<repository>/results/frozen_test_v3/phi4_policy_v2_seed1.jsonl",
+      "model": "phi4:14b",
+      "returncode": 0,
+      "seed": 1,
+      "stdout_tail": "{\n  \"completed\": 144,\n  \"expected\": 144,\n  \"raw_output\": \"<repository>/results/frozen_test_v3/phi4_policy_v2_seed1.jsonl\",\n  \"skipped\": 0,\n  \"status\": \"completed\",\n  \"topologies_available\": 7,\n  \"written\": 144\n}\n"
+    },
+    {
+      "arm": "phi4_no_scope_gate",
+      "elapsed_seconds": 259.414,
+      "ledger": "<repository>/results/frozen_test_v3/phi4_no_scope_gate_seed1.jsonl",
+      "model": "phi4:14b",
+      "returncode": 0,
+      "seed": 1,
+      "stdout_tail": "{\n  \"arm\": \"llm_agent_no_scope_gate\",\n  \"completed\": 144,\n  \"expected\": 144,\n  \"policy_version_recorded\": \"paper1-scope-policy.v2-ABLATED\",\n  \"raw_output\": \"<repository>/results/frozen_test_v3/phi4_no_scope_gate_seed1.jsonl\",\n  \"scope_gate\": \"DISABLED\",\n  \"skipped\": 0,\n  \"status\": \"completed\",\n  \"warning\": \"This arm has no independent scope gate and must never be reported as the production system.\",\n  \"written\": 144\n}\n"
+    },
+    {
+      "arm": "qwen25_policy_v2",
+      "elapsed_seconds": 366.858,
+      "ledger": "<repository>/results/frozen_test_v3/qwen25_policy_v2_seed1.jsonl",
+      "model": "qwen2.5:14b",
+      "returncode": 0,
+      "seed": 1,
+      "stdout_tail": "{\n  \"completed\": 144,\n  \"expected\": 144,\n  \"raw_output\": \"<repository>/results/frozen_test_v3/qwen25_policy_v2_seed1.jsonl\",\n  \"skipped\": 0,\n  \"status\": \"completed\",\n  \"topologies_available\": 7,\n  \"written\": 144\n}\n"
+    },
+    {
+      "arm": "phi4_policy_v2",
+      "elapsed_seconds": 469.843,
+      "ledger": "<repository>/results/frozen_test_v3/phi4_policy_v2_seed2.jsonl",
+      "model": "phi4:14b",
+      "returncode": 0,
+      "seed": 2,
+      "stdout_tail": "{\n  \"completed\": 144,\n  \"expected\": 144,\n  \"raw_output\": \"<repository>/results/frozen_test_v3/phi4_policy_v2_seed2.jsonl\",\n  \"skipped\": 0,\n  \"status\": \"completed\",\n  \"topologies_available\": 7,\n  \"written\": 144\n}\n"
+    },
+    {
+      "arm": "phi4_no_scope_gate",
+      "elapsed_seconds": 348.518,
+      "ledger": "<repository>/results/frozen_test_v3/phi4_no_scope_gate_seed2.jsonl",
+      "model": "phi4:14b",
+      "returncode": 0,
+      "seed": 2,
+      "stdout_tail": "{\n  \"arm\": \"llm_agent_no_scope_gate\",\n  \"completed\": 144,\n  \"expected\": 144,\n  \"policy_version_recorded\": \"paper1-scope-policy.v2-ABLATED\",\n  \"raw_output\": \"<repository>/results/frozen_test_v3/phi4_no_scope_gate_seed2.jsonl\",\n  \"scope_gate\": \"DISABLED\",\n  \"skipped\": 0,\n  \"status\": \"completed\",\n  \"warning\": \"This arm has no independent scope gate and must never be reported as the production system.\",\n  \"written\": 144\n}\n"
+    },
+    {
+      "arm": "qwen25_policy_v2",
+      "elapsed_seconds": 577.356,
+      "ledger": "<repository>/results/frozen_test_v3/qwen25_policy_v2_seed2.jsonl",
+      "model": "qwen2.5:14b",
+      "returncode": 0,
+      "seed": 2,
+      "stdout_tail": "{\n  \"completed\": 144,\n  \"expected\": 144,\n  \"raw_output\": \"<repository>/results/frozen_test_v3/qwen25_policy_v2_seed2.jsonl\",\n  \"skipped\": 0,\n  \"status\": \"completed\",\n  \"topologies_available\": 7,\n  \"written\": 144\n}\n"
+    }
+  ],
+  "seeds_added": [
+    1,
+    2
+  ],
+  "status": "completed",
+  "total_minutes": 39.11
+}

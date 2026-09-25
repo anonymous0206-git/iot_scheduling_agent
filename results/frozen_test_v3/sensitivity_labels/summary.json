@@ -1,0 +1,1252 @@
+{
+  "action_accuracy_span": {
+    "gpt55_advisory": {
+      "max": 0.9461,
+      "min": 0.8958,
+      "span": 0.0503
+    },
+    "gpt55_gated": {
+      "max": 0.8881,
+      "min": 0.8449,
+      "span": 0.0432
+    },
+    "gpt55_no_gate": {
+      "max": 0.9524,
+      "min": 0.9121,
+      "span": 0.0403
+    },
+    "phi4_advisory": {
+      "max": 0.4792,
+      "min": 0.45,
+      "span": 0.0292
+    },
+    "phi4_gated": {
+      "max": 0.4444,
+      "min": 0.4143,
+      "span": 0.0301
+    },
+    "phi4_no_gate": {
+      "max": 0.4653,
+      "min": 0.4357,
+      "span": 0.0296
+    },
+    "qwen25": {
+      "max": 0.3786,
+      "min": 0.3542,
+      "span": 0.0244
+    },
+    "rule_based": {
+      "max": 0.4044,
+      "min": 0.3819,
+      "span": 0.0225
+    }
+  },
+  "analysis_format": "agentic_anex.gold_label_sensitivity.v1",
+  "bootstrap": {
+    "resample_unit": "paraphrase_group",
+    "samples": 10000,
+    "seed": 0
+  },
+  "contested_items": {
+    "channel_conflict": {
+      "categories": [
+        "contradictory_channel_specification",
+        "prose_parameter_channel_conflict"
+      ],
+      "paraphrase_groups": [
+        "v3-a-018",
+        "v3-b-018"
+      ],
+      "request_ids": [
+        "ft3-r0004",
+        "ft3-r0112",
+        "ft3-r0113",
+        "ft3-r0121"
+      ]
+    },
+    "range_mismatch": {
+      "categories": [
+        "catalogue_range_mismatch",
+        "communication_range_mismatch"
+      ],
+      "paraphrase_groups": [
+        "v3-a-017",
+        "v3-b-017"
+      ],
+      "request_ids": [
+        "ft3-r0033",
+        "ft3-r0106",
+        "ft3-r0130",
+        "ft3-r0141"
+      ]
+    }
+  },
+  "harness": {
+    "items": 144,
+    "path": "benchmarks/frozen_test_v3/harness/frozen_test_v3_harness.jsonl"
+  },
+  "no_language_model_or_scheduler_invoked": true,
+  "paired_comparison_stability": {
+    "gpt55_advisory minus gpt55_gated": {
+      "ci_excludes_zero": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "ci_verdict_stable": true,
+      "difference_max": 0.0588,
+      "difference_min": 0.0509,
+      "sign_stable": true
+    },
+    "gpt55_advisory minus gpt55_no_gate": {
+      "ci_excludes_zero": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ci_verdict_stable": true,
+      "difference_max": -0.0024,
+      "difference_min": -0.0208,
+      "sign_stable": true
+    },
+    "gpt55_no_gate minus gpt55_gated": {
+      "ci_excludes_zero": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "ci_verdict_stable": true,
+      "difference_max": 0.0718,
+      "difference_min": 0.0595,
+      "sign_stable": true
+    },
+    "phi4_advisory minus phi4_gated": {
+      "ci_excludes_zero": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ci_verdict_stable": true,
+      "difference_max": 0.0368,
+      "difference_min": 0.0347,
+      "sign_stable": true
+    },
+    "phi4_advisory minus phi4_no_gate": {
+      "ci_excludes_zero": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ci_verdict_stable": true,
+      "difference_max": 0.0147,
+      "difference_min": 0.0139,
+      "sign_stable": true
+    },
+    "phi4_no_gate minus phi4_gated": {
+      "ci_excludes_zero": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ci_verdict_stable": true,
+      "difference_max": 0.0221,
+      "difference_min": 0.0208,
+      "sign_stable": true
+    }
+  },
+  "source_analysis": "results/frozen_test_v3/analysis_v36/summary.json",
+  "title": "Sensitivity of the Frozen Test v3 results to the contested gold labels",
+  "variants": [
+    {
+      "arms": {
+        "gpt55_advisory": {
+          "action_accuracy": 0.8958,
+          "action_accuracy_repeats": [
+            0.8958,
+            0.8889,
+            0.9028
+          ],
+          "correct": 129.0,
+          "false_acceptance": 3.6667,
+          "false_acceptance_repeats": [
+            4,
+            4,
+            3
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 16,
+          "items": 144
+        },
+        "gpt55_gated": {
+          "action_accuracy": 0.8449,
+          "action_accuracy_repeats": [
+            0.8472,
+            0.8403,
+            0.8472
+          ],
+          "correct": 121.6667,
+          "false_acceptance": 3.3333,
+          "false_acceptance_repeats": [
+            3,
+            3,
+            4
+          ],
+          "gold_reject_correct": 5,
+          "gold_reject_items": 16,
+          "items": 144
+        },
+        "gpt55_no_gate": {
+          "action_accuracy": 0.9121,
+          "action_accuracy_repeats": [
+            0.9028,
+            0.9167,
+            0.9167
+          ],
+          "correct": 131.3333,
+          "false_acceptance": 2.0,
+          "false_acceptance_repeats": [
+            2,
+            2,
+            2
+          ],
+          "gold_reject_correct": 6,
+          "gold_reject_items": 16,
+          "items": 144
+        },
+        "phi4_advisory": {
+          "action_accuracy": 0.4792,
+          "action_accuracy_repeats": [
+            0.4792,
+            0.4792,
+            0.4792
+          ],
+          "correct": 69.0,
+          "false_acceptance": 30.0,
+          "false_acceptance_repeats": [
+            30,
+            30,
+            30
+          ],
+          "gold_reject_correct": 10,
+          "gold_reject_items": 16,
+          "items": 144
+        },
+        "phi4_gated": {
+          "action_accuracy": 0.4444,
+          "action_accuracy_repeats": [
+            0.4444,
+            0.4444,
+            0.4444
+          ],
+          "correct": 64.0,
+          "false_acceptance": 30.0,
+          "false_acceptance_repeats": [
+            30,
+            30,
+            30
+          ],
+          "gold_reject_correct": 10,
+          "gold_reject_items": 16,
+          "items": 144
+        },
+        "phi4_no_gate": {
+          "action_accuracy": 0.4653,
+          "action_accuracy_repeats": [
+            0.4653,
+            0.4653,
+            0.4653
+          ],
+          "correct": 67.0,
+          "false_acceptance": 33.0,
+          "false_acceptance_repeats": [
+            33,
+            33,
+            33
+          ],
+          "gold_reject_correct": 10,
+          "gold_reject_items": 16,
+          "items": 144
+        },
+        "qwen25": {
+          "action_accuracy": 0.375,
+          "action_accuracy_repeats": [
+            0.375,
+            0.375,
+            0.375
+          ],
+          "correct": 54.0,
+          "false_acceptance": 54.0,
+          "false_acceptance_repeats": [
+            54,
+            54,
+            54
+          ],
+          "gold_reject_correct": 8,
+          "gold_reject_items": 16,
+          "items": 144
+        },
+        "rule_based": {
+          "action_accuracy": 0.3819,
+          "action_accuracy_repeats": [
+            0.3819
+          ],
+          "correct": 55,
+          "false_acceptance": 74,
+          "false_acceptance_repeats": [
+            74
+          ],
+          "gold_reject_correct": 0,
+          "gold_reject_items": 16,
+          "items": 144
+        }
+      },
+      "description": "the sealed gold labels, unchanged",
+      "dropped": [],
+      "label": "published",
+      "paired_comparisons": {
+        "gpt55_advisory minus gpt55_gated": {
+          "ci95": [
+            0.0046,
+            0.1065
+          ],
+          "difference": 0.0509,
+          "pairs": 144,
+          "resample_unit": "paraphrase_group",
+          "units": 72
+        },
+        "gpt55_advisory minus gpt55_no_gate": {
+          "ci95": [
+            -0.0463,
+            0.0046
+          ],
+          "difference": -0.0162,
+          "pairs": 144,
+          "resample_unit": "paraphrase_group",
+          "units": 72
+        },
+        "gpt55_no_gate minus gpt55_gated": {
+          "ci95": [
+            0.0208,
+            0.1227
+          ],
+          "difference": 0.0671,
+          "pairs": 144,
+          "resample_unit": "paraphrase_group",
+          "units": 72
+        },
+        "phi4_advisory minus phi4_gated": {
+          "ci95": [
+            -0.0208,
+            0.0903
+          ],
+          "difference": 0.0347,
+          "pairs": 144,
+          "resample_unit": "paraphrase_group",
+          "units": 72
+        },
+        "phi4_advisory minus phi4_no_gate": {
+          "ci95": [
+            0.0,
+            0.0347
+          ],
+          "difference": 0.0139,
+          "pairs": 144,
+          "resample_unit": "paraphrase_group",
+          "units": 72
+        },
+        "phi4_no_gate minus phi4_gated": {
+          "ci95": [
+            -0.0347,
+            0.0833
+          ],
+          "difference": 0.0208,
+          "pairs": 144,
+          "resample_unit": "paraphrase_group",
+          "units": 72
+        }
+      },
+      "relabelled": {}
+    },
+    {
+      "arms": {
+        "gpt55_advisory": {
+          "action_accuracy": 0.919,
+          "action_accuracy_repeats": [
+            0.9236,
+            0.9167,
+            0.9167
+          ],
+          "correct": 132.3333,
+          "false_acceptance": 3.6667,
+          "false_acceptance_repeats": [
+            4,
+            4,
+            3
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 12,
+          "items": 144
+        },
+        "gpt55_gated": {
+          "action_accuracy": 0.8681,
+          "action_accuracy_repeats": [
+            0.875,
+            0.8542,
+            0.875
+          ],
+          "correct": 125.0,
+          "false_acceptance": 3.3333,
+          "false_acceptance_repeats": [
+            3,
+            3,
+            4
+          ],
+          "gold_reject_correct": 5,
+          "gold_reject_items": 12,
+          "items": 144
+        },
+        "gpt55_no_gate": {
+          "action_accuracy": 0.9398,
+          "action_accuracy_repeats": [
+            0.9306,
+            0.9444,
+            0.9444
+          ],
+          "correct": 135.3333,
+          "false_acceptance": 2.0,
+          "false_acceptance_repeats": [
+            2,
+            2,
+            2
+          ],
+          "gold_reject_correct": 6,
+          "gold_reject_items": 12,
+          "items": 144
+        },
+        "phi4_advisory": {
+          "action_accuracy": 0.4514,
+          "action_accuracy_repeats": [
+            0.4514,
+            0.4514,
+            0.4514
+          ],
+          "correct": 65.0,
+          "false_acceptance": 30.0,
+          "false_acceptance_repeats": [
+            30,
+            30,
+            30
+          ],
+          "gold_reject_correct": 6,
+          "gold_reject_items": 12,
+          "items": 144
+        },
+        "phi4_gated": {
+          "action_accuracy": 0.4167,
+          "action_accuracy_repeats": [
+            0.4167,
+            0.4167,
+            0.4167
+          ],
+          "correct": 60.0,
+          "false_acceptance": 30.0,
+          "false_acceptance_repeats": [
+            30,
+            30,
+            30
+          ],
+          "gold_reject_correct": 6,
+          "gold_reject_items": 12,
+          "items": 144
+        },
+        "phi4_no_gate": {
+          "action_accuracy": 0.4375,
+          "action_accuracy_repeats": [
+            0.4375,
+            0.4375,
+            0.4375
+          ],
+          "correct": 63.0,
+          "false_acceptance": 33.0,
+          "false_acceptance_repeats": [
+            33,
+            33,
+            33
+          ],
+          "gold_reject_correct": 6,
+          "gold_reject_items": 12,
+          "items": 144
+        },
+        "qwen25": {
+          "action_accuracy": 0.3542,
+          "action_accuracy_repeats": [
+            0.3542,
+            0.3542,
+            0.3542
+          ],
+          "correct": 51.0,
+          "false_acceptance": 54.0,
+          "false_acceptance_repeats": [
+            54,
+            54,
+            54
+          ],
+          "gold_reject_correct": 5,
+          "gold_reject_items": 12,
+          "items": 144
+        },
+        "rule_based": {
+          "action_accuracy": 0.3819,
+          "action_accuracy_repeats": [
+            0.3819
+          ],
+          "correct": 55,
+          "false_acceptance": 74,
+          "false_acceptance_repeats": [
+            74
+          ],
+          "gold_reject_correct": 0,
+          "gold_reject_items": 12,
+          "items": 144
+        }
+      },
+      "description": "the two channel-conflict groups read as CLARIFY instead of REJECT",
+      "dropped": [],
+      "label": "channel=CLARIFY",
+      "paired_comparisons": {
+        "gpt55_advisory minus gpt55_gated": {
+          "ci95": [
+            0.0046,
+            0.1065
+          ],
+          "difference": 0.0509,
+          "pairs": 144,
+          "resample_unit": "paraphrase_group",
+          "units": 72
+        },
+        "gpt55_advisory minus gpt55_no_gate": {
+          "ci95": [
+            -0.0509,
+            0.0
+          ],
+          "difference": -0.0208,
+          "pairs": 144,
+          "resample_unit": "paraphrase_group",
+          "units": 72
+        },
+        "gpt55_no_gate minus gpt55_gated": {
+          "ci95": [
+            0.0255,
+            0.1273
+          ],
+          "difference": 0.0718,
+          "pairs": 144,
+          "resample_unit": "paraphrase_group",
+          "units": 72
+        },
+        "phi4_advisory minus phi4_gated": {
+          "ci95": [
+            -0.0208,
+            0.0903
+          ],
+          "difference": 0.0347,
+          "pairs": 144,
+          "resample_unit": "paraphrase_group",
+          "units": 72
+        },
+        "phi4_advisory minus phi4_no_gate": {
+          "ci95": [
+            0.0,
+            0.0347
+          ],
+          "difference": 0.0139,
+          "pairs": 144,
+          "resample_unit": "paraphrase_group",
+          "units": 72
+        },
+        "phi4_no_gate minus phi4_gated": {
+          "ci95": [
+            -0.0347,
+            0.0833
+          ],
+          "difference": 0.0208,
+          "pairs": 144,
+          "resample_unit": "paraphrase_group",
+          "units": 72
+        }
+      },
+      "relabelled": {
+        "ft3-r0004": "CLARIFY",
+        "ft3-r0112": "CLARIFY",
+        "ft3-r0113": "CLARIFY",
+        "ft3-r0121": "CLARIFY"
+      }
+    },
+    {
+      "arms": {
+        "gpt55_advisory": {
+          "action_accuracy": 0.9214,
+          "action_accuracy_repeats": [
+            0.9214,
+            0.9143,
+            0.9286
+          ],
+          "correct": 129.0,
+          "false_acceptance": 0.3333,
+          "false_acceptance_repeats": [
+            0,
+            1,
+            0
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 12,
+          "items": 140
+        },
+        "gpt55_gated": {
+          "action_accuracy": 0.8643,
+          "action_accuracy_repeats": [
+            0.8643,
+            0.8571,
+            0.8714
+          ],
+          "correct": 121.0,
+          "false_acceptance": 0.0,
+          "false_acceptance_repeats": [
+            0,
+            0,
+            0
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 12,
+          "items": 140
+        },
+        "gpt55_no_gate": {
+          "action_accuracy": 0.9238,
+          "action_accuracy_repeats": [
+            0.9143,
+            0.9286,
+            0.9286
+          ],
+          "correct": 129.3333,
+          "false_acceptance": 0.0,
+          "false_acceptance_repeats": [
+            0,
+            0,
+            0
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 12,
+          "items": 140
+        },
+        "phi4_advisory": {
+          "action_accuracy": 0.4786,
+          "action_accuracy_repeats": [
+            0.4786,
+            0.4786,
+            0.4786
+          ],
+          "correct": 67.0,
+          "false_acceptance": 28.0,
+          "false_acceptance_repeats": [
+            28,
+            28,
+            28
+          ],
+          "gold_reject_correct": 8,
+          "gold_reject_items": 12,
+          "items": 140
+        },
+        "phi4_gated": {
+          "action_accuracy": 0.4429,
+          "action_accuracy_repeats": [
+            0.4429,
+            0.4429,
+            0.4429
+          ],
+          "correct": 62.0,
+          "false_acceptance": 28.0,
+          "false_acceptance_repeats": [
+            28,
+            28,
+            28
+          ],
+          "gold_reject_correct": 8,
+          "gold_reject_items": 12,
+          "items": 140
+        },
+        "phi4_no_gate": {
+          "action_accuracy": 0.4643,
+          "action_accuracy_repeats": [
+            0.4643,
+            0.4643,
+            0.4643
+          ],
+          "correct": 65.0,
+          "false_acceptance": 31.0,
+          "false_acceptance_repeats": [
+            31,
+            31,
+            31
+          ],
+          "gold_reject_correct": 8,
+          "gold_reject_items": 12,
+          "items": 140
+        },
+        "qwen25": {
+          "action_accuracy": 0.3786,
+          "action_accuracy_repeats": [
+            0.3786,
+            0.3786,
+            0.3786
+          ],
+          "correct": 53.0,
+          "false_acceptance": 51.0,
+          "false_acceptance_repeats": [
+            51,
+            51,
+            51
+          ],
+          "gold_reject_correct": 7,
+          "gold_reject_items": 12,
+          "items": 140
+        },
+        "rule_based": {
+          "action_accuracy": 0.3929,
+          "action_accuracy_repeats": [
+            0.3929
+          ],
+          "correct": 55,
+          "false_acceptance": 70,
+          "false_acceptance_repeats": [
+            70
+          ],
+          "gold_reject_correct": 0,
+          "gold_reject_items": 12,
+          "items": 140
+        }
+      },
+      "description": "the two range-mismatch groups removed from the denominator",
+      "dropped": [
+        "ft3-r0033",
+        "ft3-r0106",
+        "ft3-r0130",
+        "ft3-r0141"
+      ],
+      "label": "range dropped",
+      "paired_comparisons": {
+        "gpt55_advisory minus gpt55_gated": {
+          "ci95": [
+            0.0119,
+            0.1143
+          ],
+          "difference": 0.0571,
+          "pairs": 140,
+          "resample_unit": "paraphrase_group",
+          "units": 70
+        },
+        "gpt55_advisory minus gpt55_no_gate": {
+          "ci95": [
+            -0.0167,
+            0.0095
+          ],
+          "difference": -0.0024,
+          "pairs": 140,
+          "resample_unit": "paraphrase_group",
+          "units": 70
+        },
+        "gpt55_no_gate minus gpt55_gated": {
+          "ci95": [
+            0.0143,
+            0.1167
+          ],
+          "difference": 0.0595,
+          "pairs": 140,
+          "resample_unit": "paraphrase_group",
+          "units": 70
+        },
+        "phi4_advisory minus phi4_gated": {
+          "ci95": [
+            -0.0214,
+            0.0929
+          ],
+          "difference": 0.0357,
+          "pairs": 140,
+          "resample_unit": "paraphrase_group",
+          "units": 70
+        },
+        "phi4_advisory minus phi4_no_gate": {
+          "ci95": [
+            0.0,
+            0.0357
+          ],
+          "difference": 0.0143,
+          "pairs": 140,
+          "resample_unit": "paraphrase_group",
+          "units": 70
+        },
+        "phi4_no_gate minus phi4_gated": {
+          "ci95": [
+            -0.0357,
+            0.0857
+          ],
+          "difference": 0.0214,
+          "pairs": 140,
+          "resample_unit": "paraphrase_group",
+          "units": 70
+        }
+      },
+      "relabelled": {}
+    },
+    {
+      "arms": {
+        "gpt55_advisory": {
+          "action_accuracy": 0.9453,
+          "action_accuracy_repeats": [
+            0.95,
+            0.9429,
+            0.9429
+          ],
+          "correct": 132.3333,
+          "false_acceptance": 0.3333,
+          "false_acceptance_repeats": [
+            0,
+            1,
+            0
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 8,
+          "items": 140
+        },
+        "gpt55_gated": {
+          "action_accuracy": 0.8881,
+          "action_accuracy_repeats": [
+            0.8929,
+            0.8714,
+            0.9
+          ],
+          "correct": 124.3333,
+          "false_acceptance": 0.0,
+          "false_acceptance_repeats": [
+            0,
+            0,
+            0
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 8,
+          "items": 140
+        },
+        "gpt55_no_gate": {
+          "action_accuracy": 0.9524,
+          "action_accuracy_repeats": [
+            0.9429,
+            0.9571,
+            0.9571
+          ],
+          "correct": 133.3333,
+          "false_acceptance": 0.0,
+          "false_acceptance_repeats": [
+            0,
+            0,
+            0
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 8,
+          "items": 140
+        },
+        "phi4_advisory": {
+          "action_accuracy": 0.45,
+          "action_accuracy_repeats": [
+            0.45,
+            0.45,
+            0.45
+          ],
+          "correct": 63.0,
+          "false_acceptance": 28.0,
+          "false_acceptance_repeats": [
+            28,
+            28,
+            28
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 8,
+          "items": 140
+        },
+        "phi4_gated": {
+          "action_accuracy": 0.4143,
+          "action_accuracy_repeats": [
+            0.4143,
+            0.4143,
+            0.4143
+          ],
+          "correct": 58.0,
+          "false_acceptance": 28.0,
+          "false_acceptance_repeats": [
+            28,
+            28,
+            28
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 8,
+          "items": 140
+        },
+        "phi4_no_gate": {
+          "action_accuracy": 0.4357,
+          "action_accuracy_repeats": [
+            0.4357,
+            0.4357,
+            0.4357
+          ],
+          "correct": 61.0,
+          "false_acceptance": 31.0,
+          "false_acceptance_repeats": [
+            31,
+            31,
+            31
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 8,
+          "items": 140
+        },
+        "qwen25": {
+          "action_accuracy": 0.3571,
+          "action_accuracy_repeats": [
+            0.3571,
+            0.3571,
+            0.3571
+          ],
+          "correct": 50.0,
+          "false_acceptance": 51.0,
+          "false_acceptance_repeats": [
+            51,
+            51,
+            51
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 8,
+          "items": 140
+        },
+        "rule_based": {
+          "action_accuracy": 0.3929,
+          "action_accuracy_repeats": [
+            0.3929
+          ],
+          "correct": 55,
+          "false_acceptance": 70,
+          "false_acceptance_repeats": [
+            70
+          ],
+          "gold_reject_correct": 0,
+          "gold_reject_items": 8,
+          "items": 140
+        }
+      },
+      "description": "channel conflicts read as CLARIFY and range mismatches dropped",
+      "dropped": [
+        "ft3-r0033",
+        "ft3-r0106",
+        "ft3-r0130",
+        "ft3-r0141"
+      ],
+      "label": "both",
+      "paired_comparisons": {
+        "gpt55_advisory minus gpt55_gated": {
+          "ci95": [
+            0.0119,
+            0.1143
+          ],
+          "difference": 0.0571,
+          "pairs": 140,
+          "resample_unit": "paraphrase_group",
+          "units": 70
+        },
+        "gpt55_advisory minus gpt55_no_gate": {
+          "ci95": [
+            -0.0214,
+            0.0024
+          ],
+          "difference": -0.0071,
+          "pairs": 140,
+          "resample_unit": "paraphrase_group",
+          "units": 70
+        },
+        "gpt55_no_gate minus gpt55_gated": {
+          "ci95": [
+            0.019,
+            0.1214
+          ],
+          "difference": 0.0643,
+          "pairs": 140,
+          "resample_unit": "paraphrase_group",
+          "units": 70
+        },
+        "phi4_advisory minus phi4_gated": {
+          "ci95": [
+            -0.0214,
+            0.0929
+          ],
+          "difference": 0.0357,
+          "pairs": 140,
+          "resample_unit": "paraphrase_group",
+          "units": 70
+        },
+        "phi4_advisory minus phi4_no_gate": {
+          "ci95": [
+            0.0,
+            0.0357
+          ],
+          "difference": 0.0143,
+          "pairs": 140,
+          "resample_unit": "paraphrase_group",
+          "units": 70
+        },
+        "phi4_no_gate minus phi4_gated": {
+          "ci95": [
+            -0.0357,
+            0.0857
+          ],
+          "difference": 0.0214,
+          "pairs": 140,
+          "resample_unit": "paraphrase_group",
+          "units": 70
+        }
+      },
+      "relabelled": {
+        "ft3-r0004": "CLARIFY",
+        "ft3-r0112": "CLARIFY",
+        "ft3-r0113": "CLARIFY",
+        "ft3-r0121": "CLARIFY"
+      }
+    },
+    {
+      "arms": {
+        "gpt55_advisory": {
+          "action_accuracy": 0.9461,
+          "action_accuracy_repeats": [
+            0.9485,
+            0.9412,
+            0.9485
+          ],
+          "correct": 128.6667,
+          "false_acceptance": 0.3333,
+          "false_acceptance_repeats": [
+            0,
+            1,
+            0
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 8,
+          "items": 136
+        },
+        "gpt55_gated": {
+          "action_accuracy": 0.8873,
+          "action_accuracy_repeats": [
+            0.8897,
+            0.875,
+            0.8971
+          ],
+          "correct": 120.6667,
+          "false_acceptance": 0.0,
+          "false_acceptance_repeats": [
+            0,
+            0,
+            0
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 8,
+          "items": 136
+        },
+        "gpt55_no_gate": {
+          "action_accuracy": 0.951,
+          "action_accuracy_repeats": [
+            0.9412,
+            0.9559,
+            0.9559
+          ],
+          "correct": 129.3333,
+          "false_acceptance": 0.0,
+          "false_acceptance_repeats": [
+            0,
+            0,
+            0
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 8,
+          "items": 136
+        },
+        "phi4_advisory": {
+          "action_accuracy": 0.4632,
+          "action_accuracy_repeats": [
+            0.4632,
+            0.4632,
+            0.4632
+          ],
+          "correct": 63.0,
+          "false_acceptance": 28.0,
+          "false_acceptance_repeats": [
+            28,
+            28,
+            28
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 8,
+          "items": 136
+        },
+        "phi4_gated": {
+          "action_accuracy": 0.4265,
+          "action_accuracy_repeats": [
+            0.4265,
+            0.4265,
+            0.4265
+          ],
+          "correct": 58.0,
+          "false_acceptance": 28.0,
+          "false_acceptance_repeats": [
+            28,
+            28,
+            28
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 8,
+          "items": 136
+        },
+        "phi4_no_gate": {
+          "action_accuracy": 0.4485,
+          "action_accuracy_repeats": [
+            0.4485,
+            0.4485,
+            0.4485
+          ],
+          "correct": 61.0,
+          "false_acceptance": 31.0,
+          "false_acceptance_repeats": [
+            31,
+            31,
+            31
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 8,
+          "items": 136
+        },
+        "qwen25": {
+          "action_accuracy": 0.3676,
+          "action_accuracy_repeats": [
+            0.3676,
+            0.3676,
+            0.3676
+          ],
+          "correct": 50.0,
+          "false_acceptance": 50.0,
+          "false_acceptance_repeats": [
+            50,
+            50,
+            50
+          ],
+          "gold_reject_correct": 4,
+          "gold_reject_items": 8,
+          "items": 136
+        },
+        "rule_based": {
+          "action_accuracy": 0.4044,
+          "action_accuracy_repeats": [
+            0.4044
+          ],
+          "correct": 55,
+          "false_acceptance": 66,
+          "false_acceptance_repeats": [
+            66
+          ],
+          "gold_reject_correct": 0,
+          "gold_reject_items": 8,
+          "items": 136
+        }
+      },
+      "description": "every contested item removed, the reading that trusts none of them",
+      "dropped": [
+        "ft3-r0004",
+        "ft3-r0112",
+        "ft3-r0113",
+        "ft3-r0121",
+        "ft3-r0033",
+        "ft3-r0106",
+        "ft3-r0130",
+        "ft3-r0141"
+      ],
+      "label": "all 4 groups dropped",
+      "paired_comparisons": {
+        "gpt55_advisory minus gpt55_gated": {
+          "ci95": [
+            0.0123,
+            0.1152
+          ],
+          "difference": 0.0588,
+          "pairs": 136,
+          "resample_unit": "paraphrase_group",
+          "units": 68
+        },
+        "gpt55_advisory minus gpt55_no_gate": {
+          "ci95": [
+            -0.0172,
+            0.0049
+          ],
+          "difference": -0.0049,
+          "pairs": 136,
+          "resample_unit": "paraphrase_group",
+          "units": 68
+        },
+        "gpt55_no_gate minus gpt55_gated": {
+          "ci95": [
+            0.0172,
+            0.1201
+          ],
+          "difference": 0.0637,
+          "pairs": 136,
+          "resample_unit": "paraphrase_group",
+          "units": 68
+        },
+        "phi4_advisory minus phi4_gated": {
+          "ci95": [
+            -0.0147,
+            0.0956
+          ],
+          "difference": 0.0368,
+          "pairs": 136,
+          "resample_unit": "paraphrase_group",
+          "units": 68
+        },
+        "phi4_advisory minus phi4_no_gate": {
+          "ci95": [
+            0.0,
+            0.0368
+          ],
+          "difference": 0.0147,
+          "pairs": 136,
+          "resample_unit": "paraphrase_group",
+          "units": 68
+        },
+        "phi4_no_gate minus phi4_gated": {
+          "ci95": [
+            -0.0368,
+            0.0882
+          ],
+          "difference": 0.0221,
+          "pairs": 136,
+          "resample_unit": "paraphrase_group",
+          "units": 68
+        }
+      },
+      "relabelled": {}
+    }
+  ]
+}

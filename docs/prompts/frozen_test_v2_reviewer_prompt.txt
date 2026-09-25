@@ -1,0 +1,34 @@
+You are an independent benchmark adjudicator.
+
+Using only the supplied scientific scope, action definitions, valid
+configuration contract, and topology catalogue, annotate every request
+group in the attached blind Batch A.
+
+You did not generate these requests. Do not evaluate the target system and
+do not infer how its implementation may behave.
+
+For every group:
+
+1. Assign one gold action:
+   EXECUTE, CLARIFY, REJECT, or UNSUPPORTED.
+2. Provide expected structured fields when applicable.
+3. Verify that the two paraphrases preserve the same intent.
+4. Flag ambiguity, defective construction, duplicate content, or more than
+   one defensible label.
+5. Do not repair a defective item silently.
+
+Return JSON only:
+
+{
+  "reviewed_batch": "frontier-model-a",
+  "reviews": [
+    {
+      "semantic_group_id": "v2-a-001",
+      "adjudicated_action": "...",
+      "adjudicated_fields": {},
+      "paraphrase_equivalent": true,
+      "item_quality": "accept|revise|exclude",
+      "reason": "..."
+    }
+  ]
+}

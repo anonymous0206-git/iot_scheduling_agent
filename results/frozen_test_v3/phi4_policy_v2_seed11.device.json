@@ -1,0 +1,15 @@
+{
+  "context_length": 4096,
+  "digest": "ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba",
+  "host": "http://127.0.0.1:11435",
+  "model": "phi4:14b",
+  "parameter_size": "14.7B",
+  "preflight_format": "agentic_anex.ollama_preflight.v1",
+  "quantization_level": "Q4_K_M",
+  "server_version": "0.34.0",
+  "serving_device": "gpu",
+  "size_bytes": 9734685981,
+  "size_vram_bytes": 9734685981,
+  "status": "ready",
+  "vram_fraction": 1.0
+}
