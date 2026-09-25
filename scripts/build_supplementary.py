@@ -86,6 +86,9 @@ INCLUDE = (
     "docs/**/*.md",
     "docs/prompts/**/*.txt",
     "pyproject.toml",
+    # The index a reviewer opens first: what each number in the paper is
+    # derived from, and the one command that checks the artefact runs.
+    "README.md",
     # The figure data, so a reader who wants the per-item lists behind a figure
     # --- which requests the vocabulary test put in each group, which fields
     # the model determined from the sentence --- has the file the paper names
