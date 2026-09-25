@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentic-anex.local/benchmarks/request-item.schema.json",
+  "title": "Paper 1 Natural-Language Request Benchmark Item",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "paraphrase_group_id",
+    "template_id",
+    "template_split",
+    "user_text",
+    "topology_id",
+    "gold_action",
+    "gold_structured_request",
+    "expected_defaults",
+    "expected_error",
+    "clarification_fields",
+    "expected_tool_calls",
+    "complexity_level",
+    "category"
+  ],
+  "properties": {
+    "request_id": {"type": "string", "minLength": 1},
+    "paraphrase_group_id": {"type": "string", "minLength": 1},
+    "template_id": {"type": "string", "minLength": 1},
+    "template_split": {"enum": ["dev", "test"]},
+    "user_text": {"type": "string", "minLength": 1},
+    "topology_id": {"type": ["string", "null"]},
+    "gold_action": {"enum": ["EXECUTE", "CLARIFY", "REJECT", "UNSUPPORTED"]},
+    "gold_structured_request": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "workload": {"const": "one_shot"},
+        "objective": {"const": "minimize_latency"},
+        "latency_target_slots": {"type": ["integer", "null"], "minimum": 1},
+        "channels": {"type": "integer", "minimum": 1},
+        "working_period": {"type": "integer", "minimum": 1},
+        "communication_range": {"type": "number", "exclusiveMinimum": 0},
+        "interference_ratio": {"type": "number", "minimum": 1},
+        "collision_model": {"enum": ["legacy_neighbor", "interference_range"]},
+        "seed": {"type": "integer"}
+      }
+    },
+    "expected_defaults": {"type": "object"},
+    "expected_error": {"type": ["string", "null"]},
+    "clarification_fields": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "expected_tool_calls": {
+      "type": "array",
+      "items": {"enum": ["inspect_network", "run_anex", "validate_schedule", "measure_schedule", "explain_violations"]},
+      "uniqueItems": true
+    },
+    "complexity_level": {"enum": ["basic", "intermediate", "advanced"]},
+    "category": {
+      "enum": [
+        "execute_default", "execute_configured", "latency_target",
+        "missing_information", "invalid_parameter", "unsupported_energy",
+        "unsupported_digital_twin"
+      ]
+    }
+  }
+}

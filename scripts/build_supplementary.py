@@ -58,6 +58,29 @@ INCLUDE = (
     "benchmarks/frozen_test_v3/model_metadata.json",
     "benchmarks/frozen_test_v3/generation_provenance.json",
     "src/**/*.py",
+    # The published ANEX sources the agent wraps. Without them the released
+    # agent imports a module that is not there, which a clean clone shows at
+    # once: seventeen test modules fail to collect on `No module named ANEX`.
+    # Only the four files the import bridge actually loads go in --- the rest
+    # of that tree is other papers' experiments, and shipping it would mean
+    # shipping their bylines too.
+    "source/ANEX/ANEX.py",
+    # The mutation test validates against this second legacy implementation,
+    # so it is part of what "the tests pass" means here.
+    "source/ANEX/EDAS_validation.py",
+    "source/libs/__init__.py",
+    "source/libs/gentopo.py",
+    "source/libs/node.py",
+    # Fixtures the tests read by path: a 30-node topology and the two
+    # development request sets that predate the sealed benchmark.
+    "network_30_seed7.json",
+    "benchmarks/requests_dev.jsonl",
+    "benchmarks/requests_test.jsonl",
+    # The pre-v3 ledger the policy-replay test replays. It is evidence for the
+    # retrospective ablation, not for any number in the paper, but a test that
+    # cannot find its input is indistinguishable from a broken artefact.
+    "results/phi4_reasoning_test_locked_v1_wsl.jsonl",
+    "benchmarks/schema.json",
     "scripts/*.py",
     "tests/*.py",
     "docs/**/*.md",
@@ -90,6 +113,13 @@ WITHHELD = (
 # that recorded where something was read from.
 IDENTIFYING = re.compile(r"/home/[A-Za-z0-9_.-]+/projects/[A-Za-z0-9_.-]+")
 REDACTED = "<repository>"
+# The legacy sources carry their programmer's name and institution in a
+# docstring. The institution is the one a reviewer would match against the
+# submission, so the line is replaced rather than the file withheld: the code
+# below it is what the agent runs, unaltered.
+BYLINE = re.compile(r"Programmed by the ANEX authors (byline withheld for double-blind review)
+BYLINE_REDACTED = ("Programmed by the ANEX authors (byline withheld for double-blind review)
+                   "(byline withheld for double-blind review)")
 REDACTABLE_SUFFIXES = {".json", ".jsonl", ".md", ".txt", ".py", ".tex", ".bib",
                        ".toml", ".cfg", ".yml", ".yaml"}
 LOCKS = ("benchmarks/evaluation_lock_v3.json",
@@ -141,7 +171,7 @@ def anonymise(root: Path, files: list[Path], covered: set[str]):
             plain.append((relative, data))
             continue
         body = data.decode("utf-8", "replace")
-        if not IDENTIFYING.search(body):
+        if not (IDENTIFYING.search(body) or BYLINE.search(body)):
             plain.append((relative, data))
             continue
         if relative in covered:
@@ -149,7 +179,8 @@ def anonymise(root: Path, files: list[Path], covered: set[str]):
             withheld.append(relative)
             continue
         redacted.append(relative)
-        plain.append((relative, IDENTIFYING.sub(REDACTED, body).encode("utf-8")))
+        cleaned = BYLINE.sub(BYLINE_REDACTED, IDENTIFYING.sub(REDACTED, body))
+        plain.append((relative, cleaned.encode("utf-8")))
     return plain, redacted, withheld
 
 
@@ -160,8 +191,10 @@ def readme(redacted: list[str], withheld: list[str]) -> str:
         "Handling of author-identifying content:",
         "",
         "REDACTED -- the absolute path of the working copy contained a username and",
-        "has been replaced by <repository>. No lock publishes a hash of these files,",
-        "so rewriting them changes nothing a reader can verify.",
+        "has been replaced by <repository>; in the legacy scheduler sources a docstring",
+        "naming its programmer and institution has been replaced by a neutral line. No",
+        "lock publishes a hash of these files, so rewriting them changes nothing a",
+        "reader can verify, and no line of executed code was touched.",
     ]
     lines += [f"  {name}" for name in redacted] or ["  (none)"]
     lines += [
