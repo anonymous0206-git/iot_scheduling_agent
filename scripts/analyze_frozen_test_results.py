@@ -110,6 +110,28 @@ def task_completed(record: Mapping[str, Any]) -> bool:
     return True
 
 
+# The three runner-bound fields are not top-level keys of the ledger's parsed
+# request: the runner replaces `topology_id` with the bound network object and
+# carries the other two inside it. Reading them from the top level, as this
+# analysis did until 2026-09-26, scores every bound field wrong and publishes a
+# rate of zero for every arm.
+NETWORK_FIELDS: dict[str, str] = {"topology_id": "name",
+                                  "working_period": "working_period",
+                                  "communication_range": "communication_range"}
+
+
+def _parsed_value(parsed: Mapping[str, Any], name: str) -> Any:
+    if name in parsed:
+        return parsed[name]
+    # The agent arms carry the bound network under `network`; the rule baseline,
+    # which never had a model to parse for, carries it under `topology`.
+    for key in ("network", "topology"):
+        holder = parsed.get(key)
+        if isinstance(holder, Mapping) and name in NETWORK_FIELDS:
+            return holder.get(NETWORK_FIELDS[name])
+    return None
+
+
 def field_exact_match(records: Sequence[Mapping[str, Any]],
                       harness: Mapping[str, Mapping[str, Any]]) -> dict[str, Any]:
     matched = total = 0
@@ -125,7 +147,7 @@ def field_exact_match(records: Sequence[Mapping[str, Any]],
         for name in CONTRACT_FIELDS:
             if name not in gold:
                 continue
-            ok = _equal(gold[name], parsed.get(name))
+            ok = _equal(gold[name], _parsed_value(parsed, name))
             per_field[name]["total"] += 1
             per_field[name]["matched"] += int(ok)
             if name in BOUND_FIELDS:
@@ -150,6 +172,53 @@ def field_exact_match(records: Sequence[Mapping[str, Any]],
                              "rate": round(counts["matched"] / counts["total"], 4)
                              if counts["total"] else 0.0}
                       for name, counts in per_field.items() if counts["total"]},
+    }
+
+
+def joint_intent_success(records: Sequence[Mapping[str, Any]],
+                         harness: Mapping[str, Mapping[str, Any]]) -> dict[str, Any]:
+    """Gold-EXECUTE items the arm got right in every respect at once.
+
+    Action accuracy and field exact match can both be high while no single
+    request is answered correctly end to end: the first is per request and the
+    second per field. This is the conjunction a user of the interface cares
+    about --- the right action, every contract field the gold fixes, including
+    the three the runner binds rather than parses, and a schedule the
+    independent validator certified. It is reported only over the 44
+    gold-EXECUTE items, because for the other actions there is no schedule and
+    no field set to agree about, and folding them in would produce a number
+    that means something different for each half of the benchmark.
+    """
+    considered = matched = 0
+    failed: dict[str, list[str]] = defaultdict(list)
+    for record in records:
+        item = harness[record["request_id"]]
+        gold = item.get("gold_fields")
+        if item["gold_action"] != "EXECUTE" or not isinstance(gold, Mapping):
+            continue
+        considered += 1
+        request_id = record["request_id"]
+        if record["action"] != "EXECUTE":
+            failed["action"].append(request_id)
+            continue
+        parsed = record.get("parsed_fields") or {}
+        wrong = [name for name in CONTRACT_FIELDS
+                 if name in gold and not _equal(gold[name], _parsed_value(parsed, name))]
+        if wrong:
+            failed["fields"].append(request_id)
+            continue
+        if not _certificate_valid(record):
+            failed["certificate"].append(request_id)
+            continue
+        matched += 1
+    return {
+        "definition": "gold-EXECUTE items with the correct action, every gold "
+                      "contract field matched including the runner-bound ones, "
+                      "and a valid validator certificate",
+        "completed": matched,
+        "items": considered,
+        "rate": round(matched / considered, 4) if considered else 0.0,
+        "failed_on": {reason: sorted(ids) for reason, ids in sorted(failed.items())},
     }
 
 
@@ -213,6 +282,7 @@ def analyse_arm(name: str, records: Sequence[Mapping[str, Any]],
             "completed": sum(task_completed(r) for r in records), "items": count,
             "rate": round(sum(task_completed(r) for r in records) / count, 4)},
         "field_exact_match": field_exact_match(records, harness),
+        "joint_intent_success": joint_intent_success(records, harness),
         "false_acceptance": {"count": len(false_acceptance),
                              "rate": round(len(false_acceptance) / count, 4),
                              "request_ids": false_acceptance},
@@ -343,6 +413,8 @@ REPEATED_METRICS: tuple[tuple[tuple[str, ...], bool], ...] = (
     (("task_completion", "completed"), True),
     (("task_completion", "rate"), False),
     (("field_exact_match", "rate"), False),
+    (("joint_intent_success", "completed"), True),
+    (("joint_intent_success", "rate"), False),
     (("false_acceptance", "count"), True),
     (("false_acceptance", "rate"), False),
     (("paraphrase_consistency", "consistent_groups"), True),

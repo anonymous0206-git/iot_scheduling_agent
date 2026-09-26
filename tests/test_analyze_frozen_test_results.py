@@ -112,6 +112,64 @@ class AnalysisTests(unittest.TestCase):
         self.assertEqual(match["bound_fields_excluded"]["total"], 6)
         self.assertEqual(match["bound_fields_excluded"]["matched"], 6)
 
+    def test_joint_intent_success_needs_action_fields_and_certificate(self):
+        joint = self.script.analyse_arm("arm", self.records, self.harness)["joint_intent_success"]
+        # only the two gold-EXECUTE items are considered; r1 is right in every
+        # respect, r2 answered REJECT
+        self.assertEqual(joint["items"], 2)
+        self.assertEqual(joint["completed"], 1)
+        self.assertEqual(joint["failed_on"]["action"], ["r2"])
+
+    def test_joint_intent_success_fails_on_one_wrong_field(self):
+        records = list(self.records)
+        records[0] = ledger_record("r1", "g1", "EXECUTE", "EXECUTE", success=True,
+                                   validation={"valid": True, "violations": []},
+                                   parsed_fields={**GOLD_FIELDS, "seed": 99})
+        joint = self.script.analyse_arm("arm", records, self.harness)["joint_intent_success"]
+        self.assertEqual(joint["completed"], 0)
+        self.assertEqual(joint["failed_on"]["fields"], ["r1"])
+
+    def test_joint_intent_success_fails_without_a_certificate(self):
+        records = list(self.records)
+        records[0] = ledger_record("r1", "g1", "EXECUTE", "EXECUTE", success=True,
+                                   validation={"valid": False, "violations": ["x"]},
+                                   parsed_fields=dict(GOLD_FIELDS))
+        joint = self.script.analyse_arm("arm", records, self.harness)["joint_intent_success"]
+        self.assertEqual(joint["completed"], 0)
+        self.assertEqual(joint["failed_on"]["certificate"], ["r1"])
+
+    def test_bound_fields_are_read_from_the_network_the_runner_bound(self):
+        """The runner does not parse these three; it binds them into the network.
+
+        Reading them from the top level scores every arm zero on them, which is
+        what the released analysis did until this was fixed.
+        """
+        parsed = {key: value for key, value in GOLD_FIELDS.items()
+                  if key not in ("topology_id", "working_period", "communication_range")}
+        parsed["network"] = {"name": GOLD_FIELDS["topology_id"],
+                             "working_period": GOLD_FIELDS["working_period"],
+                             "communication_range": GOLD_FIELDS["communication_range"]}
+        records = [ledger_record("r1", "g1", "EXECUTE", "EXECUTE", success=True,
+                                 validation={"valid": True, "violations": []},
+                                 parsed_fields=parsed)]
+        arm = self.script.analyse_arm("arm", records, {"r1": self.harness["r1"]})
+        bound = arm["field_exact_match"]["bound_fields_excluded"]
+        self.assertEqual((bound["matched"], bound["total"]), (3, 3))
+        self.assertEqual(arm["joint_intent_success"]["completed"], 1)
+
+    def test_bound_fields_also_resolve_for_the_rule_baseline_layout(self):
+        parsed = {key: value for key, value in GOLD_FIELDS.items()
+                  if key not in ("topology_id", "working_period", "communication_range")}
+        parsed["topology"] = {"name": GOLD_FIELDS["topology_id"],
+                              "working_period": GOLD_FIELDS["working_period"],
+                              "communication_range": GOLD_FIELDS["communication_range"]}
+        records = [ledger_record("r1", "g1", "EXECUTE", "EXECUTE", success=True,
+                                 validation={"valid": True, "violations": []},
+                                 parsed_fields=parsed)]
+        arm = self.script.analyse_arm("arm", records, {"r1": self.harness["r1"]})
+        bound = arm["field_exact_match"]["bound_fields_excluded"]
+        self.assertEqual((bound["matched"], bound["total"]), (3, 3))
+
     def test_failure_taxonomy_separates_schedule_and_infrastructure(self):
         records = list(self.records)
         records.append(ledger_record("r5", "g4", "EXECUTE", "REJECT",

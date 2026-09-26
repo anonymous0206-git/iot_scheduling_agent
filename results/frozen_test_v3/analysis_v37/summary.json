@@ -1,0 +1,7468 @@
+{
+  "analysis_format": "agentic_anex.frozen_test_analysis.v1",
+  "arms": {
+    "gpt55_advisory": {
+      "action_accuracy": {
+        "correct": 129,
+        "correct_max": 130,
+        "correct_mean": 129.0,
+        "correct_min": 128,
+        "correct_repeats": [
+          129,
+          128,
+          130
+        ],
+        "items": 144,
+        "rate": 0.8958,
+        "rate_max": 0.9028,
+        "rate_mean": 0.8958,
+        "rate_min": 0.8889,
+        "rate_repeats": [
+          0.8958,
+          0.8889,
+          0.9028
+        ]
+      },
+      "categories_with_errors": {
+        "above_topology_baseline": {
+          "correct": 1,
+          "items": 2
+        },
+        "catalogue_range_mismatch": {
+          "correct": 0,
+          "items": 2
+        },
+        "communication_range_mismatch": {
+          "correct": 0,
+          "items": 2
+        },
+        "contradictory_channel_specification": {
+          "correct": 0,
+          "items": 2
+        },
+        "device_control_precedes_bad_channel_value": {
+          "correct": 0,
+          "items": 2
+        },
+        "nonexistent_topology_id": {
+          "correct": 0,
+          "items": 2
+        },
+        "prose_parameter_channel_conflict": {
+          "correct": 0,
+          "items": 2
+        },
+        "unlisted_topology": {
+          "correct": 0,
+          "items": 2
+        }
+      },
+      "confusion_gold_by_predicted": {
+        "CLARIFY": {
+          "CLARIFY": 12,
+          "EXECUTE": 0,
+          "REJECT": 0,
+          "UNSUPPORTED": 0
+        },
+        "EXECUTE": {
+          "CLARIFY": 0,
+          "EXECUTE": 43,
+          "REJECT": 1,
+          "UNSUPPORTED": 0
+        },
+        "REJECT": {
+          "CLARIFY": 8,
+          "EXECUTE": 4,
+          "REJECT": 4,
+          "UNSUPPORTED": 0
+        },
+        "UNSUPPORTED": {
+          "CLARIFY": 0,
+          "EXECUTE": 0,
+          "REJECT": 2,
+          "UNSUPPORTED": 70
+        }
+      },
+      "error_codes": {
+        "INVALID_CHANNEL_COUNT": 1,
+        "MISSING_TOPOLOGY": 12,
+        "REQUEST_FIELD_MISMATCH": 2,
+        "VALIDATION_CERTIFICATE_FAILED": 3
+      },
+      "failure_taxonomy": {
+        "infrastructure": 0,
+        "infrastructure_request_ids": [],
+        "schedule": 0,
+        "schedule_request_ids": [],
+        "semantic": 15
+      },
+      "false_acceptance": {
+        "count": 4,
+        "count_max": 4,
+        "count_mean": 3.6667,
+        "count_min": 3,
+        "count_repeats": [
+          4,
+          4,
+          3
+        ],
+        "rate": 0.0255,
+        "rate_max": 0.0278,
+        "rate_mean": 0.0255,
+        "rate_min": 0.0208,
+        "rate_repeats": [
+          0.0278,
+          0.0278,
+          0.0208
+        ],
+        "request_ids": [
+          "ft3-r0033",
+          "ft3-r0106",
+          "ft3-r0130",
+          "ft3-r0141"
+        ]
+      },
+      "field_exact_match": {
+        "bound_fields_excluded": {
+          "fields": [
+            "topology_id",
+            "working_period",
+            "communication_range"
+          ],
+          "matched": 129,
+          "note": "bound or echoed by the runner rather than parsed from the request",
+          "rate": 0.9773,
+          "total": 132
+        },
+        "definition": "gold-EXECUTE items, contract fields the system parses",
+        "matched": 293,
+        "per_field": {
+          "channels": {
+            "matched": 42,
+            "rate": 0.9545,
+            "total": 44
+          },
+          "collision_model": {
+            "matched": 43,
+            "rate": 0.9773,
+            "total": 44
+          },
+          "communication_range": {
+            "matched": 43,
+            "rate": 0.9773,
+            "total": 44
+          },
+          "interference_ratio": {
+            "matched": 43,
+            "rate": 0.9773,
+            "total": 44
+          },
+          "latency_target_slots": {
+            "matched": 37,
+            "rate": 0.8409,
+            "total": 44
+          },
+          "objective": {
+            "matched": 43,
+            "rate": 0.9773,
+            "total": 44
+          },
+          "seed": {
+            "matched": 42,
+            "rate": 0.9545,
+            "total": 44
+          },
+          "topology_id": {
+            "matched": 43,
+            "rate": 0.9773,
+            "total": 44
+          },
+          "working_period": {
+            "matched": 43,
+            "rate": 0.9773,
+            "total": 44
+          },
+          "workload": {
+            "matched": 43,
+            "rate": 0.9773,
+            "total": 44
+          }
+        },
+        "rate": 0.9524,
+        "rate_max": 0.9545,
+        "rate_mean": 0.9524,
+        "rate_min": 0.9513,
+        "rate_repeats": [
+          0.9513,
+          0.9545,
+          0.9513
+        ],
+        "total": 308
+      },
+      "joint_intent_success": {
+        "completed": 35,
+        "completed_max": 35,
+        "completed_mean": 35.0,
+        "completed_min": 35,
+        "completed_repeats": [
+          35,
+          35,
+          35
+        ],
+        "definition": "gold-EXECUTE items with the correct action, every gold contract field matched including the runner-bound ones, and a valid validator certificate",
+        "failed_on": {
+          "action": [
+            "ft3-r0069"
+          ],
+          "fields": [
+            "ft3-r0021",
+            "ft3-r0022",
+            "ft3-r0034",
+            "ft3-r0041",
+            "ft3-r0059",
+            "ft3-r0114",
+            "ft3-r0138",
+            "ft3-r0142"
+          ]
+        },
+        "items": 44,
+        "rate": 0.7955,
+        "rate_max": 0.7955,
+        "rate_mean": 0.7955,
+        "rate_min": 0.7955,
+        "rate_repeats": [
+          0.7955,
+          0.7955,
+          0.7955
+        ]
+      },
+      "overhead": {
+        "mean_wall_seconds": 3.7573,
+        "mean_wall_seconds_max": 3.847,
+        "mean_wall_seconds_mean": 3.7573,
+        "mean_wall_seconds_min": 3.693,
+        "mean_wall_seconds_repeats": [
+          3.847,
+          3.693,
+          3.732
+        ],
+        "model_calls": 145,
+        "model_calls_max": 146,
+        "model_calls_mean": 145.0,
+        "model_calls_min": 144,
+        "model_calls_repeats": [
+          146,
+          145,
+          144
+        ],
+        "retries": 15,
+        "total_tokens": 194112,
+        "total_wall_seconds": 554.0
+      },
+      "paraphrase_consistency": {
+        "consistent_groups": 70,
+        "consistent_groups_max": 71,
+        "consistent_groups_mean": 69.6667,
+        "consistent_groups_min": 69,
+        "consistent_groups_repeats": [
+          71,
+          69,
+          69
+        ],
+        "groups": 72,
+        "inconsistent_groups": [
+          "v3-a-009"
+        ],
+        "rate": 0.9861
+      },
+      "per_batch": {
+        "frontier-model-a": {
+          "correct": 63,
+          "items": 72,
+          "rate": 0.875
+        },
+        "frontier-model-b": {
+          "correct": 66,
+          "items": 72,
+          "rate": 0.9167
+        }
+      },
+      "per_gold_action": {
+        "CLARIFY": {
+          "correct": 12,
+          "correct_max": 12,
+          "correct_min": 12,
+          "correct_repeats": [
+            12,
+            12,
+            12
+          ],
+          "items": 12,
+          "rate": 1.0
+        },
+        "EXECUTE": {
+          "correct": 43,
+          "correct_max": 43,
+          "correct_min": 43,
+          "correct_repeats": [
+            43,
+            43,
+            43
+          ],
+          "items": 44,
+          "rate": 0.9773
+        },
+        "REJECT": {
+          "correct": 4,
+          "correct_max": 5,
+          "correct_min": 4,
+          "correct_repeats": [
+            4,
+            4,
+            5
+          ],
+          "items": 16,
+          "rate": 0.25
+        },
+        "UNSUPPORTED": {
+          "correct": 70,
+          "correct_max": 70,
+          "correct_min": 69,
+          "correct_repeats": [
+            70,
+            69,
+            70
+          ],
+          "items": 72,
+          "rate": 0.9722
+        }
+      },
+      "records": 144,
+      "repeat_count": 3,
+      "schedule_validity_on_gold_execute": {
+        "items": 44,
+        "rate": 0.9773,
+        "valid": 43
+      },
+      "systems": [
+        [
+          "llm_agent_advisory_scope_gate",
+          "gpt-5.5-2026-04-23"
+        ]
+      ],
+      "task_completion": {
+        "completed": 129,
+        "completed_max": 130,
+        "completed_mean": 129.0,
+        "completed_min": 128,
+        "completed_repeats": [
+          129,
+          128,
+          130
+        ],
+        "items": 144,
+        "rate": 0.8958,
+        "rate_max": 0.9028,
+        "rate_mean": 0.8958,
+        "rate_min": 0.8889,
+        "rate_repeats": [
+          0.8958,
+          0.8889,
+          0.9028
+        ]
+      },
+      "wrong_items": [
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0004"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0014"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0026"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0033"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0052"
+        },
+        {
+          "error_code": "INVALID_CHANNEL_COUNT",
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0053"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-a-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0069"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0098"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0106"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0112"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0113"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0121"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0130"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0133"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0141"
+        }
+      ]
+    },
+    "gpt55_gated": {
+      "action_accuracy": {
+        "correct": 122,
+        "correct_max": 122,
+        "correct_mean": 121.6667,
+        "correct_min": 121,
+        "correct_repeats": [
+          122,
+          121,
+          122
+        ],
+        "items": 144,
+        "rate": 0.8449,
+        "rate_max": 0.8472,
+        "rate_mean": 0.8449,
+        "rate_min": 0.8403,
+        "rate_repeats": [
+          0.8472,
+          0.8403,
+          0.8472
+        ]
+      },
+      "categories_with_errors": {
+        "catalogue_range_mismatch": {
+          "correct": 1,
+          "items": 2
+        },
+        "communication_range_mismatch": {
+          "correct": 0,
+          "items": 2
+        },
+        "contradictory_channel_specification": {
+          "correct": 0,
+          "items": 2
+        },
+        "device_control_precedes_bad_channel_value": {
+          "correct": 0,
+          "items": 2
+        },
+        "digital_twin_explicitly_excluded": {
+          "correct": 0,
+          "items": 2
+        },
+        "explicit_channels_and_seed": {
+          "correct": 1,
+          "items": 2
+        },
+        "historical_battery_objective_excluded": {
+          "correct": 1,
+          "items": 2
+        },
+        "latency_target_below_baseline": {
+          "correct": 1,
+          "items": 2
+        },
+        "negated_digital_twin_hard_negative": {
+          "correct": 0,
+          "items": 2
+        },
+        "nonexistent_topology_id": {
+          "correct": 0,
+          "items": 2
+        },
+        "past_continuous_collection_context": {
+          "correct": 0,
+          "items": 2
+        },
+        "prose_parameter_channel_conflict": {
+          "correct": 0,
+          "items": 2
+        },
+        "unlisted_topology": {
+          "correct": 0,
+          "items": 2
+        }
+      },
+      "confusion_gold_by_predicted": {
+        "CLARIFY": {
+          "CLARIFY": 12,
+          "EXECUTE": 0,
+          "REJECT": 0,
+          "UNSUPPORTED": 0
+        },
+        "EXECUTE": {
+          "CLARIFY": 0,
+          "EXECUTE": 35,
+          "REJECT": 2,
+          "UNSUPPORTED": 7
+        },
+        "REJECT": {
+          "CLARIFY": 8,
+          "EXECUTE": 3,
+          "REJECT": 5,
+          "UNSUPPORTED": 0
+        },
+        "UNSUPPORTED": {
+          "CLARIFY": 0,
+          "EXECUTE": 0,
+          "REJECT": 2,
+          "UNSUPPORTED": 70
+        }
+      },
+      "error_codes": {
+        "INVALID_CHANNEL_COUNT": 1,
+        "MISSING_TOPOLOGY": 12,
+        "REQUEST_FIELD_MISMATCH": 3,
+        "UNSUPPORTED_DIGITAL_TWIN": 8,
+        "UNSUPPORTED_OBJECTIVE": 5,
+        "UNSUPPORTED_WORKLOAD": 5,
+        "VALIDATION_CERTIFICATE_FAILED": 3
+      },
+      "failure_taxonomy": {
+        "infrastructure": 0,
+        "infrastructure_request_ids": [],
+        "schedule": 0,
+        "schedule_request_ids": [],
+        "semantic": 22
+      },
+      "false_acceptance": {
+        "count": 3,
+        "count_max": 4,
+        "count_mean": 3.3333,
+        "count_min": 3,
+        "count_repeats": [
+          3,
+          3,
+          4
+        ],
+        "rate": 0.0231,
+        "rate_max": 0.0278,
+        "rate_mean": 0.0231,
+        "rate_min": 0.0208,
+        "rate_repeats": [
+          0.0208,
+          0.0208,
+          0.0278
+        ],
+        "request_ids": [
+          "ft3-r0033",
+          "ft3-r0106",
+          "ft3-r0130"
+        ]
+      },
+      "field_exact_match": {
+        "bound_fields_excluded": {
+          "fields": [
+            "topology_id",
+            "working_period",
+            "communication_range"
+          ],
+          "matched": 105,
+          "note": "bound or echoed by the runner rather than parsed from the request",
+          "rate": 0.7955,
+          "total": 132
+        },
+        "definition": "gold-EXECUTE items, contract fields the system parses",
+        "matched": 246,
+        "per_field": {
+          "channels": {
+            "matched": 34,
+            "rate": 0.7727,
+            "total": 44
+          },
+          "collision_model": {
+            "matched": 35,
+            "rate": 0.7955,
+            "total": 44
+          },
+          "communication_range": {
+            "matched": 35,
+            "rate": 0.7955,
+            "total": 44
+          },
+          "interference_ratio": {
+            "matched": 35,
+            "rate": 0.7955,
+            "total": 44
+          },
+          "latency_target_slots": {
+            "matched": 37,
+            "rate": 0.8409,
+            "total": 44
+          },
+          "objective": {
+            "matched": 35,
+            "rate": 0.7955,
+            "total": 44
+          },
+          "seed": {
+            "matched": 35,
+            "rate": 0.7955,
+            "total": 44
+          },
+          "topology_id": {
+            "matched": 35,
+            "rate": 0.7955,
+            "total": 44
+          },
+          "working_period": {
+            "matched": 35,
+            "rate": 0.7955,
+            "total": 44
+          },
+          "workload": {
+            "matched": 35,
+            "rate": 0.7955,
+            "total": 44
+          }
+        },
+        "rate": 0.7922,
+        "rate_max": 0.8182,
+        "rate_mean": 0.7922,
+        "rate_min": 0.7597,
+        "rate_repeats": [
+          0.7987,
+          0.7597,
+          0.8182
+        ],
+        "total": 308
+      },
+      "joint_intent_success": {
+        "completed": 28,
+        "completed_max": 28,
+        "completed_mean": 28.0,
+        "completed_min": 28,
+        "completed_repeats": [
+          28,
+          28,
+          28
+        ],
+        "definition": "gold-EXECUTE items with the correct action, every gold contract field matched including the runner-bound ones, and a valid validator certificate",
+        "failed_on": {
+          "action": [
+            "ft3-r0017",
+            "ft3-r0032",
+            "ft3-r0040",
+            "ft3-r0059",
+            "ft3-r0060",
+            "ft3-r0083",
+            "ft3-r0105",
+            "ft3-r0118",
+            "ft3-r0142"
+          ],
+          "fields": [
+            "ft3-r0021",
+            "ft3-r0022",
+            "ft3-r0034",
+            "ft3-r0041",
+            "ft3-r0069",
+            "ft3-r0114",
+            "ft3-r0138"
+          ]
+        },
+        "items": 44,
+        "rate": 0.6364,
+        "rate_max": 0.6364,
+        "rate_mean": 0.6364,
+        "rate_min": 0.6364,
+        "rate_repeats": [
+          0.6364,
+          0.6364,
+          0.6364
+        ]
+      },
+      "overhead": {
+        "mean_wall_seconds": 3.7587,
+        "mean_wall_seconds_max": 3.981,
+        "mean_wall_seconds_mean": 3.7587,
+        "mean_wall_seconds_min": 3.498,
+        "mean_wall_seconds_repeats": [
+          3.981,
+          3.498,
+          3.797
+        ],
+        "model_calls": 128,
+        "model_calls_max": 131,
+        "model_calls_mean": 128.3333,
+        "model_calls_min": 126,
+        "model_calls_repeats": [
+          126,
+          128,
+          131
+        ],
+        "retries": 13,
+        "total_tokens": 167167,
+        "total_wall_seconds": 573.2
+      },
+      "paraphrase_consistency": {
+        "consistent_groups": 68,
+        "consistent_groups_max": 70,
+        "consistent_groups_mean": 67.6667,
+        "consistent_groups_min": 65,
+        "consistent_groups_repeats": [
+          68,
+          65,
+          70
+        ],
+        "groups": 72,
+        "inconsistent_groups": [
+          "v3-a-007",
+          "v3-a-017",
+          "v3-b-005",
+          "v3-b-010"
+        ],
+        "rate": 0.9444
+      },
+      "per_batch": {
+        "frontier-model-a": {
+          "correct": 60,
+          "items": 72,
+          "rate": 0.8333
+        },
+        "frontier-model-b": {
+          "correct": 62,
+          "items": 72,
+          "rate": 0.8611
+        }
+      },
+      "per_gold_action": {
+        "CLARIFY": {
+          "correct": 12,
+          "correct_max": 12,
+          "correct_min": 12,
+          "correct_repeats": [
+            12,
+            12,
+            12
+          ],
+          "items": 12,
+          "rate": 1.0
+        },
+        "EXECUTE": {
+          "correct": 35,
+          "correct_max": 36,
+          "correct_min": 33,
+          "correct_repeats": [
+            35,
+            33,
+            36
+          ],
+          "items": 44,
+          "rate": 0.7955
+        },
+        "REJECT": {
+          "correct": 5,
+          "correct_max": 6,
+          "correct_min": 4,
+          "correct_repeats": [
+            5,
+            6,
+            4
+          ],
+          "items": 16,
+          "rate": 0.3125
+        },
+        "UNSUPPORTED": {
+          "correct": 70,
+          "correct_max": 70,
+          "correct_min": 70,
+          "correct_repeats": [
+            70,
+            70,
+            70
+          ],
+          "items": 72,
+          "rate": 0.9722
+        }
+      },
+      "records": 144,
+      "repeat_count": 3,
+      "schedule_validity_on_gold_execute": {
+        "items": 44,
+        "rate": 0.7955,
+        "valid": 35
+      },
+      "systems": [
+        [
+          "llm_agent",
+          "gpt-5.5-2026-04-23"
+        ]
+      ],
+      "task_completion": {
+        "completed": 122,
+        "completed_max": 122,
+        "completed_mean": 121.6667,
+        "completed_min": 121,
+        "completed_repeats": [
+          122,
+          121,
+          122
+        ],
+        "items": 144,
+        "rate": 0.8449,
+        "rate_max": 0.8472,
+        "rate_mean": 0.8449,
+        "rate_min": 0.8403,
+        "rate_repeats": [
+          0.8472,
+          0.8403,
+          0.8472
+        ]
+      },
+      "wrong_items": [
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0004"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0014"
+        },
+        {
+          "error_code": "UNSUPPORTED_OBJECTIVE",
+          "gold": "EXECUTE",
+          "group": "v3-a-007",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0017"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0026"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-b-002",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0032"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0033"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-b-002",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0040"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0052"
+        },
+        {
+          "error_code": "INVALID_CHANNEL_COUNT",
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0053"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-005",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0059"
+        },
+        {
+          "error_code": "UNSUPPORTED_WORKLOAD",
+          "gold": "EXECUTE",
+          "group": "v3-a-004",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0060"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-a-003",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0083"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0098"
+        },
+        {
+          "error_code": "UNSUPPORTED_WORKLOAD",
+          "gold": "EXECUTE",
+          "group": "v3-a-004",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0105"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0106"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0112"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0113"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-a-003",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0118"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0121"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0130"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0133"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-010",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0142"
+        }
+      ]
+    },
+    "gpt55_no_gate": {
+      "action_accuracy": {
+        "correct": 131,
+        "correct_max": 132,
+        "correct_mean": 131.3333,
+        "correct_min": 130,
+        "correct_repeats": [
+          130,
+          132,
+          132
+        ],
+        "items": 144,
+        "rate": 0.9121,
+        "rate_max": 0.9167,
+        "rate_mean": 0.9121,
+        "rate_min": 0.9028,
+        "rate_repeats": [
+          0.9028,
+          0.9167,
+          0.9167
+        ]
+      },
+      "categories_with_errors": {
+        "above_topology_baseline": {
+          "correct": 1,
+          "items": 2
+        },
+        "communication_range_mismatch": {
+          "correct": 0,
+          "items": 2
+        },
+        "contradictory_channel_specification": {
+          "correct": 0,
+          "items": 2
+        },
+        "device_control_precedes_bad_channel_value": {
+          "correct": 0,
+          "items": 2
+        },
+        "nonexistent_topology_id": {
+          "correct": 0,
+          "items": 2
+        },
+        "prose_parameter_channel_conflict": {
+          "correct": 0,
+          "items": 2
+        },
+        "unlisted_topology": {
+          "correct": 0,
+          "items": 2
+        },
+        "valid_target_below_baseline": {
+          "correct": 1,
+          "items": 2
+        }
+      },
+      "confusion_gold_by_predicted": {
+        "CLARIFY": {
+          "CLARIFY": 12,
+          "EXECUTE": 0,
+          "REJECT": 0,
+          "UNSUPPORTED": 0
+        },
+        "EXECUTE": {
+          "CLARIFY": 0,
+          "EXECUTE": 42,
+          "REJECT": 2,
+          "UNSUPPORTED": 0
+        },
+        "REJECT": {
+          "CLARIFY": 8,
+          "EXECUTE": 2,
+          "REJECT": 6,
+          "UNSUPPORTED": 0
+        },
+        "UNSUPPORTED": {
+          "CLARIFY": 0,
+          "EXECUTE": 0,
+          "REJECT": 2,
+          "UNSUPPORTED": 70
+        }
+      },
+      "error_codes": {
+        "INVALID_CHANNEL_COUNT": 1,
+        "MISSING_TOPOLOGY": 12,
+        "REQUEST_FIELD_MISMATCH": 3,
+        "VALIDATION_CERTIFICATE_FAILED": 3
+      },
+      "failure_taxonomy": {
+        "infrastructure": 0,
+        "infrastructure_request_ids": [],
+        "schedule": 0,
+        "schedule_request_ids": [],
+        "semantic": 14
+      },
+      "false_acceptance": {
+        "count": 2,
+        "count_max": 2,
+        "count_mean": 2.0,
+        "count_min": 2,
+        "count_repeats": [
+          2,
+          2,
+          2
+        ],
+        "rate": 0.0139,
+        "rate_max": 0.0139,
+        "rate_mean": 0.0139,
+        "rate_min": 0.0139,
+        "rate_repeats": [
+          0.0139,
+          0.0139,
+          0.0139
+        ],
+        "request_ids": [
+          "ft3-r0033",
+          "ft3-r0130"
+        ]
+      },
+      "field_exact_match": {
+        "bound_fields_excluded": {
+          "fields": [
+            "topology_id",
+            "working_period",
+            "communication_range"
+          ],
+          "matched": 126,
+          "note": "bound or echoed by the runner rather than parsed from the request",
+          "rate": 0.9545,
+          "total": 132
+        },
+        "definition": "gold-EXECUTE items, contract fields the system parses",
+        "matched": 287,
+        "per_field": {
+          "channels": {
+            "matched": 41,
+            "rate": 0.9318,
+            "total": 44
+          },
+          "collision_model": {
+            "matched": 42,
+            "rate": 0.9545,
+            "total": 44
+          },
+          "communication_range": {
+            "matched": 42,
+            "rate": 0.9545,
+            "total": 44
+          },
+          "interference_ratio": {
+            "matched": 42,
+            "rate": 0.9545,
+            "total": 44
+          },
+          "latency_target_slots": {
+            "matched": 37,
+            "rate": 0.8409,
+            "total": 44
+          },
+          "objective": {
+            "matched": 42,
+            "rate": 0.9545,
+            "total": 44
+          },
+          "seed": {
+            "matched": 41,
+            "rate": 0.9318,
+            "total": 44
+          },
+          "topology_id": {
+            "matched": 42,
+            "rate": 0.9545,
+            "total": 44
+          },
+          "working_period": {
+            "matched": 42,
+            "rate": 0.9545,
+            "total": 44
+          },
+          "workload": {
+            "matched": 42,
+            "rate": 0.9545,
+            "total": 44
+          }
+        },
+        "rate": 0.9459,
+        "rate_max": 0.9545,
+        "rate_mean": 0.9459,
+        "rate_min": 0.9318,
+        "rate_repeats": [
+          0.9318,
+          0.9513,
+          0.9545
+        ],
+        "total": 308
+      },
+      "joint_intent_success": {
+        "completed": 35,
+        "completed_max": 35,
+        "completed_mean": 35.0,
+        "completed_min": 35,
+        "completed_repeats": [
+          35,
+          35,
+          35
+        ],
+        "definition": "gold-EXECUTE items with the correct action, every gold contract field matched including the runner-bound ones, and a valid validator certificate",
+        "failed_on": {
+          "action": [
+            "ft3-r0021",
+            "ft3-r0069"
+          ],
+          "fields": [
+            "ft3-r0022",
+            "ft3-r0034",
+            "ft3-r0041",
+            "ft3-r0059",
+            "ft3-r0114",
+            "ft3-r0138",
+            "ft3-r0142"
+          ]
+        },
+        "items": 44,
+        "rate": 0.7955,
+        "rate_max": 0.7955,
+        "rate_mean": 0.7955,
+        "rate_min": 0.7955,
+        "rate_repeats": [
+          0.7955,
+          0.7955,
+          0.7955
+        ]
+      },
+      "overhead": {
+        "mean_wall_seconds": 4.0087,
+        "mean_wall_seconds_max": 4.459,
+        "mean_wall_seconds_mean": 4.0087,
+        "mean_wall_seconds_min": 3.708,
+        "mean_wall_seconds_repeats": [
+          4.459,
+          3.859,
+          3.708
+        ],
+        "model_calls": 145,
+        "model_calls_max": 146,
+        "model_calls_mean": 144.6667,
+        "model_calls_min": 143,
+        "model_calls_repeats": [
+          146,
+          145,
+          143
+        ],
+        "retries": 15,
+        "total_tokens": 192965,
+        "total_wall_seconds": 642.1
+      },
+      "paraphrase_consistency": {
+        "consistent_groups": 69,
+        "consistent_groups_max": 70,
+        "consistent_groups_mean": 69.3333,
+        "consistent_groups_min": 68,
+        "consistent_groups_repeats": [
+          70,
+          70,
+          68
+        ],
+        "groups": 72,
+        "inconsistent_groups": [
+          "v3-a-009",
+          "v3-a-010"
+        ],
+        "rate": 0.9722
+      },
+      "per_batch": {
+        "frontier-model-a": {
+          "correct": 64,
+          "items": 72,
+          "rate": 0.8889
+        },
+        "frontier-model-b": {
+          "correct": 66,
+          "items": 72,
+          "rate": 0.9167
+        }
+      },
+      "per_gold_action": {
+        "CLARIFY": {
+          "correct": 12,
+          "correct_max": 12,
+          "correct_min": 12,
+          "correct_repeats": [
+            12,
+            12,
+            12
+          ],
+          "items": 12,
+          "rate": 1.0
+        },
+        "EXECUTE": {
+          "correct": 43,
+          "correct_max": 43,
+          "correct_min": 42,
+          "correct_repeats": [
+            42,
+            43,
+            43
+          ],
+          "items": 44,
+          "rate": 0.9545
+        },
+        "REJECT": {
+          "correct": 6,
+          "correct_max": 6,
+          "correct_min": 6,
+          "correct_repeats": [
+            6,
+            6,
+            6
+          ],
+          "items": 16,
+          "rate": 0.375
+        },
+        "UNSUPPORTED": {
+          "correct": 71,
+          "correct_max": 71,
+          "correct_min": 70,
+          "correct_repeats": [
+            70,
+            71,
+            71
+          ],
+          "items": 72,
+          "rate": 0.9722
+        }
+      },
+      "records": 144,
+      "repeat_count": 3,
+      "schedule_validity_on_gold_execute": {
+        "items": 44,
+        "rate": 0.9545,
+        "valid": 42
+      },
+      "systems": [
+        [
+          "llm_agent_no_scope_gate",
+          "gpt-5.5-2026-04-23"
+        ]
+      ],
+      "task_completion": {
+        "completed": 131,
+        "completed_max": 132,
+        "completed_mean": 131.3333,
+        "completed_min": 130,
+        "completed_repeats": [
+          130,
+          132,
+          132
+        ],
+        "items": 144,
+        "rate": 0.9121,
+        "rate_max": 0.9167,
+        "rate_mean": 0.9121,
+        "rate_min": 0.9028,
+        "rate_repeats": [
+          0.9028,
+          0.9167,
+          0.9167
+        ]
+      },
+      "wrong_items": [
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0004"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0014"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-a-010",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0021"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0026"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0033"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0052"
+        },
+        {
+          "error_code": "INVALID_CHANNEL_COUNT",
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0053"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-a-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0069"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0098"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0112"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0113"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-018",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0121"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0130"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0133"
+        }
+      ]
+    },
+    "phi4_advisory": {
+      "action_accuracy": {
+        "correct": 69,
+        "correct_max": 69,
+        "correct_mean": 69.0,
+        "correct_min": 69,
+        "correct_repeats": [
+          69,
+          69,
+          69
+        ],
+        "items": 144,
+        "rate": 0.4792,
+        "rate_max": 0.4792,
+        "rate_mean": 0.4792,
+        "rate_min": 0.4792,
+        "rate_repeats": [
+          0.4792,
+          0.4792,
+          0.4792
+        ]
+      },
+      "categories_with_errors": {
+        "above_topology_baseline": {
+          "correct": 0,
+          "items": 2
+        },
+        "ambiguous_channel_count": {
+          "correct": 0,
+          "items": 2
+        },
+        "catalogue_range_mismatch": {
+          "correct": 1,
+          "items": 2
+        },
+        "charge_constrained_latency": {
+          "correct": 0,
+          "items": 2
+        },
+        "charge_driven_forwarding_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "communication_range_mismatch": {
+          "correct": 1,
+          "items": 2
+        },
+        "continuous_state_alignment_compositional_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "default_execution_alternate_range": {
+          "correct": 1,
+          "items": 2
+        },
+        "delivery_reliability_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "device_control_precedes_bad_channel_value": {
+          "correct": 0,
+          "items": 2
+        },
+        "explicit_channels_and_seed": {
+          "correct": 1,
+          "items": 2
+        },
+        "explicit_consistent_topology_parameters": {
+          "correct": 1,
+          "items": 2
+        },
+        "explicit_streaming_mirror": {
+          "correct": 1,
+          "items": 2
+        },
+        "finite_periodic_collection": {
+          "correct": 0,
+          "items": 2
+        },
+        "integrate_joining_nodes": {
+          "correct": 0,
+          "items": 2
+        },
+        "large_valid_channel_count": {
+          "correct": 0,
+          "items": 2
+        },
+        "latency_target_above_baseline": {
+          "correct": 0,
+          "items": 2
+        },
+        "latency_target_below_baseline": {
+          "correct": 0,
+          "items": 2
+        },
+        "live_route_replacement": {
+          "correct": 0,
+          "items": 2
+        },
+        "live_state_updates_after_schedule": {
+          "correct": 0,
+          "items": 2
+        },
+        "load_balancing_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "mid_round_reparenting_compositional": {
+          "correct": 1,
+          "items": 2
+        },
+        "minimax_sender_load": {
+          "correct": 1,
+          "items": 2
+        },
+        "minimize_channel_usage_objective": {
+          "correct": 0,
+          "items": 2
+        },
+        "minimize_transmission_count": {
+          "correct": 1,
+          "items": 2
+        },
+        "minimize_transmission_total": {
+          "correct": 1,
+          "items": 2
+        },
+        "nonexistent_topology_id": {
+          "correct": 0,
+          "items": 2
+        },
+        "ongoing_deadline_collection": {
+          "correct": 0,
+          "items": 2
+        },
+        "packet_level_network_emulation": {
+          "correct": 0,
+          "items": 2
+        },
+        "per_transmission_charge_accounting": {
+          "correct": 0,
+          "items": 2
+        },
+        "periodic_rounds": {
+          "correct": 1,
+          "items": 2
+        },
+        "physical_device_control_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "range_model_matching_geometry": {
+          "correct": 1,
+          "items": 2
+        },
+        "repeating_pull_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "replan_on_node_departure": {
+          "correct": 1,
+          "items": 2
+        },
+        "residual_battery_evolution_mixed": {
+          "correct": 1,
+          "items": 2
+        },
+        "restart_after_completion": {
+          "correct": 0,
+          "items": 2
+        },
+        "runtime_adaptation": {
+          "correct": 1,
+          "items": 2
+        },
+        "runtime_rerouting_with_invalid_range": {
+          "correct": 0,
+          "items": 2
+        },
+        "self_repeating_schedule_compositional_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "single_channel_neighbor_seed": {
+          "correct": 0,
+          "items": 2
+        },
+        "software_replica_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "streaming_view": {
+          "correct": 1,
+          "items": 2
+        },
+        "unlisted_topology": {
+          "correct": 0,
+          "items": 2
+        },
+        "unresolved_material_channel_setting": {
+          "correct": 0,
+          "items": 2
+        },
+        "valid_target_below_baseline": {
+          "correct": 1,
+          "items": 2
+        }
+      },
+      "confusion_gold_by_predicted": {
+        "CLARIFY": {
+          "CLARIFY": 8,
+          "EXECUTE": 1,
+          "REJECT": 3,
+          "UNSUPPORTED": 0
+        },
+        "EXECUTE": {
+          "CLARIFY": 0,
+          "EXECUTE": 29,
+          "REJECT": 15,
+          "UNSUPPORTED": 0
+        },
+        "REJECT": {
+          "CLARIFY": 4,
+          "EXECUTE": 2,
+          "REJECT": 10,
+          "UNSUPPORTED": 0
+        },
+        "UNSUPPORTED": {
+          "CLARIFY": 0,
+          "EXECUTE": 27,
+          "REJECT": 23,
+          "UNSUPPORTED": 22
+        }
+      },
+      "error_codes": {
+        "INVALID_CHANNEL_COUNT": 1,
+        "MISSING_TOPOLOGY": 12,
+        "REQUEST_FIELD_MISMATCH": 7
+      },
+      "failure_taxonomy": {
+        "infrastructure": 0,
+        "infrastructure_request_ids": [],
+        "schedule": 0,
+        "schedule_request_ids": [],
+        "semantic": 75
+      },
+      "false_acceptance": {
+        "count": 30,
+        "count_max": 30,
+        "count_mean": 30.0,
+        "count_min": 30,
+        "count_repeats": [
+          30,
+          30,
+          30
+        ],
+        "rate": 0.2083,
+        "rate_max": 0.2083,
+        "rate_mean": 0.2083,
+        "rate_min": 0.2083,
+        "rate_repeats": [
+          0.2083,
+          0.2083,
+          0.2083
+        ],
+        "request_ids": [
+          "ft3-r0001",
+          "ft3-r0003",
+          "ft3-r0005",
+          "ft3-r0009",
+          "ft3-r0010",
+          "ft3-r0019",
+          "ft3-r0024",
+          "ft3-r0038",
+          "ft3-r0047",
+          "ft3-r0048",
+          "ft3-r0057",
+          "ft3-r0068",
+          "ft3-r0071",
+          "ft3-r0079",
+          "ft3-r0081",
+          "ft3-r0086",
+          "ft3-r0094",
+          "ft3-r0101",
+          "ft3-r0104",
+          "ft3-r0106",
+          "ft3-r0107",
+          "ft3-r0109",
+          "ft3-r0116",
+          "ft3-r0123",
+          "ft3-r0126",
+          "ft3-r0130",
+          "ft3-r0131",
+          "ft3-r0135",
+          "ft3-r0139",
+          "ft3-r0140"
+        ]
+      },
+      "field_exact_match": {
+        "bound_fields_excluded": {
+          "fields": [
+            "topology_id",
+            "working_period",
+            "communication_range"
+          ],
+          "matched": 87,
+          "note": "bound or echoed by the runner rather than parsed from the request",
+          "rate": 0.6591,
+          "total": 132
+        },
+        "definition": "gold-EXECUTE items, contract fields the system parses",
+        "matched": 211,
+        "per_field": {
+          "channels": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "collision_model": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "communication_range": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "interference_ratio": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "latency_target_slots": {
+            "matched": 37,
+            "rate": 0.8409,
+            "total": 44
+          },
+          "objective": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "seed": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "topology_id": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "working_period": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "workload": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          }
+        },
+        "rate": 0.6851,
+        "rate_max": 0.6851,
+        "rate_mean": 0.6851,
+        "rate_min": 0.6851,
+        "rate_repeats": [
+          0.6851,
+          0.6851,
+          0.6851
+        ],
+        "total": 308
+      },
+      "joint_intent_success": {
+        "completed": 29,
+        "completed_max": 29,
+        "completed_mean": 29.0,
+        "completed_min": 29,
+        "completed_repeats": [
+          29,
+          29,
+          29
+        ],
+        "definition": "gold-EXECUTE items with the correct action, every gold contract field matched including the runner-bound ones, and a valid validator certificate",
+        "failed_on": {
+          "action": [
+            "ft3-r0020",
+            "ft3-r0021",
+            "ft3-r0022",
+            "ft3-r0029",
+            "ft3-r0034",
+            "ft3-r0041",
+            "ft3-r0044",
+            "ft3-r0059",
+            "ft3-r0069",
+            "ft3-r0089",
+            "ft3-r0096",
+            "ft3-r0103",
+            "ft3-r0114",
+            "ft3-r0138",
+            "ft3-r0142"
+          ]
+        },
+        "items": 44,
+        "rate": 0.6591,
+        "rate_max": 0.6591,
+        "rate_mean": 0.6591,
+        "rate_min": 0.6591,
+        "rate_repeats": [
+          0.6591,
+          0.6591,
+          0.6591
+        ]
+      },
+      "overhead": {
+        "mean_wall_seconds": 1.5813,
+        "mean_wall_seconds_max": 1.584,
+        "mean_wall_seconds_mean": 1.5813,
+        "mean_wall_seconds_min": 1.579,
+        "mean_wall_seconds_repeats": [
+          1.579,
+          1.581,
+          1.584
+        ],
+        "model_calls": 156,
+        "model_calls_max": 156,
+        "model_calls_mean": 156.0,
+        "model_calls_min": 156,
+        "model_calls_repeats": [
+          156,
+          156,
+          156
+        ],
+        "retries": 25,
+        "total_tokens": 131279,
+        "total_wall_seconds": 227.3
+      },
+      "paraphrase_consistency": {
+        "consistent_groups": 46,
+        "consistent_groups_max": 46,
+        "consistent_groups_mean": 46.0,
+        "consistent_groups_min": 46,
+        "consistent_groups_repeats": [
+          46,
+          46,
+          46
+        ],
+        "groups": 72,
+        "inconsistent_groups": [
+          "v3-a-006",
+          "v3-a-010",
+          "v3-a-017",
+          "v3-a-020",
+          "v3-a-025",
+          "v3-a-026",
+          "v3-a-030",
+          "v3-a-031",
+          "v3-a-033",
+          "v3-a-034",
+          "v3-b-004",
+          "v3-b-005",
+          "v3-b-007",
+          "v3-b-014",
+          "v3-b-017",
+          "v3-b-020",
+          "v3-b-025",
+          "v3-b-026",
+          "v3-b-027",
+          "v3-b-028",
+          "v3-b-029",
+          "v3-b-030",
+          "v3-b-031",
+          "v3-b-033",
+          "v3-b-034",
+          "v3-b-035"
+        ],
+        "rate": 0.6389
+      },
+      "per_batch": {
+        "frontier-model-a": {
+          "correct": 33,
+          "items": 72,
+          "rate": 0.4583
+        },
+        "frontier-model-b": {
+          "correct": 36,
+          "items": 72,
+          "rate": 0.5
+        }
+      },
+      "per_gold_action": {
+        "CLARIFY": {
+          "correct": 8,
+          "correct_max": 8,
+          "correct_min": 8,
+          "correct_repeats": [
+            8,
+            8,
+            8
+          ],
+          "items": 12,
+          "rate": 0.6667
+        },
+        "EXECUTE": {
+          "correct": 29,
+          "correct_max": 29,
+          "correct_min": 29,
+          "correct_repeats": [
+            29,
+            29,
+            29
+          ],
+          "items": 44,
+          "rate": 0.6591
+        },
+        "REJECT": {
+          "correct": 10,
+          "correct_max": 10,
+          "correct_min": 10,
+          "correct_repeats": [
+            10,
+            10,
+            10
+          ],
+          "items": 16,
+          "rate": 0.625
+        },
+        "UNSUPPORTED": {
+          "correct": 22,
+          "correct_max": 22,
+          "correct_min": 22,
+          "correct_repeats": [
+            22,
+            22,
+            22
+          ],
+          "items": 72,
+          "rate": 0.3056
+        }
+      },
+      "records": 144,
+      "repeat_count": 3,
+      "schedule_validity_on_gold_execute": {
+        "items": 44,
+        "rate": 0.6591,
+        "valid": 29
+      },
+      "systems": [
+        [
+          "llm_agent_advisory_scope_gate",
+          "phi4:14b"
+        ]
+      ],
+      "task_completion": {
+        "completed": 69,
+        "completed_max": 69,
+        "completed_mean": 69.0,
+        "completed_min": 69,
+        "completed_repeats": [
+          69,
+          69,
+          69
+        ],
+        "items": 144,
+        "rate": 0.4792,
+        "rate_max": 0.4792,
+        "rate_mean": 0.4792,
+        "rate_min": 0.4792,
+        "rate_repeats": [
+          0.4792,
+          0.4792,
+          0.4792
+        ]
+      },
+      "wrong_items": [
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-034",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0001"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-029",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0003"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0005"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-034",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0007"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-036",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0009"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-029",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0010"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-a-014",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0012"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0014"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-029",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0019"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-b-007",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0020"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-a-010",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0021"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0022"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-031",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0024"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0026"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-032",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0027"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-004",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0029"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-a-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0034"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-025",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0038"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-010",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0041"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0042"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-005",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0044"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-026",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0046"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0047"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-b-014",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0048"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0052"
+        },
+        {
+          "error_code": "INVALID_CHANNEL_COUNT",
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0053"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-032",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0054"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-a-014",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0055"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-020",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0057"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-b-005",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0059"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-036",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0063"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-030",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0066"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0068"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0069"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-027",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0071"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-036",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0073"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-b-014",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0075"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-031",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0076"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-030",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0079"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0081"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-020",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0084"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-025",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0085"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0086"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-008",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0089"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-034",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0094"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-006",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0096"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0098"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0101"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-008",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0103"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0104"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0106"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-033",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0107"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0109"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-032",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0111"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-005",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0114"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-025",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0116"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-028",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0120"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-027",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0122"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-035",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0123"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-027",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0124"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-031",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0126"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-026",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0128"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-020",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0129"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0130"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0131"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-029",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0132"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0133"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0135"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-033",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0137"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-b-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0138"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0139"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-036",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0140"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-010",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0142"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-025",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0143"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-032",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0144"
+        }
+      ]
+    },
+    "phi4_gated": {
+      "action_accuracy": {
+        "correct": 64,
+        "correct_max": 64,
+        "correct_mean": 64.0,
+        "correct_min": 64,
+        "correct_repeats": [
+          64,
+          64,
+          64
+        ],
+        "items": 144,
+        "rate": 0.4444,
+        "rate_max": 0.4444,
+        "rate_mean": 0.4444,
+        "rate_min": 0.4444,
+        "rate_repeats": [
+          0.4444,
+          0.4444,
+          0.4444
+        ]
+      },
+      "categories_with_errors": {
+        "above_topology_baseline": {
+          "correct": 0,
+          "items": 2
+        },
+        "ambiguous_channel_count": {
+          "correct": 0,
+          "items": 2
+        },
+        "catalogue_range_mismatch": {
+          "correct": 1,
+          "items": 2
+        },
+        "charge_constrained_latency": {
+          "correct": 0,
+          "items": 2
+        },
+        "charge_driven_forwarding_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "communication_range_mismatch": {
+          "correct": 1,
+          "items": 2
+        },
+        "continuous_state_alignment_compositional_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "default_execution_alternate_range": {
+          "correct": 1,
+          "items": 2
+        },
+        "delivery_reliability_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "device_control_precedes_bad_channel_value": {
+          "correct": 0,
+          "items": 2
+        },
+        "digital_twin_explicitly_excluded": {
+          "correct": 0,
+          "items": 2
+        },
+        "explicit_channels_and_seed": {
+          "correct": 1,
+          "items": 2
+        },
+        "explicit_consistent_topology_parameters": {
+          "correct": 1,
+          "items": 2
+        },
+        "explicit_streaming_mirror": {
+          "correct": 1,
+          "items": 2
+        },
+        "historical_battery_objective_excluded": {
+          "correct": 1,
+          "items": 2
+        },
+        "integrate_joining_nodes": {
+          "correct": 0,
+          "items": 2
+        },
+        "large_valid_channel_count": {
+          "correct": 0,
+          "items": 2
+        },
+        "latency_target_above_baseline": {
+          "correct": 0,
+          "items": 2
+        },
+        "latency_target_below_baseline": {
+          "correct": 0,
+          "items": 2
+        },
+        "live_route_replacement": {
+          "correct": 0,
+          "items": 2
+        },
+        "live_state_updates_after_schedule": {
+          "correct": 0,
+          "items": 2
+        },
+        "load_balancing_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "mid_round_reparenting_compositional": {
+          "correct": 1,
+          "items": 2
+        },
+        "minimax_sender_load": {
+          "correct": 1,
+          "items": 2
+        },
+        "minimize_channel_usage_objective": {
+          "correct": 0,
+          "items": 2
+        },
+        "minimize_transmission_count": {
+          "correct": 1,
+          "items": 2
+        },
+        "minimize_transmission_total": {
+          "correct": 1,
+          "items": 2
+        },
+        "negated_digital_twin_hard_negative": {
+          "correct": 0,
+          "items": 2
+        },
+        "nonexistent_topology_id": {
+          "correct": 0,
+          "items": 2
+        },
+        "ongoing_deadline_collection": {
+          "correct": 0,
+          "items": 2
+        },
+        "packet_level_network_emulation": {
+          "correct": 0,
+          "items": 2
+        },
+        "past_continuous_collection_context": {
+          "correct": 0,
+          "items": 2
+        },
+        "per_transmission_charge_accounting": {
+          "correct": 0,
+          "items": 2
+        },
+        "periodic_rounds": {
+          "correct": 1,
+          "items": 2
+        },
+        "physical_device_control_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "range_model_matching_geometry": {
+          "correct": 1,
+          "items": 2
+        },
+        "repeating_pull_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "replan_on_node_departure": {
+          "correct": 1,
+          "items": 2
+        },
+        "residual_battery_evolution_mixed": {
+          "correct": 1,
+          "items": 2
+        },
+        "restart_after_completion": {
+          "correct": 0,
+          "items": 2
+        },
+        "runtime_adaptation": {
+          "correct": 1,
+          "items": 2
+        },
+        "runtime_rerouting_with_invalid_range": {
+          "correct": 0,
+          "items": 2
+        },
+        "self_repeating_schedule_compositional_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "single_channel_neighbor_seed": {
+          "correct": 0,
+          "items": 2
+        },
+        "software_replica_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "streaming_view": {
+          "correct": 1,
+          "items": 2
+        },
+        "unlisted_topology": {
+          "correct": 0,
+          "items": 2
+        },
+        "unresolved_material_channel_setting": {
+          "correct": 0,
+          "items": 2
+        },
+        "valid_target_below_baseline": {
+          "correct": 1,
+          "items": 2
+        }
+      },
+      "confusion_gold_by_predicted": {
+        "CLARIFY": {
+          "CLARIFY": 8,
+          "EXECUTE": 1,
+          "REJECT": 3,
+          "UNSUPPORTED": 0
+        },
+        "EXECUTE": {
+          "CLARIFY": 0,
+          "EXECUTE": 22,
+          "REJECT": 15,
+          "UNSUPPORTED": 7
+        },
+        "REJECT": {
+          "CLARIFY": 4,
+          "EXECUTE": 2,
+          "REJECT": 10,
+          "UNSUPPORTED": 0
+        },
+        "UNSUPPORTED": {
+          "CLARIFY": 0,
+          "EXECUTE": 27,
+          "REJECT": 21,
+          "UNSUPPORTED": 24
+        }
+      },
+      "error_codes": {
+        "INVALID_CHANNEL_COUNT": 1,
+        "MISSING_TOPOLOGY": 12,
+        "REQUEST_FIELD_MISMATCH": 7,
+        "UNSUPPORTED_DIGITAL_TWIN": 8,
+        "UNSUPPORTED_OBJECTIVE": 5,
+        "UNSUPPORTED_WORKLOAD": 5
+      },
+      "failure_taxonomy": {
+        "infrastructure": 0,
+        "infrastructure_request_ids": [],
+        "schedule": 0,
+        "schedule_request_ids": [],
+        "semantic": 80
+      },
+      "false_acceptance": {
+        "count": 30,
+        "count_max": 30,
+        "count_mean": 30.0,
+        "count_min": 30,
+        "count_repeats": [
+          30,
+          30,
+          30
+        ],
+        "rate": 0.2083,
+        "rate_max": 0.2083,
+        "rate_mean": 0.2083,
+        "rate_min": 0.2083,
+        "rate_repeats": [
+          0.2083,
+          0.2083,
+          0.2083
+        ],
+        "request_ids": [
+          "ft3-r0001",
+          "ft3-r0003",
+          "ft3-r0005",
+          "ft3-r0009",
+          "ft3-r0010",
+          "ft3-r0019",
+          "ft3-r0024",
+          "ft3-r0038",
+          "ft3-r0047",
+          "ft3-r0048",
+          "ft3-r0057",
+          "ft3-r0068",
+          "ft3-r0071",
+          "ft3-r0079",
+          "ft3-r0081",
+          "ft3-r0086",
+          "ft3-r0094",
+          "ft3-r0101",
+          "ft3-r0104",
+          "ft3-r0106",
+          "ft3-r0107",
+          "ft3-r0109",
+          "ft3-r0116",
+          "ft3-r0123",
+          "ft3-r0126",
+          "ft3-r0130",
+          "ft3-r0131",
+          "ft3-r0135",
+          "ft3-r0139",
+          "ft3-r0140"
+        ]
+      },
+      "field_exact_match": {
+        "bound_fields_excluded": {
+          "fields": [
+            "topology_id",
+            "working_period",
+            "communication_range"
+          ],
+          "matched": 66,
+          "note": "bound or echoed by the runner rather than parsed from the request",
+          "rate": 0.5,
+          "total": 132
+        },
+        "definition": "gold-EXECUTE items, contract fields the system parses",
+        "matched": 169,
+        "per_field": {
+          "channels": {
+            "matched": 22,
+            "rate": 0.5,
+            "total": 44
+          },
+          "collision_model": {
+            "matched": 22,
+            "rate": 0.5,
+            "total": 44
+          },
+          "communication_range": {
+            "matched": 22,
+            "rate": 0.5,
+            "total": 44
+          },
+          "interference_ratio": {
+            "matched": 22,
+            "rate": 0.5,
+            "total": 44
+          },
+          "latency_target_slots": {
+            "matched": 37,
+            "rate": 0.8409,
+            "total": 44
+          },
+          "objective": {
+            "matched": 22,
+            "rate": 0.5,
+            "total": 44
+          },
+          "seed": {
+            "matched": 22,
+            "rate": 0.5,
+            "total": 44
+          },
+          "topology_id": {
+            "matched": 22,
+            "rate": 0.5,
+            "total": 44
+          },
+          "working_period": {
+            "matched": 22,
+            "rate": 0.5,
+            "total": 44
+          },
+          "workload": {
+            "matched": 22,
+            "rate": 0.5,
+            "total": 44
+          }
+        },
+        "rate": 0.5487,
+        "rate_max": 0.5487,
+        "rate_mean": 0.5487,
+        "rate_min": 0.5487,
+        "rate_repeats": [
+          0.5487,
+          0.5487,
+          0.5487
+        ],
+        "total": 308
+      },
+      "joint_intent_success": {
+        "completed": 22,
+        "completed_max": 22,
+        "completed_mean": 22.0,
+        "completed_min": 22,
+        "completed_repeats": [
+          22,
+          22,
+          22
+        ],
+        "definition": "gold-EXECUTE items with the correct action, every gold contract field matched including the runner-bound ones, and a valid validator certificate",
+        "failed_on": {
+          "action": [
+            "ft3-r0017",
+            "ft3-r0020",
+            "ft3-r0021",
+            "ft3-r0022",
+            "ft3-r0029",
+            "ft3-r0032",
+            "ft3-r0034",
+            "ft3-r0040",
+            "ft3-r0041",
+            "ft3-r0044",
+            "ft3-r0059",
+            "ft3-r0060",
+            "ft3-r0069",
+            "ft3-r0083",
+            "ft3-r0089",
+            "ft3-r0096",
+            "ft3-r0103",
+            "ft3-r0105",
+            "ft3-r0114",
+            "ft3-r0118",
+            "ft3-r0138",
+            "ft3-r0142"
+          ]
+        },
+        "items": 44,
+        "rate": 0.5,
+        "rate_max": 0.5,
+        "rate_mean": 0.5,
+        "rate_min": 0.5,
+        "rate_repeats": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "overhead": {
+        "mean_wall_seconds": 1.4067,
+        "mean_wall_seconds_max": 1.414,
+        "mean_wall_seconds_mean": 1.4067,
+        "mean_wall_seconds_min": 1.4,
+        "mean_wall_seconds_repeats": [
+          1.414,
+          1.406,
+          1.4
+        ],
+        "model_calls": 138,
+        "model_calls_max": 138,
+        "model_calls_mean": 138.0,
+        "model_calls_min": 138,
+        "model_calls_repeats": [
+          138,
+          138,
+          138
+        ],
+        "retries": 25,
+        "total_tokens": 114853,
+        "total_wall_seconds": 203.5
+      },
+      "paraphrase_consistency": {
+        "consistent_groups": 45,
+        "consistent_groups_max": 45,
+        "consistent_groups_mean": 45.0,
+        "consistent_groups_min": 45,
+        "consistent_groups_repeats": [
+          45,
+          45,
+          45
+        ],
+        "groups": 72,
+        "inconsistent_groups": [
+          "v3-a-006",
+          "v3-a-007",
+          "v3-a-010",
+          "v3-a-017",
+          "v3-a-020",
+          "v3-a-025",
+          "v3-a-026",
+          "v3-a-030",
+          "v3-a-031",
+          "v3-a-033",
+          "v3-a-034",
+          "v3-b-004",
+          "v3-b-005",
+          "v3-b-007",
+          "v3-b-014",
+          "v3-b-017",
+          "v3-b-020",
+          "v3-b-025",
+          "v3-b-026",
+          "v3-b-027",
+          "v3-b-028",
+          "v3-b-029",
+          "v3-b-030",
+          "v3-b-031",
+          "v3-b-033",
+          "v3-b-034",
+          "v3-b-035"
+        ],
+        "rate": 0.625
+      },
+      "per_batch": {
+        "frontier-model-a": {
+          "correct": 30,
+          "items": 72,
+          "rate": 0.4167
+        },
+        "frontier-model-b": {
+          "correct": 34,
+          "items": 72,
+          "rate": 0.4722
+        }
+      },
+      "per_gold_action": {
+        "CLARIFY": {
+          "correct": 8,
+          "correct_max": 8,
+          "correct_min": 8,
+          "correct_repeats": [
+            8,
+            8,
+            8
+          ],
+          "items": 12,
+          "rate": 0.6667
+        },
+        "EXECUTE": {
+          "correct": 22,
+          "correct_max": 22,
+          "correct_min": 22,
+          "correct_repeats": [
+            22,
+            22,
+            22
+          ],
+          "items": 44,
+          "rate": 0.5
+        },
+        "REJECT": {
+          "correct": 10,
+          "correct_max": 10,
+          "correct_min": 10,
+          "correct_repeats": [
+            10,
+            10,
+            10
+          ],
+          "items": 16,
+          "rate": 0.625
+        },
+        "UNSUPPORTED": {
+          "correct": 24,
+          "correct_max": 24,
+          "correct_min": 24,
+          "correct_repeats": [
+            24,
+            24,
+            24
+          ],
+          "items": 72,
+          "rate": 0.3333
+        }
+      },
+      "records": 144,
+      "repeat_count": 3,
+      "schedule_validity_on_gold_execute": {
+        "items": 44,
+        "rate": 0.5,
+        "valid": 22
+      },
+      "systems": [
+        [
+          "llm_agent",
+          "phi4:14b"
+        ]
+      ],
+      "task_completion": {
+        "completed": 64,
+        "completed_max": 64,
+        "completed_mean": 64.0,
+        "completed_min": 64,
+        "completed_repeats": [
+          64,
+          64,
+          64
+        ],
+        "items": 144,
+        "rate": 0.4444,
+        "rate_max": 0.4444,
+        "rate_mean": 0.4444,
+        "rate_min": 0.4444,
+        "rate_repeats": [
+          0.4444,
+          0.4444,
+          0.4444
+        ]
+      },
+      "wrong_items": [
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-034",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0001"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-029",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0003"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0005"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-034",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0007"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-036",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0009"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-029",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0010"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-a-014",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0012"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0014"
+        },
+        {
+          "error_code": "UNSUPPORTED_OBJECTIVE",
+          "gold": "EXECUTE",
+          "group": "v3-a-007",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0017"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-029",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0019"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-b-007",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0020"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-a-010",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0021"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0022"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-031",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0024"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0026"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-032",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0027"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-004",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0029"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-b-002",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0032"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-a-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0034"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-025",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0038"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-b-002",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0040"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-010",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0041"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0042"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-005",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0044"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-026",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0046"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0047"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-b-014",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0048"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0052"
+        },
+        {
+          "error_code": "INVALID_CHANNEL_COUNT",
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0053"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-032",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0054"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-a-014",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0055"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-020",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0057"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-b-005",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0059"
+        },
+        {
+          "error_code": "UNSUPPORTED_WORKLOAD",
+          "gold": "EXECUTE",
+          "group": "v3-a-004",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0060"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-036",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0063"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-030",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0066"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0068"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0069"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-027",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0071"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-036",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0073"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-b-014",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0075"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-031",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0076"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-030",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0079"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0081"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-a-003",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0083"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-020",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0084"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-025",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0085"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0086"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-008",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0089"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-034",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0094"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-006",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0096"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0098"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0101"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-008",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0103"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0104"
+        },
+        {
+          "error_code": "UNSUPPORTED_WORKLOAD",
+          "gold": "EXECUTE",
+          "group": "v3-a-004",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0105"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0106"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-033",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0107"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0109"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-032",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0111"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-005",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0114"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-025",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0116"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-a-003",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0118"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-028",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0120"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-035",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0123"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-031",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0126"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-026",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0128"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-020",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0129"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0130"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0131"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-029",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0132"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0133"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0135"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-033",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0137"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-b-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0138"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0139"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-036",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0140"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-010",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0142"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-025",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0143"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-032",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0144"
+        }
+      ]
+    },
+    "phi4_no_gate": {
+      "action_accuracy": {
+        "correct": 67,
+        "correct_max": 67,
+        "correct_mean": 67.0,
+        "correct_min": 67,
+        "correct_repeats": [
+          67,
+          67,
+          67
+        ],
+        "items": 144,
+        "rate": 0.4653,
+        "rate_max": 0.4653,
+        "rate_mean": 0.4653,
+        "rate_min": 0.4653,
+        "rate_repeats": [
+          0.4653,
+          0.4653,
+          0.4653
+        ]
+      },
+      "categories_with_errors": {
+        "above_topology_baseline": {
+          "correct": 0,
+          "items": 2
+        },
+        "ambiguous_channel_count": {
+          "correct": 0,
+          "items": 2
+        },
+        "battery_trajectory_report": {
+          "correct": 1,
+          "items": 2
+        },
+        "catalogue_range_mismatch": {
+          "correct": 1,
+          "items": 2
+        },
+        "charge_constrained_latency": {
+          "correct": 0,
+          "items": 2
+        },
+        "charge_driven_forwarding_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "communication_range_mismatch": {
+          "correct": 1,
+          "items": 2
+        },
+        "continuous_state_alignment_compositional_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "default_execution_alternate_range": {
+          "correct": 1,
+          "items": 2
+        },
+        "delivery_reliability_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "device_control_precedes_bad_channel_value": {
+          "correct": 0,
+          "items": 2
+        },
+        "explicit_channels_and_seed": {
+          "correct": 1,
+          "items": 2
+        },
+        "explicit_consistent_topology_parameters": {
+          "correct": 1,
+          "items": 2
+        },
+        "explicit_streaming_mirror": {
+          "correct": 1,
+          "items": 2
+        },
+        "finite_periodic_collection": {
+          "correct": 0,
+          "items": 2
+        },
+        "integrate_joining_nodes": {
+          "correct": 0,
+          "items": 2
+        },
+        "large_valid_channel_count": {
+          "correct": 0,
+          "items": 2
+        },
+        "latency_target_above_baseline": {
+          "correct": 0,
+          "items": 2
+        },
+        "latency_target_below_baseline": {
+          "correct": 0,
+          "items": 2
+        },
+        "live_route_replacement": {
+          "correct": 0,
+          "items": 2
+        },
+        "live_state_updates_after_schedule": {
+          "correct": 0,
+          "items": 2
+        },
+        "load_balancing_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "mid_round_reparenting_compositional": {
+          "correct": 1,
+          "items": 2
+        },
+        "minimax_sender_load": {
+          "correct": 1,
+          "items": 2
+        },
+        "minimize_channel_usage_objective": {
+          "correct": 0,
+          "items": 2
+        },
+        "minimize_transmission_count": {
+          "correct": 1,
+          "items": 2
+        },
+        "minimize_transmission_total": {
+          "correct": 1,
+          "items": 2
+        },
+        "nonexistent_topology_id": {
+          "correct": 0,
+          "items": 2
+        },
+        "ongoing_deadline_collection": {
+          "correct": 0,
+          "items": 2
+        },
+        "packet_level_network_emulation": {
+          "correct": 0,
+          "items": 2
+        },
+        "per_transmission_charge_accounting": {
+          "correct": 0,
+          "items": 2
+        },
+        "periodic_rounds": {
+          "correct": 0,
+          "items": 2
+        },
+        "physical_device_control_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "range_model_matching_geometry": {
+          "correct": 1,
+          "items": 2
+        },
+        "repeating_pull_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "replan_on_node_departure": {
+          "correct": 1,
+          "items": 2
+        },
+        "residual_battery_evolution_mixed": {
+          "correct": 1,
+          "items": 2
+        },
+        "restart_after_completion": {
+          "correct": 0,
+          "items": 2
+        },
+        "runtime_adaptation": {
+          "correct": 1,
+          "items": 2
+        },
+        "runtime_rerouting_with_invalid_range": {
+          "correct": 0,
+          "items": 2
+        },
+        "self_repeating_schedule_compositional_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "single_channel_neighbor_seed": {
+          "correct": 0,
+          "items": 2
+        },
+        "software_replica_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "streaming_view": {
+          "correct": 1,
+          "items": 2
+        },
+        "unlisted_topology": {
+          "correct": 0,
+          "items": 2
+        },
+        "unresolved_material_channel_setting": {
+          "correct": 0,
+          "items": 2
+        },
+        "valid_target_below_baseline": {
+          "correct": 1,
+          "items": 2
+        }
+      },
+      "confusion_gold_by_predicted": {
+        "CLARIFY": {
+          "CLARIFY": 8,
+          "EXECUTE": 1,
+          "REJECT": 3,
+          "UNSUPPORTED": 0
+        },
+        "EXECUTE": {
+          "CLARIFY": 0,
+          "EXECUTE": 29,
+          "REJECT": 15,
+          "UNSUPPORTED": 0
+        },
+        "REJECT": {
+          "CLARIFY": 4,
+          "EXECUTE": 2,
+          "REJECT": 10,
+          "UNSUPPORTED": 0
+        },
+        "UNSUPPORTED": {
+          "CLARIFY": 0,
+          "EXECUTE": 30,
+          "REJECT": 22,
+          "UNSUPPORTED": 20
+        }
+      },
+      "error_codes": {
+        "INVALID_CHANNEL_COUNT": 1,
+        "MISSING_TOPOLOGY": 12,
+        "REQUEST_FIELD_MISMATCH": 7
+      },
+      "failure_taxonomy": {
+        "infrastructure": 0,
+        "infrastructure_request_ids": [],
+        "schedule": 0,
+        "schedule_request_ids": [],
+        "semantic": 77
+      },
+      "false_acceptance": {
+        "count": 33,
+        "count_max": 33,
+        "count_mean": 33.0,
+        "count_min": 33,
+        "count_repeats": [
+          33,
+          33,
+          33
+        ],
+        "rate": 0.2292,
+        "rate_max": 0.2292,
+        "rate_mean": 0.2292,
+        "rate_min": 0.2292,
+        "rate_repeats": [
+          0.2292,
+          0.2292,
+          0.2292
+        ],
+        "request_ids": [
+          "ft3-r0001",
+          "ft3-r0003",
+          "ft3-r0005",
+          "ft3-r0008",
+          "ft3-r0009",
+          "ft3-r0010",
+          "ft3-r0019",
+          "ft3-r0024",
+          "ft3-r0038",
+          "ft3-r0047",
+          "ft3-r0048",
+          "ft3-r0057",
+          "ft3-r0068",
+          "ft3-r0071",
+          "ft3-r0079",
+          "ft3-r0081",
+          "ft3-r0086",
+          "ft3-r0094",
+          "ft3-r0101",
+          "ft3-r0104",
+          "ft3-r0106",
+          "ft3-r0107",
+          "ft3-r0109",
+          "ft3-r0116",
+          "ft3-r0122",
+          "ft3-r0123",
+          "ft3-r0124",
+          "ft3-r0126",
+          "ft3-r0130",
+          "ft3-r0131",
+          "ft3-r0135",
+          "ft3-r0139",
+          "ft3-r0140"
+        ]
+      },
+      "field_exact_match": {
+        "bound_fields_excluded": {
+          "fields": [
+            "topology_id",
+            "working_period",
+            "communication_range"
+          ],
+          "matched": 87,
+          "note": "bound or echoed by the runner rather than parsed from the request",
+          "rate": 0.6591,
+          "total": 132
+        },
+        "definition": "gold-EXECUTE items, contract fields the system parses",
+        "matched": 211,
+        "per_field": {
+          "channels": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "collision_model": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "communication_range": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "interference_ratio": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "latency_target_slots": {
+            "matched": 37,
+            "rate": 0.8409,
+            "total": 44
+          },
+          "objective": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "seed": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "topology_id": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "working_period": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          },
+          "workload": {
+            "matched": 29,
+            "rate": 0.6591,
+            "total": 44
+          }
+        },
+        "rate": 0.6851,
+        "rate_max": 0.6851,
+        "rate_mean": 0.6851,
+        "rate_min": 0.6851,
+        "rate_repeats": [
+          0.6851,
+          0.6851,
+          0.6851
+        ],
+        "total": 308
+      },
+      "joint_intent_success": {
+        "completed": 29,
+        "completed_max": 29,
+        "completed_mean": 29.0,
+        "completed_min": 29,
+        "completed_repeats": [
+          29,
+          29,
+          29
+        ],
+        "definition": "gold-EXECUTE items with the correct action, every gold contract field matched including the runner-bound ones, and a valid validator certificate",
+        "failed_on": {
+          "action": [
+            "ft3-r0020",
+            "ft3-r0021",
+            "ft3-r0022",
+            "ft3-r0029",
+            "ft3-r0034",
+            "ft3-r0041",
+            "ft3-r0044",
+            "ft3-r0059",
+            "ft3-r0069",
+            "ft3-r0089",
+            "ft3-r0096",
+            "ft3-r0103",
+            "ft3-r0114",
+            "ft3-r0138",
+            "ft3-r0142"
+          ]
+        },
+        "items": 44,
+        "rate": 0.6591,
+        "rate_max": 0.6591,
+        "rate_mean": 0.6591,
+        "rate_min": 0.6591,
+        "rate_repeats": [
+          0.6591,
+          0.6591,
+          0.6591
+        ]
+      },
+      "overhead": {
+        "mean_wall_seconds": 1.579,
+        "mean_wall_seconds_max": 1.589,
+        "mean_wall_seconds_mean": 1.579,
+        "mean_wall_seconds_min": 1.571,
+        "mean_wall_seconds_repeats": [
+          1.571,
+          1.589,
+          1.577
+        ],
+        "model_calls": 156,
+        "model_calls_max": 156,
+        "model_calls_mean": 156.0,
+        "model_calls_min": 156,
+        "model_calls_repeats": [
+          156,
+          156,
+          156
+        ],
+        "retries": 25,
+        "total_tokens": 129432,
+        "total_wall_seconds": 226.2
+      },
+      "paraphrase_consistency": {
+        "consistent_groups": 46,
+        "consistent_groups_max": 46,
+        "consistent_groups_mean": 46.0,
+        "consistent_groups_min": 46,
+        "consistent_groups_repeats": [
+          46,
+          46,
+          46
+        ],
+        "groups": 72,
+        "inconsistent_groups": [
+          "v3-a-006",
+          "v3-a-010",
+          "v3-a-017",
+          "v3-a-020",
+          "v3-a-022",
+          "v3-a-025",
+          "v3-a-026",
+          "v3-a-030",
+          "v3-a-031",
+          "v3-a-033",
+          "v3-a-034",
+          "v3-b-004",
+          "v3-b-005",
+          "v3-b-007",
+          "v3-b-014",
+          "v3-b-017",
+          "v3-b-020",
+          "v3-b-025",
+          "v3-b-026",
+          "v3-b-028",
+          "v3-b-029",
+          "v3-b-030",
+          "v3-b-031",
+          "v3-b-033",
+          "v3-b-034",
+          "v3-b-035"
+        ],
+        "rate": 0.6389
+      },
+      "per_batch": {
+        "frontier-model-a": {
+          "correct": 32,
+          "items": 72,
+          "rate": 0.4444
+        },
+        "frontier-model-b": {
+          "correct": 35,
+          "items": 72,
+          "rate": 0.4861
+        }
+      },
+      "per_gold_action": {
+        "CLARIFY": {
+          "correct": 8,
+          "correct_max": 8,
+          "correct_min": 8,
+          "correct_repeats": [
+            8,
+            8,
+            8
+          ],
+          "items": 12,
+          "rate": 0.6667
+        },
+        "EXECUTE": {
+          "correct": 29,
+          "correct_max": 29,
+          "correct_min": 29,
+          "correct_repeats": [
+            29,
+            29,
+            29
+          ],
+          "items": 44,
+          "rate": 0.6591
+        },
+        "REJECT": {
+          "correct": 10,
+          "correct_max": 10,
+          "correct_min": 10,
+          "correct_repeats": [
+            10,
+            10,
+            10
+          ],
+          "items": 16,
+          "rate": 0.625
+        },
+        "UNSUPPORTED": {
+          "correct": 20,
+          "correct_max": 20,
+          "correct_min": 20,
+          "correct_repeats": [
+            20,
+            20,
+            20
+          ],
+          "items": 72,
+          "rate": 0.2778
+        }
+      },
+      "records": 144,
+      "repeat_count": 3,
+      "schedule_validity_on_gold_execute": {
+        "items": 44,
+        "rate": 0.6591,
+        "valid": 29
+      },
+      "systems": [
+        [
+          "llm_agent_no_scope_gate",
+          "phi4:14b"
+        ]
+      ],
+      "task_completion": {
+        "completed": 67,
+        "completed_max": 67,
+        "completed_mean": 67.0,
+        "completed_min": 67,
+        "completed_repeats": [
+          67,
+          67,
+          67
+        ],
+        "items": 144,
+        "rate": 0.4653,
+        "rate_max": 0.4653,
+        "rate_mean": 0.4653,
+        "rate_min": 0.4653,
+        "rate_repeats": [
+          0.4653,
+          0.4653,
+          0.4653
+        ]
+      },
+      "wrong_items": [
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-034",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0001"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-029",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0003"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0005"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-034",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0007"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-027",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0008"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-036",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0009"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-029",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0010"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-a-014",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0012"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0014"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-029",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0019"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-b-007",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0020"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-a-010",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0021"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0022"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-031",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0024"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0026"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-032",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0027"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-004",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0029"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-a-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0034"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-025",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0038"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-010",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0041"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0042"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-005",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0044"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-026",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0046"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0047"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-b-014",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0048"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-022",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0049"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0052"
+        },
+        {
+          "error_code": "INVALID_CHANNEL_COUNT",
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0053"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-032",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0054"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-a-014",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0055"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-020",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0057"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-b-005",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0059"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-036",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0063"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-030",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0066"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0068"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0069"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-027",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0071"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-036",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0073"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-b-014",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0075"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-031",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0076"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-030",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0079"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0081"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-020",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0084"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-025",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0085"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0086"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-008",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0089"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-034",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0094"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-006",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0096"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0098"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0101"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-008",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0103"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0104"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0106"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-033",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0107"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0109"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-032",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0111"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-005",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0114"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-025",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0116"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-028",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0120"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-027",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0122"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-035",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0123"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-027",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0124"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-031",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0126"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-026",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0128"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-020",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0129"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0130"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0131"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-029",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0132"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0133"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0135"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-033",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0137"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-b-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0138"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0139"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-036",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0140"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-010",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0142"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-025",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0143"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-032",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0144"
+        }
+      ]
+    },
+    "qwen25": {
+      "action_accuracy": {
+        "correct": 54,
+        "correct_max": 54,
+        "correct_mean": 54.0,
+        "correct_min": 54,
+        "correct_repeats": [
+          54,
+          54,
+          54
+        ],
+        "items": 144,
+        "rate": 0.375,
+        "rate_max": 0.375,
+        "rate_mean": 0.375,
+        "rate_min": 0.375,
+        "rate_repeats": [
+          0.375,
+          0.375,
+          0.375
+        ]
+      },
+      "categories_with_errors": {
+        "above_topology_baseline": {
+          "correct": 0,
+          "items": 2
+        },
+        "ambiguous_channel_count": {
+          "correct": 0,
+          "items": 2
+        },
+        "catalogue_range_mismatch": {
+          "correct": 1,
+          "items": 2
+        },
+        "charge_constrained_latency": {
+          "correct": 0,
+          "items": 2
+        },
+        "charge_driven_forwarding_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "communication_range_mismatch": {
+          "correct": 0,
+          "items": 2
+        },
+        "continuous_state_alignment_compositional_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "delivery_reliability_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "device_control_precedes_bad_channel_value": {
+          "correct": 0,
+          "items": 2
+        },
+        "digital_twin_explicitly_excluded": {
+          "correct": 0,
+          "items": 2
+        },
+        "energy_aware_scheduling": {
+          "correct": 0,
+          "items": 2
+        },
+        "explicit_channels_and_seed": {
+          "correct": 1,
+          "items": 2
+        },
+        "explicit_streaming_mirror": {
+          "correct": 0,
+          "items": 2
+        },
+        "generation_seed_not_scheduler_seed": {
+          "correct": 1,
+          "items": 2
+        },
+        "historical_battery_objective_excluded": {
+          "correct": 1,
+          "items": 2
+        },
+        "integrate_joining_nodes": {
+          "correct": 0,
+          "items": 2
+        },
+        "latency_target_above_baseline": {
+          "correct": 0,
+          "items": 2
+        },
+        "latency_target_below_baseline": {
+          "correct": 0,
+          "items": 2
+        },
+        "live_route_replacement": {
+          "correct": 0,
+          "items": 2
+        },
+        "live_state_updates_after_schedule": {
+          "correct": 0,
+          "items": 2
+        },
+        "load_balancing_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "mid_round_reparenting_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "minimax_sender_load": {
+          "correct": 0,
+          "items": 2
+        },
+        "minimize_channel_usage_objective": {
+          "correct": 0,
+          "items": 2
+        },
+        "minimize_transmission_count": {
+          "correct": 0,
+          "items": 2
+        },
+        "minimize_transmission_total": {
+          "correct": 0,
+          "items": 2
+        },
+        "negated_digital_twin_hard_negative": {
+          "correct": 0,
+          "items": 2
+        },
+        "network_lifetime_objective_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "nonexistent_topology_id": {
+          "correct": 0,
+          "items": 2
+        },
+        "ongoing_deadline_collection": {
+          "correct": 0,
+          "items": 2
+        },
+        "packet_level_network_emulation": {
+          "correct": 0,
+          "items": 2
+        },
+        "past_continuous_collection_context": {
+          "correct": 0,
+          "items": 2
+        },
+        "per_transmission_charge_accounting": {
+          "correct": 0,
+          "items": 2
+        },
+        "periodic_rounds": {
+          "correct": 1,
+          "items": 2
+        },
+        "physical_device_control_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "prose_parameter_channel_conflict": {
+          "correct": 1,
+          "items": 2
+        },
+        "repeating_pull_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "replan_on_node_departure": {
+          "correct": 0,
+          "items": 2
+        },
+        "residual_battery_evolution_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "restart_after_completion": {
+          "correct": 0,
+          "items": 2
+        },
+        "runtime_adaptation": {
+          "correct": 0,
+          "items": 2
+        },
+        "runtime_rerouting_with_invalid_range": {
+          "correct": 0,
+          "items": 2
+        },
+        "self_repeating_schedule_compositional_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "single_channel_neighbor_seed": {
+          "correct": 1,
+          "items": 2
+        },
+        "software_replica_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "streaming_view": {
+          "correct": 0,
+          "items": 2
+        },
+        "unlisted_topology": {
+          "correct": 0,
+          "items": 2
+        },
+        "unresolved_material_channel_setting": {
+          "correct": 0,
+          "items": 2
+        },
+        "valid_target_below_baseline": {
+          "correct": 1,
+          "items": 2
+        }
+      },
+      "confusion_gold_by_predicted": {
+        "CLARIFY": {
+          "CLARIFY": 8,
+          "EXECUTE": 2,
+          "REJECT": 2,
+          "UNSUPPORTED": 0
+        },
+        "EXECUTE": {
+          "CLARIFY": 0,
+          "EXECUTE": 27,
+          "REJECT": 10,
+          "UNSUPPORTED": 7
+        },
+        "REJECT": {
+          "CLARIFY": 4,
+          "EXECUTE": 4,
+          "REJECT": 8,
+          "UNSUPPORTED": 0
+        },
+        "UNSUPPORTED": {
+          "CLARIFY": 0,
+          "EXECUTE": 48,
+          "REJECT": 13,
+          "UNSUPPORTED": 11
+        }
+      },
+      "error_codes": {
+        "INVALID_CHANNEL_COUNT": 1,
+        "MISSING_TOPOLOGY": 12,
+        "REQUEST_FIELD_MISMATCH": 3,
+        "UNSUPPORTED_DIGITAL_TWIN": 8,
+        "UNSUPPORTED_OBJECTIVE": 5,
+        "UNSUPPORTED_WORKLOAD": 5,
+        "VALIDATION_CERTIFICATE_FAILED": 2
+      },
+      "failure_taxonomy": {
+        "infrastructure": 0,
+        "infrastructure_request_ids": [],
+        "schedule": 0,
+        "schedule_request_ids": [],
+        "semantic": 90
+      },
+      "false_acceptance": {
+        "count": 54,
+        "count_max": 54,
+        "count_mean": 54.0,
+        "count_min": 54,
+        "count_repeats": [
+          54,
+          54,
+          54
+        ],
+        "rate": 0.375,
+        "rate_max": 0.375,
+        "rate_mean": 0.375,
+        "rate_min": 0.375,
+        "rate_repeats": [
+          0.375,
+          0.375,
+          0.375
+        ],
+        "request_ids": [
+          "ft3-r0001",
+          "ft3-r0003",
+          "ft3-r0005",
+          "ft3-r0007",
+          "ft3-r0009",
+          "ft3-r0013",
+          "ft3-r0019",
+          "ft3-r0023",
+          "ft3-r0024",
+          "ft3-r0030",
+          "ft3-r0033",
+          "ft3-r0036",
+          "ft3-r0038",
+          "ft3-r0039",
+          "ft3-r0042",
+          "ft3-r0047",
+          "ft3-r0048",
+          "ft3-r0054",
+          "ft3-r0056",
+          "ft3-r0057",
+          "ft3-r0063",
+          "ft3-r0066",
+          "ft3-r0068",
+          "ft3-r0071",
+          "ft3-r0072",
+          "ft3-r0073",
+          "ft3-r0075",
+          "ft3-r0079",
+          "ft3-r0081",
+          "ft3-r0082",
+          "ft3-r0084",
+          "ft3-r0085",
+          "ft3-r0086",
+          "ft3-r0094",
+          "ft3-r0101",
+          "ft3-r0104",
+          "ft3-r0106",
+          "ft3-r0107",
+          "ft3-r0109",
+          "ft3-r0116",
+          "ft3-r0120",
+          "ft3-r0121",
+          "ft3-r0123",
+          "ft3-r0126",
+          "ft3-r0127",
+          "ft3-r0129",
+          "ft3-r0130",
+          "ft3-r0131",
+          "ft3-r0135",
+          "ft3-r0137",
+          "ft3-r0139",
+          "ft3-r0140",
+          "ft3-r0143",
+          "ft3-r0144"
+        ]
+      },
+      "field_exact_match": {
+        "bound_fields_excluded": {
+          "fields": [
+            "topology_id",
+            "working_period",
+            "communication_range"
+          ],
+          "matched": 81,
+          "note": "bound or echoed by the runner rather than parsed from the request",
+          "rate": 0.6136,
+          "total": 132
+        },
+        "definition": "gold-EXECUTE items, contract fields the system parses",
+        "matched": 199,
+        "per_field": {
+          "channels": {
+            "matched": 27,
+            "rate": 0.6136,
+            "total": 44
+          },
+          "collision_model": {
+            "matched": 27,
+            "rate": 0.6136,
+            "total": 44
+          },
+          "communication_range": {
+            "matched": 27,
+            "rate": 0.6136,
+            "total": 44
+          },
+          "interference_ratio": {
+            "matched": 27,
+            "rate": 0.6136,
+            "total": 44
+          },
+          "latency_target_slots": {
+            "matched": 37,
+            "rate": 0.8409,
+            "total": 44
+          },
+          "objective": {
+            "matched": 27,
+            "rate": 0.6136,
+            "total": 44
+          },
+          "seed": {
+            "matched": 27,
+            "rate": 0.6136,
+            "total": 44
+          },
+          "topology_id": {
+            "matched": 27,
+            "rate": 0.6136,
+            "total": 44
+          },
+          "working_period": {
+            "matched": 27,
+            "rate": 0.6136,
+            "total": 44
+          },
+          "workload": {
+            "matched": 27,
+            "rate": 0.6136,
+            "total": 44
+          }
+        },
+        "rate": 0.6461,
+        "rate_max": 0.6461,
+        "rate_mean": 0.6461,
+        "rate_min": 0.6461,
+        "rate_repeats": [
+          0.6461,
+          0.6461,
+          0.6461
+        ],
+        "total": 308
+      },
+      "joint_intent_success": {
+        "completed": 27,
+        "completed_max": 27,
+        "completed_mean": 27.0,
+        "completed_min": 27,
+        "completed_repeats": [
+          27,
+          27,
+          27
+        ],
+        "definition": "gold-EXECUTE items with the correct action, every gold contract field matched including the runner-bound ones, and a valid validator certificate",
+        "failed_on": {
+          "action": [
+            "ft3-r0017",
+            "ft3-r0021",
+            "ft3-r0022",
+            "ft3-r0032",
+            "ft3-r0034",
+            "ft3-r0040",
+            "ft3-r0041",
+            "ft3-r0059",
+            "ft3-r0060",
+            "ft3-r0069",
+            "ft3-r0083",
+            "ft3-r0090",
+            "ft3-r0105",
+            "ft3-r0114",
+            "ft3-r0118",
+            "ft3-r0138",
+            "ft3-r0142"
+          ]
+        },
+        "items": 44,
+        "rate": 0.6136,
+        "rate_max": 0.6136,
+        "rate_mean": 0.6136,
+        "rate_min": 0.6136,
+        "rate_repeats": [
+          0.6136,
+          0.6136,
+          0.6136
+        ]
+      },
+      "overhead": {
+        "mean_wall_seconds": 1.6093,
+        "mean_wall_seconds_max": 1.614,
+        "mean_wall_seconds_mean": 1.6093,
+        "mean_wall_seconds_min": 1.604,
+        "mean_wall_seconds_repeats": [
+          1.614,
+          1.604,
+          1.61
+        ],
+        "model_calls": 138,
+        "model_calls_max": 138,
+        "model_calls_mean": 138.0,
+        "model_calls_min": 138,
+        "model_calls_repeats": [
+          138,
+          138,
+          138
+        ],
+        "retries": 25,
+        "total_tokens": 119654,
+        "total_wall_seconds": 232.4
+      },
+      "paraphrase_consistency": {
+        "consistent_groups": 61,
+        "consistent_groups_max": 61,
+        "consistent_groups_mean": 61.0,
+        "consistent_groups_min": 61,
+        "consistent_groups_repeats": [
+          61,
+          61,
+          61
+        ],
+        "groups": 72,
+        "inconsistent_groups": [
+          "v3-a-002",
+          "v3-a-005",
+          "v3-a-007",
+          "v3-a-010",
+          "v3-a-017",
+          "v3-a-018",
+          "v3-a-031",
+          "v3-a-032",
+          "v3-b-005",
+          "v3-b-027",
+          "v3-b-032"
+        ],
+        "rate": 0.8472
+      },
+      "per_batch": {
+        "frontier-model-a": {
+          "correct": 28,
+          "items": 72,
+          "rate": 0.3889
+        },
+        "frontier-model-b": {
+          "correct": 26,
+          "items": 72,
+          "rate": 0.3611
+        }
+      },
+      "per_gold_action": {
+        "CLARIFY": {
+          "correct": 8,
+          "correct_max": 8,
+          "correct_min": 8,
+          "correct_repeats": [
+            8,
+            8,
+            8
+          ],
+          "items": 12,
+          "rate": 0.6667
+        },
+        "EXECUTE": {
+          "correct": 27,
+          "correct_max": 27,
+          "correct_min": 27,
+          "correct_repeats": [
+            27,
+            27,
+            27
+          ],
+          "items": 44,
+          "rate": 0.6136
+        },
+        "REJECT": {
+          "correct": 8,
+          "correct_max": 8,
+          "correct_min": 8,
+          "correct_repeats": [
+            8,
+            8,
+            8
+          ],
+          "items": 16,
+          "rate": 0.5
+        },
+        "UNSUPPORTED": {
+          "correct": 11,
+          "correct_max": 11,
+          "correct_min": 11,
+          "correct_repeats": [
+            11,
+            11,
+            11
+          ],
+          "items": 72,
+          "rate": 0.1528
+        }
+      },
+      "records": 144,
+      "repeat_count": 3,
+      "schedule_validity_on_gold_execute": {
+        "items": 44,
+        "rate": 0.6136,
+        "valid": 27
+      },
+      "systems": [
+        [
+          "llm_agent",
+          "qwen2.5:14b"
+        ]
+      ],
+      "task_completion": {
+        "completed": 54,
+        "completed_max": 54,
+        "completed_mean": 54.0,
+        "completed_min": 54,
+        "completed_repeats": [
+          54,
+          54,
+          54
+        ],
+        "items": 144,
+        "rate": 0.375,
+        "rate_max": 0.375,
+        "rate_mean": 0.375,
+        "rate_min": 0.375,
+        "rate_repeats": [
+          0.375,
+          0.375,
+          0.375
+        ]
+      },
+      "wrong_items": [
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-034",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0001"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-029",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0003"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0005"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-034",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0007"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-036",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0009"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-029",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0010"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-a-014",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0012"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-020",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0013"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0014"
+        },
+        {
+          "error_code": "UNSUPPORTED_OBJECTIVE",
+          "gold": "EXECUTE",
+          "group": "v3-a-007",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0017"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-029",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0019"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-a-010",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0021"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0022"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-034",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0023"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-031",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0024"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0026"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-032",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0027"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-030",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0030"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-026",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0031"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-b-002",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0032"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0033"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0034"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-022",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0036"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-025",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0038"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-033",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0039"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-b-002",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0040"
+        },
+        {
+          "error_code": "REQUEST_FIELD_MISMATCH",
+          "gold": "EXECUTE",
+          "group": "v3-b-010",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0041"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-035",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0042"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-026",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0046"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0047"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-b-014",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0048"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0052"
+        },
+        {
+          "error_code": "INVALID_CHANNEL_COUNT",
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0053"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-032",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0054"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-a-014",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0055"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-022",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0056"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-020",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0057"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-019",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0058"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-b-005",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0059"
+        },
+        {
+          "error_code": "UNSUPPORTED_WORKLOAD",
+          "gold": "EXECUTE",
+          "group": "v3-a-004",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0060"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-036",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0063"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-030",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0066"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0068"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0069"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-027",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0071"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-033",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0072"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-036",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0073"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-b-014",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0075"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-031",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0076"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-030",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0079"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0081"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-030",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0082"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-a-003",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0083"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-020",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0084"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-025",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0085"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0086"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-002",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0090"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-034",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0094"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0098"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0101"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0104"
+        },
+        {
+          "error_code": "UNSUPPORTED_WORKLOAD",
+          "gold": "EXECUTE",
+          "group": "v3-a-004",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0105"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0106"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-033",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0107"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-019",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0108"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0109"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-032",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0111"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-a-005",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0114"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-025",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0116"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-a-003",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0118"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0120"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-018",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0121"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-035",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0123"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-031",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0126"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-031",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0127"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-026",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0128"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-020",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0129"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0130"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0131"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-029",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0132"
+        },
+        {
+          "error_code": "MISSING_TOPOLOGY",
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0133"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-026",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0134"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0135"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-033",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0137"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-b-009",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0138"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0139"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-036",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0140"
+        },
+        {
+          "error_code": null,
+          "gold": "EXECUTE",
+          "group": "v3-b-010",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0142"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-025",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0143"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-032",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0144"
+        }
+      ]
+    },
+    "rule_based": {
+      "action_accuracy": {
+        "correct": 55,
+        "items": 144,
+        "rate": 0.3819
+      },
+      "categories_with_errors": {
+        "ambiguous_channel_count": {
+          "correct": 0,
+          "items": 2
+        },
+        "catalogue_range_mismatch": {
+          "correct": 0,
+          "items": 2
+        },
+        "charge_constrained_latency": {
+          "correct": 0,
+          "items": 2
+        },
+        "charge_driven_forwarding_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "communication_range_mismatch": {
+          "correct": 0,
+          "items": 2
+        },
+        "continuous_state_alignment_compositional_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "contradictory_channel_specification": {
+          "correct": 0,
+          "items": 2
+        },
+        "delivery_reliability_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "device_control_precedes_bad_channel_value": {
+          "correct": 0,
+          "items": 2
+        },
+        "digital_twin_explicitly_excluded": {
+          "correct": 0,
+          "items": 2
+        },
+        "explicit_streaming_mirror": {
+          "correct": 0,
+          "items": 2
+        },
+        "historical_battery_objective_excluded": {
+          "correct": 0,
+          "items": 2
+        },
+        "historical_energy_mention_hard_negative": {
+          "correct": 0,
+          "items": 2
+        },
+        "integrate_joining_nodes": {
+          "correct": 0,
+          "items": 2
+        },
+        "interference_ratio_above_one": {
+          "correct": 0,
+          "items": 2
+        },
+        "live_route_replacement": {
+          "correct": 0,
+          "items": 2
+        },
+        "live_state_updates_after_schedule": {
+          "correct": 0,
+          "items": 2
+        },
+        "load_balancing_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "mid_round_reparenting_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "minimax_sender_load": {
+          "correct": 0,
+          "items": 2
+        },
+        "minimize_channel_usage_objective": {
+          "correct": 0,
+          "items": 2
+        },
+        "minimize_transmission_count": {
+          "correct": 0,
+          "items": 2
+        },
+        "minimize_transmission_total": {
+          "correct": 0,
+          "items": 2
+        },
+        "negated_digital_twin_hard_negative": {
+          "correct": 0,
+          "items": 2
+        },
+        "network_lifetime_objective_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "nonexistent_topology_id": {
+          "correct": 0,
+          "items": 2
+        },
+        "ongoing_deadline_collection": {
+          "correct": 0,
+          "items": 2
+        },
+        "packet_level_network_emulation": {
+          "correct": 0,
+          "items": 2
+        },
+        "past_continuous_collection_context": {
+          "correct": 0,
+          "items": 2
+        },
+        "per_transmission_charge_accounting": {
+          "correct": 0,
+          "items": 2
+        },
+        "periodic_rounds": {
+          "correct": 1,
+          "items": 2
+        },
+        "physical_device_control_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "prose_parameter_channel_conflict": {
+          "correct": 0,
+          "items": 2
+        },
+        "repeating_pull_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "replan_on_node_departure": {
+          "correct": 0,
+          "items": 2
+        },
+        "residual_battery_evolution_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "restart_after_completion": {
+          "correct": 0,
+          "items": 2
+        },
+        "runtime_adaptation": {
+          "correct": 0,
+          "items": 2
+        },
+        "runtime_rerouting_with_invalid_range": {
+          "correct": 0,
+          "items": 2
+        },
+        "self_repeating_schedule_compositional_mixed": {
+          "correct": 0,
+          "items": 2
+        },
+        "software_replica_compositional": {
+          "correct": 0,
+          "items": 2
+        },
+        "streaming_view": {
+          "correct": 0,
+          "items": 2
+        },
+        "unequal_interference_range": {
+          "correct": 0,
+          "items": 2
+        },
+        "unlisted_topology": {
+          "correct": 0,
+          "items": 2
+        },
+        "unresolved_material_channel_setting": {
+          "correct": 0,
+          "items": 2
+        }
+      },
+      "confusion_gold_by_predicted": {
+        "CLARIFY": {
+          "CLARIFY": 8,
+          "EXECUTE": 4,
+          "REJECT": 0,
+          "UNSUPPORTED": 0
+        },
+        "EXECUTE": {
+          "CLARIFY": 0,
+          "EXECUTE": 34,
+          "REJECT": 0,
+          "UNSUPPORTED": 10
+        },
+        "REJECT": {
+          "CLARIFY": 4,
+          "EXECUTE": 12,
+          "REJECT": 0,
+          "UNSUPPORTED": 0
+        },
+        "UNSUPPORTED": {
+          "CLARIFY": 0,
+          "EXECUTE": 58,
+          "REJECT": 1,
+          "UNSUPPORTED": 13
+        }
+      },
+      "error_codes": {
+        "INVALID_CHANNEL_COUNT": 1,
+        "UNSUPPORTED_DIGITAL_TWIN": 8,
+        "UNSUPPORTED_OBJECTIVE": 10,
+        "UNSUPPORTED_WORKLOAD": 5
+      },
+      "failure_taxonomy": {
+        "infrastructure": 0,
+        "infrastructure_request_ids": [],
+        "schedule": 0,
+        "schedule_request_ids": [],
+        "semantic": 89
+      },
+      "false_acceptance": {
+        "count": 74,
+        "rate": 0.5139,
+        "request_ids": [
+          "ft3-r0001",
+          "ft3-r0003",
+          "ft3-r0004",
+          "ft3-r0005",
+          "ft3-r0006",
+          "ft3-r0007",
+          "ft3-r0009",
+          "ft3-r0010",
+          "ft3-r0011",
+          "ft3-r0012",
+          "ft3-r0013",
+          "ft3-r0019",
+          "ft3-r0023",
+          "ft3-r0024",
+          "ft3-r0027",
+          "ft3-r0030",
+          "ft3-r0031",
+          "ft3-r0033",
+          "ft3-r0036",
+          "ft3-r0038",
+          "ft3-r0039",
+          "ft3-r0042",
+          "ft3-r0046",
+          "ft3-r0047",
+          "ft3-r0048",
+          "ft3-r0053",
+          "ft3-r0054",
+          "ft3-r0055",
+          "ft3-r0056",
+          "ft3-r0057",
+          "ft3-r0062",
+          "ft3-r0063",
+          "ft3-r0066",
+          "ft3-r0068",
+          "ft3-r0071",
+          "ft3-r0072",
+          "ft3-r0073",
+          "ft3-r0075",
+          "ft3-r0076",
+          "ft3-r0079",
+          "ft3-r0081",
+          "ft3-r0082",
+          "ft3-r0084",
+          "ft3-r0085",
+          "ft3-r0086",
+          "ft3-r0094",
+          "ft3-r0097",
+          "ft3-r0101",
+          "ft3-r0104",
+          "ft3-r0106",
+          "ft3-r0107",
+          "ft3-r0109",
+          "ft3-r0111",
+          "ft3-r0112",
+          "ft3-r0113",
+          "ft3-r0116",
+          "ft3-r0120",
+          "ft3-r0121",
+          "ft3-r0123",
+          "ft3-r0126",
+          "ft3-r0127",
+          "ft3-r0128",
+          "ft3-r0129",
+          "ft3-r0130",
+          "ft3-r0131",
+          "ft3-r0132",
+          "ft3-r0134",
+          "ft3-r0135",
+          "ft3-r0137",
+          "ft3-r0139",
+          "ft3-r0140",
+          "ft3-r0141",
+          "ft3-r0143",
+          "ft3-r0144"
+        ]
+      },
+      "field_exact_match": {
+        "bound_fields_excluded": {
+          "fields": [
+            "topology_id",
+            "working_period",
+            "communication_range"
+          ],
+          "matched": 111,
+          "note": "bound or echoed by the runner rather than parsed from the request",
+          "rate": 0.8409,
+          "total": 132
+        },
+        "definition": "gold-EXECUTE items, contract fields the system parses",
+        "matched": 108,
+        "per_field": {
+          "channels": {
+            "matched": 0,
+            "rate": 0.0,
+            "total": 44
+          },
+          "collision_model": {
+            "matched": 0,
+            "rate": 0.0,
+            "total": 44
+          },
+          "communication_range": {
+            "matched": 37,
+            "rate": 0.8409,
+            "total": 44
+          },
+          "interference_ratio": {
+            "matched": 0,
+            "rate": 0.0,
+            "total": 44
+          },
+          "latency_target_slots": {
+            "matched": 37,
+            "rate": 0.8409,
+            "total": 44
+          },
+          "objective": {
+            "matched": 34,
+            "rate": 0.7727,
+            "total": 44
+          },
+          "seed": {
+            "matched": 0,
+            "rate": 0.0,
+            "total": 44
+          },
+          "topology_id": {
+            "matched": 37,
+            "rate": 0.8409,
+            "total": 44
+          },
+          "working_period": {
+            "matched": 37,
+            "rate": 0.8409,
+            "total": 44
+          },
+          "workload": {
+            "matched": 37,
+            "rate": 0.8409,
+            "total": 44
+          }
+        },
+        "rate": 0.3506,
+        "total": 308
+      },
+      "joint_intent_success": {
+        "completed": 0,
+        "definition": "gold-EXECUTE items with the correct action, every gold contract field matched including the runner-bound ones, and a valid validator certificate",
+        "failed_on": {
+          "action": [
+            "ft3-r0016",
+            "ft3-r0017",
+            "ft3-r0032",
+            "ft3-r0040",
+            "ft3-r0060",
+            "ft3-r0061",
+            "ft3-r0070",
+            "ft3-r0083",
+            "ft3-r0105",
+            "ft3-r0118"
+          ],
+          "fields": [
+            "ft3-r0015",
+            "ft3-r0018",
+            "ft3-r0020",
+            "ft3-r0021",
+            "ft3-r0022",
+            "ft3-r0025",
+            "ft3-r0029",
+            "ft3-r0034",
+            "ft3-r0035",
+            "ft3-r0037",
+            "ft3-r0041",
+            "ft3-r0043",
+            "ft3-r0044",
+            "ft3-r0045",
+            "ft3-r0050",
+            "ft3-r0051",
+            "ft3-r0059",
+            "ft3-r0067",
+            "ft3-r0069",
+            "ft3-r0074",
+            "ft3-r0077",
+            "ft3-r0078",
+            "ft3-r0087",
+            "ft3-r0089",
+            "ft3-r0090",
+            "ft3-r0092",
+            "ft3-r0096",
+            "ft3-r0103",
+            "ft3-r0114",
+            "ft3-r0117",
+            "ft3-r0119",
+            "ft3-r0136",
+            "ft3-r0138",
+            "ft3-r0142"
+          ]
+        },
+        "items": 44,
+        "rate": 0.0
+      },
+      "overhead": {
+        "mean_wall_seconds": 0.017,
+        "model_calls": 0,
+        "retries": 0,
+        "total_tokens": 0,
+        "total_wall_seconds": 2.4
+      },
+      "paraphrase_consistency": {
+        "consistent_groups": 70,
+        "groups": 72,
+        "inconsistent_groups": [
+          "v3-a-035",
+          "v3-b-027"
+        ],
+        "rate": 0.9722
+      },
+      "per_batch": {
+        "frontier-model-a": {
+          "correct": 28,
+          "items": 72,
+          "rate": 0.3889
+        },
+        "frontier-model-b": {
+          "correct": 27,
+          "items": 72,
+          "rate": 0.375
+        }
+      },
+      "per_gold_action": {
+        "CLARIFY": {
+          "correct": 8,
+          "items": 12,
+          "rate": 0.6667
+        },
+        "EXECUTE": {
+          "correct": 34,
+          "items": 44,
+          "rate": 0.7727
+        },
+        "REJECT": {
+          "correct": 0,
+          "items": 16,
+          "rate": 0.0
+        },
+        "UNSUPPORTED": {
+          "correct": 13,
+          "items": 72,
+          "rate": 0.1806
+        }
+      },
+      "records": 144,
+      "schedule_validity_on_gold_execute": {
+        "items": 44,
+        "rate": 0.7727,
+        "valid": 34
+      },
+      "systems": [
+        [
+          "rule_based",
+          "deterministic"
+        ]
+      ],
+      "task_completion": {
+        "completed": 55,
+        "items": 144,
+        "rate": 0.3819
+      },
+      "wrong_items": [
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-034",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0001"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-029",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0003"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-018",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0004"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0005"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-016",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0006"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-034",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0007"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-036",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0009"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-029",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0010"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-016",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0011"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-a-014",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0012"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-020",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0013"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0014"
+        },
+        {
+          "error_code": "UNSUPPORTED_OBJECTIVE",
+          "gold": "EXECUTE",
+          "group": "v3-b-008",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0016"
+        },
+        {
+          "error_code": "UNSUPPORTED_OBJECTIVE",
+          "gold": "EXECUTE",
+          "group": "v3-a-007",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0017"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-029",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0019"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-034",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0023"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-031",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0024"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0026"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-032",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0027"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-030",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0030"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-026",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0031"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-b-002",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0032"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0033"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-022",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0036"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-025",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0038"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-033",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0039"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-b-002",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0040"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-035",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0042"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-026",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0046"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0047"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-b-014",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0048"
+        },
+        {
+          "error_code": "INVALID_CHANNEL_COUNT",
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "REJECT",
+          "request_id": "ft3-r0052"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-035",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0053"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-032",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0054"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-a-014",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0055"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-022",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0056"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-020",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0057"
+        },
+        {
+          "error_code": "UNSUPPORTED_WORKLOAD",
+          "gold": "EXECUTE",
+          "group": "v3-a-004",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0060"
+        },
+        {
+          "error_code": "UNSUPPORTED_OBJECTIVE",
+          "gold": "EXECUTE",
+          "group": "v3-a-007",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0061"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-016",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0062"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-036",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0063"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-030",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0066"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0068"
+        },
+        {
+          "error_code": "UNSUPPORTED_OBJECTIVE",
+          "gold": "EXECUTE",
+          "group": "v3-b-008",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0070"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-027",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0071"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-033",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0072"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-036",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0073"
+        },
+        {
+          "error_code": null,
+          "gold": "CLARIFY",
+          "group": "v3-b-014",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0075"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-031",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0076"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-030",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0079"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0081"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-030",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0082"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-a-003",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0083"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-020",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0084"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-025",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0085"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0086"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-034",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0094"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-016",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0097"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0098"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0101"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0104"
+        },
+        {
+          "error_code": "UNSUPPORTED_WORKLOAD",
+          "gold": "EXECUTE",
+          "group": "v3-a-004",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0105"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0106"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-033",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0107"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-021",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0109"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-032",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0111"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-018",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0112"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-018",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0113"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-025",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0116"
+        },
+        {
+          "error_code": "UNSUPPORTED_DIGITAL_TWIN",
+          "gold": "EXECUTE",
+          "group": "v3-a-003",
+          "predicted": "UNSUPPORTED",
+          "request_id": "ft3-r0118"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0120"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-018",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0121"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-035",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0123"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-031",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0126"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-031",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0127"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-026",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0128"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-020",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0129"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-b-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0130"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-028",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0131"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-029",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0132"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-015",
+          "predicted": "CLARIFY",
+          "request_id": "ft3-r0133"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-026",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0134"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0135"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-033",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0137"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-024",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0139"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-b-036",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0140"
+        },
+        {
+          "error_code": null,
+          "gold": "REJECT",
+          "group": "v3-a-017",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0141"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-025",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0143"
+        },
+        {
+          "error_code": null,
+          "gold": "UNSUPPORTED",
+          "group": "v3-a-032",
+          "predicted": "EXECUTE",
+          "request_id": "ft3-r0144"
+        }
+      ]
+    }
+  },
+  "harness": {
+    "items": 144,
+    "path": "benchmarks/frozen_test_v3/harness/frozen_test_v3_harness.jsonl",
+    "per_gold_action": {
+      "CLARIFY": 12,
+      "EXECUTE": 44,
+      "REJECT": 16,
+      "UNSUPPORTED": 72
+    }
+  },
+  "ledgers": {
+    "gpt55_advisory": [
+      "results/frozen_test_v3/gpt55_advisory_scope_gate_seed11.jsonl",
+      "results/frozen_test_v3/gpt55_advisory_scope_gate_seed12.jsonl",
+      "results/frozen_test_v3/gpt55_advisory_scope_gate_seed13.jsonl"
+    ],
+    "gpt55_gated": [
+      "results/frozen_test_v3/gpt55_policy_v2_seed11.jsonl",
+      "results/frozen_test_v3/gpt55_policy_v2_seed12.jsonl",
+      "results/frozen_test_v3/gpt55_policy_v2_seed13.jsonl"
+    ],
+    "gpt55_no_gate": [
+      "results/frozen_test_v3/gpt55_no_scope_gate_seed11.jsonl",
+      "results/frozen_test_v3/gpt55_no_scope_gate_seed12.jsonl",
+      "results/frozen_test_v3/gpt55_no_scope_gate_seed13.jsonl"
+    ],
+    "phi4_advisory": [
+      "results/frozen_test_v3/phi4_advisory_scope_gate_seed11.jsonl",
+      "results/frozen_test_v3/phi4_advisory_scope_gate_seed12.jsonl",
+      "results/frozen_test_v3/phi4_advisory_scope_gate_seed13.jsonl"
+    ],
+    "phi4_gated": [
+      "results/frozen_test_v3/phi4_policy_v2_seed11.jsonl",
+      "results/frozen_test_v3/phi4_policy_v2_seed12.jsonl",
+      "results/frozen_test_v3/phi4_policy_v2_seed13.jsonl"
+    ],
+    "phi4_no_gate": [
+      "results/frozen_test_v3/phi4_no_scope_gate_seed11.jsonl",
+      "results/frozen_test_v3/phi4_no_scope_gate_seed12.jsonl",
+      "results/frozen_test_v3/phi4_no_scope_gate_seed13.jsonl"
+    ],
+    "qwen25": [
+      "results/frozen_test_v3/qwen25_policy_v2_seed11.jsonl",
+      "results/frozen_test_v3/qwen25_policy_v2_seed12.jsonl",
+      "results/frozen_test_v3/qwen25_policy_v2_seed13.jsonl"
+    ],
+    "rule_based": [
+      "results/frozen_test_v3/rule_based_gated_v32.jsonl"
+    ]
+  },
+  "no_language_model_or_scheduler_invoked": true,
+  "paired_comparisons": {
+    "gpt55_advisory minus rule_based": {
+      "bootstrap_samples": 10000,
+      "bootstrap_seed": 0,
+      "ci95": [
+        0.3958,
+        0.6273
+      ],
+      "ci95_by_request": [
+        0.4306,
+        0.5972
+      ],
+      "mean_difference": 0.5139,
+      "pairs": 144,
+      "repeats": [
+        1,
+        3
+      ],
+      "resample_unit": "paraphrase_group",
+      "resample_units": 72
+    },
+    "gpt55_gated minus rule_based": {
+      "bootstrap_samples": 10000,
+      "bootstrap_seed": 0,
+      "ci95": [
+        0.3426,
+        0.5787
+      ],
+      "ci95_by_request": [
+        0.3773,
+        0.5463
+      ],
+      "mean_difference": 0.463,
+      "pairs": 144,
+      "repeats": [
+        1,
+        3
+      ],
+      "resample_unit": "paraphrase_group",
+      "resample_units": 72
+    },
+    "gpt55_no_gate minus rule_based": {
+      "bootstrap_samples": 10000,
+      "bootstrap_seed": 0,
+      "ci95": [
+        0.412,
+        0.6412
+      ],
+      "ci95_by_request": [
+        0.4468,
+        0.6134
+      ],
+      "mean_difference": 0.5301,
+      "pairs": 144,
+      "repeats": [
+        1,
+        3
+      ],
+      "resample_unit": "paraphrase_group",
+      "resample_units": 72
+    },
+    "phi4_advisory minus rule_based": {
+      "bootstrap_samples": 10000,
+      "bootstrap_seed": 0,
+      "ci95": [
+        -0.0208,
+        0.2153
+      ],
+      "ci95_by_request": [
+        0.0,
+        0.1875
+      ],
+      "mean_difference": 0.0972,
+      "pairs": 144,
+      "repeats": [
+        1,
+        3
+      ],
+      "resample_unit": "paraphrase_group",
+      "resample_units": 72
+    },
+    "phi4_gated minus rule_based": {
+      "bootstrap_samples": 10000,
+      "bootstrap_seed": 0,
+      "ci95": [
+        -0.0417,
+        0.1667
+      ],
+      "ci95_by_request": [
+        -0.0208,
+        0.1458
+      ],
+      "mean_difference": 0.0625,
+      "pairs": 144,
+      "repeats": [
+        1,
+        3
+      ],
+      "resample_unit": "paraphrase_group",
+      "resample_units": 72
+    },
+    "phi4_no_gate minus rule_based": {
+      "bootstrap_samples": 10000,
+      "bootstrap_seed": 0,
+      "ci95": [
+        -0.0417,
+        0.2014
+      ],
+      "ci95_by_request": [
+        -0.0139,
+        0.1736
+      ],
+      "mean_difference": 0.0833,
+      "pairs": 144,
+      "repeats": [
+        1,
+        3
+      ],
+      "resample_unit": "paraphrase_group",
+      "resample_units": 72
+    },
+    "qwen25 minus rule_based": {
+      "bootstrap_samples": 10000,
+      "bootstrap_seed": 0,
+      "ci95": [
+        -0.0903,
+        0.0764
+      ],
+      "ci95_by_request": [
+        -0.0694,
+        0.0556
+      ],
+      "mean_difference": -0.0069,
+      "pairs": 144,
+      "repeats": [
+        1,
+        3
+      ],
+      "resample_unit": "paraphrase_group",
+      "resample_units": 72
+    }
+  },
+  "repeats_per_arm": {
+    "gpt55_advisory": 3,
+    "gpt55_gated": 3,
+    "gpt55_no_gate": 3,
+    "phi4_advisory": 3,
+    "phi4_gated": 3,
+    "phi4_no_gate": 3,
+    "qwen25": 3,
+    "rule_based": 1
+  },
+  "title": "Frozen Test v3: all arms, three seeds, group-clustered intervals, with joint intent success"
+}

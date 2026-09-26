@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
@@ -91,6 +92,13 @@ def metric_rows(arms: Mapping[str, Mapping[str, Any]]) -> list[tuple[str, list[s
     rows.append(("Field exact match", [
         f"{float(a['field_exact_match']['rate']):.3f}"
         + _spread(a["field_exact_match"], "rate", ".3f") for a in arms.values()]))
+    # The conjunction the interface is judged on: right action, every gold field
+    # including the three the runner binds, and a certified schedule. Action
+    # accuracy and field exact match can both be high while this is not.
+    if all("joint_intent_success" in a for a in arms.values()):
+        rows.append(("Joint intent success", [
+            _fraction(_mean_only(a["joint_intent_success"], "completed"),
+                      a["joint_intent_success"]["items"]) for a in arms.values()]))
     rows.append(("False acceptance", [
         _mean_count(a["false_acceptance"], "count") for a in arms.values()]))
     rows.append(("Paraphrase consistency", [
@@ -133,9 +141,32 @@ def arm_configuration(arms: Mapping[str, Mapping[str, Any]]) -> dict[str, list[s
         gate = seen_gate.pop() if seen_gate else "---"
         # The rule baseline calls nothing; an em dash says so more plainly than
         # the word "deterministic" repeated under a column already named Rule.
-        models.append("---" if model == "deterministic" else escape(model))
+        models.append("---" if model == "deterministic" else model)
         gates.append(r"\textbf{" + gate + "}" if gate != "enforcing" else gate)
     return {"model": models, "gate": gates}
+
+
+# A pinned snapshot id is the widest cell in the table and it appears three
+# times, which is what held the font at \footnotesize with eight arms. The row
+# shows the family and the caption carries the snapshot, so nothing is lost and
+# the table reads a size larger.
+SNAPSHOT = re.compile(r"-\d{4}-\d{2}-\d{2}$")
+
+
+def abbreviate_models(models: Sequence[str]) -> tuple[list[str], str]:
+    """Short names for the row, and the sentence that restores the full ones."""
+    shown: list[str] = []
+    pinned: dict[str, str] = {}
+    for model in models:
+        short = SNAPSHOT.sub("", model)
+        if short != model:
+            pinned[short] = model
+        shown.append("---" if model == "---" else escape(short))
+    if not pinned:
+        return shown, ""
+    # The caption does not restore the snapshot: Section 4.4 prints every model
+    # id in full, and a table* caption line costs two lines of body text.
+    return shown, ""
 
 
 def render_main(arms: Mapping[str, Mapping[str, Any]], labels: Mapping[str, str],
@@ -150,11 +181,16 @@ def render_main(arms: Mapping[str, Mapping[str, Any]], labels: Mapping[str, str]
     # and the results cannot drift apart and the page budget carries one float
     # rather than two.
     config = arm_configuration(arms)
-    lines = [r"\begin{table*}[t]", f"\\caption{{{caption}}}", f"\\label{{{label}}}",
-             r"\footnotesize", r"\setlength{\tabcolsep}{5pt}",
+    shown_models, snapshot_note = abbreviate_models(config["model"])
+    lines = [r"\begin{table*}[t]", f"\\caption{{{caption}{snapshot_note}}}",
+             f"\\label{{{label}}}",
+             r"\small", r"\setlength{\tabcolsep}{5pt}",
+             # 8pt type in rows 5 per cent tighter reads better than 7pt type
+             # in loose ones, and the pair costs one line rather than ten.
+             r"\renewcommand{\arraystretch}{0.95}",
              r"\begin{tabular}{@{}l" + "r" * len(names) + r"@{}}",
              r"\toprule", f"Arm & {header} \\\\",
-             f"\\quad model & " + " & ".join(config["model"]) + r" \\",
+             f"\\quad model & " + " & ".join(shown_models) + r" \\",
              f"\\quad scope gate & " + " & ".join(config["gate"]) + r" \\",
              r"\midrule"]
     for title, cells in metric_rows(arms):

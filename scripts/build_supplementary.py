@@ -94,12 +94,13 @@ INCLUDE = (
     # the model determined from the sentence --- has the file the paper names
     # rather than a re-derivation.
     "paper/aamas2027/figure_data/*.json",
-    # The unabridged build. It is the locator for the worked example's schedule
-    # and for the paired-difference table, both of which the submission cites
-    # instead of printing. This is the one PDF that goes in: the submitted
-    # main.pdf stays out, because shipping the paper back with the paper is
-    # what the exclusion is for.
-    "paper/aamas2027/main-full.pdf",
+    # No PDF of the paper goes in, in either build. AAMAS allows a supplement
+    # to carry experimental detail and proofs and does not allow it to carry an
+    # extended or revised version of the submission, and `main-full.pdf` is
+    # exactly that: the same manuscript with its \iffull passages restored.
+    # What the submission cited it for --- the worked example's schedule and
+    # the paired-difference table --- is in the figure data and the analysis
+    # summaries, which are here.
 )
 
 EXCLUDE = (

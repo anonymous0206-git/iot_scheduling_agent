@@ -30,14 +30,15 @@ python scripts/analyze_frozen_test_results.py \
 ```
 
 Repeating `--ledger` with one name declares repeats of one arm; add the other
-arms the same way. `results/frozen_test_v3/analysis_v36/` is that command run
+arms the same way. `results/frozen_test_v3/analysis_v37/` is that command run
 over all eight arms, and is what the paper's table is generated from.
 
 ## Where each number in the paper comes from
 
 | In the paper | In this repository |
 | --- | --- |
-| Table 1, every arm and metric | `results/frozen_test_v3/analysis_v36/summary.json`, rendered by `scripts/render_results_tables.py` |
+| Table 1, every arm and metric | `results/frozen_test_v3/analysis_v37/summary.json`, rendered by `scripts/render_results_tables.py` |
+| Joint intent success, and the per-field and bound-field rates | the same `summary.json`, key `joint_intent_success` |
 | Scope-gate ablation, 14B and frontier | `results/frozen_test_v3/analysis_abl_phi4_final/`, `analysis_abl_gpt_final/` |
 | Advisory gate, all four intervals | `analysis_advisory_phi4/`, `analysis_advisory_phi4_vs_off/`, `analysis_advisory_gpt/`, `analysis_advisory_gpt_vs_off/` |
 | Sensitivity to the contested gold labels | `results/frozen_test_v3/sensitivity_labels/summary.md`, produced by `scripts/sensitivity_gold_labels.py` |
@@ -52,7 +53,6 @@ over all eight arms, and is what the paper's table is generated from.
 | Who authored and adjudicated each batch | `benchmarks/frozen_test_v3/model_metadata.json`, `generation_provenance.json`, `frozen_test_v3_authoring_lock.json` |
 | The pipeline repair, before and after | pre-repair `gpt55_policy_v2_seed1.jsonl` and `gpt55_no_scope_gate_seed1.jsonl`; post-repair `*_seed11`, `*_seed12`, `*_seed13` |
 | Serving device per timed run | `results/frozen_test_v3/*.device.json` |
-| The unabridged build, with the worked schedule | `paper/aamas2027/main-full.pdf` |
 
 ## Re-running the experiments themselves
 
@@ -83,11 +83,13 @@ scripts/      experiment runners, analysis, figure and table generation
 source/       the published ANEX scheduler the agent wraps, unmodified
 src/          the agent: policy, orchestration, validator, sealing pipeline
 tests/        the suite the first command runs
-paper/        figure data and the unabridged build
+paper/        the figure data behind Figures 2 and 3
 ```
 
 ## What is not here
 
-The submitted PDF, model weights, API keys, and the parts of the ANEX source
-tree the agent does not import. `docs/development_notes.md` keeps the earlier
+No PDF of the paper, in either build: a supplement may carry experimental
+detail and proofs, not an extended version of the submission. Also absent are
+model weights, API keys, and the parts of the ANEX source tree the agent does
+not import. `docs/development_notes.md` keeps the earlier
 milestone notes; where they disagree with the paper, the paper is current.

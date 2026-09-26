@@ -106,13 +106,10 @@ def render_phrasing(data: Mapping[str, Any]) -> str:
         r"\end{axis}",
         r"\end{tikzpicture}",
         r"\caption{Recall on the 72 gold-\textsc{unsupported} requests, split by a",
-        r"vocabulary test, independent of the gate's own patterns, for whether the",
-        r"request names the out-of-scope capability. The gate's patterns are fixed,",
-        r"so its bars are one number; the agent decodes at temperature~1, so its",
-        r"bars are the mean of the three repeats of Table~\ref{tab:results}. The",
-        r"gate's rules are proximity windows written to catch a capability",
-        r"expressed without its name, and they fired on none of the 46 requests on",
-        r"the right. Per-group request ids are in",
+        r"vocabulary test independent of the gate's own patterns: whether the",
+        r"request names the capability it asks for. The gate's patterns are fixed,",
+        r"so its bars are one number; the agent samples at temperature~1, so its",
+        r"bars are the mean of three repeats. Per-group request ids are in",
         r"\texttt{figure\_data/fig2\_phrasing.json}.}",
         r"\label{fig:phrasing}",
         # The class checks for this and warns without it, and a bar chart is
@@ -337,7 +334,7 @@ def render_schedule(data: Mapping[str, Any]) -> str:
         rf"\definecolor{{laneCfill}}{{HTML}}{{{LANE_C_FILL}}}",
         rf"\definecolor{{laneCline}}{{HTML}}{{{LANE_C_LINE}}}",
         r"\begin{figure}[tb]",
-        r"\centering\footnotesize",
+        r"\centering\small",
         r"\setlength{\fboxsep}{3.5pt}",
         r"\begin{tabular}{@{}p{0.945\columnwidth}@{}}",
         r"\textcolor{black!55}{\bfseries the request} \\[1pt]",
@@ -365,12 +362,11 @@ def render_schedule(data: Mapping[str, Any]) -> str:
         rf"{data['cost']['wall_seconds']}\,s). The model returns the typed "
         rf"request, a proposed action and its tool approvals; of the seven "
         rf"contract fields, the sentence determines the two in the second box "
-        rf"and the other five are the contract defaults, which "
-        rf"\texttt{{contract.py}} lists as \texttt{{DEFAULT\_FIELDS}}. It "
-        rf"never sees the sensors and never writes a schedule. The schedule "
-        rf"this request produced is drawn in \texttt{{main-full.pdf}} in the "
-        rf"supplement, and its every entry is in "
-        rf"\texttt{{figure\_data/fig6\_trace.json}} there.}}",
+        rf"and the other five are the defaults \texttt{{contract.py}} lists "
+        rf"as \texttt{{DEFAULT\_FIELDS}}. It "
+        rf"never sees the sensors and never writes a schedule. Every entry of "
+        rf"the schedule it produced is in "
+        rf"\texttt{{figure\_data/fig6\_trace.json}} in the supplement.}}",
         r"\label{fig:trace}",
         r"\Description{Four stacked boxes: the user's one-sentence request; "
         r"the two contract fields that sentence determines; the five fields "
