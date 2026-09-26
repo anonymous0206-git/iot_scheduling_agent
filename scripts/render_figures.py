@@ -61,7 +61,7 @@ def render_phrasing(data: Mapping[str, Any]) -> str:
             # which is a decimal whenever they disagreed.
             shown = f"{value:g}" if float(value).is_integer() else f"{value:.1f}"
             labels.append(
-                f"\\node[font=\\scriptsize,anchor={anchor},inner sep=1.5pt] "
+                f"\\node[font=\\footnotesize,anchor={anchor},inner sep=1.5pt] "
                 f"at (axis cs:{index + shift},{height:.4f}) "
                 f"{{{shown}/{group['items']}}};")
 
@@ -92,10 +92,10 @@ def render_phrasing(data: Mapping[str, Any]) -> str:
         r"  xtick={0,1},",
         f"  xticklabels={{{{{NAMED_TICK}}},{{{COMPOSED_TICK}}}}},",
         r"  xticklabel style={font=\small},",
-        r"  yticklabel style={font=\scriptsize},",
+        r"  yticklabel style={font=\footnotesize},",
         r"  axis lines*=left, axis line style={-},",
         r"  tick style={draw=none}, ymajorgrids=false,",
-        r"  legend style={draw=none, font=\scriptsize, at={(0.5,1.02)},",
+        r"  legend style={draw=none, font=\footnotesize, at={(0.5,1.02)},",
         r"    anchor=south, legend columns=2, column sep=1.2em},",
         r"]",
         plot("gate", "gatebar"),
@@ -213,7 +213,7 @@ def render_scaling(data: Mapping[str, Any]) -> str:
         r"  xmin=20, xmax=310, ymin=0,",
         r"  axis lines*=left, axis line style={-}, tick style={draw=none},",
         r"  ymajorgrids=true, grid style={draw=black!12},",
-        r"  legend style={draw=none, font=\scriptsize, at={(1.0,1.04)},",
+        r"  legend style={draw=none, font=\footnotesize, at={(1.0,1.04)},",
         r"    anchor=south east, legend columns=7, column sep=0.2em},",
         r"  legend cell align=left,",
         r"]",
