@@ -105,12 +105,10 @@ def render_phrasing(data: Mapping[str, Any]) -> str:
         *labels,
         r"\end{axis}",
         r"\end{tikzpicture}",
-        r"\caption{Recall on the 72 gold-\textsc{unsupported} requests, split by a",
-        r"vocabulary test independent of the gate's own patterns: whether the",
-        r"request names the capability it asks for. The gate's patterns are fixed,",
-        r"so its bars are one number; the agent samples at temperature~1, so its",
-        r"bars are the mean of three repeats. Per-group request ids are in",
-        r"\texttt{figure\_data/fig2\_phrasing.json}.}",
+        r"\caption{Recall on the 72 gold-\textsc{unsupported} requests, split by",
+        r"whether the request names the capability it asks for. The gate's bars",
+        r"are one number, the agent's the mean of three repeats. Request ids are",
+        r"in \texttt{figure\_data/fig2\_phrasing.json}.}",
         r"\label{fig:phrasing}",
         # The class checks for this and warns without it, and a bar chart is
         # exactly the figure a screen reader cannot recover from the caption:
@@ -361,12 +359,11 @@ def render_schedule(data: Mapping[str, Any]) -> str:
         rf"{data['cost']['model_calls']} model call, "
         rf"{data['cost']['wall_seconds']}\,s). The model returns the typed "
         rf"request, a proposed action and its tool approvals; of the seven "
-        rf"contract fields, the sentence determines the two in the second box "
+        rf"contract fields, the sentence determines two "
         rf"and the other five are the defaults \texttt{{contract.py}} lists "
         rf"as \texttt{{DEFAULT\_FIELDS}}. It "
-        rf"never sees the sensors and never writes a schedule. Every entry of "
-        rf"the schedule it produced is in "
-        rf"\texttt{{figure\_data/fig6\_trace.json}} in the supplement.}}",
+        rf"Every entry of the schedule it produced is in "
+        rf"\texttt{{figure\_data/fig6\_trace.json}}.}}",
         r"\label{fig:trace}",
         r"\Description{Four stacked boxes: the user's one-sentence request; "
         r"the two contract fields that sentence determines; the five fields "
