@@ -1,0 +1,515 @@
+{
+  "reviewed_batch": "frontier-model-a",
+  "reviews": [
+    {
+      "semantic_group_id": "v3-a-001",
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "topology_id": "topo50_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 2,
+        "interference_ratio": 1.0,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": null,
+        "seed": 0,
+        "working_period": 10,
+        "communication_range": 20.0
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "A catalogue topology is named by its exact id and every optional field is left out, so the documented defaults apply and communication_range takes the topology value 20.0. Reporting elapsed duration is in scope. Batch-level observation, recorded once here: the blind file parses cleanly, holds 36 groups of exactly two paraphrases with unique ids, and I found no duplicated or near-duplicated sentence across groups. The register is uniform, with most supported requests naming ANEX explicitly, which is plausible for operators of this system but makes the batch read more homogeneously than field requests usually do."
+    },
+    {
+      "semantic_group_id": "v3-a-002",
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "topology_id": "legacy30_seed7",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 2,
+        "interference_ratio": 1.0,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": null,
+        "seed": 0,
+        "working_period": 10,
+        "communication_range": 18.0
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Defaults on legacy30_seed7, whose communication range is 18.0 rather than 20.0. Checking the schedule for collisions is deterministic schedule validation, which the scope includes, so it adds no capability beyond the supported one."
+    },
+    {
+      "semantic_group_id": "v3-a-003",
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "topology_id": "topo150_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 2,
+        "interference_ratio": 1.0,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": null,
+        "seed": 0,
+        "working_period": 10,
+        "communication_range": 20.0
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "The Digital Twin appears only as a negated requirement, which the action labels state is not an unsupported request. What remains is a default plan computed from the static network."
+    },
+    {
+      "semantic_group_id": "v3-a-004",
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "topology_id": "topo300_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 2,
+        "interference_ratio": 1.0,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": null,
+        "seed": 0,
+        "working_period": 10,
+        "communication_range": 20.0
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Continuous collection is attributed to a previous campaign and explicitly excluded from today's job, which is a historical mention rather than a requested workload. The requested work is a single default collection."
+    },
+    {
+      "semantic_group_id": "v3-a-005",
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "topology_id": "topo100_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 1,
+        "interference_ratio": 1.0,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": null,
+        "seed": 16,
+        "working_period": 10,
+        "communication_range": 20.0
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "One channel is a valid integer at the lower bound, legacy_neighbor is a permitted collision model, and 16 is a valid explicit seed that is not derived from the topology id."
+    },
+    {
+      "semantic_group_id": "v3-a-006",
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "topology_id": "topo200_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 6,
+        "interference_ratio": 1.0,
+        "collision_model": "interference_range",
+        "latency_target_slots": null,
+        "seed": 24,
+        "working_period": 10,
+        "communication_range": 20.0
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Every explicit value is valid and the two topology-owned fields restate the selected topology exactly: working period 10 and communication range 20.0. The ratio of 1.0 is the only permitted value, so interference_range here is equivalent to legacy_neighbor."
+    },
+    {
+      "semantic_group_id": "v3-a-007",
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "topology_id": "topo250_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 4,
+        "interference_ratio": 1.0,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": null,
+        "seed": 31,
+        "working_period": 10,
+        "communication_range": 20.0
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Battery-life prioritization is placed in an earlier analysis and explicitly excluded, so the positively requested objective is latency alone. All explicit values satisfy the contract."
+    },
+    {
+      "semantic_group_id": "v3-a-008",
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "topology_id": "legacy30_seed7",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 48,
+        "interference_ratio": 1.0,
+        "collision_model": "interference_range",
+        "latency_target_slots": null,
+        "seed": 5,
+        "working_period": 10,
+        "communication_range": 18.0
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "The contract states that arbitrary positive integer channel counts are supported, so 48 is valid rather than excessive. The stated communication range of 18.0 matches legacy30_seed7, and the ratio of 1.0 is the permitted value."
+    },
+    {
+      "semantic_group_id": "v3-a-009",
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "topology_id": "topo100_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 2,
+        "interference_ratio": 1.0,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": 35,
+        "seed": 0,
+        "working_period": 10,
+        "communication_range": 20.0
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Thirty-five elapsed slots is a valid positive integer target and sits above this topology's baseline of 29, so it is achievable. Reporting whether the target was met is part of execution."
+    },
+    {
+      "semantic_group_id": "v3-a-010",
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "topology_id": "topo300_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 2,
+        "interference_ratio": 1.0,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": 32,
+        "seed": 0,
+        "working_period": 10,
+        "communication_range": 20.0
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Thirty-two elapsed slots is below this topology's baseline of 47, which the contract says is still syntactically valid and must not be rejected on feasibility grounds. The request itself anticipates a miss and asks for the actual latency either way."
+    },
+    {
+      "semantic_group_id": "v3-a-011",
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "topology_id": "topo200_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 2,
+        "interference_ratio": 1.0,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": null,
+        "seed": 0,
+        "working_period": 10,
+        "communication_range": 20.0
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "An explicit null target coincides with the documented default, and the rest of the configuration is left at defaults, so the configuration is complete and valid."
+    },
+    {
+      "semantic_group_id": "v3-a-012",
+      "adjudicated_action": "CLARIFY",
+      "adjudicated_fields": {
+        "channels": 3,
+        "seed": 14,
+        "unresolved": {
+          "topology_id": "No topology id appears in either paraphrase and the field has no default."
+        }
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Three channels and seed 14 are valid, so nothing invalid was supplied and REJECT does not apply. Without a topology id no configuration can be built, which is the first CLARIFY condition. Neither paraphrase narrates the omission."
+    },
+    {
+      "semantic_group_id": "v3-a-013",
+      "adjudicated_action": "CLARIFY",
+      "adjudicated_fields": {
+        "channels": 2,
+        "unresolved": {
+          "topology_id": "topo50_seed0 and topo150_seed0 are both listed as candidates for one run and neither is marked as selected."
+        }
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Two different catalogue topologies are named for a single run, which the topology section states is ambiguous. The deciding fact sits outside the request, so one configuration cannot be chosen."
+    },
+    {
+      "semantic_group_id": "v3-a-014",
+      "adjudicated_action": "CLARIFY",
+      "adjudicated_fields": {
+        "topology_id": "topo250_seed0",
+        "unresolved": {
+          "channels": "The approved allocation is either 3 or 7 and the notes do not mark which entry was approved."
+        }
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Both candidate channel counts are valid but materially different, and the request requires the approved one, so the default cannot stand in for the unresolved value."
+    },
+    {
+      "semantic_group_id": "v3-a-015",
+      "adjudicated_action": "REJECT",
+      "adjudicated_fields": {
+        "topology_id": "topo175_seed0",
+        "channels": 2,
+        "invalid_fields": {
+          "topology_id": {
+            "observed": "topo175_seed0",
+            "reason": "Not one of the seven catalogue topologies; an unlisted explicit id produces REJECT."
+          }
+        }
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "The task is supported and the channel count is valid, but the explicitly supplied topology id is outside the catalogue. Topology-dependent defaults cannot be resolved for a network that does not exist."
+    },
+    {
+      "semantic_group_id": "v3-a-016",
+      "adjudicated_action": "REJECT",
+      "adjudicated_fields": {
+        "topology_id": "topo100_seed0",
+        "collision_model": "interference_range",
+        "interference_ratio": 1.25,
+        "invalid_fields": {
+          "interference_ratio": {
+            "observed": 1.25,
+            "reason": "The interference range equals the communication range, so 1.0 is the only valid ratio."
+          }
+        }
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "The collision model is a permitted literal, but a ratio of 1.25 asks for an interference range wider than the communication range. The contract classifies that as an invalid value of a supported field, so REJECT rather than UNSUPPORTED."
+    },
+    {
+      "semantic_group_id": "v3-a-017",
+      "adjudicated_action": "REJECT",
+      "adjudicated_fields": {
+        "topology_id": "topo200_seed0",
+        "communication_range": 18.0,
+        "seed": 9,
+        "invalid_fields": {
+          "communication_range": {
+            "observed": 18.0,
+            "reason": "topo200_seed0 has a communication range of 20.0; 18.0 belongs to legacy30_seed7."
+          }
+        }
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Seed 9 is valid, but the explicit communication range contradicts the selected topology. This is a static configuration inconsistency, not a request to change the network, so REJECT is the right label."
+    },
+    {
+      "semantic_group_id": "v3-a-018",
+      "adjudicated_action": "REJECT",
+      "adjudicated_fields": {
+        "topology_id": "legacy30_seed7",
+        "channels": null,
+        "seed": 22,
+        "collision_model": "legacy_neighbor",
+        "invalid_fields": {
+          "channels": {
+            "observed": {
+              "prose": 1,
+              "settings_block": 4
+            },
+            "reason": "The prose calls it a single-channel trial while the attached settings block specifies four channels for the same run."
+          }
+        }
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Both channel counts are stated as fact rather than as an open choice, so this is contradictory explicit configuration rather than an ambiguity the user is asking help to resolve. No scalar channel value is returned, because picking either would silently repair the contradiction. The contradiction arises the way it would in practice, from prose disagreeing with a pasted block."
+    },
+    {
+      "semantic_group_id": "v3-a-019",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Energy-aware scheduling driven by remaining node charge"
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Remaining charge is positively requested as the criterion for selecting transmissions, which is energy-aware scheduling and outside the scope."
+    },
+    {
+      "semantic_group_id": "v3-a-020",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Residual-battery evolution per transmission",
+        "also_supported": "The default one-shot schedule on topo100_seed0 would be EXECUTE on its own."
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "A supported default schedule is combined with a positively requested per-transmission charge balance, which requires modelling residual battery. Precedence rule 1 makes the combined request UNSUPPORTED."
+    },
+    {
+      "semantic_group_id": "v3-a-021",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Residual-charge constraint on the schedule (at least 30 percent retained per node)"
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "The stated objective is latency, but the request constrains the solution by charge remaining after the collection, which the system cannot evaluate because it does not model battery state. A capability outside the scope is positively required, so precedence rule 1 applies. Worth noting as a good hard case: the unsupported capability enters as a constraint rather than as the objective, so a label based on the objective alone would be wrong."
+    },
+    {
+      "semantic_group_id": "v3-a-022",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Slot-by-slot residual-battery simulation"
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "The schedule itself is supported, but simulating each node's residual battery across its slots is explicitly outside the scope."
+    },
+    {
+      "semantic_group_id": "v3-a-023",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Digital Twin construction and execution inside it"
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "A Digital Twin is positively requested and the aggregation is to run inside it, neither of which the system provides."
+    },
+    {
+      "semantic_group_id": "v3-a-024",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Network emulation through a software replica exchanging packets"
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Virtual nodes exchanging packets on the timetable and producing packet events is emulation, expressed without naming it. The system produces a validated schedule, not an executed run."
+    },
+    {
+      "semantic_group_id": "v3-a-025",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Continuous state synchronization with incoming deployment readings",
+        "also_supported": "The one-shot schedule with two channels and seed 10 would be EXECUTE on its own."
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "A fully specified supported schedule is followed by a positively requested requirement to keep a stored state view updated on every incoming reading, which is ongoing synchronization."
+    },
+    {
+      "semantic_group_id": "v3-a-026",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Streaming feed with a continuously synchronized copy of sensor readings"
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Both a streaming connection and continuous synchronization are positively requested, and no one-shot schedule is asked for at all, so there is no supported residue."
+    },
+    {
+      "semantic_group_id": "v3-a-027",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Periodic aggregation over twelve rounds"
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Twelve rounds spaced 40 slots apart is a periodic workload; only one_shot is supported. The 40-slot spacing is a scheduling period of the campaign and not the topology working period."
+    },
+    {
+      "semantic_group_id": "v3-a-028",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Back-to-back repetition of the collection for fifty rounds"
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Starting a fresh collection each time the previous one finishes, fifty times over, is a recurring workload described without using the word periodic."
+    },
+    {
+      "semantic_group_id": "v3-a-029",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Unbounded collection launched every twenty-five slots"
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Launching a collection every 25 slots indefinitely is continuous aggregation, and the added completion deadline does not bring it back into the one-shot scope."
+    },
+    {
+      "semantic_group_id": "v3-a-030",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Runtime recalculation of the plan when a node disappears"
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Recomputing the unfinished plan when the network changes during the run is runtime topology adaptation, while the supported system treats the topology as static input."
+    },
+    {
+      "semantic_group_id": "v3-a-031",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Replacing forwarding routes during execution as links fail",
+        "also_supported": "The three-channel one-shot plan with seed 18 would be EXECUTE on its own."
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "The scheduling half is valid and fully specified, but substituting routes while the schedule runs requires runtime adaptation, so precedence rule 1 decides the label."
+    },
+    {
+      "semantic_group_id": "v3-a-032",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Admitting newly joining nodes into a running collection"
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Adding nodes to the remaining schedule while it executes changes the network during the run, which the static-topology scope excludes."
+    },
+    {
+      "semantic_group_id": "v3-a-033",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Minimum total transmission count as the sole objective"
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "The optimization criterion is explicitly the transmission count and nothing else, and only latency minimization is supported."
+    },
+    {
+      "semantic_group_id": "v3-a-034",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Minimizing the busiest node's transmission count, with latency demoted to a tie-break"
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Load balancing is the primary objective here and latency only orders ties, so the requested objective is not latency minimization. Keeping latency as a secondary criterion does not bring it back into scope."
+    },
+    {
+      "semantic_group_id": "v3-a-035",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Uploading the timetable to the deployed sensors and commanding them to sample",
+        "also_invalid": {
+          "channels": "0 is invalid and would independently require REJECT, but a positively requested unsupported capability takes precedence."
+        }
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "Two defects coexist: a zero channel count and direct control of physical sensors. Precedence rule 1 ranks the unsupported capability above the invalid configuration, so UNSUPPORTED is the single correct label. This is a deliberate and useful precedence test."
+    },
+    {
+      "semantic_group_id": "v3-a-036",
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {
+        "unsupported_capability": "Minimizing the number of channels actually used, with latency explicitly not an optimization criterion"
+      },
+      "paraphrase_equivalent": true,
+      "item_quality": "accept",
+      "reason": "An allowance of eight channels is itself valid, but the request replaces the objective with channel economy and states that latency is not optimized, which is an unsupported objective."
+    }
+  ]
+}

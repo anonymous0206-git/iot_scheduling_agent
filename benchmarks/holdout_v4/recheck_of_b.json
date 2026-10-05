@@ -1,0 +1,14 @@
+{
+  "rechecks": [
+    {
+      "semantic_group_id": "h4-b-015",
+      "paraphrase_equivalent": true,
+      "reason": "Both requests specify topo250_seed0, ANEX, 3 channels, interference ratio 1.5, an initial one-shot round followed by periodic aggregation with one collection per working period for exactly 500 additional rounds after the initial round."
+    },
+    {
+      "semantic_group_id": "h4-b-018",
+      "paraphrase_equivalent": true,
+      "reason": "Both requests specify legacy30_seed7, seed 1, 2 channels, a one-shot ANEX schedule, over-the-air distribution to deployed motes, and radio on/off behavior according to assigned slots."
+    }
+  ]
+}

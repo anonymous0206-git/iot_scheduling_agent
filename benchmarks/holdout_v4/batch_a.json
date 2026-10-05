@@ -1,0 +1,478 @@
+{
+  "benchmark_version": "holdout-v4-candidate",
+  "batch_id": "frontier-model-a",
+  "generator_role": "independent_generator",
+  "groups": [
+    {
+      "semantic_group_id": "h4-a-001",
+      "difficulty": "easy",
+      "protocol_category": "supported_default",
+      "capability_category": "default_execution",
+      "proposed_gold_action": "EXECUTE",
+      "proposed_gold_fields": {
+        "topology_id": "legacy30_seed7",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 2,
+        "interference_ratio": 1,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": null,
+        "seed": 0,
+        "working_period": 10,
+        "communication_range": 18
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-001-p1",
+          "request_text": "Please prepare a one-shot ANEX aggregation schedule for legacy30_seed7 with minimum latency."
+        },
+        {
+          "request_id": "h4-a-001-p2",
+          "request_text": "For legacy30_seed7, I need ANEX to schedule a single aggregation of the readings as quickly as possible."
+        }
+      ],
+      "annotation_reason": "The topology is selected exactly; optional fields use defaults. The generation suffix seed7 does not set the scheduling seed, which remains 0.",
+      "ambiguity_risk": "none"
+    },
+    {
+      "semantic_group_id": "h4-a-002",
+      "difficulty": "hard",
+      "protocol_category": "supported_default",
+      "capability_category": "negated_twin",
+      "proposed_gold_action": "EXECUTE",
+      "proposed_gold_fields": {
+        "topology_id": "topo50_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 2,
+        "interference_ratio": 1,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": null,
+        "seed": 0,
+        "working_period": 10,
+        "communication_range": 20
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-002-p1",
+          "request_text": "Do not use a Digital Twin for this experiment. On topo50_seed0, compute the minimum-latency ANEX schedule for one collection of sensor data."
+        },
+        {
+          "request_id": "h4-a-002-p2",
+          "request_text": "My experiment on topo50_seed0 needs one sensor-data aggregation scheduled by ANEX to minimize latency; a Digital Twin must not be used."
+        }
+      ],
+      "annotation_reason": "The twin requirement is explicitly negated, so the request remains within scope and uses default configuration.",
+      "ambiguity_risk": "none"
+    },
+    {
+      "semantic_group_id": "h4-a-003",
+      "difficulty": "medium",
+      "protocol_category": "supported_configured",
+      "capability_category": "explicit_legacy_collision",
+      "proposed_gold_action": "EXECUTE",
+      "proposed_gold_fields": {
+        "topology_id": "topo100_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 3,
+        "interference_ratio": 1,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": null,
+        "seed": 11,
+        "working_period": 10,
+        "communication_range": 20
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-003-p1",
+          "request_text": "Use topo100_seed0 for a one-shot minimum-latency ANEX run with 3 channels, scheduling seed 11, collision_model legacy_neighbor, and interference_ratio 1.0. The working period is 10 slots and the communication range is 20.0."
+        },
+        {
+          "request_id": "h4-a-003-p2",
+          "request_text": "With a 10-slot working period and communication range 20.0 on topo100_seed0, schedule one aggregation using ANEX for minimum latency. Set collision_model to legacy_neighbor, interference_ratio to 1.0, the channel count to 3, and the scheduling seed to 11."
+        }
+      ],
+      "annotation_reason": "All explicit values are valid, including the topology-dependent period and range.",
+      "ambiguity_risk": "none"
+    },
+    {
+      "semantic_group_id": "h4-a-004",
+      "difficulty": "hard",
+      "protocol_category": "supported_configured",
+      "capability_category": "historical_battery_comparison",
+      "proposed_gold_action": "EXECUTE",
+      "proposed_gold_fields": {
+        "topology_id": "topo150_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 5,
+        "interference_ratio": 1,
+        "collision_model": "interference_range",
+        "latency_target_slots": null,
+        "seed": 23,
+        "working_period": 10,
+        "communication_range": 20
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-004-p1",
+          "request_text": "Our previous study optimized battery lifetime. This run on topo150_seed0 is solely a one-shot minimum-latency ANEX aggregation, using 5 channels, scheduling seed 23, collision_model interference_range, and interference_ratio 1.0."
+        },
+        {
+          "request_id": "h4-a-004-p2",
+          "request_text": "For topo150_seed0, configure ANEX with interference_ratio 1.0, collision_model interference_range, seed 23, and 5 channels to minimize the latency of one aggregation only. Battery lifetime was the objective of our earlier study."
+        }
+      ],
+      "annotation_reason": "Battery optimization is historical context, not a current requirement. Both the explicit collision model and all other values are valid.",
+      "ambiguity_risk": "none"
+    },
+    {
+      "semantic_group_id": "h4-a-005",
+      "difficulty": "hard",
+      "protocol_category": "supported_latency_target",
+      "capability_category": "revised_above_baseline_target",
+      "proposed_gold_action": "EXECUTE",
+      "proposed_gold_fields": {
+        "topology_id": "topo200_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 2,
+        "interference_ratio": 1,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": 45,
+        "seed": 0,
+        "working_period": 10,
+        "communication_range": 20
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-005-p1",
+          "request_text": "The draft for topo200_seed0 had latency_target_slots: null, meaning no target applied. Replace that draft setting with a target of 45 elapsed slots for this run, then compute a one-shot minimum-latency ANEX schedule."
+        },
+        {
+          "request_id": "h4-a-005-p2",
+          "request_text": "Compute the one-shot ANEX aggregation schedule with minimum latency on topo200_seed0. For this run the target is 45 elapsed slots, replacing the draft's explicit latency_target_slots: null setting that meant no target."
+        }
+      ],
+      "annotation_reason": "The explicit null is a superseded draft value, not a simultaneous constraint. The final target is 45 elapsed slots, above the topology's 37-slot baseline.",
+      "ambiguity_risk": "none"
+    },
+    {
+      "semantic_group_id": "h4-a-006",
+      "difficulty": "medium",
+      "protocol_category": "supported_latency_target",
+      "capability_category": "below_baseline_target",
+      "proposed_gold_action": "EXECUTE",
+      "proposed_gold_fields": {
+        "topology_id": "topo300_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 2,
+        "interference_ratio": 1,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": 30,
+        "seed": 0,
+        "working_period": 10,
+        "communication_range": 20
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-006-p1",
+          "request_text": "On topo300_seed0, find a minimum-latency ANEX schedule for one aggregation with a target of 30 elapsed slots, and report whether the resulting latency meets that target."
+        },
+        {
+          "request_id": "h4-a-006-p2",
+          "request_text": "I want one aggregation on topo300_seed0 scheduled by ANEX for minimum latency; compare its measured elapsed latency against my 30-slot target."
+        }
+      ],
+      "annotation_reason": "A positive integer target is valid even though 30 is below the 47-slot baseline; target attainment is evaluated after execution.",
+      "ambiguity_risk": "none"
+    },
+    {
+      "semantic_group_id": "h4-a-007",
+      "difficulty": "medium",
+      "protocol_category": "missing_information",
+      "capability_category": "description_without_identifier",
+      "proposed_gold_action": "CLARIFY",
+      "proposed_gold_fields": null,
+      "paraphrases": [
+        {
+          "request_id": "h4-a-007-p1",
+          "request_text": "Take the largest network in the catalogue and produce a one-shot ANEX aggregation schedule minimizing latency with 2 channels."
+        },
+        {
+          "request_id": "h4-a-007-p2",
+          "request_text": "I need a minimum-latency ANEX schedule for one aggregation using 2 channels on the catalogue's network with the most nodes."
+        }
+      ],
+      "annotation_reason": "A descriptive reference does not select a topology under the exact-ID contract, even if the description uniquely matches the 300-node entry.",
+      "ambiguity_risk": "none"
+    },
+    {
+      "semantic_group_id": "h4-a-008",
+      "difficulty": "easy",
+      "protocol_category": "invalid_parameter",
+      "capability_category": "unknown_topology",
+      "proposed_gold_action": "REJECT",
+      "proposed_gold_fields": {
+        "topology_id": "topo120_seed0"
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-008-p1",
+          "request_text": "Generate a minimum-latency ANEX schedule for a single data aggregation on topo120_seed0."
+        },
+        {
+          "request_id": "h4-a-008-p2",
+          "request_text": "The network for my one-shot aggregation is topo120_seed0; use ANEX to minimize its scheduling latency."
+        }
+      ],
+      "annotation_reason": "The explicitly selected topology is absent from the catalogue; topology-dependent defaults cannot be resolved.",
+      "ambiguity_risk": "none",
+      "invalid_fields": {
+        "topology_id": {
+          "observed": "topo120_seed0",
+          "reason": "Not one of the seven catalogue topology IDs."
+        }
+      }
+    },
+    {
+      "semantic_group_id": "h4-a-009",
+      "difficulty": "medium",
+      "protocol_category": "invalid_parameter",
+      "capability_category": "topology_range_mismatch",
+      "proposed_gold_action": "REJECT",
+      "proposed_gold_fields": {
+        "topology_id": "topo250_seed0",
+        "workload": "one_shot",
+        "objective": "minimize_latency",
+        "channels": 2,
+        "interference_ratio": 1,
+        "collision_model": "legacy_neighbor",
+        "latency_target_slots": null,
+        "seed": 0,
+        "working_period": 10,
+        "communication_range": 18
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-009-p1",
+          "request_text": "Prepare one minimum-latency ANEX aggregation on topo250_seed0 with communication_range set to 18.0."
+        },
+        {
+          "request_id": "h4-a-009-p2",
+          "request_text": "For a single aggregation scheduled by ANEX to minimize latency, select topo250_seed0 and configure its communication range as 18.0."
+        }
+      ],
+      "annotation_reason": "The supplied communication range conflicts with the selected topology's fixed value of 20.0.",
+      "ambiguity_risk": "none",
+      "invalid_fields": {
+        "communication_range": {
+          "observed": 18,
+          "reason": "topo250_seed0 requires communication_range 20.0."
+        }
+      }
+    },
+    {
+      "semantic_group_id": "h4-a-010",
+      "difficulty": "medium",
+      "protocol_category": "unsupported_energy",
+      "capability_category": "battery_lifetime_objective",
+      "proposed_gold_action": "UNSUPPORTED",
+      "proposed_gold_fields": null,
+      "paraphrases": [
+        {
+          "request_id": "h4-a-010-p1",
+          "request_text": "On legacy30_seed7, choose the aggregation transmissions to maximize the time until the first node exhausts its battery."
+        },
+        {
+          "request_id": "h4-a-010-p2",
+          "request_text": "The aggregation plan for legacy30_seed7 should be optimized to keep the earliest battery failure as far in the future as possible."
+        }
+      ],
+      "annotation_reason": "Maximizing battery lifetime positively requires optimization beyond the supported latency objective.",
+      "ambiguity_risk": "none"
+    },
+    {
+      "semantic_group_id": "h4-a-011",
+      "difficulty": "hard",
+      "protocol_category": "unsupported_energy",
+      "capability_category": "battery_state_evolution",
+      "proposed_gold_action": "UNSUPPORTED",
+      "proposed_gold_fields": null,
+      "paraphrases": [
+        {
+          "request_id": "h4-a-011-p1",
+          "request_text": "Compute a one-shot minimum-latency ANEX schedule on topo50_seed0 using 2 channels, and also update each node's remaining battery charge after every scheduled transmission."
+        },
+        {
+          "request_id": "h4-a-011-p2",
+          "request_text": "For topo50_seed0 I need both a 2-channel ANEX schedule minimizing the latency of one aggregation and a trace that subtracts each transmission's consumption from the transmitting node's remaining charge."
+        }
+      ],
+      "annotation_reason": "The schedule alone is supported, but evolving residual battery state is an additional required capability and takes precedence.",
+      "ambiguity_risk": "none"
+    },
+    {
+      "semantic_group_id": "h4-a-012",
+      "difficulty": "medium",
+      "protocol_category": "unsupported_digital_twin_or_sync",
+      "capability_category": "live_replica",
+      "proposed_gold_action": "UNSUPPORTED",
+      "proposed_gold_fields": null,
+      "paraphrases": [
+        {
+          "request_id": "h4-a-012-p1",
+          "request_text": "Build a software replica of topo100_seed0 whose node states stay current by ingesting every new reading from the deployed sensors as it arrives."
+        },
+        {
+          "request_id": "h4-a-012-p2",
+          "request_text": "I need topo100_seed0 represented in software with each node's state continuously refreshed from incoming readings of the deployed sensors."
+        }
+      ],
+      "annotation_reason": "A live software replica with continuous state synchronization exceeds static one-shot scheduling.",
+      "ambiguity_risk": "none"
+    },
+    {
+      "semantic_group_id": "h4-a-013",
+      "difficulty": "hard",
+      "protocol_category": "unsupported_digital_twin_or_sync",
+      "capability_category": "emulation_with_invalid_schedule",
+      "proposed_gold_action": "UNSUPPORTED",
+      "proposed_gold_fields": null,
+      "paraphrases": [
+        {
+          "request_id": "h4-a-013-p1",
+          "request_text": "Produce a one-shot minimum-latency ANEX schedule for topo150_seed0 with channels: 0, and build a Digital Twin that emulates the network executing that schedule."
+        },
+        {
+          "request_id": "h4-a-013-p2",
+          "request_text": "On topo150_seed0, create a Digital Twin to emulate execution of a one-shot ANEX aggregation schedule optimized for latency; configure that schedule with zero communication channels."
+        }
+      ],
+      "annotation_reason": "Digital Twin construction and emulation are positively required, so UNSUPPORTED takes precedence over the otherwise invalid zero channel count.",
+      "ambiguity_risk": "none"
+    },
+    {
+      "semantic_group_id": "h4-a-014",
+      "difficulty": "medium",
+      "protocol_category": "unsupported_periodic",
+      "capability_category": "recurring_collection",
+      "proposed_gold_action": "UNSUPPORTED",
+      "proposed_gold_fields": null,
+      "paraphrases": [
+        {
+          "request_id": "h4-a-014-p1",
+          "request_text": "Set up topo200_seed0 to gather a fresh aggregate every 60 slots indefinitely, choosing ANEX schedules to minimize the latency of each collection."
+        },
+        {
+          "request_id": "h4-a-014-p2",
+          "request_text": "Every 60 slots, start another sensor-data aggregation on topo200_seed0 and keep doing so without an end time; use ANEX to minimize each collection's latency."
+        }
+      ],
+      "annotation_reason": "An indefinitely repeated aggregation workload is outside the one-shot scope.",
+      "ambiguity_risk": "none"
+    },
+    {
+      "semantic_group_id": "h4-a-015",
+      "difficulty": "medium",
+      "protocol_category": "unsupported_periodic",
+      "capability_category": "continuous_aggregation",
+      "proposed_gold_action": "UNSUPPORTED",
+      "proposed_gold_fields": null,
+      "paraphrases": [
+        {
+          "request_id": "h4-a-015-p1",
+          "request_text": "Keep aggregating readings on topo250_seed0 without stopping, starting a new collection immediately whenever the preceding collection finishes."
+        },
+        {
+          "request_id": "h4-a-015-p2",
+          "request_text": "For topo250_seed0, completion of each aggregate should immediately trigger the next collection so that the aggregation service runs continuously."
+        }
+      ],
+      "annotation_reason": "Continuous aggregation is a positively requested unsupported workload.",
+      "ambiguity_risk": "none"
+    },
+    {
+      "semantic_group_id": "h4-a-016",
+      "difficulty": "hard",
+      "protocol_category": "unsupported_topology_adaptation",
+      "capability_category": "runtime_route_repair",
+      "proposed_gold_action": "UNSUPPORTED",
+      "proposed_gold_fields": null,
+      "paraphrases": [
+        {
+          "request_id": "h4-a-016-p1",
+          "request_text": "Find a one-shot minimum-latency ANEX schedule on topo300_seed0 with 2 channels, and reroute the remaining transmissions during execution whenever a link fails."
+        },
+        {
+          "request_id": "h4-a-016-p2",
+          "request_text": "For topo300_seed0, prepare a 2-channel ANEX schedule minimizing the latency of one aggregation, with remaining transmissions redirected at execution time in response to any failed link."
+        }
+      ],
+      "annotation_reason": "The initial static schedule is supported, but changing routes during execution requires unsupported runtime topology or routing adaptation.",
+      "ambiguity_risk": "none"
+    },
+    {
+      "semantic_group_id": "h4-a-017",
+      "difficulty": "easy",
+      "protocol_category": "unsupported_other_objective",
+      "capability_category": "transmission_count_objective",
+      "proposed_gold_action": "UNSUPPORTED",
+      "proposed_gold_fields": null,
+      "paraphrases": [
+        {
+          "request_id": "h4-a-017-p1",
+          "request_text": "Use topo50_seed0 for one data aggregation and choose a schedule that minimizes the total number of transmissions, even if completion takes longer."
+        },
+        {
+          "request_id": "h4-a-017-p2",
+          "request_text": "Completion time can increase on topo50_seed0: for this single aggregation, optimize the schedule for the fewest transmissions."
+        }
+      ],
+      "annotation_reason": "Minimizing transmission count in preference to latency is an unsupported optimization objective.",
+      "ambiguity_risk": "none"
+    },
+    {
+      "semantic_group_id": "h4-a-018",
+      "difficulty": "medium",
+      "protocol_category": "unsupported_other_objective",
+      "capability_category": "physical_sensor_control",
+      "proposed_gold_action": "UNSUPPORTED",
+      "proposed_gold_fields": null,
+      "paraphrases": [
+        {
+          "request_id": "h4-a-018-p1",
+          "request_text": "Compute a one-shot minimum-latency ANEX schedule for legacy30_seed7, then send commands to the physical sensors to switch their radios off after their final scheduled transmissions."
+        },
+        {
+          "request_id": "h4-a-018-p2",
+          "request_text": "After preparing an ANEX schedule that minimizes the latency of one aggregation on legacy30_seed7, command each physical sensor to turn off its radio once its last scheduled transmission is complete."
+        }
+      ],
+      "annotation_reason": "The schedule is supported, but commanding physical sensor radios is a separately required unsupported capability.",
+      "ambiguity_risk": "none"
+    }
+  ],
+  "self_check": {
+    "group_count": 18,
+    "item_count": 36,
+    "execute_groups": 6,
+    "clarify_groups": 1,
+    "reject_groups": 2,
+    "unsupported_groups": 9,
+    "protocol_category_counts": {
+      "supported_default": 2,
+      "supported_configured": 2,
+      "supported_latency_target": 2,
+      "missing_information": 1,
+      "invalid_parameter": 2,
+      "unsupported_energy": 2,
+      "unsupported_digital_twin_or_sync": 2,
+      "unsupported_periodic": 2,
+      "unsupported_topology_adaptation": 1,
+      "unsupported_other_objective": 2
+    }
+  }
+}

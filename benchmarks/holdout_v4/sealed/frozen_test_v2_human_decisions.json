@@ -1,0 +1,34 @@
+{
+  "decided_at": "2026-09-27",
+  "decided_by": "Vi (operator)",
+  "decision_provenance": "Two groups were flagged by the independent adjudicator for paraphrase inequivalence; neither was flagged for its action, and the two adjudications agreed on every gold action in both batches. The replacement wording was written by the session that authored the batch, which received only the flagged texts and the defect with the adjudicated action masked. The same adjudicator then confirmed both revised pairs equivalent. The operator approved the result; no label was changed and no group was excluded.",
+  "decisions": [
+    {
+      "final_action": "UNSUPPORTED",
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": true,
+      "paraphrase_overrides": {
+        "h4-b-015-p1": "Start with a single one-shot ANEX round on topo250_seed0 using 3 channels and an interference ratio of 1.5; once that first round is done, continue in periodic aggregation mode with one collection per working period for 500 further rounds beyond the initial one.",
+        "h4-b-015-p2": "On topo250_seed0 I need ANEX configured with three channels and interference ratio 1.5. Run the first collection as a one-shot round, then keep going as periodic aggregation — a new collection every working period — until 500 additional rounds have completed after that initial round."
+      },
+      "rationale": "Both requests specify topo250_seed0, ANEX, 3 channels, interference ratio 1.5, an initial one-shot round followed by periodic aggregation with one collection per working period for exactly 500 additional rounds after the initial round.",
+      "resolution": "keep_with_edits",
+      "semantic_group_id": "h4-b-015"
+    },
+    {
+      "final_action": "UNSUPPORTED",
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": true,
+      "paraphrase_overrides": {
+        "h4-b-018-p1": "Compute the one-shot ANEX schedule for legacy30_seed7 with two channels and seed 1, then deliver it to the deployed motes over the air and have each node switch its radio on and off at the slots the schedule assigns.",
+        "h4-b-018-p2": "Using legacy30_seed7 with seed 1 and 2 channels, generate the single-round ANEX schedule; the deployed motes then receive it through an over-the-air update and toggle their radios on and off according to their assigned slots."
+      },
+      "rationale": "Both requests specify legacy30_seed7, seed 1, 2 channels, a one-shot ANEX schedule, over-the-air distribution to deployed motes, and radio on/off behavior according to assigned slots.",
+      "resolution": "keep_with_edits",
+      "semantic_group_id": "h4-b-018"
+    }
+  ],
+  "decisions_version": "holdout-v4-decisions/1"
+}

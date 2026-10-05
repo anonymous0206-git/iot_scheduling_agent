@@ -83,13 +83,22 @@ class RenderTablesTests(unittest.TestCase):
         self.assertEqual(header, r"Arm & GPT & Rule \\")
 
     def test_numbers_come_from_the_summary_not_from_recomputation(self):
-        # The table reports counts out of 144 and lets the caption carry the
-        # denominator; a rate in parentheses beside every count cost a column
-        # of width the 8-page budget needed elsewhere.
+        # The table reports counts, not rates beside counts, which would cost a
+        # column of width the 8-page budget needs elsewhere. The denominator now
+        # rides in the row label instead, so a reader can tell a count from a
+        # rate without inspecting the cells.
         _, _, text = self.render("--label", "gpt55_gated=GPT")
-        self.assertIn(r"Action accuracy & 122 \\", text)
+        self.assertIn(r"Action accuracy /144 & 122 \\", text)
+        self.assertIn(r"Field exact match (rate) & 0.549 \\", text)
         self.assertIn("20/44", text)
-        self.assertIn("0.549", text)
+
+    def test_each_row_label_says_whether_the_cells_are_counts_or_rates(self):
+        # Without this a reader tells them apart by looking for a decimal point.
+        _, _, text = self.render("--label", "gpt55_gated=GPT")
+        for label in ("Action accuracy /144", "Field exact match (rate)",
+                      "False acceptance /144", "Paraphrase consistency /72"):
+            with self.subTest(label=label):
+                self.assertIn(label, text)
 
     def test_the_comparison_table_is_unabridged_only(self):
         # Every number in it is also stated in the main-results prose, so the

@@ -1,0 +1,32 @@
+{
+  "lock_format": "agentic_anex.evaluation_lock.v1",
+  "locked_at": "2026-08-31",
+  "policy": {
+    "development_complete": true,
+    "frozen_test_set": true,
+    "no_prompt_or_policy_tuning_after_test_inspection": true
+  },
+  "runtime": {
+    "prompt_version": "paper1-requirements-v4",
+    "max_retries": 2,
+    "seeds": [0],
+    "temperature": 0.0,
+    "systems": ["llm_agent"],
+    "providers": [
+      {"provider": "ollama", "model": "phi4:14b", "role": "primary"},
+      {"provider": "ollama", "model": "qwen2.5:14b", "role": "comparison"}
+    ]
+  },
+  "sha256": {
+    "benchmarks/requests_test.jsonl": "ead190a33e9a303a8c3af88c0ffab80876881eb4d91008633b937fbec1c0e291",
+    "benchmarks/schema.json": "5344ec1018655830b8fc464c8d1b4eaad6d1c46e8cd8b0f1b6f2a853e3892c1e",
+    "src/agentic_anex/orchestration.py": "1d31bb19d72f970b880fe97bd9602bd981d846915d10275811044327722b0730",
+    "src/agentic_anex/request_consistency.py": "9ed11113d9d954c0ba8a378c727cdfa8a262e62c1bd2fc44560372cc99b1d624",
+    "src/agentic_anex/experiments.py": "c70856eb5298fefc00fd38ef2e19f1467b48d3ca4016c827c24c10f8fb4133bf",
+    "scripts/run_experiments.py": "017b6bf77744d0e5adaab14b8387e79ca16b7f2980333c1b30ade491b8a56545",
+    "pyproject.toml": "0f9076621465f4f467b2257595af4c4cdf5a08cfd52053df4b7a3938816aae0d",
+    "uv.lock": "328c87a551f5d97ebbd4a2b4df0ba3360fb01af1d43485c6bcff5764a3b5a74f",
+    "results/phi4_dev_v4_scope.jsonl": "b6f4f422087caf3ff51c65d3064f9cfe35540f641419c5e61ba49fe6ddf562db",
+    "results/qwen2.5_dev_v4_scope.jsonl": "44150eed35b37219dadd023a27c158c3bd77b665749ca16206d79e00e04a9566"
+  }
+}

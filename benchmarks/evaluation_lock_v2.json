@@ -1,0 +1,138 @@
+{
+  "lock_format": "agentic_anex.evaluation_lock.v2",
+  "locked_at": "2026-09-09",
+  "status": "FROZEN_TEST_V2_SEALED_EVALUATION_MAY_BEGIN",
+  "supersedes": "benchmarks/evaluation_lock_v1.json",
+  "policy": {
+    "development_complete": true,
+    "frozen_test_set": true,
+    "frozen_test_v1_is_regression_only": true,
+    "frozen_test_v2_independently_generated": true,
+    "frozen_test_v2_blind_cross_reviewed": true,
+    "frozen_test_v2_human_adjudicated": true,
+    "no_prompt_or_policy_tuning_after_test_inspection": true,
+    "sealed_directory_is_immutable_reseal_into_new_directory": true
+  },
+  "scientific_policy": {
+    "primary_model": "phi4:14b",
+    "prompt_version": "paper1-requirements-v4",
+    "scope_policy_version": "paper1-scope-policy.v2",
+    "consistency_checker_version": "paper1-request-consistency.v1",
+    "seed": 0,
+    "temperature": 0.0,
+    "max_retries": 2
+  },
+  "runtime": {
+    "prompt_version": "paper1-requirements-v4",
+    "max_retries": 2,
+    "seeds": [0],
+    "temperature": 0.0,
+    "systems": [
+      "rule_based_baseline",
+      "phi4_with_scope_policy_v2_primary",
+      "phi4_without_scope_gate_safety_ablation",
+      "qwen2.5_comparison_optional"
+    ],
+    "providers": [
+      {
+        "provider": "ollama",
+        "model": "phi4:14b",
+        "role": "primary",
+        "digest": "ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba"
+      },
+      {"provider": "ollama", "model": "qwen2.5:14b", "role": "comparison"}
+    ]
+  },
+  "frozen_test_v2": {
+    "sealed_dir": "benchmarks/frozen_test_v2/sealed",
+    "manifest": "benchmarks/frozen_test_v2/sealed/frozen_test_v2_lock_manifest.json",
+    "manifest_sha256": "77608581bb14b287b2c601302291d1b75fa5be6fc91f72ec4752cb72d2cf626a",
+    "target_facing_requests": "benchmarks/frozen_test_v2/sealed/frozen_test_v2_requests.jsonl",
+    "requests_sha256": "3291495006d58a56eb9ac101d5fb386e419f79623343cd3da6cc53f9b4aa4bdd",
+    "gold_evaluator_only": "benchmarks/frozen_test_v2/sealed/frozen_test_v2_gold.jsonl",
+    "gold_sha256": "52f31f72ae8d3a8f5a9eb468ad0364cce8484d72f4bfdd727d5d21c4298fec94",
+    "sealed_at_utc": "2026-09-09T03:18:16Z",
+    "pipeline_version": "frozen-test-v2-pipeline/1.0.0",
+    "shuffle_seed": 20260908,
+    "topology_id": "legacy30_seed7",
+    "counts": {
+      "semantic_groups": 72,
+      "requests": 144,
+      "per_action": {"EXECUTE": 18, "CLARIFY": 18, "REJECT": 18, "UNSUPPORTED": 18},
+      "per_batch": {"frontier-model-a": 36, "frontier-model-b": 36}
+    },
+    "generators": {
+      "frontier-model-a": "gpt-6-astra-light",
+      "frontier-model-b": "claude-fable-5-1"
+    },
+    "blind_reviews": {
+      "frontier-model-a": "reviewed by claude-fable-5-1",
+      "frontier-model-b": "reviewed by gpt-6-astra-light"
+    },
+    "reconciliation": {
+      "full_agreement": 58,
+      "paraphrase_mismatch": 5,
+      "defective_item": 9,
+      "action_disagreement": 0,
+      "field_disagreement": 0
+    },
+    "human_adjudication": {
+      "decided_by": "Vi",
+      "decided_at": "2026-09-09T11:30:00Z",
+      "decisions_applied": 14,
+      "excluded_groups": []
+    },
+    "source_defects_recorded": [
+      "review_of_a: leading prose before the JSON payload",
+      "benchmark_b: leading prose before the JSON payload"
+    ],
+    "distribution_rule": "The target-facing file carries only opaque request ids and text; the gold file stays with the evaluator; the development team receives only the manifest hash."
+  },
+  "provenance_checks": {
+    "policy_v2_development_lock": "benchmarks/policy_v2_development_lock.json",
+    "policy_code_unchanged_since_policy_lock": true,
+    "changed_since_policy_lock": {
+      "README.md": "documentation only: Frozen Test v2 pipeline section added on 2026-09-09"
+    },
+    "evaluation_lock_v1_note": "historical pre-policy-v2 lock; orchestration.py and experiments.py now match policy_v2_development_lock.json"
+  },
+  "sha256": {
+    "benchmarks/frozen_test_v2/sealed/frozen_test_v2_lock_manifest.json": "77608581bb14b287b2c601302291d1b75fa5be6fc91f72ec4752cb72d2cf626a",
+    "benchmarks/frozen_test_v2/sealed/frozen_test_v2_lock_manifest.sha256": "70f169aa44e1f3c1106788008ba380b80f4de4063e18241528b1056b75a920c6",
+    "benchmarks/frozen_test_v2/sealed/frozen_test_v2_requests.jsonl": "3291495006d58a56eb9ac101d5fb386e419f79623343cd3da6cc53f9b4aa4bdd",
+    "benchmarks/frozen_test_v2/sealed/frozen_test_v2_gold.jsonl": "52f31f72ae8d3a8f5a9eb468ad0364cce8484d72f4bfdd727d5d21c4298fec94",
+    "benchmarks/frozen_test_v2/sealed/frozen_test_v2_human_decisions.json": "89744ef7f6fb567839c0ece8714b66d2e837e132ade76dfb1d21122a0063f9c2",
+    "benchmarks/frozen_test_v2/sealed/frozen_test_v2_reconciliation_worksheet.json": "8c49730b673d90e3edee0abccc677ed78171f5c8a8827856f932e7caf3731a00",
+    "benchmarks/frozen_test_v2/model_metadata.json": "b1de327853174cce83d3440003d27b737c619ba3d64fce3850e6df3ab853440e",
+    "benchmarks/frozen_test_v2/human_decisions.json": "062b137622019966c42bbf911424b65307d37e640287995529bd3684ee2bc7bc",
+    "benchmark_model_A.json": "17cf2b4846b1457fa99e530a3ed5d9266cab6e3de391379bb48e7455c4377f4a",
+    "benchmark_model_B.json": "72702c46f406b0fc11b3e08e665f56eee07ee9d9f8a80ceda5c1d68435997b1e",
+    "Model-A blind review of Batch B.json": "f49f24f03c8a3403d5ebc77d607a1ccabddef944893265e84ed551d2826c14d2",
+    "Model-B blind review of Batch A.json": "2495a905c8b0622be8f50337128f7b2ee0d83aad3308d224231f65cb97a88727",
+    "docs/prompts/frozen_test_v2_generator_prompt.txt": "49d2baa78a39d5b9cb25fc072c9491dfc9eb7e8043311ed72cdf2e89664dabe6",
+    "docs/prompts/frozen_test_v2_reviewer_prompt.txt": "e9fd1a6f3ab7d71dddda5b86e024a11fe29a71f502d0882afc9d93ed4c4be659",
+    "docs/frozen_test_v2_pipeline.md": "269950cf5ecee6cea94a2565a72618b901ab1e1dd0561b3e8367413628b1fb2f",
+    "docs/frozen_test_v2_protocol.md": "5bfa3af19aae33823e924aaafaa7f855efb310f1233ea2cb5caba5b249f0f7af",
+    "network_30_seed7.json": "9a8df81459c536c7c5ab282812d019c88de9b60824a2cc07e6ee07d120e2eb78",
+    "src/frozen_test_v2/__init__.py": "e080b37ef3333743c27907c7442ebba6e887338580ab2c20de67b78bfaa79765",
+    "src/frozen_test_v2/__main__.py": "b5ff7ab58419ef3eebfaf65806e6c05caad8ca686c329bad4a2e4315eb7cd735",
+    "src/frozen_test_v2/cli.py": "2bc9d0b1a534cfcd5b7a2ef6ae79a619eb4fbf443c3c485f1490dca65e4cc951",
+    "src/frozen_test_v2/contract.py": "a4d32228e6e7314cac216813b7942bb4bd8732483cfe16d28acce40234f89dd1",
+    "src/frozen_test_v2/decisions.py": "c39e13c177b9cfb3237485de23b584efdd16daac307f2fd624fd7dd72cbcdec7",
+    "src/frozen_test_v2/documents.py": "d646b62e91cb660ed5929db513b925fa8f193d5f5cb083ff94e1cc0b50de7e39",
+    "src/frozen_test_v2/reconcile.py": "ca259b5f81691a102fd1e7e85c255b4c546d57c7d33aadd0a42cdcea83466613",
+    "src/frozen_test_v2/schemas.py": "d915738c36a5d45bf4fc665ab4921605669e4f08fd1879aa3593146a34cdae21",
+    "src/frozen_test_v2/seal.py": "c14596712032b6b3bbe173e461f8b8008251598c0ee58332aa873d017e77ed75",
+    "src/agentic_anex/scope_policy.py": "13c284ca373acb9106279ca2ffc56c36eb65c74e7e3fc6b3ddf185b522845371",
+    "src/agentic_anex/orchestration.py": "abb0f75c6334827ef06da11e784189951511cfeb39362bfe0981677927486b60",
+    "src/agentic_anex/request_consistency.py": "9ed11113d9d954c0ba8a378c727cdfa8a262e62c1bd2fc44560372cc99b1d624",
+    "src/agentic_anex/experiments.py": "23dc9433af62236805eb51d40f2e3180510e7ced6e438a647cbb51dfb3dcfaf8",
+    "src/agentic_anex/policy_replay.py": "a3c2eaa8c7d0bd0c407ddf8ce3637accbb36d7641bfc1949f9eb5743aeccb08c",
+    "scripts/run_experiments.py": "017b6bf77744d0e5adaab14b8387e79ca16b7f2980333c1b30ade491b8a56545",
+    "scripts/evaluate_agent.py": "5b4efa6ee1065db10a67c4359bff1d7c2947d975d9a5a4ed4214285948f6bbef",
+    "scripts/verify_evaluation_lock.py": "6ceee8bd48a07357c5638db7bf400a98495604ffd19433bd883790df5d0ce2ae",
+    "pyproject.toml": "0f9076621465f4f467b2257595af4c4cdf5a08cfd52053df4b7a3938816aae0d",
+    "uv.lock": "328c87a551f5d97ebbd4a2b4df0ba3360fb01af1d43485c6bcff5764a3b5a74f",
+    "agentic_anex_policy_v2_source.zip": "dd420741cc0751cae29aad5a55776077885adb4b5c183a3fc116cdf4e22e3c3e"
+  }
+}

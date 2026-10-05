@@ -1,0 +1,2030 @@
+{
+  "adjudication_policy": {
+    "automatic_resolution": false,
+    "rule": "Every group whose classification is not FULL_AGREEMENT requires a recorded human decision before sealing; the pipeline never selects between generator and reviewer values."
+  },
+  "batch_warnings": {
+    "frontier-model-a": [],
+    "frontier-model-b": []
+  },
+  "contract_version": "frozen-test-v3",
+  "generated_at_utc": "2026-09-27T14:08:29Z",
+  "groups": [
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "The topology is selected exactly; optional fields use defaults. The generation suffix seed7 does not set the scheduling seed, which remains 0.",
+        "capability_category": "default_execution",
+        "difficulty": "easy",
+        "invalid_fields": null,
+        "proposed_gold_action": "EXECUTE",
+        "proposed_gold_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 18,
+          "interference_ratio": 1,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "legacy30_seed7",
+          "working_period": 10,
+          "workload": "one_shot"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-001-p1",
+          "request_text": "Please prepare a one-shot ANEX aggregation schedule for legacy30_seed7 with minimum latency."
+        },
+        {
+          "request_id": "h4-a-001-p2",
+          "request_text": "For legacy30_seed7, I need ANEX to schedule a single aggregation of the readings as quickly as possible."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "EXECUTE",
+        "adjudicated_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 18.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "legacy30_seed7",
+          "working_period": 10,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "In-scope one-shot minimum-latency ANEX run on a catalogue topology with no explicit optional values, so all defaults apply. Seed is 0 (omitted; the seed7 suffix of the id is irrelevant) and communication_range follows legacy30_seed7 (18.0). Both paraphrases state the same topology, workload and objective. No construction defect."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-001",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "The twin requirement is explicitly negated, so the request remains within scope and uses default configuration.",
+        "capability_category": "negated_twin",
+        "difficulty": "hard",
+        "invalid_fields": null,
+        "proposed_gold_action": "EXECUTE",
+        "proposed_gold_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20,
+          "interference_ratio": 1,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "topo50_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-002-p1",
+          "request_text": "Do not use a Digital Twin for this experiment. On topo50_seed0, compute the minimum-latency ANEX schedule for one collection of sensor data."
+        },
+        {
+          "request_id": "h4-a-002-p2",
+          "request_text": "My experiment on topo50_seed0 needs one sensor-data aggregation scheduled by ANEX to minimize latency; a Digital Twin must not be used."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "EXECUTE",
+        "adjudicated_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "topo50_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Hard negative: the Digital Twin appears only as a negated requirement, which is explicitly not an unsupported request. The remainder is a default one-shot ANEX schedule on topo50_seed0. Both paraphrases carry the same negation and the same schedule. Note for independence: the opening clause closely mirrors the specification's own illustrative phrase for negated requirements, so this item is a weak held-out probe even though it is correctly constructed."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-002",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "All explicit values are valid, including the topology-dependent period and range.",
+        "capability_category": "explicit_legacy_collision",
+        "difficulty": "medium",
+        "invalid_fields": null,
+        "proposed_gold_action": "EXECUTE",
+        "proposed_gold_fields": {
+          "channels": 3,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20,
+          "interference_ratio": 1,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 11,
+          "topology_id": "topo100_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-003-p1",
+          "request_text": "Use topo100_seed0 for a one-shot minimum-latency ANEX run with 3 channels, scheduling seed 11, collision_model legacy_neighbor, and interference_ratio 1.0. The working period is 10 slots and the communication range is 20.0."
+        },
+        {
+          "request_id": "h4-a-003-p2",
+          "request_text": "With a 10-slot working period and communication range 20.0 on topo100_seed0, schedule one aggregation using ANEX for minimum latency. Set collision_model to legacy_neighbor, interference_ratio to 1.0, the channel count to 3, and the scheduling seed to 11."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "EXECUTE",
+        "adjudicated_fields": {
+          "channels": 3,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 11,
+          "topology_id": "topo100_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Fully specified configuration; every explicit value is valid and consistent with topo100_seed0 (working_period 10, communication_range 20.0, channels 3, seed 11, interference_ratio exactly 1.0, collision_model legacy_neighbor). Both paraphrases list identical values in different order. Single defensible label."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-003",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "Battery optimization is historical context, not a current requirement. Both the explicit collision model and all other values are valid.",
+        "capability_category": "historical_battery_comparison",
+        "difficulty": "hard",
+        "invalid_fields": null,
+        "proposed_gold_action": "EXECUTE",
+        "proposed_gold_fields": {
+          "channels": 5,
+          "collision_model": "interference_range",
+          "communication_range": 20,
+          "interference_ratio": 1,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 23,
+          "topology_id": "topo150_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-004-p1",
+          "request_text": "Our previous study optimized battery lifetime. This run on topo150_seed0 is solely a one-shot minimum-latency ANEX aggregation, using 5 channels, scheduling seed 23, collision_model interference_range, and interference_ratio 1.0."
+        },
+        {
+          "request_id": "h4-a-004-p2",
+          "request_text": "For topo150_seed0, configure ANEX with interference_ratio 1.0, collision_model interference_range, seed 23, and 5 channels to minimize the latency of one aggregation only. Battery lifetime was the objective of our earlier study."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "EXECUTE",
+        "adjudicated_fields": {
+          "channels": 5,
+          "collision_model": "interference_range",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 23,
+          "topology_id": "topo150_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Hard negative with a historical mention: battery-lifetime optimization is attributed to a previous study, and the present run is explicitly restricted to one-shot minimum-latency ANEX. Explicit values (channels 5, seed 23, collision_model interference_range, interference_ratio 1.0) are all valid; interference_range is equivalent to legacy_neighbor at ratio 1.0. Both paraphrases preserve the historical framing and the same configuration."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-004",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "The explicit null is a superseded draft value, not a simultaneous constraint. The final target is 45 elapsed slots, above the topology's 37-slot baseline.",
+        "capability_category": "revised_above_baseline_target",
+        "difficulty": "hard",
+        "invalid_fields": null,
+        "proposed_gold_action": "EXECUTE",
+        "proposed_gold_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20,
+          "interference_ratio": 1,
+          "latency_target_slots": 45,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "topo200_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-005-p1",
+          "request_text": "The draft for topo200_seed0 had latency_target_slots: null, meaning no target applied. Replace that draft setting with a target of 45 elapsed slots for this run, then compute a one-shot minimum-latency ANEX schedule."
+        },
+        {
+          "request_id": "h4-a-005-p2",
+          "request_text": "Compute the one-shot ANEX aggregation schedule with minimum latency on topo200_seed0. For this run the target is 45 elapsed slots, replacing the draft's explicit latency_target_slots: null setting that meant no target."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "EXECUTE",
+        "adjudicated_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": 45,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "topo200_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "The effective configuration is unambiguous: the draft's null target is described as superseded, and the run's target is 45 elapsed slots (valid integer, above the topo200_seed0 baseline of 37). Both paraphrases state the same replacement. Flag (low risk): the text contains two target values (null and 45) with the older one narrated as history; the item therefore tests recovery of the current value from a revision narrative, not an explicit-null target, and the phrase 'meaning no target applied' reads as specification commentary rather than operator prose. Not defective, but the null mention should not be counted as covering the explicit-null-target case."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-005",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "A positive integer target is valid even though 30 is below the 47-slot baseline; target attainment is evaluated after execution.",
+        "capability_category": "below_baseline_target",
+        "difficulty": "medium",
+        "invalid_fields": null,
+        "proposed_gold_action": "EXECUTE",
+        "proposed_gold_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20,
+          "interference_ratio": 1,
+          "latency_target_slots": 30,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "topo300_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-006-p1",
+          "request_text": "On topo300_seed0, find a minimum-latency ANEX schedule for one aggregation with a target of 30 elapsed slots, and report whether the resulting latency meets that target."
+        },
+        {
+          "request_id": "h4-a-006-p2",
+          "request_text": "I want one aggregation on topo300_seed0 scheduled by ANEX for minimum latency; compare its measured elapsed latency against my 30-slot target."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "EXECUTE",
+        "adjudicated_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": 30,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "topo300_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "latency_target_slots 30 is a valid positive integer in elapsed slots. It is below the topo300_seed0 baseline of 47, which by contract must not cause rejection; execution may report the target as missed. All other fields default. Both paraphrases request the schedule plus a comparison against the 30-slot target."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-006",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "A descriptive reference does not select a topology under the exact-ID contract, even if the description uniquely matches the 300-node entry.",
+        "capability_category": "description_without_identifier",
+        "difficulty": "medium",
+        "invalid_fields": null,
+        "proposed_gold_action": "CLARIFY",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-007-p1",
+          "request_text": "Take the largest network in the catalogue and produce a one-shot ANEX aggregation schedule minimizing latency with 2 channels."
+        },
+        {
+          "request_id": "h4-a-007-p2",
+          "request_text": "I need a minimum-latency ANEX schedule for one aggregation using 2 channels on the catalogue's network with the most nodes."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "CLARIFY",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "The task is in scope and channels 2 is valid, but the topology is only described ('largest network' / 'most nodes') and no topology_id is written. By contract a description does not select a topology even though exactly one entry (topo300_seed0) matches, so topology_id is missing. No omission is narrated and no action is named. Note for independence: the description is essentially the specification's own example ('the largest topology'), so it is a weak held-out probe."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-007",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "The explicitly selected topology is absent from the catalogue; topology-dependent defaults cannot be resolved.",
+        "capability_category": "unknown_topology",
+        "difficulty": "easy",
+        "invalid_fields": {
+          "topology_id": {
+            "observed": "topo120_seed0",
+            "reason": "Not one of the seven catalogue topology IDs."
+          }
+        },
+        "proposed_gold_action": "REJECT",
+        "proposed_gold_fields": {
+          "topology_id": "topo120_seed0"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-008-p1",
+          "request_text": "Generate a minimum-latency ANEX schedule for a single data aggregation on topo120_seed0."
+        },
+        {
+          "request_id": "h4-a-008-p2",
+          "request_text": "The network for my one-shot aggregation is topo120_seed0; use ANEX to minimize its scheduling latency."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "REJECT",
+        "adjudicated_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": null,
+          "interference_ratio": 1.0,
+          "invalid_fields": {
+            "topology_id": {
+              "observed": "topo120_seed0",
+              "reason": "Not one of the seven catalogue topology_ids. Because the topology is invalid, the topology-dependent defaults working_period and communication_range cannot be resolved."
+            }
+          },
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "topo120_seed0",
+          "working_period": null,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "An explicitly supplied topology_id that is not in the catalogue is an invalid value (REJECT), not missing information (CLARIFY). No unsupported capability is requested, so precedence rule 2 applies. Both paraphrases name the same id and the same one-shot minimum-latency task. Note for independence: topo120_seed0 is the exact invalid id quoted as an example in the specification; a different unlisted id would make a stronger held-out item."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-008",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "The supplied communication range conflicts with the selected topology's fixed value of 20.0.",
+        "capability_category": "topology_range_mismatch",
+        "difficulty": "medium",
+        "invalid_fields": {
+          "communication_range": {
+            "observed": 18,
+            "reason": "topo250_seed0 requires communication_range 20.0."
+          }
+        },
+        "proposed_gold_action": "REJECT",
+        "proposed_gold_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 18,
+          "interference_ratio": 1,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "topo250_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-009-p1",
+          "request_text": "Prepare one minimum-latency ANEX aggregation on topo250_seed0 with communication_range set to 18.0."
+        },
+        {
+          "request_id": "h4-a-009-p2",
+          "request_text": "For a single aggregation scheduled by ANEX to minimize latency, select topo250_seed0 and configure its communication range as 18.0."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "REJECT",
+        "adjudicated_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 18.0,
+          "interference_ratio": 1.0,
+          "invalid_fields": {
+            "communication_range": {
+              "observed": 18.0,
+              "reason": "topo250_seed0 has communication_range 20.0; an explicit 18.0 is inconsistent with the selected topology."
+            }
+          },
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "topo250_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "The explicit communication_range 18.0 conflicts with the catalogue value 20.0 for topo250_seed0, which the contract defines as inconsistent -> REJECT. Everything else defaults and the task is supported. Both paraphrases attach the same 18.0 range to the same topology. Single defensible label."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-009",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "Maximizing battery lifetime positively requires optimization beyond the supported latency objective.",
+        "capability_category": "battery_lifetime_objective",
+        "difficulty": "medium",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-010-p1",
+          "request_text": "On legacy30_seed7, choose the aggregation transmissions to maximize the time until the first node exhausts its battery."
+        },
+        {
+          "request_id": "h4-a-010-p2",
+          "request_text": "The aggregation plan for legacy30_seed7 should be optimized to keep the earliest battery failure as far in the future as possible."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "The schedule is to be chosen to maximize the time until the first battery is exhausted, i.e. an energy-aware / network-lifetime objective, positively requested and expressed without canonical wording. This is outside scope both as energy-aware scheduling and as an objective other than latency; either reading yields UNSUPPORTED, so the action label is unique. No supported schedule is requested alongside it. Both paraphrases state the same objective on legacy30_seed7."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-010",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "The schedule alone is supported, but evolving residual battery state is an additional required capability and takes precedence.",
+        "capability_category": "battery_state_evolution",
+        "difficulty": "hard",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-011-p1",
+          "request_text": "Compute a one-shot minimum-latency ANEX schedule on topo50_seed0 using 2 channels, and also update each node's remaining battery charge after every scheduled transmission."
+        },
+        {
+          "request_id": "h4-a-011-p2",
+          "request_text": "For topo50_seed0 I need both a 2-channel ANEX schedule minimizing the latency of one aggregation and a trace that subtracts each transmission's consumption from the transmitting node's remaining charge."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Mixed request: the schedule part (topo50_seed0, channels 2, one-shot minimum-latency ANEX) is fully valid, but updating each node's remaining charge after every transmission is residual-battery evolution, positively requested. Precedence rule 1 makes the whole request UNSUPPORTED. Both paraphrases describe the same per-transmission charge trace. Batch-level flag: the leading clause 'Compute a one-shot minimum-latency ANEX schedule on/for <topology>' recurs with small edits in h4-a-013, h4-a-016 and h4-a-018, so the mixed UNSUPPORTED items share a recognisable surface template; consider diversifying before sealing."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-011",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "A live software replica with continuous state synchronization exceeds static one-shot scheduling.",
+        "capability_category": "live_replica",
+        "difficulty": "medium",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-012-p1",
+          "request_text": "Build a software replica of topo100_seed0 whose node states stay current by ingesting every new reading from the deployed sensors as it arrives."
+        },
+        {
+          "request_id": "h4-a-012-p2",
+          "request_text": "I need topo100_seed0 represented in software with each node's state continuously refreshed from incoming readings of the deployed sensors."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "A software replica of the network whose node states are continuously refreshed from incoming sensor readings is a Digital Twin with streaming state synchronization, described compositionally. It is positively required and no schedule is requested at all, so the request is purely out of scope -> UNSUPPORTED. Both paraphrases state the same replica and the same continuous ingestion."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-012",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "Digital Twin construction and emulation are positively required, so UNSUPPORTED takes precedence over the otherwise invalid zero channel count.",
+        "capability_category": "emulation_with_invalid_schedule",
+        "difficulty": "hard",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-013-p1",
+          "request_text": "Produce a one-shot minimum-latency ANEX schedule for topo150_seed0 with channels: 0, and build a Digital Twin that emulates the network executing that schedule."
+        },
+        {
+          "request_id": "h4-a-013-p2",
+          "request_text": "On topo150_seed0, create a Digital Twin to emulate execution of a one-shot ANEX aggregation schedule optimized for latency; configure that schedule with zero communication channels."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Precedence test. channels 0 is an invalid value that would alone produce REJECT, but Digital Twin construction and emulation of the schedule's execution are positively requested, and precedence rule 1 places the unsupported capability above the invalid parameter -> UNSUPPORTED. Both paraphrases contain the zero-channel setting and the emulation requirement. Shares the leading-clause template noted under h4-a-011."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-013",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "An indefinitely repeated aggregation workload is outside the one-shot scope.",
+        "capability_category": "recurring_collection",
+        "difficulty": "medium",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-014-p1",
+          "request_text": "Set up topo200_seed0 to gather a fresh aggregate every 60 slots indefinitely, choosing ANEX schedules to minimize the latency of each collection."
+        },
+        {
+          "request_id": "h4-a-014-p2",
+          "request_text": "Every 60 slots, start another sensor-data aggregation on topo200_seed0 and keep doing so without an end time; use ANEX to minimize each collection's latency."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Starting a new aggregation every 60 slots with no end time is periodic aggregation, positively requested without canonical wording; the per-round minimum-latency ANEX scheduling does not change the workload. Only one-shot aggregation is supported -> UNSUPPORTED. Both paraphrases specify the same 60-slot cadence and open-ended duration on topo200_seed0."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-014",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "Continuous aggregation is a positively requested unsupported workload.",
+        "capability_category": "continuous_aggregation",
+        "difficulty": "medium",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-015-p1",
+          "request_text": "Keep aggregating readings on topo250_seed0 without stopping, starting a new collection immediately whenever the preceding collection finishes."
+        },
+        {
+          "request_id": "h4-a-015-p2",
+          "request_text": "For topo250_seed0, completion of each aggregate should immediately trigger the next collection so that the aggregation service runs continuously."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Back-to-back collections triggered by completion of the previous one constitute continuous aggregation, positively requested. No one-shot schedule is asked for. Both paraphrases describe the same trigger rule and non-stop service on topo250_seed0. Single defensible label."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-015",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "The initial static schedule is supported, but changing routes during execution requires unsupported runtime topology or routing adaptation.",
+        "capability_category": "runtime_route_repair",
+        "difficulty": "hard",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-016-p1",
+          "request_text": "Find a one-shot minimum-latency ANEX schedule on topo300_seed0 with 2 channels, and reroute the remaining transmissions during execution whenever a link fails."
+        },
+        {
+          "request_id": "h4-a-016-p2",
+          "request_text": "For topo300_seed0, prepare a 2-channel ANEX schedule minimizing the latency of one aggregation, with remaining transmissions redirected at execution time in response to any failed link."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Mixed request: the schedule part (topo300_seed0, channels 2, one-shot minimum-latency ANEX) is valid, but rerouting remaining transmissions during execution in response to link failures is runtime topology/routing adaptation, positively requested. Precedence rule 1 -> UNSUPPORTED. Both paraphrases include the same execution-time rerouting requirement. Shares the leading-clause template noted under h4-a-011."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-016",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "Minimizing transmission count in preference to latency is an unsupported optimization objective.",
+        "capability_category": "transmission_count_objective",
+        "difficulty": "easy",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-017-p1",
+          "request_text": "Use topo50_seed0 for one data aggregation and choose a schedule that minimizes the total number of transmissions, even if completion takes longer."
+        },
+        {
+          "request_id": "h4-a-017-p2",
+          "request_text": "Completion time can increase on topo50_seed0: for this single aggregation, optimize the schedule for the fewest transmissions."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "The optimization objective is explicitly changed from latency to the fewest total transmissions, with longer completion time accepted, so a different objective is positively requested -> UNSUPPORTED. Both paraphrases state the same trade-off. Flag (construction, low risk): in a one-shot aggregation tree every non-sink node transmits exactly once, so 'total number of transmissions' is constant and the requested objective is degenerate; the label is still unique because the request rejects latency as the objective, but a non-degenerate alternative objective (e.g. balancing relay load) would make a more robust item."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-017",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-a",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "The schedule is supported, but commanding physical sensor radios is a separately required unsupported capability.",
+        "capability_category": "physical_sensor_control",
+        "difficulty": "medium",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-a-018-p1",
+          "request_text": "Compute a one-shot minimum-latency ANEX schedule for legacy30_seed7, then send commands to the physical sensors to switch their radios off after their final scheduled transmissions."
+        },
+        {
+          "request_id": "h4-a-018-p2",
+          "request_text": "After preparing an ANEX schedule that minimizes the latency of one aggregation on legacy30_seed7, command each physical sensor to turn off its radio once its last scheduled transmission is complete."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Mixed request: the schedule part (legacy30_seed7, one-shot minimum-latency ANEX, defaults) is valid, but commanding the physical sensors to switch their radios off is physical device control, positively requested. Precedence rule 1 -> UNSUPPORTED. Both paraphrases order the same radio shutdown after each node's last transmission. Shares the leading-clause template noted under h4-a-011."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-a-018",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "In-scope one-shot minimum-latency ANEX run on a catalogue topology. No optional field is supplied, so every default applies; the scheduling seed is omitted and therefore 0 (the seed0 suffix of the topology id plays no role).",
+        "capability_category": "default_execution_no_seed_given",
+        "difficulty": "easy",
+        "invalid_fields": null,
+        "proposed_gold_action": "EXECUTE",
+        "proposed_gold_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "topo100_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-001-p1",
+          "request_text": "Please compute a one-shot aggregation schedule for topology topo100_seed0 with the ANEX algorithm and tell me the resulting latency. Standard settings are fine."
+        },
+        {
+          "request_id": "h4-b-001-p2",
+          "request_text": "For topo100_seed0 I need the minimum-latency ANEX schedule for a single collection round — nothing custom, just the default setup, and the latency it ends up with."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "EXECUTE",
+        "adjudicated_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "topo100_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Both requests select the same valid topology and request one-shot ANEX scheduling and latency with defaults. The minimum-latency objective is the documented default."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-001",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "low",
+        "annotation_reason": "Hard negative: the Digital Twin is mentioned only as something NOT to do, which is not a request for that capability. The remaining request is a default one-shot ANEX schedule. Gold seed stays 0 (not 7); communication_range follows legacy30_seed7 (18.0).",
+        "capability_category": "hard_negative_negated_digital_twin",
+        "difficulty": "hard",
+        "invalid_fields": null,
+        "proposed_gold_action": "EXECUTE",
+        "proposed_gold_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 18.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "legacy30_seed7",
+          "working_period": 10,
+          "workload": "one_shot"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-002-p1",
+          "request_text": "We only need the plain scheduler output for legacy30_seed7: a single aggregation round, ANEX, default channel count and default collision handling. Do not construct a Digital Twin of the network for this — the schedule alone goes into the report, together with its latency."
+        },
+        {
+          "request_id": "h4-b-002-p2",
+          "request_text": "Our reviewer wants raw numbers, so skip any Digital Twin modelling and simply run ANEX once on legacy30_seed7 with the default number of channels and the default collision model, then give me the latency of that one-shot schedule."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "EXECUTE",
+        "adjudicated_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 18.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "legacy30_seed7",
+          "working_period": 10,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Digital Twin construction is explicitly negated in both requests. The requested schedule is supported. The topology supplies range 18.0; its generation seed 7 does not override the scheduling-seed default of 0."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-002",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "low",
+        "annotation_reason": "All explicit values are valid: channels 3, interference_ratio exactly 1.0, collision_model interference_range (equivalent to legacy_neighbor at ratio 1.0), seed 11, working_period 10 consistent with topo200_seed0. The battery-tracking scheduler is a historical/comparative mention, not a requested capability.",
+        "capability_category": "explicit_config_interference_range_with_historical_mention",
+        "difficulty": "hard",
+        "invalid_fields": null,
+        "proposed_gold_action": "EXECUTE",
+        "proposed_gold_fields": {
+          "channels": 3,
+          "collision_model": "interference_range",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 11,
+          "topology_id": "topo200_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-003-p1",
+          "request_text": "Set up a one-shot ANEX run on topo200_seed0 using 3 channels, the interference_range collision model with the interference ratio at 1.0, scheduling seed 11, and the topology's 10-slot working period. Back in 2022 our testbed scheduler tracked each node's remaining battery to decide who transmits; this comparison run should stay purely latency-driven like the paper's method."
+        },
+        {
+          "request_id": "h4-b-003-p2",
+          "request_text": "I'm reproducing a comparison against our old 2022 testbed scheduler, which picked transmitters according to how much battery each node had left. For the reference side I want the standard minimum-latency ANEX schedule on topo200_seed0: seed 11, three channels, collision model interference_range at an interference ratio of 1.0, working period 10 slots, single aggregation round."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "EXECUTE",
+        "adjudicated_fields": {
+          "channels": 3,
+          "collision_model": "interference_range",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 11,
+          "topology_id": "topo200_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Battery-based scheduling describes the historical comparison method, not a requested capability. Both paraphrases request the same valid latency-driven reference configuration."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-003",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "Explicit channels 4, collision_model legacy_neighbor, interference_ratio 1.0, seed 5, and communication_range 20.0 consistent with topo50_seed0. The request states explicitly that no latency target applies, so latency_target_slots is an explicit null. This group carries the batch's explicit-null-target case, since the two supported_latency_target groups are used for the above-baseline and below-baseline targets.",
+        "capability_category": "explicit_config_legacy_neighbor_explicit_no_latency_target",
+        "difficulty": "medium",
+        "invalid_fields": null,
+        "proposed_gold_action": "EXECUTE",
+        "proposed_gold_fields": {
+          "channels": 4,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 5,
+          "topology_id": "topo50_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-004-p1",
+          "request_text": "Run ANEX once on topo50_seed0 with four channels, collision model legacy_neighbor, interference ratio 1.0, and seed 5. The communication range should be 20.0, matching the catalogue entry. No latency target applies to this run; I just want the schedule and its measured latency."
+        },
+        {
+          "request_id": "h4-b-004-p2",
+          "request_text": "On topo50_seed0 (communication range 20.0 as listed) I'd like a single-round ANEX schedule: seed 5, 4 channels, interference ratio 1.0, legacy_neighbor collisions. We're not holding it to any latency deadline — whatever latency comes out is what we record."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "EXECUTE",
+        "adjudicated_fields": {
+          "channels": 4,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 5,
+          "topology_id": "topo50_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Both specify the same valid one-shot configuration, including the catalogue range and the absence of a latency target. Four channels are supported."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-004",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "low",
+        "annotation_reason": "latency_target_slots 40 is a valid positive integer in elapsed slots. It lies below the topo300_seed0 baseline of 47, but a target that may not be achievable is still syntactically valid, so the request is EXECUTE and execution may report the target as missed.",
+        "capability_category": "latency_target_below_baseline",
+        "difficulty": "hard",
+        "invalid_fields": null,
+        "proposed_gold_action": "EXECUTE",
+        "proposed_gold_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": 40,
+          "objective": "minimize_latency",
+          "seed": 3,
+          "topology_id": "topo300_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-005-p1",
+          "request_text": "Schedule a one-shot aggregation on topo300_seed0 with ANEX, seed 3 and the default two channels, and check whether the whole collection can be completed within 40 elapsed slots. If the schedule does not hit that bound, report the latency it actually reaches."
+        },
+        {
+          "request_id": "h4-b-005-p2",
+          "request_text": "Our deadline for the 300-node case is 40 slots of elapsed time. Using topo300_seed0, two channels and scheduling seed 3, generate the single-round ANEX schedule and tell me the achieved latency relative to that 40-slot goal, whether or not the goal is met."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "EXECUTE",
+        "adjudicated_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": 40,
+          "objective": "minimize_latency",
+          "seed": 3,
+          "topology_id": "topo300_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "The 40-elapsed-slot target is syntactically valid despite being below the catalogue baseline of 47. Both request the achieved latency whether or not the target is met; no execution outcome is assumed."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-005",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "latency_target_slots 35 is valid and above the topo150_seed0 baseline of 29 elapsed slots. All other fields are omitted and take defaults, including seed 0.",
+        "capability_category": "latency_target_above_baseline",
+        "difficulty": "easy",
+        "invalid_fields": null,
+        "proposed_gold_action": "EXECUTE",
+        "proposed_gold_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": 35,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "topo150_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-006-p1",
+          "request_text": "For topo150_seed0, produce the one-shot ANEX schedule and verify that the aggregation finishes within a target of 35 elapsed slots. Defaults are fine for everything else."
+        },
+        {
+          "request_id": "h4-b-006-p2",
+          "request_text": "Is 35 slots of elapsed latency enough for a single aggregation round on topo150_seed0? Build the ANEX schedule with default settings and report the latency against that 35-slot target."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "EXECUTE",
+        "adjudicated_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": 35,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "topo150_seed0",
+          "working_period": 10,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Both request default one-shot ANEX scheduling on the exact topology and evaluation against the same valid 35-elapsed-slot target."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-006",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "medium",
+        "annotation_reason": "The task is in scope and every supplied value is valid, but the topology is only described (250 nodes) and no topology_id is written. A description does not select a topology even when exactly one catalogue entry matches, so the required topology_id is missing.",
+        "capability_category": "topology_described_without_id",
+        "difficulty": "medium",
+        "invalid_fields": null,
+        "proposed_gold_action": "CLARIFY",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-007-p1",
+          "request_text": "Generate a minimum-latency ANEX schedule for a single aggregation round on the 250-node network in the catalogue, using 2 channels and seed 0."
+        },
+        {
+          "request_id": "h4-b-007-p2",
+          "request_text": "Take the catalogue topology with 250 nodes and run a one-shot ANEX aggregation on it — two channels, scheduling seed 0 — and give me the latency."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "CLARIFY",
+        "adjudicated_fields": {
+          "channels": 2,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Neither paraphrase supplies an exact topology_id. The description of the 250-node catalogue network does not select a topology under the explicit identifier rule, even though it uniquely matches an entry. The omission is natural and is not narrated."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-007",
+      "signals": [
+        "generator ambiguity_risk=medium"
+      ],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "low",
+        "annotation_reason": "The task itself (one-shot minimum-latency ANEX) is supported, but the explicitly supplied topology_id is not in the catalogue. An explicit unlisted id is an invalid value, not missing information, so the label is REJECT rather than CLARIFY.",
+        "capability_category": "unlisted_topology_id",
+        "difficulty": "easy",
+        "invalid_fields": {
+          "topology_id": {
+            "observed": "topo200_seed1",
+            "reason": "Not one of the seven catalogue topology_ids (the only 200-node entry is topo200_seed0). Because the topology is invalid, the topology-dependent defaults working_period and communication_range cannot be resolved."
+          }
+        },
+        "proposed_gold_action": "REJECT",
+        "proposed_gold_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": null,
+          "interference_ratio": 1.0,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "topo200_seed1",
+          "working_period": null,
+          "workload": "one_shot"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-008-p1",
+          "request_text": "Run a one-shot ANEX aggregation on topo200_seed1 with two channels and report the schedule latency."
+        },
+        {
+          "request_id": "h4-b-008-p2",
+          "request_text": "I need the ANEX schedule and its latency for a single collection round on topology topo200_seed1, two channels."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "REJECT",
+        "adjudicated_fields": {
+          "channels": 2,
+          "invalid_fields": [
+            "topology_id"
+          ],
+          "topology_id": "topo200_seed1",
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Both explicitly select topo200_seed1, which is absent from the catalogue. The task is supported but this identifier is invalid; it must not be silently replaced with topo200_seed0."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-008",
+      "signals": [
+        "reviewer did not enumerate invalid_fields; only overlapping explicit values were compared"
+      ],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "low",
+        "annotation_reason": "working_period 10 matches the topology, but the explicit communication_range 20.0 conflicts with legacy30_seed7, the one catalogue topology whose range is 18.0. The inconsistency arises naturally from an operator assuming the common 20.0 value. No unsupported capability is requested, so precedence rule 2 gives REJECT.",
+        "capability_category": "communication_range_inconsistent_with_legacy30",
+        "difficulty": "hard",
+        "invalid_fields": {
+          "communication_range": {
+            "observed": 20.0,
+            "reason": "legacy30_seed7 has communication_range 18.0; an explicit 20.0 is inconsistent with the selected topology."
+          }
+        },
+        "proposed_gold_action": "REJECT",
+        "proposed_gold_fields": {
+          "channels": 2,
+          "collision_model": "legacy_neighbor",
+          "communication_range": 20.0,
+          "interference_ratio": 1.0,
+          "latency_target_slots": null,
+          "objective": "minimize_latency",
+          "seed": 0,
+          "topology_id": "legacy30_seed7",
+          "working_period": 10,
+          "workload": "one_shot"
+        }
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-009-p1",
+          "request_text": "Here's the config we're using for the small-network baseline; run ANEX for one aggregation round and give me the latency.\n\ntopology_id: legacy30_seed7\nchannels: 2\ncommunication_range: 20.0\nworking_period: 10\nseed: 0"
+        },
+        {
+          "request_id": "h4-b-009-p2",
+          "request_text": "One-shot ANEX latency on legacy30_seed7 please, seed 0, two channels, working period 10 slots and a communication range of 20.0 for every node."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "REJECT",
+        "adjudicated_fields": {
+          "channels": 2,
+          "communication_range": 20.0,
+          "invalid_fields": [
+            "communication_range"
+          ],
+          "seed": 0,
+          "topology_id": "legacy30_seed7",
+          "working_period": 10,
+          "workload": "one_shot"
+        },
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Both explicitly request communication_range 20.0, inconsistent with the selected legacy topology's fixed 18.0. The other explicit fields are valid. The prose and parameter-block versions preserve the same configuration."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-009",
+      "signals": [
+        "reviewer did not enumerate invalid_fields; only overlapping explicit values were compared"
+      ],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "low",
+        "annotation_reason": "The request positively requires the scheduler to take remaining battery charge into account when assigning slots and relays, i.e. energy-aware scheduling, expressed compositionally without the canonical category wording. The one-shot framing does not change the label.",
+        "capability_category": "battery_aware_slot_assignment_compositional",
+        "difficulty": "medium",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-010-p1",
+          "request_text": "On topo100_seed0, assign transmission slots so that nodes with little remaining battery charge are placed in the fewest active slots possible, and pick relays that spread the drain evenly. Two channels, single aggregation round."
+        },
+        {
+          "request_id": "h4-b-010-p2",
+          "request_text": "I want a single-round schedule for topo100_seed0 (two channels) where the slot assignment favours nodes that are low on battery — fewer active slots for them — and relay selection keeps the depletion balanced across the network."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Both positively require battery-aware slot assignment and relay selection to balance depletion. These are energy-aware scheduling requirements outside the scientific scope."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-010",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "low",
+        "annotation_reason": "Mixed request. The first part (topo300_seed0, channels 3, seed 2, one-shot ANEX) is a fully valid supported schedule, but the second part positively requires simulating residual-battery evolution over repeated executions, which is outside scope. Precedence rule 1 makes the whole request UNSUPPORTED.",
+        "capability_category": "residual_charge_evolution_mixed_with_valid_schedule",
+        "difficulty": "hard",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-011-p1",
+          "request_text": "Compute the minimum-latency ANEX schedule for one aggregation round on topo300_seed0 with three channels and seed 2. Afterwards, simulate how much charge each node has left after every slot of the schedule and report which nodes would run out first if the same schedule were executed 10,000 times."
+        },
+        {
+          "request_id": "h4-b-011-p2",
+          "request_text": "Two things for topo300_seed0, seed 2, 3 channels: the ANEX single-round schedule with its latency, and then a per-slot simulation of each node's remaining charge, projected across 10,000 executions of that schedule, listing the nodes that deplete earliest."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Both add per-slot residual-battery simulation and depletion projections over 10,000 executions to a supported one-shot schedule. Residual-battery evolution is unsupported and takes precedence over the valid scheduling component."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-011",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "Digital Twin construction and continuous synchronization with a live network are positively requested as the mechanism for producing the schedule; both capabilities are outside the Paper-1 scope.",
+        "capability_category": "digital_twin_construction_canonical",
+        "difficulty": "easy",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-012-p1",
+          "request_text": "Construct a Digital Twin of topo50_seed0 that stays synchronized with the live deployment, and have the twin derive the ANEX aggregation schedule from its current network state."
+        },
+        {
+          "request_id": "h4-b-012-p2",
+          "request_text": "Please build a Digital Twin for the topo50_seed0 deployment, keep it in sync with the physical network, and let the ANEX schedule be generated from whatever state the twin holds."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Both positively request Digital Twin construction, continuous synchronization with a physical deployment, and scheduling from the twin's current state. These capabilities are outside the static one-shot scope."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-012",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "low",
+        "annotation_reason": "Mixed request: the schedule part (topo150_seed0, channels 2, seed 4, interference_range) is fully valid, but a continuously synchronized virtual replica of the live network — a Digital Twin with streaming state synchronization, described without the canonical name — is positively required. Precedence rule 1 applies.",
+        "capability_category": "live_mirror_state_streaming_mixed_compositional",
+        "difficulty": "hard",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-013-p1",
+          "request_text": "Run one ANEX aggregation round on topo150_seed0 with two channels, seed 4 and the interference_range collision model. Then keep a virtual replica of the deployment running alongside the real nodes, streaming their link and buffer states into it continuously so the replica always mirrors the field network."
+        },
+        {
+          "request_id": "h4-b-013-p2",
+          "request_text": "Start with the single-round ANEX schedule for topo150_seed0 (interference_range collisions, seed 4, 2 channels). On top of that, I need a software mirror of the live network that continuously receives the nodes' link and buffer states as they change, so it stays identical to what is deployed."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Both combine a valid one-shot schedule with a continuously synchronized virtual network replica receiving live link and buffer states. The replica and streaming synchronization are unsupported regardless of the absence of the phrase Digital Twin."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-013",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "none",
+        "annotation_reason": "Repeating the aggregation every 30 seconds for 24 hours is a recurring (periodic) aggregation workload, requested without the canonical wording. Only one-shot aggregation is supported.",
+        "capability_category": "recurring_collection_campaign_compositional",
+        "difficulty": "medium",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-014-p1",
+          "request_text": "Set up ANEX on topo200_seed0 with 2 channels so that a fresh aggregation round is launched every 30 seconds for a 24-hour measurement campaign, and report the latency of each round."
+        },
+        {
+          "request_id": "h4-b-014-p2",
+          "request_text": "For a day-long campaign on topo200_seed0 I need the aggregation repeated every 30 seconds, with ANEX and two channels, plus the latency achieved in every one of those rounds."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Both require periodic aggregation every 30 seconds over 24 hours with per-round latency reporting. Periodic execution is outside the one-shot workload scope."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-014",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "PARAPHRASE_MISMATCH",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "low",
+        "annotation_reason": "Precedence test. The one-shot part carries an explicit interference_ratio of 1.5, which on its own would be REJECT (invalid value of a supported field). However, periodic aggregation over 500 rounds is positively requested, and precedence rule 1 places the unsupported capability above the invalid parameter, so the gold action is UNSUPPORTED.",
+        "capability_category": "periodic_request_with_otherwise_invalid_ratio_precedence",
+        "difficulty": "hard",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-015-p1",
+          "request_text": "First get me the one-shot ANEX schedule for topo250_seed0 with 3 channels and an interference ratio of 1.5, then switch to periodic aggregation and repeat that collection every working period for 500 rounds."
+        },
+        {
+          "request_id": "h4-b-015-p2",
+          "request_text": "On topo250_seed0, run ANEX with three channels and interference ratio 1.5 for a single round, and after that run it as periodic aggregation, one collection per working period, 500 rounds in total."
+        }
+      ],
+      "requires_human_decision": true,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "revise",
+        "paraphrase_equivalent": false,
+        "reason": "Both positively require periodic aggregation, so UNSUPPORTED takes precedence over the independently invalid interference_ratio of 1.5. However, p1 requests an initial single round followed by 500 periodic rounds, whereas p2 says 500 rounds in total, which can include the initial round. The requested count is therefore not reliably equivalent. Specify the same inclusion or exclusion of the initial round in both paraphrases; the action remains unambiguous."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-015",
+      "signals": [
+        "reviewer judged the paraphrases not equivalent",
+        "reviewer item_quality=revise"
+      ],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "low",
+        "annotation_reason": "Re-parenting nodes and rescheduling during execution in response to relay failures is runtime topology/routing adaptation, positively requested and expressed without the canonical wording. The system only supports a static topology.",
+        "capability_category": "runtime_reparenting_on_relay_failure_compositional",
+        "difficulty": "medium",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-016-p1",
+          "request_text": "Schedule a one-shot ANEX aggregation on topo100_seed0 with two channels, and while the collection is running, detect any relay that stops responding, re-parent its children to another neighbour and reschedule the remaining transmissions on the fly."
+        },
+        {
+          "request_id": "h4-b-016-p2",
+          "request_text": "I need ANEX on topo100_seed0 (2 channels, single round) with live recovery: if a relay drops out mid-collection, its children get attached to a different neighbour and the outstanding transmissions are rescheduled without stopping the round."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Both require live relay-failure detection, re-parenting, and rescheduling during an ongoing collection. Runtime topology adaptation and recovery exceed the supported static-topology schedule."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-016",
+      "signals": [],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "FULL_AGREEMENT",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "medium",
+        "annotation_reason": "The optimization objective is explicitly changed from minimizing aggregation latency to minimizing the number of channels used, with latency declared irrelevant. A different objective is positively requested, so the request is UNSUPPORTED.",
+        "capability_category": "minimize_channel_count_objective_compositional",
+        "difficulty": "hard",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-017-p1",
+          "request_text": "For topo300_seed0, find the single-round ANEX schedule that needs the fewest channels; the aggregation latency is not what we're optimizing here, any latency is acceptable."
+        },
+        {
+          "request_id": "h4-b-017-p2",
+          "request_text": "On topo300_seed0 the goal is to minimize how many channels the one-shot ANEX schedule occupies rather than how quickly it finishes — we don't care about the latency figure, only the channel count."
+        }
+      ],
+      "requires_human_decision": false,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "accept",
+        "paraphrase_equivalent": true,
+        "reason": "Both explicitly replace latency minimization with channel-count minimization. This is an unsupported optimization objective, not an omitted channels value requiring clarification."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-017",
+      "signals": [
+        "generator ambiguity_risk=medium"
+      ],
+      "structural_defects": []
+    },
+    {
+      "batch_id": "frontier-model-b",
+      "classification": "PARAPHRASE_MISMATCH",
+      "field_differences": [],
+      "generator": {
+        "ambiguity_risk": "low",
+        "annotation_reason": "Mixed request: the schedule part (legacy30_seed7, channels 2, seed 1) is fully valid, but dispatching the schedule to physical motes and toggling their radios is physical device control, which is outside scope. Precedence rule 1 makes the request UNSUPPORTED.",
+        "capability_category": "physical_device_control_mixed_compositional",
+        "difficulty": "medium",
+        "invalid_fields": null,
+        "proposed_gold_action": "UNSUPPORTED",
+        "proposed_gold_fields": null
+      },
+      "paraphrases": [
+        {
+          "request_id": "h4-b-018-p1",
+          "request_text": "Compute the one-shot ANEX schedule for legacy30_seed7 with two channels and seed 1, then push it out to the deployed motes over the air and switch each node's radio on and off at the slots the schedule dictates."
+        },
+        {
+          "request_id": "h4-b-018-p2",
+          "request_text": "Using legacy30_seed7, seed 1 and 2 channels, generate the single-round ANEX schedule and then program the real nodes with it — the radios in the field should be toggled according to the assigned slots."
+        }
+      ],
+      "requires_human_decision": true,
+      "reviewer": {
+        "adjudicated_action": "UNSUPPORTED",
+        "adjudicated_fields": {},
+        "item_quality": "revise",
+        "paraphrase_equivalent": false,
+        "reason": "Both require programming physical nodes and controlling their radios, so UNSUPPORTED is unambiguous. However, p1 additionally specifies over-the-air schedule delivery; p2 merely says to program the real nodes and does not preserve that delivery requirement. Under the strict no-dropping-or-weakening rule, explicitly retain over-the-air delivery in p2 or remove it from p1."
+      },
+      "reviewer_record_defects": [],
+      "semantic_group_id": "h4-b-018",
+      "signals": [
+        "reviewer judged the paraphrases not equivalent",
+        "reviewer item_quality=revise"
+      ],
+      "structural_defects": []
+    }
+  ],
+  "inputs": {
+    "frontier-model-a": {
+      "benchmark": {
+        "path": "benchmarks/holdout_v4/batch_a.json",
+        "payload_sha256": "bd2fa32fe88043b357b6bb94953e0ab3318f1ba844d1fd06b7cd637900f975ce",
+        "sha256": "bd2fa32fe88043b357b6bb94953e0ab3318f1ba844d1fd06b7cd637900f975ce",
+        "size_bytes": 20914,
+        "source_defects": []
+      },
+      "review": {
+        "path": "benchmarks/holdout_v4/review_of_a_reconciled.json",
+        "payload_sha256": "288e3d10eaaf2e31e8428e2690546090a82dade98b0c229142abc838626b697f",
+        "sha256": "288e3d10eaaf2e31e8428e2690546090a82dade98b0c229142abc838626b697f",
+        "size_bytes": 14933,
+        "source_defects": []
+      }
+    },
+    "frontier-model-b": {
+      "benchmark": {
+        "path": "benchmarks/holdout_v4/batch_b.json",
+        "payload_sha256": "f58e6d53876e6365b5ab0afb8145fa87d124183247753baa9a1d8f2a1ca059f7",
+        "sha256": "f58e6d53876e6365b5ab0afb8145fa87d124183247753baa9a1d8f2a1ca059f7",
+        "size_bytes": 26726,
+        "source_defects": []
+      },
+      "review": {
+        "path": "benchmarks/holdout_v4/review_of_b_reconciled.json",
+        "payload_sha256": "9aeda2af53703f4a4903ca8ab95bd1c5b08ce587a555f774e18bd19b9058d0f4",
+        "sha256": "9aeda2af53703f4a4903ca8ab95bd1c5b08ce587a555f774e18bd19b9058d0f4",
+        "size_bytes": 10462,
+        "source_defects": []
+      }
+    }
+  },
+  "summary": {
+    "by_classification": {
+      "ACTION_DISAGREEMENT": 0,
+      "DEFECTIVE_ITEM": 0,
+      "FIELD_DISAGREEMENT": 0,
+      "FULL_AGREEMENT": 34,
+      "PARAPHRASE_MISMATCH": 2
+    },
+    "groups": 36,
+    "per_batch": {
+      "frontier-model-a": {
+        "by_classification": {
+          "ACTION_DISAGREEMENT": 0,
+          "DEFECTIVE_ITEM": 0,
+          "FIELD_DISAGREEMENT": 0,
+          "FULL_AGREEMENT": 18,
+          "PARAPHRASE_MISMATCH": 0
+        },
+        "declared_counts": {
+          "CLARIFY": 1,
+          "EXECUTE": 6,
+          "REJECT": 2,
+          "UNSUPPORTED": 9
+        },
+        "groups": 18,
+        "proposed_action_counts": {
+          "CLARIFY": 1,
+          "EXECUTE": 6,
+          "REJECT": 2,
+          "UNSUPPORTED": 9
+        },
+        "requires_human_decision": 0
+      },
+      "frontier-model-b": {
+        "by_classification": {
+          "ACTION_DISAGREEMENT": 0,
+          "DEFECTIVE_ITEM": 0,
+          "FIELD_DISAGREEMENT": 0,
+          "FULL_AGREEMENT": 16,
+          "PARAPHRASE_MISMATCH": 2
+        },
+        "declared_counts": {
+          "CLARIFY": 1,
+          "EXECUTE": 6,
+          "REJECT": 2,
+          "UNSUPPORTED": 9
+        },
+        "groups": 18,
+        "proposed_action_counts": {
+          "CLARIFY": 1,
+          "EXECUTE": 6,
+          "REJECT": 2,
+          "UNSUPPORTED": 9
+        },
+        "requires_human_decision": 2
+      }
+    },
+    "requests": 72,
+    "requires_human_decision": 2
+  },
+  "topology_catalogue": {
+    "legacy30_seed7": {
+      "active_slot_mode": "legacy_exclude_final_slot",
+      "active_slots_per_node": 2,
+      "average_degree": 10.0,
+      "baseline": {
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "elapsed_latency_slots": 26,
+        "interference_ratio": 1.0,
+        "max_timeslot_index": 25,
+        "valid": true
+      },
+      "communication_range": 18.0,
+      "coordinate_domain": [
+        0,
+        40
+      ],
+      "density": 0.3448275862068966,
+      "edge_count": 150,
+      "generation_seed": 7,
+      "max_bfs_layer": 2,
+      "maximum_degree": 17,
+      "node_count": 30,
+      "path": "network_30_seed7.json",
+      "sha256": "9a8df81459c536c7c5ab282812d019c88de9b60824a2cc07e6ee07d120e2eb78",
+      "sink_id": 0,
+      "source": "Frozen Test v2 topology",
+      "topology_id": "legacy30_seed7",
+      "working_period": 10
+    },
+    "topo100_seed0": {
+      "active_slot_mode": "legacy_exclude_final_slot",
+      "active_slots_per_node": 2,
+      "average_degree": 9.64,
+      "baseline": {
+        "anex_seconds": 0.0289,
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "elapsed_latency_slots": 29,
+        "interference_ratio": 1.0,
+        "max_timeslot_index": 28,
+        "valid": true,
+        "violations": 0
+      },
+      "baseline_schedule_path": "benchmarks/topologies/fixed_area100_r20/topo100_seed0.baseline_schedule.json",
+      "baseline_schedule_sha256": "309ce92a8bcbbd356b58b7611915633c1c26c66e573dca439863a3ec9cadead5",
+      "communication_range": 20.0,
+      "coordinate_domain": [
+        0,
+        100
+      ],
+      "density": 0.09737373737373738,
+      "edge_count": 482,
+      "generation_seed": 0,
+      "max_bfs_layer": 5,
+      "maximum_degree": 17,
+      "node_count": 100,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo100_seed0.json",
+      "sha256": "3bd20b02a0aa08cc05c12727463830ed6558b1118b0853837c31617771778369",
+      "sink_id": 0,
+      "source": "generated catalogue fixed_area100_r20",
+      "topology_id": "topo100_seed0",
+      "working_period": 10
+    },
+    "topo150_seed0": {
+      "active_slot_mode": "legacy_exclude_final_slot",
+      "active_slots_per_node": 2,
+      "average_degree": 14.84,
+      "baseline": {
+        "anex_seconds": 0.0097,
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "elapsed_latency_slots": 29,
+        "interference_ratio": 1.0,
+        "max_timeslot_index": 28,
+        "valid": true,
+        "violations": 0
+      },
+      "baseline_schedule_path": "benchmarks/topologies/fixed_area100_r20/topo150_seed0.baseline_schedule.json",
+      "baseline_schedule_sha256": "d47ef01289e69c3f8451916aa880a0eb2375ce06f4ee72447b44d9865aeec808",
+      "communication_range": 20.0,
+      "coordinate_domain": [
+        0,
+        100
+      ],
+      "density": 0.0995973154362416,
+      "edge_count": 1113,
+      "generation_seed": 0,
+      "max_bfs_layer": 5,
+      "maximum_degree": 26,
+      "node_count": 150,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo150_seed0.json",
+      "sha256": "9e617ae050a96bf3cf3894d541f7cc8340689ee68c570b4777fdb2d668bdcf91",
+      "sink_id": 0,
+      "source": "generated catalogue fixed_area100_r20",
+      "topology_id": "topo150_seed0",
+      "working_period": 10
+    },
+    "topo200_seed0": {
+      "active_slot_mode": "legacy_exclude_final_slot",
+      "active_slots_per_node": 2,
+      "average_degree": 20.15,
+      "baseline": {
+        "anex_seconds": 0.0188,
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "elapsed_latency_slots": 37,
+        "interference_ratio": 1.0,
+        "max_timeslot_index": 36,
+        "valid": true,
+        "violations": 0
+      },
+      "baseline_schedule_path": "benchmarks/topologies/fixed_area100_r20/topo200_seed0.baseline_schedule.json",
+      "baseline_schedule_sha256": "1c3129214da0cde9a9818eabaea8ba5afcad72e8ebdfeef0dbd06fa858f6d51b",
+      "communication_range": 20.0,
+      "coordinate_domain": [
+        0,
+        100
+      ],
+      "density": 0.10125628140703517,
+      "edge_count": 2015,
+      "generation_seed": 0,
+      "max_bfs_layer": 4,
+      "maximum_degree": 37,
+      "node_count": 200,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo200_seed0.json",
+      "sha256": "81eb3ef9f7032768c98101eb8c023993eb0d652f14a53f4907b5f323c299b01f",
+      "sink_id": 0,
+      "source": "generated catalogue fixed_area100_r20",
+      "topology_id": "topo200_seed0",
+      "working_period": 10
+    },
+    "topo250_seed0": {
+      "active_slot_mode": "legacy_exclude_final_slot",
+      "active_slots_per_node": 2,
+      "average_degree": 25.936,
+      "baseline": {
+        "anex_seconds": 0.032,
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "elapsed_latency_slots": 37,
+        "interference_ratio": 1.0,
+        "max_timeslot_index": 36,
+        "valid": true,
+        "violations": 0
+      },
+      "baseline_schedule_path": "benchmarks/topologies/fixed_area100_r20/topo250_seed0.baseline_schedule.json",
+      "baseline_schedule_sha256": "cbc2a9cc7647d5109c575f4e5d79a7e59271496dc11cb7c202a3244586dddf47",
+      "communication_range": 20.0,
+      "coordinate_domain": [
+        0,
+        100
+      ],
+      "density": 0.10416064257028113,
+      "edge_count": 3242,
+      "generation_seed": 0,
+      "max_bfs_layer": 4,
+      "maximum_degree": 48,
+      "node_count": 250,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo250_seed0.json",
+      "sha256": "00c7611340a407808b21ac3ebe2b5f534bcdba4de896ee728d627e42b3cd6151",
+      "sink_id": 0,
+      "source": "generated catalogue fixed_area100_r20",
+      "topology_id": "topo250_seed0",
+      "working_period": 10
+    },
+    "topo300_seed0": {
+      "active_slot_mode": "legacy_exclude_final_slot",
+      "active_slots_per_node": 2,
+      "average_degree": 30.42,
+      "baseline": {
+        "anex_seconds": 0.2957,
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "elapsed_latency_slots": 47,
+        "interference_ratio": 1.0,
+        "max_timeslot_index": 46,
+        "valid": true,
+        "violations": 0
+      },
+      "baseline_schedule_path": "benchmarks/topologies/fixed_area100_r20/topo300_seed0.baseline_schedule.json",
+      "baseline_schedule_sha256": "ac29401f7e73913e75b0a8c9bd306bd4cbe76a5c33a810369217b2e53408c5aa",
+      "communication_range": 20.0,
+      "coordinate_domain": [
+        0,
+        100
+      ],
+      "density": 0.10173913043478261,
+      "edge_count": 4563,
+      "generation_seed": 0,
+      "max_bfs_layer": 4,
+      "maximum_degree": 54,
+      "node_count": 300,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo300_seed0.json",
+      "sha256": "6b39ff460b3173c789af2124cf5a96255bc8bd36ba031286798adb1a772febc8",
+      "sink_id": 0,
+      "source": "generated catalogue fixed_area100_r20",
+      "topology_id": "topo300_seed0",
+      "working_period": 10
+    },
+    "topo50_seed0": {
+      "active_slot_mode": "legacy_exclude_final_slot",
+      "active_slots_per_node": 2,
+      "average_degree": 4.6,
+      "baseline": {
+        "anex_seconds": 0.0014,
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "elapsed_latency_slots": 27,
+        "interference_ratio": 1.0,
+        "max_timeslot_index": 26,
+        "valid": true,
+        "violations": 0
+      },
+      "baseline_schedule_path": "benchmarks/topologies/fixed_area100_r20/topo50_seed0.baseline_schedule.json",
+      "baseline_schedule_sha256": "d85c6dc6eb0606f6a1f04718ec5d3b6cff7682945f5ea2e9ecc1623805a8b4e2",
+      "communication_range": 20.0,
+      "coordinate_domain": [
+        0,
+        100
+      ],
+      "density": 0.09387755102040816,
+      "edge_count": 115,
+      "generation_seed": 0,
+      "max_bfs_layer": 5,
+      "maximum_degree": 10,
+      "node_count": 50,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo50_seed0.json",
+      "sha256": "25dc562618c9232713dcca81d9f18d1c9685e075b6610c797dc2e632279e3426",
+      "sink_id": 0,
+      "source": "generated catalogue fixed_area100_r20",
+      "topology_id": "topo50_seed0",
+      "working_period": 10
+    }
+  },
+  "worksheet_version": "frozen-test-v2-worksheet/1"
+}

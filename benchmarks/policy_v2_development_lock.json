@@ -1,0 +1,56 @@
+{
+  "lock_format": "agentic_anex.policy_development_lock.v2",
+  "locked_at": "2026-09-01",
+  "status": "POLICY_LOCKED_AWAITING_INDEPENDENT_FROZEN_TEST_V2",
+  "scientific_policy": {
+    "frozen_test_v1_is_regression_only": true,
+    "do_not_claim_v1_post_fix_results_as_unbiased": true,
+    "frozen_test_v2_not_yet_authored_or_opened": true,
+    "primary_model": "phi4:14b",
+    "reasoning_model_role": "post_hoc_exploratory_ablation",
+    "prompt_version": "paper1-requirements-v4",
+    "scope_policy_version": "paper1-scope-policy.v2",
+    "consistency_checker_version": "paper1-request-consistency.v1",
+    "seed": 0,
+    "temperature": 0.0,
+    "max_retries": 2
+  },
+  "model": {
+    "provider": "ollama",
+    "tag": "phi4:14b",
+    "digest": "ac896e5b8b34a1f4efa7b14d7520725140d5512484457fab45d2a4ea14c69dba"
+  },
+  "retrospective_regression": {
+    "artifact": "results/retrospective_policy_ablation_v1.json",
+    "classification": "retrospective/regression; not unbiased generalization performance",
+    "test_dt02_blocked_before_model": true,
+    "test_dt02_blocked_before_tools": true,
+    "supported_overblock_count": 0
+  },
+  "end_to_end_smoke": {
+    "artifact": "results/phi4_policy_v2_smoke_regression.json",
+    "classification": "regression smoke; not evaluation",
+    "scope_supported": true,
+    "status": "INFRASTRUCTURE_FAILURE",
+    "error_code": "PROVIDER_TIMEOUT",
+    "attempts": 3
+  },
+  "sha256": {
+    "src/agentic_anex/scope_policy.py": "13c284ca373acb9106279ca2ffc56c36eb65c74e7e3fc6b3ddf185b522845371",
+    "src/agentic_anex/orchestration.py": "abb0f75c6334827ef06da11e784189951511cfeb39362bfe0981677927486b60",
+    "src/agentic_anex/request_consistency.py": "9ed11113d9d954c0ba8a378c727cdfa8a262e62c1bd2fc44560372cc99b1d624",
+    "src/agentic_anex/experiments.py": "23dc9433af62236805eb51d40f2e3180510e7ced6e438a647cbb51dfb3dcfaf8",
+    "tests/test_scope_policy.py": "6cbe808afc758c8ef471df6a0c6812f0f65019fffbd7d81801ba9dfaf5b4f3dc",
+    "docs/phi4_reasoning_failure_case.md": "a405d7ce4671fd57d114edeb815e48e62eee5c893521deec8b5f542f00af6158",
+    "docs/frozen_test_v2_protocol.md": "5bfa3af19aae33823e924aaafaa7f855efb310f1233ea2cb5caba5b249f0f7af",
+    "README.md": "9ee4b3ca6c392f69a2717fce1104691b8701a76c40536be66e1c5b4d8564079b",
+    "docs/operator_guide.md": "64271075aff503e5d27555594b1f941950aa81bfc76e0c355057107f87340066",
+    "scripts/export_record_validation_certificate.py": "0b104e6edd0dcd2885d93e921c6b8c39494c29b271ab7cad469f6f194b4c9095",
+    "src/agentic_anex/policy_replay.py": "a3c2eaa8c7d0bd0c407ddf8ce3637accbb36d7641bfc1949f9eb5743aeccb08c",
+    "scripts/replay_locked_policy.py": "d9ca46e7bcc5915e602658920e02ab5ac6719579e25fa533439dca59ba319e0a",
+    "tests/test_policy_replay.py": "7b97b6c339cec4636f82151e2230615eff58263b49e500946aaafc9772d7d83c",
+    "results/retrospective_policy_ablation_v1.json": "26477a236ce2e3339ad52610fe1ade71dec7593361d1f96f46faf12584ef0007",
+    "results/phi4_policy_v2_smoke_regression.json": "07dfa0dfb908f69b76bb2057a2dbb3f18cd6387548643b97e95620a0efcadc86",
+    "agentic_anex_policy_v2_source.zip": "dd420741cc0751cae29aad5a55776077885adb4b5c183a3fc116cdf4e22e3c3e"
+  }
+}

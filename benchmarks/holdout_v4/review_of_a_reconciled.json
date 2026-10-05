@@ -1,0 +1,250 @@
+{
+  "identifier_normalised_from": "holdout-model-a",
+  "reviewed_batch": "frontier-model-a",
+  "reviews": [
+    {
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "communication_range": 18.0,
+        "interference_ratio": 1.0,
+        "latency_target_slots": null,
+        "objective": "minimize_latency",
+        "seed": 0,
+        "topology_id": "legacy30_seed7",
+        "working_period": 10,
+        "workload": "one_shot"
+      },
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "In-scope one-shot minimum-latency ANEX run on a catalogue topology with no explicit optional values, so all defaults apply. Seed is 0 (omitted; the seed7 suffix of the id is irrelevant) and communication_range follows legacy30_seed7 (18.0). Both paraphrases state the same topology, workload and objective. No construction defect.",
+      "semantic_group_id": "h4-a-001"
+    },
+    {
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "communication_range": 20.0,
+        "interference_ratio": 1.0,
+        "latency_target_slots": null,
+        "objective": "minimize_latency",
+        "seed": 0,
+        "topology_id": "topo50_seed0",
+        "working_period": 10,
+        "workload": "one_shot"
+      },
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "Hard negative: the Digital Twin appears only as a negated requirement, which is explicitly not an unsupported request. The remainder is a default one-shot ANEX schedule on topo50_seed0. Both paraphrases carry the same negation and the same schedule. Note for independence: the opening clause closely mirrors the specification's own illustrative phrase for negated requirements, so this item is a weak held-out probe even though it is correctly constructed.",
+      "semantic_group_id": "h4-a-002"
+    },
+    {
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "channels": 3,
+        "collision_model": "legacy_neighbor",
+        "communication_range": 20.0,
+        "interference_ratio": 1.0,
+        "latency_target_slots": null,
+        "objective": "minimize_latency",
+        "seed": 11,
+        "topology_id": "topo100_seed0",
+        "working_period": 10,
+        "workload": "one_shot"
+      },
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "Fully specified configuration; every explicit value is valid and consistent with topo100_seed0 (working_period 10, communication_range 20.0, channels 3, seed 11, interference_ratio exactly 1.0, collision_model legacy_neighbor). Both paraphrases list identical values in different order. Single defensible label.",
+      "semantic_group_id": "h4-a-003"
+    },
+    {
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "channels": 5,
+        "collision_model": "interference_range",
+        "communication_range": 20.0,
+        "interference_ratio": 1.0,
+        "latency_target_slots": null,
+        "objective": "minimize_latency",
+        "seed": 23,
+        "topology_id": "topo150_seed0",
+        "working_period": 10,
+        "workload": "one_shot"
+      },
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "Hard negative with a historical mention: battery-lifetime optimization is attributed to a previous study, and the present run is explicitly restricted to one-shot minimum-latency ANEX. Explicit values (channels 5, seed 23, collision_model interference_range, interference_ratio 1.0) are all valid; interference_range is equivalent to legacy_neighbor at ratio 1.0. Both paraphrases preserve the historical framing and the same configuration.",
+      "semantic_group_id": "h4-a-004"
+    },
+    {
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "communication_range": 20.0,
+        "interference_ratio": 1.0,
+        "latency_target_slots": 45,
+        "objective": "minimize_latency",
+        "seed": 0,
+        "topology_id": "topo200_seed0",
+        "working_period": 10,
+        "workload": "one_shot"
+      },
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "The effective configuration is unambiguous: the draft's null target is described as superseded, and the run's target is 45 elapsed slots (valid integer, above the topo200_seed0 baseline of 37). Both paraphrases state the same replacement. Flag (low risk): the text contains two target values (null and 45) with the older one narrated as history; the item therefore tests recovery of the current value from a revision narrative, not an explicit-null target, and the phrase 'meaning no target applied' reads as specification commentary rather than operator prose. Not defective, but the null mention should not be counted as covering the explicit-null-target case.",
+      "semantic_group_id": "h4-a-005"
+    },
+    {
+      "adjudicated_action": "EXECUTE",
+      "adjudicated_fields": {
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "communication_range": 20.0,
+        "interference_ratio": 1.0,
+        "latency_target_slots": 30,
+        "objective": "minimize_latency",
+        "seed": 0,
+        "topology_id": "topo300_seed0",
+        "working_period": 10,
+        "workload": "one_shot"
+      },
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "latency_target_slots 30 is a valid positive integer in elapsed slots. It is below the topo300_seed0 baseline of 47, which by contract must not cause rejection; execution may report the target as missed. All other fields default. Both paraphrases request the schedule plus a comparison against the 30-slot target.",
+      "semantic_group_id": "h4-a-006"
+    },
+    {
+      "adjudicated_action": "CLARIFY",
+      "adjudicated_fields": {},
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "The task is in scope and channels 2 is valid, but the topology is only described ('largest network' / 'most nodes') and no topology_id is written. By contract a description does not select a topology even though exactly one entry (topo300_seed0) matches, so topology_id is missing. No omission is narrated and no action is named. Note for independence: the description is essentially the specification's own example ('the largest topology'), so it is a weak held-out probe.",
+      "semantic_group_id": "h4-a-007"
+    },
+    {
+      "adjudicated_action": "REJECT",
+      "adjudicated_fields": {
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "communication_range": null,
+        "interference_ratio": 1.0,
+        "invalid_fields": {
+          "topology_id": {
+            "observed": "topo120_seed0",
+            "reason": "Not one of the seven catalogue topology_ids. Because the topology is invalid, the topology-dependent defaults working_period and communication_range cannot be resolved."
+          }
+        },
+        "latency_target_slots": null,
+        "objective": "minimize_latency",
+        "seed": 0,
+        "topology_id": "topo120_seed0",
+        "working_period": null,
+        "workload": "one_shot"
+      },
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "An explicitly supplied topology_id that is not in the catalogue is an invalid value (REJECT), not missing information (CLARIFY). No unsupported capability is requested, so precedence rule 2 applies. Both paraphrases name the same id and the same one-shot minimum-latency task. Note for independence: topo120_seed0 is the exact invalid id quoted as an example in the specification; a different unlisted id would make a stronger held-out item.",
+      "semantic_group_id": "h4-a-008"
+    },
+    {
+      "adjudicated_action": "REJECT",
+      "adjudicated_fields": {
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "communication_range": 18.0,
+        "interference_ratio": 1.0,
+        "invalid_fields": {
+          "communication_range": {
+            "observed": 18.0,
+            "reason": "topo250_seed0 has communication_range 20.0; an explicit 18.0 is inconsistent with the selected topology."
+          }
+        },
+        "latency_target_slots": null,
+        "objective": "minimize_latency",
+        "seed": 0,
+        "topology_id": "topo250_seed0",
+        "working_period": 10,
+        "workload": "one_shot"
+      },
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "The explicit communication_range 18.0 conflicts with the catalogue value 20.0 for topo250_seed0, which the contract defines as inconsistent -> REJECT. Everything else defaults and the task is supported. Both paraphrases attach the same 18.0 range to the same topology. Single defensible label.",
+      "semantic_group_id": "h4-a-009"
+    },
+    {
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {},
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "The schedule is to be chosen to maximize the time until the first battery is exhausted, i.e. an energy-aware / network-lifetime objective, positively requested and expressed without canonical wording. This is outside scope both as energy-aware scheduling and as an objective other than latency; either reading yields UNSUPPORTED, so the action label is unique. No supported schedule is requested alongside it. Both paraphrases state the same objective on legacy30_seed7.",
+      "semantic_group_id": "h4-a-010"
+    },
+    {
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {},
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "Mixed request: the schedule part (topo50_seed0, channels 2, one-shot minimum-latency ANEX) is fully valid, but updating each node's remaining charge after every transmission is residual-battery evolution, positively requested. Precedence rule 1 makes the whole request UNSUPPORTED. Both paraphrases describe the same per-transmission charge trace. Batch-level flag: the leading clause 'Compute a one-shot minimum-latency ANEX schedule on/for <topology>' recurs with small edits in h4-a-013, h4-a-016 and h4-a-018, so the mixed UNSUPPORTED items share a recognisable surface template; consider diversifying before sealing.",
+      "semantic_group_id": "h4-a-011"
+    },
+    {
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {},
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "A software replica of the network whose node states are continuously refreshed from incoming sensor readings is a Digital Twin with streaming state synchronization, described compositionally. It is positively required and no schedule is requested at all, so the request is purely out of scope -> UNSUPPORTED. Both paraphrases state the same replica and the same continuous ingestion.",
+      "semantic_group_id": "h4-a-012"
+    },
+    {
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {},
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "Precedence test. channels 0 is an invalid value that would alone produce REJECT, but Digital Twin construction and emulation of the schedule's execution are positively requested, and precedence rule 1 places the unsupported capability above the invalid parameter -> UNSUPPORTED. Both paraphrases contain the zero-channel setting and the emulation requirement. Shares the leading-clause template noted under h4-a-011.",
+      "semantic_group_id": "h4-a-013"
+    },
+    {
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {},
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "Starting a new aggregation every 60 slots with no end time is periodic aggregation, positively requested without canonical wording; the per-round minimum-latency ANEX scheduling does not change the workload. Only one-shot aggregation is supported -> UNSUPPORTED. Both paraphrases specify the same 60-slot cadence and open-ended duration on topo200_seed0.",
+      "semantic_group_id": "h4-a-014"
+    },
+    {
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {},
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "Back-to-back collections triggered by completion of the previous one constitute continuous aggregation, positively requested. No one-shot schedule is asked for. Both paraphrases describe the same trigger rule and non-stop service on topo250_seed0. Single defensible label.",
+      "semantic_group_id": "h4-a-015"
+    },
+    {
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {},
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "Mixed request: the schedule part (topo300_seed0, channels 2, one-shot minimum-latency ANEX) is valid, but rerouting remaining transmissions during execution in response to link failures is runtime topology/routing adaptation, positively requested. Precedence rule 1 -> UNSUPPORTED. Both paraphrases include the same execution-time rerouting requirement. Shares the leading-clause template noted under h4-a-011.",
+      "semantic_group_id": "h4-a-016"
+    },
+    {
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {},
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "The optimization objective is explicitly changed from latency to the fewest total transmissions, with longer completion time accepted, so a different objective is positively requested -> UNSUPPORTED. Both paraphrases state the same trade-off. Flag (construction, low risk): in a one-shot aggregation tree every non-sink node transmits exactly once, so 'total number of transmissions' is constant and the requested objective is degenerate; the label is still unique because the request rejects latency as the objective, but a non-degenerate alternative objective (e.g. balancing relay load) would make a more robust item.",
+      "semantic_group_id": "h4-a-017"
+    },
+    {
+      "adjudicated_action": "UNSUPPORTED",
+      "adjudicated_fields": {},
+      "item_quality": "accept",
+      "paraphrase_equivalent": true,
+      "reason": "Mixed request: the schedule part (legacy30_seed7, one-shot minimum-latency ANEX, defaults) is valid, but commanding the physical sensors to switch their radios off is physical device control, positively requested. Precedence rule 1 -> UNSUPPORTED. Both paraphrases order the same radio shutdown after each node's last transmission. Shares the leading-clause template noted under h4-a-011.",
+      "semantic_group_id": "h4-a-018"
+    }
+  ]
+}

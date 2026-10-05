@@ -12,7 +12,6 @@ reader can verify, and no line of executed code was touched.
   results/frozen_test_v3/frontier_campaign_v36.json
   results/frozen_test_v3/gpu_campaign_v33.json
   results/frozen_test_v3/seed_campaign.json
-  scripts/build_supplementary.py
   source/libs/node.py
 
 WITHHELD -- these files also carried that path, but a lock publishes their

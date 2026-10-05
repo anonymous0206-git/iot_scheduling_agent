@@ -100,15 +100,18 @@ def render_phrasing(data: Mapping[str, Any]) -> str:
         r"]",
         plot("gate", "gatebar"),
         plot("agent", "agentbar"),
-        r"\legend{scope gate, agent with the gate removed}",
+        # No comma inside an entry: \legend splits on commas, so "frontier
+        # agent, gate removed" would ask for three labels and lose the third.
+        r"\legend{scope gate, ungated frontier agent}",
         *zero_marks,
         *labels,
         r"\end{axis}",
         r"\end{tikzpicture}",
         r"\caption{Recall on the 72 gold-\textsc{unsupported} requests, split by",
-        r"whether the request names the capability it asks for. The gate's bars",
-        r"are one number, the agent's the mean of three repeats. Request ids are",
-        r"in \texttt{figure\_data/fig2\_phrasing.json}.}",
+        r"whether the request names the capability it asks for. The agent is the",
+        r"ungated frontier arm, \texttt{gpt-5.5}; the gate's bars are one number,",
+        r"since its rules are fixed, and the agent's the mean of three repeats.",
+        r"Request ids are in \texttt{figure\_data/fig2\_phrasing.json}.}",
         r"\label{fig:phrasing}",
         # The class checks for this and warns without it, and a bar chart is
         # exactly the figure a screen reader cannot recover from the caption:
@@ -117,7 +120,7 @@ def render_phrasing(data: Mapping[str, Any]) -> str:
         r"\Description{A bar chart with two groups of two bars, recall on the",
         r"vertical axis from zero to one. On the left, the 26 unsupported",
         r"requests that name the capability they ask for: the scope gate reaches",
-        r"0.42, eleven of them, and the agent with the gate removed reaches 1.0,",
+        r"0.42, eleven of them, and the ungated frontier agent reaches 1.0,",
         r"all twenty-six. On the right, the 46 that express the capability",
         r"without naming it: the gate reaches zero, marked with a written zero,",
         r"and the agent 0.97, a mean 44.7 of 46 over three repeats.}",
@@ -361,8 +364,8 @@ def render_schedule(data: Mapping[str, Any]) -> str:
         rf"request, a proposed action and its tool approvals; of the seven "
         rf"contract fields, the sentence determines two "
         rf"and the other five are the defaults \texttt{{contract.py}} lists "
-        rf"as \texttt{{DEFAULT\_FIELDS}}. It "
-        rf"Every entry of the schedule it produced is in "
+        rf"as \texttt{{DEFAULT\_FIELDS}}. "
+        rf"Every entry of the schedule produced by the pipeline is in "
         rf"\texttt{{figure\_data/fig6\_trace.json}}.}}",
         r"\label{fig:trace}",
         r"\Description{Four stacked boxes: the user's one-sentence request; "

@@ -1,0 +1,30 @@
+{
+  "revisions": [
+    {
+      "semantic_group_id": "h4-b-015",
+      "paraphrases": [
+        {
+          "request_id": "h4-b-015-p1",
+          "request_text": "Start with a single one-shot ANEX round on topo250_seed0 using 3 channels and an interference ratio of 1.5; once that first round is done, continue in periodic aggregation mode with one collection per working period for 500 further rounds beyond the initial one."
+        },
+        {
+          "request_id": "h4-b-015-p2",
+          "request_text": "On topo250_seed0 I need ANEX configured with three channels and interference ratio 1.5. Run the first collection as a one-shot round, then keep going as periodic aggregation — a new collection every working period — until 500 additional rounds have completed after that initial round."
+        }
+      ]
+    },
+    {
+      "semantic_group_id": "h4-b-018",
+      "paraphrases": [
+        {
+          "request_id": "h4-b-018-p1",
+          "request_text": "Compute the one-shot ANEX schedule for legacy30_seed7 with two channels and seed 1, then deliver it to the deployed motes over the air and have each node switch its radio on and off at the slots the schedule assigns."
+        },
+        {
+          "request_id": "h4-b-018-p2",
+          "request_text": "Using legacy30_seed7 with seed 1 and 2 channels, generate the single-round ANEX schedule; the deployed motes then receive it through an over-the-air update and toggle their radios on and off according to their assigned slots."
+        }
+      ]
+    }
+  ]
+}

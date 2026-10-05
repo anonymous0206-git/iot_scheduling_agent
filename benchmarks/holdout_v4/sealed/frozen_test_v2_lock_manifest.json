@@ -1,0 +1,633 @@
+{
+  "benchmark_version": "frozen-test-v3",
+  "contract_version": "frozen-test-v3",
+  "counts": {
+    "groups": 36,
+    "per_action": {
+      "CLARIFY": 2,
+      "EXECUTE": 12,
+      "REJECT": 4,
+      "UNSUPPORTED": 18
+    },
+    "per_batch": {
+      "frontier-model-a": 18,
+      "frontier-model-b": 18
+    },
+    "requests": 72
+  },
+  "human_decisions": {
+    "decided_at": "2026-09-27",
+    "decided_by": "Vi (operator)",
+    "decisions_applied": 2,
+    "excluded_groups": []
+  },
+  "inputs": {
+    "benchmark_a": {
+      "path": "benchmarks/holdout_v4/batch_a.json",
+      "payload_sha256": "bd2fa32fe88043b357b6bb94953e0ab3318f1ba844d1fd06b7cd637900f975ce",
+      "sha256": "bd2fa32fe88043b357b6bb94953e0ab3318f1ba844d1fd06b7cd637900f975ce",
+      "size_bytes": 20914,
+      "source_defects": []
+    },
+    "benchmark_b": {
+      "path": "benchmarks/holdout_v4/batch_b.json",
+      "payload_sha256": "f58e6d53876e6365b5ab0afb8145fa87d124183247753baa9a1d8f2a1ca059f7",
+      "sha256": "f58e6d53876e6365b5ab0afb8145fa87d124183247753baa9a1d8f2a1ca059f7",
+      "size_bytes": 26726,
+      "source_defects": []
+    },
+    "human_decisions": {
+      "path": "benchmarks/holdout_v4/human_decisions.json",
+      "payload_sha256": "0a291ec5ecf185f8e4126157a0cca678f9084937898ef52b1cb8685b7020211a",
+      "sha256": "0a291ec5ecf185f8e4126157a0cca678f9084937898ef52b1cb8685b7020211a",
+      "size_bytes": 2685,
+      "source_defects": []
+    },
+    "model_metadata": {
+      "path": "benchmarks/holdout_v4/model_metadata.json",
+      "payload_sha256": "fd4fdc174a41e8486bcfbcbc5bbf8b909946f7830fb8ec37546a136d397bf880",
+      "sha256": "fd4fdc174a41e8486bcfbcbc5bbf8b909946f7830fb8ec37546a136d397bf880",
+      "size_bytes": 1775,
+      "source_defects": []
+    },
+    "review_of_a": {
+      "path": "benchmarks/holdout_v4/review_of_a_reconciled.json",
+      "payload_sha256": "288e3d10eaaf2e31e8428e2690546090a82dade98b0c229142abc838626b697f",
+      "sha256": "288e3d10eaaf2e31e8428e2690546090a82dade98b0c229142abc838626b697f",
+      "size_bytes": 14933,
+      "source_defects": []
+    },
+    "review_of_b": {
+      "path": "benchmarks/holdout_v4/review_of_b_reconciled.json",
+      "payload_sha256": "9aeda2af53703f4a4903ca8ab95bd1c5b08ce587a555f774e18bd19b9058d0f4",
+      "sha256": "9aeda2af53703f4a4903ca8ab95bd1c5b08ce587a555f774e18bd19b9058d0f4",
+      "size_bytes": 10462,
+      "source_defects": []
+    }
+  },
+  "leakage_checks": [
+    {
+      "check": "request_keys_allowlist",
+      "detail": "only request_id and request_text are present",
+      "passed": true
+    },
+    {
+      "check": "opaque_request_ids",
+      "detail": "all ids are opaque sealed ids",
+      "passed": true
+    },
+    {
+      "check": "no_source_identifiers",
+      "detail": "no source request or group identifiers are exposed",
+      "passed": true
+    },
+    {
+      "check": "no_label_tokens",
+      "detail": "no gold action tokens appear in request text",
+      "passed": true
+    },
+    {
+      "check": "no_schema_field_names",
+      "detail": "no gold schema field names appear in request text",
+      "passed": true
+    },
+    {
+      "check": "unique_texts",
+      "detail": "all request texts are unique",
+      "passed": true
+    },
+    {
+      "check": "order_differs_from_source",
+      "detail": "sealed order differs from the generator order",
+      "passed": true
+    },
+    {
+      "check": "bounded_same_action_runs",
+      "detail": "longest run of one gold action is 5 (limit 10)",
+      "passed": true
+    },
+    {
+      "check": "gold_text_binding",
+      "detail": "every request is bound to exactly one gold record by text hash",
+      "passed": true
+    },
+    {
+      "check": "gold_covers_requests",
+      "detail": "gold ids and request ids coincide",
+      "passed": true
+    }
+  ],
+  "leakage_policy": {
+    "max_same_action_run": 10
+  },
+  "manifest_format": "agentic_anex.frozen_test_v2_lock.v1",
+  "model_metadata": {
+    "declared": {
+      "metadata_version": "holdout-v4-model-metadata/1",
+      "model_a": {
+        "decoding": {
+          "seed": null,
+          "temperature": null
+        },
+        "display_name": "ChatGPT 6 Astra Medium",
+        "generation_date": "2026-09-27",
+        "independence": "CROSS_REVIEW_SATISFIED",
+        "interface": "ChatGPT, fresh session",
+        "model_id": "chatgpt-6-astra-medium",
+        "notes": "Session had not seen the repository, its ledgers, its failure taxonomy or any earlier benchmark of this project, and received only its rendered prompt. The pipeline was frozen before authoring began; the manifest is benchmarks/evaluation_lock_v4_holdout.json.",
+        "provider": "OpenAI",
+        "review_date": "2026-09-27",
+        "roles": [
+          "generator of frontier-model-a",
+          "blind adjudicator of frontier-model-b"
+        ],
+        "version_or_snapshot": ""
+      },
+      "model_b": {
+        "decoding": {
+          "seed": null,
+          "temperature": null
+        },
+        "display_name": "Claude Fable 5.1",
+        "generation_date": "2026-09-27",
+        "independence": "CROSS_REVIEW_SATISFIED",
+        "interface": "Claude, fresh session",
+        "model_id": "claude-fable-5-1",
+        "notes": "As for model A. The revision session received only the flagged texts and the equivalence defect, with the adjudicated action masked. The pipeline was operated by a different Anthropic model in a separate session; that session authored and adjudicated nothing.",
+        "provider": "Anthropic",
+        "review_date": "2026-09-27",
+        "roles": [
+          "generator of frontier-model-b",
+          "blind adjudicator of frontier-model-a",
+          "author of the paraphrase revision to h4-b-015 and h4-b-018",
+          "equivalence re-check of the revised h4-b-015 and h4-b-018"
+        ],
+        "version_or_snapshot": ""
+      },
+      "operator": {
+        "notes": "Vi (operator)",
+        "role": "human adjudication of flagged groups, and approval of this metadata"
+      }
+    },
+    "roles": {
+      "model_a": [
+        "generator of frontier-model-a",
+        "blind reviewer of frontier-model-b"
+      ],
+      "model_b": [
+        "generator of frontier-model-b",
+        "blind reviewer of frontier-model-a"
+      ]
+    }
+  },
+  "outputs": {
+    "gold_jsonl": {
+      "path": "frozen_test_v2_gold.jsonl",
+      "records": 72,
+      "sha256": "2791409e80f5ed005e7855203b0eb7d171c268aba7c02481e6fe6d0176707de7",
+      "size_bytes": 45746
+    },
+    "human_decisions_copy": {
+      "path": "frozen_test_v2_human_decisions.json",
+      "records": null,
+      "sha256": "a45b7de862b301af6bd7bd8340153c935152dfcbd156976267995c02c8ee3286",
+      "size_bytes": 2769
+    },
+    "requests_jsonl": {
+      "path": "frozen_test_v2_requests.jsonl",
+      "records": 72,
+      "sha256": "16aa86247f2ff5f6b0b63c5354effed1cc5574c3e1b8c3b2d9390f098acf71f1",
+      "size_bytes": 16915
+    },
+    "worksheet_json": {
+      "path": "frozen_test_v2_reconciliation_worksheet.json",
+      "records": null,
+      "sha256": "c5fbcf8bd62eda7c64c80518d988cca19113899090fcea2eb887b21df29c07a9",
+      "size_bytes": 93037
+    }
+  },
+  "pipeline": {
+    "package": "frozen_test_v2",
+    "python": "3.12.12",
+    "version": "frozen-test-v2-pipeline/1.0.0"
+  },
+  "policy_version": "paper1-scope-policy.v2",
+  "prompt_hashes": {
+    "generator_a": {
+      "path": "docs/prompts/holdout_v4/holdout_v4_generator_A.txt",
+      "sha256": "9672f501f67bff1ccb4a613f1035ad6ddafeba34153c4c2827c570f5b57b2500",
+      "size_bytes": 18103
+    },
+    "generator_b": {
+      "path": "docs/prompts/holdout_v4/holdout_v4_generator_B.txt",
+      "sha256": "8a5cb4e038fb13836377f6fdc1415cb8c98c440b255ab1c3199a42ae474ad8e3",
+      "size_bytes": 18103
+    },
+    "recheck_batch_b": {
+      "path": "docs/prompts/holdout_v4/holdout_v4_recheck_batch_B.txt",
+      "sha256": "18209ac1192c26ffb1197073cc83475ebf584fedb40d7beb99a133e13aa3b33a",
+      "size_bytes": 1780
+    },
+    "reviewer_batch_a": {
+      "path": "docs/prompts/holdout_v4/holdout_v4_reviewer_batch_A.txt",
+      "sha256": "b2d2bc29d9aa74f361908a4c05ca01c043da2c2ddc5b0f7ca93e13956a21f621",
+      "size_bytes": 12130
+    },
+    "reviewer_batch_b": {
+      "path": "docs/prompts/holdout_v4/holdout_v4_reviewer_batch_B.txt",
+      "sha256": "01e7ec9fcafd339545da653becb534c8d41a8f2dfa42ded26fa5c338f8950a0c",
+      "size_bytes": 12130
+    },
+    "revision_batch_b": {
+      "path": "docs/prompts/holdout_v4/holdout_v4_revision_batch_B.txt",
+      "sha256": "64ea928c6309a75ec3486106809a5aa0b2e7691e2405bac95fa7f72ccfdf98cb",
+      "size_bytes": 3149
+    }
+  },
+  "quotas": {
+    "expected": {
+      "CLARIFY": 2,
+      "EXECUTE": 12,
+      "REJECT": 4,
+      "UNSUPPORTED": 18
+    },
+    "observed": {
+      "CLARIFY": 2,
+      "EXECUTE": 12,
+      "REJECT": 4,
+      "UNSUPPORTED": 18
+    },
+    "source": "generator_self_check"
+  },
+  "reconciliation_summary": {
+    "by_classification": {
+      "ACTION_DISAGREEMENT": 0,
+      "DEFECTIVE_ITEM": 0,
+      "FIELD_DISAGREEMENT": 0,
+      "FULL_AGREEMENT": 34,
+      "PARAPHRASE_MISMATCH": 2
+    },
+    "groups": 36,
+    "per_batch": {
+      "frontier-model-a": {
+        "by_classification": {
+          "ACTION_DISAGREEMENT": 0,
+          "DEFECTIVE_ITEM": 0,
+          "FIELD_DISAGREEMENT": 0,
+          "FULL_AGREEMENT": 18,
+          "PARAPHRASE_MISMATCH": 0
+        },
+        "declared_counts": {
+          "CLARIFY": 1,
+          "EXECUTE": 6,
+          "REJECT": 2,
+          "UNSUPPORTED": 9
+        },
+        "groups": 18,
+        "proposed_action_counts": {
+          "CLARIFY": 1,
+          "EXECUTE": 6,
+          "REJECT": 2,
+          "UNSUPPORTED": 9
+        },
+        "requires_human_decision": 0
+      },
+      "frontier-model-b": {
+        "by_classification": {
+          "ACTION_DISAGREEMENT": 0,
+          "DEFECTIVE_ITEM": 0,
+          "FIELD_DISAGREEMENT": 0,
+          "FULL_AGREEMENT": 16,
+          "PARAPHRASE_MISMATCH": 2
+        },
+        "declared_counts": {
+          "CLARIFY": 1,
+          "EXECUTE": 6,
+          "REJECT": 2,
+          "UNSUPPORTED": 9
+        },
+        "groups": 18,
+        "proposed_action_counts": {
+          "CLARIFY": 1,
+          "EXECUTE": 6,
+          "REJECT": 2,
+          "UNSUPPORTED": 9
+        },
+        "requires_human_decision": 2
+      }
+    },
+    "requests": 72,
+    "requires_human_decision": 2
+  },
+  "sealed_at_utc": "2026-09-27T14:36:27Z",
+  "shuffle_seed": 20260927,
+  "source_archives": [],
+  "source_commit": {
+    "dirty": null,
+    "source": "explicit",
+    "value": "evaluation-lock-v4-holdout-e67aa706a747d8abd47bb41382f17489"
+  },
+  "source_defects": [],
+  "topologies": {
+    "legacy30_seed7": {
+      "communication_range": 18.0,
+      "node_count": 30,
+      "path": "network_30_seed7.json",
+      "sha256": "9a8df81459c536c7c5ab282812d019c88de9b60824a2cc07e6ee07d120e2eb78",
+      "size_bytes": 8396,
+      "topology_id": "legacy30_seed7",
+      "working_period": 10
+    },
+    "topo100_seed0": {
+      "communication_range": 20.0,
+      "node_count": 100,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo100_seed0.json",
+      "sha256": "3bd20b02a0aa08cc05c12727463830ed6558b1118b0853837c31617771778369",
+      "size_bytes": 26710,
+      "topology_id": "topo100_seed0",
+      "working_period": 10
+    },
+    "topo150_seed0": {
+      "communication_range": 20.0,
+      "node_count": 150,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo150_seed0.json",
+      "sha256": "9e617ae050a96bf3cf3894d541f7cc8340689ee68c570b4777fdb2d668bdcf91",
+      "size_bytes": 49984,
+      "topology_id": "topo150_seed0",
+      "working_period": 10
+    },
+    "topo200_seed0": {
+      "communication_range": 20.0,
+      "node_count": 200,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo200_seed0.json",
+      "sha256": "81eb3ef9f7032768c98101eb8c023993eb0d652f14a53f4907b5f323c299b01f",
+      "size_bytes": 80274,
+      "topology_id": "topo200_seed0",
+      "working_period": 10
+    },
+    "topo250_seed0": {
+      "communication_range": 20.0,
+      "node_count": 250,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo250_seed0.json",
+      "sha256": "00c7611340a407808b21ac3ebe2b5f534bcdba4de896ee728d627e42b3cd6151",
+      "size_bytes": 118984,
+      "topology_id": "topo250_seed0",
+      "working_period": 10
+    },
+    "topo300_seed0": {
+      "communication_range": 20.0,
+      "node_count": 300,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo300_seed0.json",
+      "sha256": "6b39ff460b3173c789af2124cf5a96255bc8bd36ba031286798adb1a772febc8",
+      "size_bytes": 160256,
+      "topology_id": "topo300_seed0",
+      "working_period": 10
+    },
+    "topo50_seed0": {
+      "communication_range": 20.0,
+      "node_count": 50,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo50_seed0.json",
+      "sha256": "25dc562618c9232713dcca81d9f18d1c9685e075b6610c797dc2e632279e3426",
+      "size_bytes": 10561,
+      "topology_id": "topo50_seed0",
+      "working_period": 10
+    }
+  },
+  "topology_catalogue": {
+    "legacy30_seed7": {
+      "active_slot_mode": "legacy_exclude_final_slot",
+      "active_slots_per_node": 2,
+      "average_degree": 10.0,
+      "baseline": {
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "elapsed_latency_slots": 26,
+        "interference_ratio": 1.0,
+        "max_timeslot_index": 25,
+        "valid": true
+      },
+      "communication_range": 18.0,
+      "coordinate_domain": [
+        0,
+        40
+      ],
+      "density": 0.3448275862068966,
+      "edge_count": 150,
+      "generation_seed": 7,
+      "max_bfs_layer": 2,
+      "maximum_degree": 17,
+      "node_count": 30,
+      "path": "network_30_seed7.json",
+      "sha256": "9a8df81459c536c7c5ab282812d019c88de9b60824a2cc07e6ee07d120e2eb78",
+      "sink_id": 0,
+      "source": "Frozen Test v2 topology",
+      "topology_id": "legacy30_seed7",
+      "working_period": 10
+    },
+    "topo100_seed0": {
+      "active_slot_mode": "legacy_exclude_final_slot",
+      "active_slots_per_node": 2,
+      "average_degree": 9.64,
+      "baseline": {
+        "anex_seconds": 0.0289,
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "elapsed_latency_slots": 29,
+        "interference_ratio": 1.0,
+        "max_timeslot_index": 28,
+        "valid": true,
+        "violations": 0
+      },
+      "baseline_schedule_path": "benchmarks/topologies/fixed_area100_r20/topo100_seed0.baseline_schedule.json",
+      "baseline_schedule_sha256": "309ce92a8bcbbd356b58b7611915633c1c26c66e573dca439863a3ec9cadead5",
+      "communication_range": 20.0,
+      "coordinate_domain": [
+        0,
+        100
+      ],
+      "density": 0.09737373737373738,
+      "edge_count": 482,
+      "generation_seed": 0,
+      "max_bfs_layer": 5,
+      "maximum_degree": 17,
+      "node_count": 100,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo100_seed0.json",
+      "sha256": "3bd20b02a0aa08cc05c12727463830ed6558b1118b0853837c31617771778369",
+      "sink_id": 0,
+      "source": "generated catalogue fixed_area100_r20",
+      "topology_id": "topo100_seed0",
+      "working_period": 10
+    },
+    "topo150_seed0": {
+      "active_slot_mode": "legacy_exclude_final_slot",
+      "active_slots_per_node": 2,
+      "average_degree": 14.84,
+      "baseline": {
+        "anex_seconds": 0.0097,
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "elapsed_latency_slots": 29,
+        "interference_ratio": 1.0,
+        "max_timeslot_index": 28,
+        "valid": true,
+        "violations": 0
+      },
+      "baseline_schedule_path": "benchmarks/topologies/fixed_area100_r20/topo150_seed0.baseline_schedule.json",
+      "baseline_schedule_sha256": "d47ef01289e69c3f8451916aa880a0eb2375ce06f4ee72447b44d9865aeec808",
+      "communication_range": 20.0,
+      "coordinate_domain": [
+        0,
+        100
+      ],
+      "density": 0.0995973154362416,
+      "edge_count": 1113,
+      "generation_seed": 0,
+      "max_bfs_layer": 5,
+      "maximum_degree": 26,
+      "node_count": 150,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo150_seed0.json",
+      "sha256": "9e617ae050a96bf3cf3894d541f7cc8340689ee68c570b4777fdb2d668bdcf91",
+      "sink_id": 0,
+      "source": "generated catalogue fixed_area100_r20",
+      "topology_id": "topo150_seed0",
+      "working_period": 10
+    },
+    "topo200_seed0": {
+      "active_slot_mode": "legacy_exclude_final_slot",
+      "active_slots_per_node": 2,
+      "average_degree": 20.15,
+      "baseline": {
+        "anex_seconds": 0.0188,
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "elapsed_latency_slots": 37,
+        "interference_ratio": 1.0,
+        "max_timeslot_index": 36,
+        "valid": true,
+        "violations": 0
+      },
+      "baseline_schedule_path": "benchmarks/topologies/fixed_area100_r20/topo200_seed0.baseline_schedule.json",
+      "baseline_schedule_sha256": "1c3129214da0cde9a9818eabaea8ba5afcad72e8ebdfeef0dbd06fa858f6d51b",
+      "communication_range": 20.0,
+      "coordinate_domain": [
+        0,
+        100
+      ],
+      "density": 0.10125628140703517,
+      "edge_count": 2015,
+      "generation_seed": 0,
+      "max_bfs_layer": 4,
+      "maximum_degree": 37,
+      "node_count": 200,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo200_seed0.json",
+      "sha256": "81eb3ef9f7032768c98101eb8c023993eb0d652f14a53f4907b5f323c299b01f",
+      "sink_id": 0,
+      "source": "generated catalogue fixed_area100_r20",
+      "topology_id": "topo200_seed0",
+      "working_period": 10
+    },
+    "topo250_seed0": {
+      "active_slot_mode": "legacy_exclude_final_slot",
+      "active_slots_per_node": 2,
+      "average_degree": 25.936,
+      "baseline": {
+        "anex_seconds": 0.032,
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "elapsed_latency_slots": 37,
+        "interference_ratio": 1.0,
+        "max_timeslot_index": 36,
+        "valid": true,
+        "violations": 0
+      },
+      "baseline_schedule_path": "benchmarks/topologies/fixed_area100_r20/topo250_seed0.baseline_schedule.json",
+      "baseline_schedule_sha256": "cbc2a9cc7647d5109c575f4e5d79a7e59271496dc11cb7c202a3244586dddf47",
+      "communication_range": 20.0,
+      "coordinate_domain": [
+        0,
+        100
+      ],
+      "density": 0.10416064257028113,
+      "edge_count": 3242,
+      "generation_seed": 0,
+      "max_bfs_layer": 4,
+      "maximum_degree": 48,
+      "node_count": 250,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo250_seed0.json",
+      "sha256": "00c7611340a407808b21ac3ebe2b5f534bcdba4de896ee728d627e42b3cd6151",
+      "sink_id": 0,
+      "source": "generated catalogue fixed_area100_r20",
+      "topology_id": "topo250_seed0",
+      "working_period": 10
+    },
+    "topo300_seed0": {
+      "active_slot_mode": "legacy_exclude_final_slot",
+      "active_slots_per_node": 2,
+      "average_degree": 30.42,
+      "baseline": {
+        "anex_seconds": 0.2957,
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "elapsed_latency_slots": 47,
+        "interference_ratio": 1.0,
+        "max_timeslot_index": 46,
+        "valid": true,
+        "violations": 0
+      },
+      "baseline_schedule_path": "benchmarks/topologies/fixed_area100_r20/topo300_seed0.baseline_schedule.json",
+      "baseline_schedule_sha256": "ac29401f7e73913e75b0a8c9bd306bd4cbe76a5c33a810369217b2e53408c5aa",
+      "communication_range": 20.0,
+      "coordinate_domain": [
+        0,
+        100
+      ],
+      "density": 0.10173913043478261,
+      "edge_count": 4563,
+      "generation_seed": 0,
+      "max_bfs_layer": 4,
+      "maximum_degree": 54,
+      "node_count": 300,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo300_seed0.json",
+      "sha256": "6b39ff460b3173c789af2124cf5a96255bc8bd36ba031286798adb1a772febc8",
+      "sink_id": 0,
+      "source": "generated catalogue fixed_area100_r20",
+      "topology_id": "topo300_seed0",
+      "working_period": 10
+    },
+    "topo50_seed0": {
+      "active_slot_mode": "legacy_exclude_final_slot",
+      "active_slots_per_node": 2,
+      "average_degree": 4.6,
+      "baseline": {
+        "anex_seconds": 0.0014,
+        "channels": 2,
+        "collision_model": "legacy_neighbor",
+        "elapsed_latency_slots": 27,
+        "interference_ratio": 1.0,
+        "max_timeslot_index": 26,
+        "valid": true,
+        "violations": 0
+      },
+      "baseline_schedule_path": "benchmarks/topologies/fixed_area100_r20/topo50_seed0.baseline_schedule.json",
+      "baseline_schedule_sha256": "d85c6dc6eb0606f6a1f04718ec5d3b6cff7682945f5ea2e9ecc1623805a8b4e2",
+      "communication_range": 20.0,
+      "coordinate_domain": [
+        0,
+        100
+      ],
+      "density": 0.09387755102040816,
+      "edge_count": 115,
+      "generation_seed": 0,
+      "max_bfs_layer": 5,
+      "maximum_degree": 10,
+      "node_count": 50,
+      "path": "benchmarks/topologies/fixed_area100_r20/topo50_seed0.json",
+      "sha256": "25dc562618c9232713dcca81d9f18d1c9685e075b6610c797dc2e632279e3426",
+      "sink_id": 0,
+      "source": "generated catalogue fixed_area100_r20",
+      "topology_id": "topo50_seed0",
+      "working_period": 10
+    }
+  },
+  "topology_count": 7
+}

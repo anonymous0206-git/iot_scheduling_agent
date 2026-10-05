@@ -1,0 +1,90 @@
+{
+  "analysis_format": "agentic_anex.holdout_sample_size.v1",
+  "assumes": "the holdout draws items the way this benchmark does: the same ten protocol categories and quotas, two wordings per intent",
+  "contrasts": [
+    {
+      "contrast": "gpt55_no_gate minus gpt55_gated",
+      "groups_for_80_percent_power_at_this_effect": 87,
+      "groups_for_half_width": {
+        "0.03": 213,
+        "0.04": 120,
+        "0.05": 77,
+        "0.075": 35,
+        "0.1": 20
+      },
+      "groups_observed": 72,
+      "half_width_bootstrap": 0.051,
+      "half_width_normal": 0.0516,
+      "label": "frontier: gate off minus enforcing",
+      "mean_difference": 0.0671,
+      "normal_over_bootstrap": 1.012,
+      "per_group_sd": 0.2232,
+      "power_at_36_groups": 0.438,
+      "power_at_72_groups": 0.723
+    },
+    {
+      "contrast": "phi4_no_gate minus phi4_gated",
+      "groups_for_80_percent_power_at_this_effect": 1202,
+      "groups_for_half_width": {
+        "0.03": 284,
+        "0.04": 160,
+        "0.05": 103,
+        "0.075": 46,
+        "0.1": 26
+      },
+      "groups_observed": 72,
+      "half_width_bootstrap": 0.059,
+      "half_width_normal": 0.0595,
+      "label": "14B: gate off minus enforcing",
+      "mean_difference": 0.0208,
+      "normal_over_bootstrap": 1.009,
+      "per_group_sd": 0.2578,
+      "power_at_36_groups": 0.07,
+      "power_at_72_groups": 0.101
+    },
+    {
+      "contrast": "phi4_advisory minus phi4_gated",
+      "groups_for_80_percent_power_at_this_effect": 382,
+      "groups_for_half_width": {
+        "0.03": 251,
+        "0.04": 141,
+        "0.05": 91,
+        "0.075": 41,
+        "0.1": 23
+      },
+      "groups_observed": 72,
+      "half_width_bootstrap": 0.0556,
+      "half_width_normal": 0.0559,
+      "label": "14B: advisory minus enforcing",
+      "mean_difference": 0.0347,
+      "normal_over_bootstrap": 1.007,
+      "per_group_sd": 0.2421,
+      "power_at_36_groups": 0.136,
+      "power_at_72_groups": 0.229
+    },
+    {
+      "contrast": "gpt55_no_gate minus rule_based",
+      "groups_for_80_percent_power_at_this_effect": 8,
+      "groups_for_half_width": {
+        "0.03": 1084,
+        "0.04": 610,
+        "0.05": 390,
+        "0.075": 174,
+        "0.1": 98
+      },
+      "groups_observed": 72,
+      "half_width_bootstrap": 0.1146,
+      "half_width_normal": 0.1164,
+      "label": "frontier ungated minus the rule baseline",
+      "mean_difference": 0.5301,
+      "normal_over_bootstrap": 1.015,
+      "per_group_sd": 0.5038,
+      "power_at_36_groups": 1.0,
+      "power_at_72_groups": 1.0
+    }
+  ],
+  "method": "per-group paired difference, standard deviation across groups, half-width 1.96*sd/sqrt(n); the bootstrap half-width at the observed size is reported beside it as a check on the approximation",
+  "no_language_model_or_scheduler_invoked": true,
+  "source_analysis": "results/frozen_test_v3/analysis_v37/summary.json",
+  "title": "Groups a holdout batch needs, projected from the observed per-group spread"
+}

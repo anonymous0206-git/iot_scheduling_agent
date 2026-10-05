@@ -1,0 +1,246 @@
+{
+  "batch_id": "frontier-model-a",
+  "benchmark_version": "holdout-v4-candidate",
+  "blinded": true,
+  "generator_role": "independent_generator",
+  "groups": [
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-001-p1",
+          "request_text": "Please prepare a one-shot ANEX aggregation schedule for legacy30_seed7 with minimum latency."
+        },
+        {
+          "request_id": "h4-a-001-p2",
+          "request_text": "For legacy30_seed7, I need ANEX to schedule a single aggregation of the readings as quickly as possible."
+        }
+      ],
+      "semantic_group_id": "h4-a-001"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-002-p1",
+          "request_text": "Do not use a Digital Twin for this experiment. On topo50_seed0, compute the minimum-latency ANEX schedule for one collection of sensor data."
+        },
+        {
+          "request_id": "h4-a-002-p2",
+          "request_text": "My experiment on topo50_seed0 needs one sensor-data aggregation scheduled by ANEX to minimize latency; a Digital Twin must not be used."
+        }
+      ],
+      "semantic_group_id": "h4-a-002"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-003-p1",
+          "request_text": "Use topo100_seed0 for a one-shot minimum-latency ANEX run with 3 channels, scheduling seed 11, collision_model legacy_neighbor, and interference_ratio 1.0. The working period is 10 slots and the communication range is 20.0."
+        },
+        {
+          "request_id": "h4-a-003-p2",
+          "request_text": "With a 10-slot working period and communication range 20.0 on topo100_seed0, schedule one aggregation using ANEX for minimum latency. Set collision_model to legacy_neighbor, interference_ratio to 1.0, the channel count to 3, and the scheduling seed to 11."
+        }
+      ],
+      "semantic_group_id": "h4-a-003"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-004-p1",
+          "request_text": "Our previous study optimized battery lifetime. This run on topo150_seed0 is solely a one-shot minimum-latency ANEX aggregation, using 5 channels, scheduling seed 23, collision_model interference_range, and interference_ratio 1.0."
+        },
+        {
+          "request_id": "h4-a-004-p2",
+          "request_text": "For topo150_seed0, configure ANEX with interference_ratio 1.0, collision_model interference_range, seed 23, and 5 channels to minimize the latency of one aggregation only. Battery lifetime was the objective of our earlier study."
+        }
+      ],
+      "semantic_group_id": "h4-a-004"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-005-p1",
+          "request_text": "The draft for topo200_seed0 had latency_target_slots: null, meaning no target applied. Replace that draft setting with a target of 45 elapsed slots for this run, then compute a one-shot minimum-latency ANEX schedule."
+        },
+        {
+          "request_id": "h4-a-005-p2",
+          "request_text": "Compute the one-shot ANEX aggregation schedule with minimum latency on topo200_seed0. For this run the target is 45 elapsed slots, replacing the draft's explicit latency_target_slots: null setting that meant no target."
+        }
+      ],
+      "semantic_group_id": "h4-a-005"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-006-p1",
+          "request_text": "On topo300_seed0, find a minimum-latency ANEX schedule for one aggregation with a target of 30 elapsed slots, and report whether the resulting latency meets that target."
+        },
+        {
+          "request_id": "h4-a-006-p2",
+          "request_text": "I want one aggregation on topo300_seed0 scheduled by ANEX for minimum latency; compare its measured elapsed latency against my 30-slot target."
+        }
+      ],
+      "semantic_group_id": "h4-a-006"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-007-p1",
+          "request_text": "Take the largest network in the catalogue and produce a one-shot ANEX aggregation schedule minimizing latency with 2 channels."
+        },
+        {
+          "request_id": "h4-a-007-p2",
+          "request_text": "I need a minimum-latency ANEX schedule for one aggregation using 2 channels on the catalogue's network with the most nodes."
+        }
+      ],
+      "semantic_group_id": "h4-a-007"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-008-p1",
+          "request_text": "Generate a minimum-latency ANEX schedule for a single data aggregation on topo120_seed0."
+        },
+        {
+          "request_id": "h4-a-008-p2",
+          "request_text": "The network for my one-shot aggregation is topo120_seed0; use ANEX to minimize its scheduling latency."
+        }
+      ],
+      "semantic_group_id": "h4-a-008"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-009-p1",
+          "request_text": "Prepare one minimum-latency ANEX aggregation on topo250_seed0 with communication_range set to 18.0."
+        },
+        {
+          "request_id": "h4-a-009-p2",
+          "request_text": "For a single aggregation scheduled by ANEX to minimize latency, select topo250_seed0 and configure its communication range as 18.0."
+        }
+      ],
+      "semantic_group_id": "h4-a-009"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-010-p1",
+          "request_text": "On legacy30_seed7, choose the aggregation transmissions to maximize the time until the first node exhausts its battery."
+        },
+        {
+          "request_id": "h4-a-010-p2",
+          "request_text": "The aggregation plan for legacy30_seed7 should be optimized to keep the earliest battery failure as far in the future as possible."
+        }
+      ],
+      "semantic_group_id": "h4-a-010"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-011-p1",
+          "request_text": "Compute a one-shot minimum-latency ANEX schedule on topo50_seed0 using 2 channels, and also update each node's remaining battery charge after every scheduled transmission."
+        },
+        {
+          "request_id": "h4-a-011-p2",
+          "request_text": "For topo50_seed0 I need both a 2-channel ANEX schedule minimizing the latency of one aggregation and a trace that subtracts each transmission's consumption from the transmitting node's remaining charge."
+        }
+      ],
+      "semantic_group_id": "h4-a-011"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-012-p1",
+          "request_text": "Build a software replica of topo100_seed0 whose node states stay current by ingesting every new reading from the deployed sensors as it arrives."
+        },
+        {
+          "request_id": "h4-a-012-p2",
+          "request_text": "I need topo100_seed0 represented in software with each node's state continuously refreshed from incoming readings of the deployed sensors."
+        }
+      ],
+      "semantic_group_id": "h4-a-012"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-013-p1",
+          "request_text": "Produce a one-shot minimum-latency ANEX schedule for topo150_seed0 with channels: 0, and build a Digital Twin that emulates the network executing that schedule."
+        },
+        {
+          "request_id": "h4-a-013-p2",
+          "request_text": "On topo150_seed0, create a Digital Twin to emulate execution of a one-shot ANEX aggregation schedule optimized for latency; configure that schedule with zero communication channels."
+        }
+      ],
+      "semantic_group_id": "h4-a-013"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-014-p1",
+          "request_text": "Set up topo200_seed0 to gather a fresh aggregate every 60 slots indefinitely, choosing ANEX schedules to minimize the latency of each collection."
+        },
+        {
+          "request_id": "h4-a-014-p2",
+          "request_text": "Every 60 slots, start another sensor-data aggregation on topo200_seed0 and keep doing so without an end time; use ANEX to minimize each collection's latency."
+        }
+      ],
+      "semantic_group_id": "h4-a-014"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-015-p1",
+          "request_text": "Keep aggregating readings on topo250_seed0 without stopping, starting a new collection immediately whenever the preceding collection finishes."
+        },
+        {
+          "request_id": "h4-a-015-p2",
+          "request_text": "For topo250_seed0, completion of each aggregate should immediately trigger the next collection so that the aggregation service runs continuously."
+        }
+      ],
+      "semantic_group_id": "h4-a-015"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-016-p1",
+          "request_text": "Find a one-shot minimum-latency ANEX schedule on topo300_seed0 with 2 channels, and reroute the remaining transmissions during execution whenever a link fails."
+        },
+        {
+          "request_id": "h4-a-016-p2",
+          "request_text": "For topo300_seed0, prepare a 2-channel ANEX schedule minimizing the latency of one aggregation, with remaining transmissions redirected at execution time in response to any failed link."
+        }
+      ],
+      "semantic_group_id": "h4-a-016"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-017-p1",
+          "request_text": "Use topo50_seed0 for one data aggregation and choose a schedule that minimizes the total number of transmissions, even if completion takes longer."
+        },
+        {
+          "request_id": "h4-a-017-p2",
+          "request_text": "Completion time can increase on topo50_seed0: for this single aggregation, optimize the schedule for the fewest transmissions."
+        }
+      ],
+      "semantic_group_id": "h4-a-017"
+    },
+    {
+      "paraphrases": [
+        {
+          "request_id": "h4-a-018-p1",
+          "request_text": "Compute a one-shot minimum-latency ANEX schedule for legacy30_seed7, then send commands to the physical sensors to switch their radios off after their final scheduled transmissions."
+        },
+        {
+          "request_id": "h4-a-018-p2",
+          "request_text": "After preparing an ANEX schedule that minimizes the latency of one aggregation on legacy30_seed7, command each physical sensor to turn off its radio once its last scheduled transmission is complete."
+        }
+      ],
+      "semantic_group_id": "h4-a-018"
+    }
+  ],
+  "self_check": {
+    "group_count": 18,
+    "item_count": 36
+  }
+}

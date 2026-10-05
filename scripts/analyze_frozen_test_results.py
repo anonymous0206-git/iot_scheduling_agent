@@ -222,11 +222,48 @@ def joint_intent_success(records: Sequence[Mapping[str, Any]],
     }
 
 
+#: Fields both a ledger record and a harness item carry, and which name the
+#: request rather than the run, so the two sides must agree on them.
+BENCHMARK_IDENTITY_FIELDS = ("paraphrase_group_id", "category")
+
+
+def _describes_other_benchmark(records: Sequence[Mapping[str, Any]],
+                               harness: Mapping[str, Mapping[str, Any]]) -> list[str]:
+    """Request ids the ledger and the harness disagree about.
+
+    Matching request ids do not establish that a ledger was produced against a
+    given harness. The sealing step derives the id prefix from the benchmark
+    version string (`frozen-test-v3` becomes `ft3`), so two benchmarks sealed
+    under one contract profile are numbered in the same space: `ft3-r0001`
+    exists in both frozen_test_v3 and holdout_v4 and names a different request
+    in each. The id check above therefore passes on a mismatched pair, and the
+    result is silent rather than wrong-looking --- analysing holdout ledgers
+    against the frozen harness reports a plausible accuracy, not an error.
+
+    A field absent from the ledger is skipped rather than counted as a
+    disagreement, because not every runner records every field.
+    """
+    mismatched = []
+    for record in records:
+        item = harness[record["request_id"]]
+        if any(record[field] != item.get(field)
+               for field in BENCHMARK_IDENTITY_FIELDS if field in record):
+            mismatched.append(record["request_id"])
+    return sorted(mismatched)
+
+
 def analyse_arm(name: str, records: Sequence[Mapping[str, Any]],
                 harness: Mapping[str, Mapping[str, Any]]) -> dict[str, Any]:
     unknown = sorted({r["request_id"] for r in records} - set(harness))
     if unknown:
         raise AnalysisError(f"{name}: ledger has request ids absent from the harness: {unknown[:5]}")
+    mismatched = _describes_other_benchmark(records, harness)
+    if mismatched:
+        raise AnalysisError(
+            f"{name}: the ledger and the harness disagree about "
+            f"{len(mismatched)} requests that share an id, so they are different "
+            f"benchmarks (first: {mismatched[:3]}); pass the harness these ledgers "
+            "were produced against")
     count = len(records)
     if not count:
         raise AnalysisError(f"{name}: ledger is empty")

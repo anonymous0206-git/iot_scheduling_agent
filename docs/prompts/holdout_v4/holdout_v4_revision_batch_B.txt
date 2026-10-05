@@ -1,0 +1,58 @@
+You generated a benchmark batch for an agentic IoT data-aggregation
+scheduling system. An independent adjudicator has reviewed it and flagged the
+groups below: in each one, your two paraphrases do not carry the same intent.
+
+The gold action of these groups is not in question and you should not change
+it. Nothing else about the batch is in question either.
+
+For each group, revise the request texts so that both paraphrases:
+
+- express exactly the same intent and the same configuration, including every
+  quantity;
+- keep the same gold action as before;
+- still differ in sentence structure rather than in a few synonyms;
+- still read like a request from a system operator or researcher.
+
+Change the wording only. Do not introduce a capability, a parameter or a
+topology that the group did not already mention, and do not copy sentences
+from the adjudicator's description into a request.
+
+Return JSON only, with this structure and these two groups alone:
+
+{
+  "revisions": [
+    {
+      "semantic_group_id": "...",
+      "paraphrases": [
+        {"request_id": "...", "request_text": "..."},
+        {"request_id": "...", "request_text": "..."}
+      ]
+    }
+  ]
+}
+
+==================================================
+Group h4-b-015
+
+What the adjudicator found:
+  Both positively require periodic aggregation, so [action] takes precedence over the independently invalid interference_ratio of 1.5. However, p1 requests an initial single round followed by 500 periodic rounds, whereas p2 says 500 rounds in total, which can include the initial round. The requested count is therefore not reliably equivalent. Specify the same inclusion or exclusion of the initial round in both paraphrases; the action remains unambiguous.
+
+Your current texts:
+  h4-b-015-p1:
+    First get me the one-shot ANEX schedule for topo250_seed0 with 3 channels and an interference ratio of 1.5, then switch to periodic aggregation and repeat that collection every working period for 500 rounds.
+  h4-b-015-p2:
+    On topo250_seed0, run ANEX with three channels and interference ratio 1.5 for a single round, and after that run it as periodic aggregation, one collection per working period, 500 rounds in total.
+
+==================================================
+Group h4-b-018
+
+What the adjudicator found:
+  Both require programming physical nodes and controlling their radios, so [action] is unambiguous. However, p1 additionally specifies over-the-air schedule delivery; p2 merely says to program the real nodes and does not preserve that delivery requirement. Under the strict no-dropping-or-weakening rule, explicitly retain over-the-air delivery in p2 or remove it from p1.
+
+Your current texts:
+  h4-b-018-p1:
+    Compute the one-shot ANEX schedule for legacy30_seed7 with two channels and seed 1, then push it out to the deployed motes over the air and switch each node's radio on and off at the slots the schedule dictates.
+  h4-b-018-p2:
+    Using legacy30_seed7, seed 1 and 2 channels, generate the single-round ANEX schedule and then program the real nodes with it — the radios in the field should be toggled according to the assigned slots.
+
+Return JSON only.

@@ -1,0 +1,39 @@
+# Byte-compiled and cached. Running the test suite creates eight of these
+# directories, and without this file a reviewer who runs the first command in
+# the README is then looking at a dirty working tree.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Installed-package metadata. The release ships the sources under src/, not an
+# installed copy of them.
+*.egg-info/
+.eggs/
+
+# Virtual environments.
+.venv/
+venv/
+env/
+
+# Build products of the artefact itself. scripts/build_supplementary.py writes
+# its archive into the working copy, and scripts/build_release_manifest.py
+# excludes archives from the release, so a built one would otherwise sit here
+# untracked.
+supplementary*.zip
+
+# Analysis output. Every re-derivation in the README writes to a directory the
+# reader names; these are the names the README uses.
+/tmp_check/
+/recheck/
+
+# WSL writes one of these beside every file downloaded through Windows. They
+# carry no content, and three of them sat in the holdout batch until the
+# packaging script learned to drop them.
+*:Zone.Identifier
+
+# Editor and platform noise.
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

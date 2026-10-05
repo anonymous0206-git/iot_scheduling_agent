@@ -305,6 +305,28 @@ class AnalysisTests(unittest.TestCase):
         self.assertEqual(arm["failure_taxonomy"]["infrastructure_request_ids"],
                          ["r1", "r2"])
 
+    def test_refuses_a_ledger_from_a_different_benchmark_with_the_same_ids(self):
+        # Two benchmarks sealed under one contract profile share an id space, so
+        # a mismatched pair passes the request-id check and yields a plausible
+        # number instead of an error. The group id settles which benchmark it is.
+        records = [ledger_record("r1", "h4-a-001", "EXECUTE", "EXECUTE"),
+                   ledger_record("r2", "h4-a-001", "EXECUTE", "EXECUTE")]
+        harness = {"r1": harness_item("r1", "v3-a-001", "EXECUTE"),
+                   "r2": harness_item("r2", "v3-a-001", "EXECUTE")}
+        with self.assertRaises(self.script.AnalysisError) as caught:
+            self.script.analyse_arm("arm", records, harness)
+        self.assertIn("different", str(caught.exception))
+        self.assertIn("r1", str(caught.exception))
+
+    def test_accepts_a_ledger_that_omits_an_identity_field(self):
+        # Not every runner records every field, so an absent field is skipped
+        # rather than counted as a disagreement.
+        records = [ledger_record("r1", "g1", "EXECUTE", "EXECUTE")]
+        self.assertNotIn("category", records[0])
+        harness = {"r1": harness_item("r1", "g1", "EXECUTE")}
+        arm = self.script.analyse_arm("arm", records, harness)
+        self.assertEqual(arm["action_accuracy"]["correct"], 1)
+
     def test_cli_writes_once_and_renders_markdown(self):
         out = self.root / "analysis"
         argv = ["analyze_frozen_test_results.py", "--harness", str(self.harness_path),

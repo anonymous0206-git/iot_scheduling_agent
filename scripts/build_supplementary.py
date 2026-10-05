@@ -8,8 +8,12 @@ needed to re-derive a number in the paper, and nothing that only repeats it.
 What goes in, and why:
 
   * the sealed benchmark and its gold labels, so the evaluation can be re-run;
-  * both evaluation locks, so the pipeline that produced each set of results can
-    be identified by hash rather than by trust;
+  * the post-freeze holdout batch, the same way, because Table 2 is generated
+    from it;
+  * every lock in the chain and the manifest of this release, so the pipeline
+    that produced each set of results can be identified by hash rather than by
+    trust, and every divergence between the two is stated rather than tidied
+    away;
   * every ledger, including the ones from before the pipeline repair, because a
     before/after claim that ships only the "after" is not checkable;
   * the analysis and figure-data code, so every table and figure in the paper
@@ -35,9 +39,34 @@ ROOT = Path(__file__).resolve().parents[1]
 INCLUDE = (
     "benchmarks/frozen_test_v3/**/*",
     "benchmarks/topologies/frozen_test_v3_llm_catalogue.json",
+    # The six topologies that catalogue binds --- the seventh,
+    # network_30_seed7.json, is below. Without them the archive carries a
+    # catalogue whose every entry points at a file that is not there: the
+    # agent cannot be run on a single benchmark request, and
+    # test_demo_agent.py fails on the first one it tries. The 180-topology
+    # catalogue beside them stays out at 18 MB; the tests skip it by name and
+    # the release manifest lists it among the files no lock-covered path ships.
+    "benchmarks/topologies/fixed_area100_r20/topo50_seed0.json",
+    "benchmarks/topologies/fixed_area100_r20/topo100_seed0.json",
+    "benchmarks/topologies/fixed_area100_r20/topo150_seed0.json",
+    "benchmarks/topologies/fixed_area100_r20/topo200_seed0.json",
+    "benchmarks/topologies/fixed_area100_r20/topo250_seed0.json",
+    "benchmarks/topologies/fixed_area100_r20/topo300_seed0.json",
+    # The whole lock chain, not only the locks the paper's results were produced
+    # under. The release manifest pins each of them by its own hash and states
+    # every divergence from each, which a reader can only check against the
+    # locks themselves.
+    "benchmarks/policy_v2_development_lock.json",
+    "benchmarks/evaluation_lock_v1.json",
+    "benchmarks/evaluation_lock_v2.json",
     "benchmarks/evaluation_lock_v3.json",
     "benchmarks/evaluation_lock_v3_1.json",
+    "benchmarks/evaluation_lock_v4_holdout.json",
     "benchmarks/frozen_test_v3_authoring_lock.json",
+    # The manifest of this release. The locks above are historical and are not
+    # edited, so the files they cover have moved on; this one records what the
+    # release actually contains and states every divergence from them.
+    "benchmarks/release_manifest_v5.json",
     "results/frozen_test_v3/*.jsonl",
     "results/frozen_test_v3/**/summary.json",
     "results/frozen_test_v3/**/summary.md",
@@ -57,6 +86,36 @@ INCLUDE = (
     "results/frozen_test_v3/quarantine/*",
     "benchmarks/frozen_test_v3/model_metadata.json",
     "benchmarks/frozen_test_v3/generation_provenance.json",
+    # The frozen-test-v3 authoring round as it was delivered, at the paths the
+    # locks pin it at: each model's authored batch and each model's blind review
+    # of the other's. The archive already carried the blind copies and the
+    # reconciliation, so the gold labels were traceable --- but only to the
+    # adjudication, not to the two documents it adjudicated. The holdout batch
+    # ships its equivalents, and these are the same thing for the sealed one.
+    "Model-A blind review of Batch B v3.json",
+    "Model-B blind review of Batch A v3.json",
+    "benchmark_model_A_v3.json",
+    "benchmark_model_B_v3.json",
+    # The resolved dependency set every lock pins beside pyproject.toml. The
+    # tests need neither, but a lock that covers it and an archive that omits
+    # it is one more absence to explain for 83 KB.
+    "uv.lock",
+    # The post-freeze holdout batch of Section 5.7, which the first build of
+    # this archive shipped none of: it was packaged the day the batch was
+    # sealed and before any of it was run. Table 2 is generated from these
+    # files, so without them the archive could not check the paper's newest
+    # numbers at all. The batch goes in whole --- both authored halves, both
+    # blind copies, the adjudications, the revision round and the human
+    # decisions --- for the same reason frozen-test-v3 does: a gold label a
+    # reader cannot trace to an adjudication is a gold label taken on trust.
+    "benchmarks/holdout_v4/**/*",
+    "results/holdout_v4/*.jsonl",
+    "results/holdout_v4/*.device.json",
+    "results/holdout_v4/*.json",
+    "results/holdout_v4/analysis*/*",
+    # How the batch was sized, and what 36 groups buy. The paper cites this
+    # file for the 1202 groups the underpowered contrast would have needed.
+    "results/frozen_test_v3/holdout_sizing/*",
     "src/**/*.py",
     # The published ANEX sources the agent wraps. Without them the released
     # agent imports a module that is not there, which a clean clone shows at
@@ -89,6 +148,9 @@ INCLUDE = (
     # The index a reviewer opens first: what each number in the paper is
     # derived from, and the one command that checks the artefact runs.
     "README.md",
+    # Running the test suite creates eight __pycache__ directories, so without
+    # this a reader who follows the README is then looking at a dirty tree.
+    ".gitignore",
     # The figure data, so a reader who wants the per-item lists behind a figure
     # --- which requests the vocabulary test put in each group, which fields
     # the model determined from the sentence --- has the file the paper names
@@ -106,6 +168,9 @@ INCLUDE = (
 EXCLUDE = (
     "**/__pycache__/**", "**/*.pyc", "**/.venv/**", "**/.git/**",
     "**/node_modules/**", "**/*.zip", "**/.pytest_cache/**",
+    # WSL writes one of these beside every file downloaded through Windows.
+    # They carry no content and three of them sit in the holdout batch.
+    "**/*:Zone.Identifier",
 )
 
 # Paths that would identify the authors or that belong to a different project.
@@ -121,13 +186,25 @@ REDACTED = "<repository>"
 # docstring. The institution is the one a reviewer would match against the
 # submission, so the line is replaced rather than the file withheld: the code
 # below it is what the agent runs, unaltered.
-BYLINE = re.compile(r"Programmed by the ANEX authors (byline withheld for double-blind review)
-BYLINE_REDACTED = ("Programmed by the ANEX authors (byline withheld for double-blind review)
+BYLINE = re.compile(r"Programmed by [^\n]*")
+BYLINE_REDACTED = ("Programmed by the ANEX authors "
                    "(byline withheld for double-blind review)")
+# ...and only in that tree. This script quotes the pattern and its replacement,
+# so without a scope it redacted its own source: `[^\n]*` swallowed the rest of
+# the line, closing quote included, and the archive shipped a copy of this file
+# that does not parse. Nothing noticed until a test module imported it.
+BYLINE_SCOPE = ("source/*", "source/**/*")
 REDACTABLE_SUFFIXES = {".json", ".jsonl", ".md", ".txt", ".py", ".tex", ".bib",
                        ".toml", ".cfg", ".yml", ".yaml"}
+# Locks only, and deliberately not the release manifest. A lock is immutable, so
+# a file whose hash one publishes may not be rewritten for anonymity. The
+# release manifest is regenerated whenever the release changes, and it records
+# the repository's own bytes; listing it here would make every released file
+# unredactable and withhold seven that the previous archive shipped --- one of
+# them a source file the tests import.
 LOCKS = ("benchmarks/evaluation_lock_v3.json",
          "benchmarks/evaluation_lock_v3_1.json",
+         "benchmarks/evaluation_lock_v4_holdout.json",
          "benchmarks/frozen_test_v3_authoring_lock.json")
 
 
@@ -175,7 +252,8 @@ def anonymise(root: Path, files: list[Path], covered: set[str]):
             plain.append((relative, data))
             continue
         body = data.decode("utf-8", "replace")
-        if not (IDENTIFYING.search(body) or BYLINE.search(body)):
+        byline = matches(relative, BYLINE_SCOPE) and bool(BYLINE.search(body))
+        if not (IDENTIFYING.search(body) or byline):
             plain.append((relative, data))
             continue
         if relative in covered:
@@ -183,7 +261,9 @@ def anonymise(root: Path, files: list[Path], covered: set[str]):
             withheld.append(relative)
             continue
         redacted.append(relative)
-        cleaned = BYLINE.sub(BYLINE_REDACTED, IDENTIFYING.sub(REDACTED, body))
+        cleaned = IDENTIFYING.sub(REDACTED, body)
+        if byline:
+            cleaned = BYLINE.sub(BYLINE_REDACTED, cleaned)
         plain.append((relative, cleaned.encode("utf-8")))
     return plain, redacted, withheld
 

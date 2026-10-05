@@ -1,0 +1,95 @@
+{
+  "decided_at": "",
+  "decided_by": "",
+  "decisions": [
+    {
+      "context": {
+        "batch_id": "frontier-model-b",
+        "classification": "PARAPHRASE_MISMATCH",
+        "generator": {
+          "ambiguity_risk": "low",
+          "annotation_reason": "Precedence test. The one-shot part carries an explicit interference_ratio of 1.5, which on its own would be REJECT (invalid value of a supported field). However, periodic aggregation over 500 rounds is positively requested, and precedence rule 1 places the unsupported capability above the invalid parameter, so the gold action is UNSUPPORTED.",
+          "capability_category": "periodic_request_with_otherwise_invalid_ratio_precedence",
+          "difficulty": "hard",
+          "invalid_fields": null,
+          "proposed_gold_action": "UNSUPPORTED",
+          "proposed_gold_fields": null
+        },
+        "paraphrases": [
+          {
+            "request_id": "h4-b-015-p1",
+            "request_text": "First get me the one-shot ANEX schedule for topo250_seed0 with 3 channels and an interference ratio of 1.5, then switch to periodic aggregation and repeat that collection every working period for 500 rounds."
+          },
+          {
+            "request_id": "h4-b-015-p2",
+            "request_text": "On topo250_seed0, run ANEX with three channels and interference ratio 1.5 for a single round, and after that run it as periodic aggregation, one collection per working period, 500 rounds in total."
+          }
+        ],
+        "reviewer": {
+          "adjudicated_action": "UNSUPPORTED",
+          "adjudicated_fields": {},
+          "item_quality": "revise",
+          "paraphrase_equivalent": false,
+          "reason": "Both positively require periodic aggregation, so UNSUPPORTED takes precedence over the independently invalid interference_ratio of 1.5. However, p1 requests an initial single round followed by 500 periodic rounds, whereas p2 says 500 rounds in total, which can include the initial round. The requested count is therefore not reliably equivalent. Specify the same inclusion or exclusion of the initial round in both paraphrases; the action remains unambiguous."
+        },
+        "signals": [
+          "reviewer judged the paraphrases not equivalent",
+          "reviewer item_quality=revise"
+        ]
+      },
+      "final_action": null,
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": null,
+      "paraphrase_overrides": {},
+      "rationale": "",
+      "resolution": null,
+      "semantic_group_id": "h4-b-015"
+    },
+    {
+      "context": {
+        "batch_id": "frontier-model-b",
+        "classification": "PARAPHRASE_MISMATCH",
+        "generator": {
+          "ambiguity_risk": "low",
+          "annotation_reason": "Mixed request: the schedule part (legacy30_seed7, channels 2, seed 1) is fully valid, but dispatching the schedule to physical motes and toggling their radios is physical device control, which is outside scope. Precedence rule 1 makes the request UNSUPPORTED.",
+          "capability_category": "physical_device_control_mixed_compositional",
+          "difficulty": "medium",
+          "invalid_fields": null,
+          "proposed_gold_action": "UNSUPPORTED",
+          "proposed_gold_fields": null
+        },
+        "paraphrases": [
+          {
+            "request_id": "h4-b-018-p1",
+            "request_text": "Compute the one-shot ANEX schedule for legacy30_seed7 with two channels and seed 1, then push it out to the deployed motes over the air and switch each node's radio on and off at the slots the schedule dictates."
+          },
+          {
+            "request_id": "h4-b-018-p2",
+            "request_text": "Using legacy30_seed7, seed 1 and 2 channels, generate the single-round ANEX schedule and then program the real nodes with it — the radios in the field should be toggled according to the assigned slots."
+          }
+        ],
+        "reviewer": {
+          "adjudicated_action": "UNSUPPORTED",
+          "adjudicated_fields": {},
+          "item_quality": "revise",
+          "paraphrase_equivalent": false,
+          "reason": "Both require programming physical nodes and controlling their radios, so UNSUPPORTED is unambiguous. However, p1 additionally specifies over-the-air schedule delivery; p2 merely says to program the real nodes and does not preserve that delivery requirement. Under the strict no-dropping-or-weakening rule, explicitly retain over-the-air delivery in p2 or remove it from p1."
+        },
+        "signals": [
+          "reviewer judged the paraphrases not equivalent",
+          "reviewer item_quality=revise"
+        ]
+      },
+      "final_action": null,
+      "final_fields": null,
+      "final_invalid_fields": null,
+      "paraphrase_equivalent": null,
+      "paraphrase_overrides": {},
+      "rationale": "",
+      "resolution": null,
+      "semantic_group_id": "h4-b-018"
+    }
+  ],
+  "decisions_version": "frozen-test-v2-decisions/1"
+}

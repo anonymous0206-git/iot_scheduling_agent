@@ -79,7 +79,7 @@ def _mean_count(entry: Mapping[str, Any], leaf: str) -> str:
 def metric_rows(arms: Mapping[str, Mapping[str, Any]]) -> list[tuple[str, list[str]]]:
     """The rows of the main table, in the order the paper reads them."""
     rows: list[tuple[str, list[str]]] = []
-    rows.append(("Action accuracy", [
+    rows.append(("Action accuracy /144", [
         _mean_count(a["action_accuracy"], "correct") for a in arms.values()]))
     for action in ACTIONS:
         rows.append((f"\\quad \\textsc{{{action.lower()}}}", [
@@ -89,19 +89,21 @@ def metric_rows(arms: Mapping[str, Mapping[str, Any]]) -> list[tuple[str, list[s
     # Task completion is reported in the JSON but not here: on this benchmark it
     # equals action accuracy for every arm, so a row would repeat one above it.
     # The text says so once instead.
-    rows.append(("Field exact match", [
+    # The unit goes in the label: a reader should not have to tell a count from a
+    # rate by looking at whether the cell has a decimal point.
+    rows.append(("Field exact match (rate)", [
         f"{float(a['field_exact_match']['rate']):.3f}"
         + _spread(a["field_exact_match"], "rate", ".3f") for a in arms.values()]))
     # The conjunction the interface is judged on: right action, every gold field
     # including the three the runner binds, and a certified schedule. Action
     # accuracy and field exact match can both be high while this is not.
     if all("joint_intent_success" in a for a in arms.values()):
-        rows.append(("Joint intent success", [
+        rows.append(("Joint intent success /44", [
             _fraction(_mean_only(a["joint_intent_success"], "completed"),
                       a["joint_intent_success"]["items"]) for a in arms.values()]))
-    rows.append(("False acceptance", [
+    rows.append(("False acceptance /144", [
         _mean_count(a["false_acceptance"], "count") for a in arms.values()]))
-    rows.append(("Paraphrase consistency", [
+    rows.append(("Paraphrase consistency /72", [
         _fraction(a["paraphrase_consistency"]["consistent_groups"],
                   a["paraphrase_consistency"]["groups"]) for a in arms.values()]))
     rows.append(("Model calls", [
@@ -184,7 +186,9 @@ def render_main(arms: Mapping[str, Mapping[str, Any]], labels: Mapping[str, str]
     shown_models, snapshot_note = abbreviate_models(config["model"])
     lines = [r"\begin{table*}[t]", f"\\caption{{{caption}{snapshot_note}}}",
              f"\\label{{{label}}}",
-             r"\small", r"\setlength{\tabcolsep}{5pt}",
+             r"\small", # 4pt rather than 5: the row labels now carry their units, and nine columns
+        # of 1pt each way is what buys the width back without shrinking type.
+        r"\setlength{\tabcolsep}{4pt}",
              # 8pt type in rows 5 per cent tighter reads better than 7pt type
              # in loose ones, and the pair costs one line rather than ten.
              r"\renewcommand{\arraystretch}{0.95}",

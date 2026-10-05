@@ -1,0 +1,45 @@
+{
+  "evaluator_side_only": true,
+  "exported_at_utc": "2026-09-27T14:37:48Z",
+  "harness_format": "agentic_anex.frozen_test_v2_harness.v1",
+  "output": {
+    "path": "benchmarks/holdout_v4/harness/holdout_v4_harness.jsonl",
+    "records": 72,
+    "sha256": "d0b9d9803f078b07cb3c25a5b4a3c88279169f487b039ae994e5d63d92a1dfc7"
+  },
+  "sealed_dir": "benchmarks/holdout_v4/sealed",
+  "sources": {
+    "gold_jsonl": {
+      "path": "frozen_test_v2_gold.jsonl",
+      "sha256": "2791409e80f5ed005e7855203b0eb7d171c268aba7c02481e6fe6d0176707de7"
+    },
+    "lock_manifest": {
+      "path": "frozen_test_v2_lock_manifest.json",
+      "sha256": "73afcb1a9bbd5d735e9219f844489edb858771eb0fac185ca8b24bc7ededda04"
+    },
+    "requests_jsonl": {
+      "path": "frozen_test_v2_requests.jsonl",
+      "sha256": "16aa86247f2ff5f6b0b63c5354effed1cc5574c3e1b8c3b2d9390f098acf71f1"
+    }
+  },
+  "summary": {
+    "harness_format": "agentic_anex.frozen_test_v2_harness.v1",
+    "items": 72,
+    "per_action": {
+      "CLARIFY": 4,
+      "EXECUTE": 24,
+      "REJECT": 8,
+      "UNSUPPORTED": 36
+    },
+    "requests_naming_multiple_topologies": [],
+    "requests_naming_uncatalogued_topology": [
+      "ft3-r0006",
+      "ft3-r0058",
+      "ft3-r0065",
+      "ft3-r0069"
+    ],
+    "topology_binding_rule": "A catalogue topology is bound to a request only when exactly one topology_id appears as a whole token in the request text; otherwise no network is supplied. A request that names a topology outside the catalogue receives no network because no such network exists, and a request that names two catalogue topologies receives none because the selection is ambiguous.",
+    "topology_bound": 64,
+    "topology_unbound": 8
+  }
+}

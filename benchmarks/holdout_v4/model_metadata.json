@@ -1,0 +1,47 @@
+{
+ "metadata_version": "holdout-v4-model-metadata/1",
+ "model_a": {
+  "model_id": "chatgpt-6-astra-medium",
+  "display_name": "ChatGPT 6 Astra Medium",
+  "provider": "OpenAI",
+  "version_or_snapshot": "",
+  "interface": "ChatGPT, fresh session",
+  "decoding": {
+   "temperature": null,
+   "seed": null
+  },
+  "roles": [
+   "generator of frontier-model-a",
+   "blind adjudicator of frontier-model-b"
+  ],
+  "generation_date": "2026-09-27",
+  "review_date": "2026-09-27",
+  "independence": "CROSS_REVIEW_SATISFIED",
+  "notes": "Session had not seen the repository, its ledgers, its failure taxonomy or any earlier benchmark of this project, and received only its rendered prompt. The pipeline was frozen before authoring began; the manifest is benchmarks/evaluation_lock_v4_holdout.json."
+ },
+ "model_b": {
+  "model_id": "claude-fable-5-1",
+  "display_name": "Claude Fable 5.1",
+  "provider": "Anthropic",
+  "version_or_snapshot": "",
+  "interface": "Claude, fresh session",
+  "decoding": {
+   "temperature": null,
+   "seed": null
+  },
+  "roles": [
+   "generator of frontier-model-b",
+   "blind adjudicator of frontier-model-a",
+   "author of the paraphrase revision to h4-b-015 and h4-b-018",
+   "equivalence re-check of the revised h4-b-015 and h4-b-018"
+  ],
+  "generation_date": "2026-09-27",
+  "review_date": "2026-09-27",
+  "independence": "CROSS_REVIEW_SATISFIED",
+  "notes": "As for model A. The revision session received only the flagged texts and the equivalence defect, with the adjudicated action masked. The pipeline was operated by a different Anthropic model in a separate session; that session authored and adjudicated nothing."
+ },
+ "operator": {
+  "role": "human adjudication of flagged groups, and approval of this metadata",
+  "notes": "Vi (operator)"
+ }
+}
