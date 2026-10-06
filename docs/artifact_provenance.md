@@ -101,8 +101,12 @@ diff <(jq -S . results/frozen_test_v3/analysis_v37/summary.json) \
      <(jq -S . /tmp/recheck/summary.json)        # differs only in "title"
 ```
 
-The identifiers are left as they are: renumbering them would change a locked file
-and, under section 2 of `holdout_v4_protocol.md`, restart the experiment.
+The identifiers are left as they are. The prefix comes from `sealed_id_prefix` in
+`src/frozen_test_v2/seal.py`, which is one of the 98 files
+`evaluation_lock_v4_holdout.json` pins, and section 2 of `holdout_v4_protocol.md`
+restarts the experiment on a change to a covered file. That lock covers no
+`holdout_v4` path of its own --- it was issued before the batch existed --- so the
+constraint runs through the sealing code rather than through the sealed files.
 
 **4. Documentation, read by no code** --- `README.md` and
 `docs/operator_guide.md`. The locks that cover them were issued on 2026-09-01 and

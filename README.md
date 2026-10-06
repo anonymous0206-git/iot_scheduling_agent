@@ -125,8 +125,12 @@ that the ledger and the harness agree on the fields naming the request rather
 than the run. The check was added after this experiment closed: every number
 reported here was produced by the version the lock records, and that one file's
 hash in `evaluation_lock_v4_holdout.json` is superseded by this change. The
-identifiers themselves are left alone, because renumbering them would change a
-locked file and, under section 2 of the protocol, restart the experiment.
+identifiers themselves are left alone. The prefix is derived from the contract
+version by `sealed_id_prefix` in `src/frozen_test_v2/seal.py`, so renumbering means
+changing that file --- one of the 98 `evaluation_lock_v4_holdout.json` pins --- and
+under section 2 of the protocol a change to a covered file restarts the experiment.
+The lock covers no `holdout_v4` path itself, having been issued before the batch
+existed; it is the sealing code that is locked, not the sealed files.
 
 The check changes no result, and that is checkable rather than asserted:
 re-running either campaign's analysis with the current script reproduces the

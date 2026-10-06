@@ -126,9 +126,12 @@ DIVERGENCES: Mapping[str, Mapping[str, Any]] = {
             "existed, by the version `evaluation_lock_v4_holdout.json` records, "
             "and re-running the analysis with the check in place reproduces "
             "them --- the check refuses a pairing nothing in the paper used. "
-            "The identifiers themselves are left alone, because renumbering "
-            "them would change a locked file and, under section 2 of the "
-            "holdout protocol, restart the experiment.",
+            "The identifiers themselves are left alone: the prefix comes from "
+            "`sealed_id_prefix` in `src/frozen_test_v2/seal.py`, which this lock "
+            "pins, and section 2 of the holdout protocol restarts the experiment "
+            "on a change to a covered file. The lock covers no `holdout_v4` path "
+            "of its own, having been issued before the batch existed, so what is "
+            "locked is the sealing code rather than the sealed files.",
         "superseded_by": None,
     },
     "src/frozen_test_v2/seal.py": {
