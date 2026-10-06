@@ -1,0 +1,50 @@
+{
+  "detector_version": "paper1-semantic-scope-detector.v1",
+  "harness": "benchmarks/frozen_test_v3/harness/frozen_test_v3_harness.jsonl",
+  "model": "gpt-5.5-2026-04-23",
+  "output_dir": "results/frozen_test_v3/semantic_scope",
+  "requests": 144,
+  "runs": [
+    {
+      "calls": 144,
+      "client_failures": 0,
+      "completion_tokens": 23834,
+      "ledger": "semantic_scope_seed11.jsonl",
+      "prompt_tokens": 84191,
+      "seed": 11,
+      "total_tokens": 108025,
+      "wall_seconds": 378.1
+    },
+    {
+      "calls": 144,
+      "client_failures": 0,
+      "completion_tokens": 23279,
+      "ledger": "semantic_scope_seed12.jsonl",
+      "prompt_tokens": 84191,
+      "seed": 12,
+      "total_tokens": 107470,
+      "wall_seconds": 355.8
+    },
+    {
+      "calls": 144,
+      "client_failures": 0,
+      "completion_tokens": 23430,
+      "ledger": "semantic_scope_seed13.jsonl",
+      "prompt_tokens": 84191,
+      "seed": 13,
+      "total_tokens": 107621,
+      "wall_seconds": 361.7
+    }
+  ],
+  "status": "run",
+  "taxonomy_of": "paper1-scope-policy.v2",
+  "temperature": 1.0,
+  "totals": {
+    "calls": 432,
+    "client_failures": 0,
+    "completion_tokens": 70543,
+    "prompt_tokens": 252573,
+    "total_tokens": 323116,
+    "wall_seconds": 1095.6
+  }
+}

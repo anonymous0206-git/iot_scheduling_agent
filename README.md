@@ -67,6 +67,7 @@ over all eight arms, and is what the paper's table is generated from.
 | The pipeline repair, before and after | pre-repair `gpt55_policy_v2_seed1.jsonl` and `gpt55_no_scope_gate_seed1.jsonl`; post-repair `*_seed11`, `*_seed12`, `*_seed13` |
 | Serving device per timed run | `results/frozen_test_v3/*.device.json` |
 | Table 2, the post-freeze holdout | `results/holdout_v4/analysis_holdout_all/summary.json`, rendered by `scripts/render_holdout_table.py` |
+| Section 5.2, the semantic detector against the regex gate | `results/frozen_test_v3/semantic_scope/summary.json`, from `scripts/run_semantic_scope_detector.py` and `analyze_semantic_scope_detector.py` |
 
 ## The post-freeze holdout batch
 
@@ -133,6 +134,46 @@ shipped summary exactly, differing only in the `--title` string. Both tables in
 the paper are generated from those summaries rather than typed:
 `paper/aamas2027/render_table1.sh` and `render_holdout_table.sh` rebuild them,
 and they carry the captions and arm labels, which are command-line arguments.
+
+## The semantic detector of Section 5.2
+
+Section 5.2 shows the shipped scope gate's recall following the phrasing: 11 of
+the 26 unsupported requests that name the capability, none of the 46 that compose
+it. The obvious objection is that this says more about that regex than about scope
+gating, so we measured a second detector aimed at the same closed taxonomy and
+asked the same question --- a detector against a detector, with no pipeline arm.
+
+```bash
+OPENAI_API_KEY=... python scripts/run_semantic_scope_detector.py \
+  --harness benchmarks/frozen_test_v3/harness/frozen_test_v3_harness.jsonl \
+  --out results/frozen_test_v3/semantic_scope \
+  --model gpt-5.5-2026-04-23 --temperature 1 --seeds 11 12 13
+
+python scripts/analyze_semantic_scope_detector.py \
+  --ledger-dir results/frozen_test_v3/semantic_scope \
+  --harness benchmarks/frozen_test_v3/harness/frozen_test_v3_harness.jsonl \
+  --phrasing paper/aamas2027/figure_data/fig2_phrasing.json \
+  --out results/frozen_test_v3/semantic_scope
+```
+
+The second command calls no model and reproduces the summary from the shipped
+ledgers. Over three repeats the semantic detector refuses all 72 unsupported
+requests, 46 of 46 where the capability is composed, and over-blocks a mean 0.67
+of the 7 gold-`EXECUTE` requests the regex blocks --- all seven of which it reads
+correctly in every repeat. Its own single over-block is `ft3-r0034`, a latency
+target read as an unsupported objective, in two repeats of three.
+
+Two things make the comparison fair rather than flattering, and both are in the
+runner: the question put to the model is generated from `_RULES` in
+`scope_policy.py`, so the two detectors are aimed at the same taxonomy by
+construction; and the model is told the rule the gold labels encode and the regex
+cannot express, that a request mentioning an out-of-scope concept while asking for
+a supported one is in scope. Without the second, the seven hard negatives would be
+counted against it for a distinction it was never asked to make.
+
+What it costs is a model call per request, on the one stage that exists to decide
+before any model is called: 432 calls, 323,116 tokens and 18 minutes for the three
+repeats, recorded in `run_report.json`.
 
 ## Provenance: the locks, the manifest, and what differs
 

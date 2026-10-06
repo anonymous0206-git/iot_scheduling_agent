@@ -116,6 +116,11 @@ INCLUDE = (
     # How the batch was sized, and what 36 groups buy. The paper cites this
     # file for the 1202 groups the underpowered contrast would have needed.
     "results/frozen_test_v3/holdout_sizing/*",
+    # The semantic-detector comparison of Section 5.2: the three ledgers, the
+    # run report and the summary the paper cites. Ledgers of a detector rather
+    # than of an arm --- one verdict per request, nothing downstream --- so
+    # they sit beside the analyses rather than among the campaign ledgers.
+    "results/frozen_test_v3/semantic_scope/*",
     "src/**/*.py",
     # The published ANEX sources the agent wraps. Without them the released
     # agent imports a module that is not there, which a clean clone shows at

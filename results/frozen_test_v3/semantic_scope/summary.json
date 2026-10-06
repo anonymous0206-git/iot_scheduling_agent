@@ -1,0 +1,966 @@
+{
+  "analysis_format": "agentic_anex.semantic_scope_comparison.v1",
+  "denominators": {
+    "gold_execute": 44,
+    "gold_reject_or_clarify": 28,
+    "gold_unsupported": 72
+  },
+  "detector_version": "paper1-semantic-scope-detector.v1",
+  "groups": {
+    "composes it from ordinary words": 46,
+    "names the capability": 26
+  },
+  "ledgers": [
+    "results/frozen_test_v3/semantic_scope/semantic_scope_seed11.jsonl",
+    "results/frozen_test_v3/semantic_scope/semantic_scope_seed12.jsonl",
+    "results/frozen_test_v3/semantic_scope/semantic_scope_seed13.jsonl"
+  ],
+  "no_language_model_invoked": true,
+  "question": "whether the gate's dependence on the capability's vocabulary is a property of the shipped regex or of gating on surface form; measured detector to detector, with no pipeline arm",
+  "regex_gate": {
+    "flagged_reject_or_clarify": 0,
+    "flagged_total": 18,
+    "over_blocked_execute": 7,
+    "recall_composes": 0,
+    "recall_names": 11,
+    "recall_unsupported": 11
+  },
+  "repeats": 3,
+  "requests_the_two_detectors_decide_differently": {
+    "ft3-r0001": {
+      "category": "physical_device_control_mixed",
+      "evidence": "\"push it down to the motes so they wake and send in their assigned slots\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0003": {
+      "category": "ongoing_deadline_collection",
+      "evidence": "\"launch a collection every 25 slots beginning at slot 0 indefinitely\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0005": {
+      "category": "charge_driven_forwarding_compositional",
+      "evidence": "\"Charge levels vary a lot\"; \"forwarding should fall to whichever node is holding the most charge at that moment\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "names the capability",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0007": {
+      "category": "physical_device_control_mixed",
+      "evidence": "\"load it onto the physical motes so they wake and transmit in their assigned slots\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0009": {
+      "category": "delivery_reliability_compositional",
+      "evidence": "\"spend extra slots than lose packets\" and \"choose the plan with the highest delivery odds\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0010": {
+      "category": "self_repeating_schedule_compositional_mixed",
+      "evidence": "\"let it run itself again each time it finishes\" and \"so the sink always holds readings under a minute old\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0013": {
+      "category": "residual_battery_evolution_mixed",
+      "evidence": "\"track how much charge each node has left after every one of its transmissions\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "names the capability",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0017": {
+      "category": "historical_battery_objective_excluded",
+      "evidence": "\"this calculation optimizes latency alone\"",
+      "gold_action": "EXECUTE",
+      "group": null,
+      "regex": "out of scope",
+      "semantic_in_scope_in_seeds": [
+        11,
+        12,
+        13
+      ],
+      "semantic_out_of_scope_in_seeds": []
+    },
+    "ft3-r0019": {
+      "category": "ongoing_deadline_collection",
+      "evidence": "\"at slot 0 and every 25 slots thereafter without an end date\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0023": {
+      "category": "minimax_sender_load",
+      "evidence": "\"minimizing the largest transmission count assigned to any one node, with elapsed latency used only to break ties\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0024": {
+      "category": "live_route_replacement",
+      "evidence": "\"While it runs, substitute a new forwarding route for any route whose link becomes unavailable.\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0027": {
+      "category": "runtime_rerouting_with_invalid_range",
+      "evidence": "\"routes recomputed as link quality moves through the round\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0030": {
+      "category": "runtime_adaptation",
+      "evidence": "\"plan should adapt to nodes dropping out and to links that appear\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "names the capability",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0031": {
+      "category": "explicit_streaming_mirror",
+      "evidence": "\"Maintain a continuously synchronized software copy\" and \"using a connected streaming feed\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "names the capability",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0032": {
+      "category": "negated_digital_twin_hard_negative",
+      "evidence": "\"We are not building a Digital Twin\" rules out the out-of-scope concept, while the request asks for \"the aggregation schedule for topo150_seed0, worked out from the stored topology with the usual settings\"",
+      "gold_action": "EXECUTE",
+      "group": null,
+      "regex": "out of scope",
+      "semantic_in_scope_in_seeds": [
+        11,
+        12,
+        13
+      ],
+      "semantic_out_of_scope_in_seeds": []
+    },
+    "ft3-r0034": {
+      "category": "above_topology_baseline",
+      "evidence": "\"Set the elapsed-slot target to 35\"",
+      "gold_action": "EXECUTE",
+      "group": null,
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12
+      ]
+    },
+    "ft3-r0036": {
+      "category": "network_lifetime_objective_compositional",
+      "evidence": "\"keeps the whole field reporting for as many weeks as it can before the first node goes dark\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0038": {
+      "category": "live_state_updates_after_schedule",
+      "evidence": "\"Afterwards, update the stored view of sensor state on every incoming deployment reading.\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0039": {
+      "category": "minimize_transmission_count",
+      "evidence": "\"the transmission count matters more to me than the finish time\" and \"drive that count down as low as possible\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0040": {
+      "category": "negated_digital_twin_hard_negative",
+      "evidence": "\"give me the aggregation schedule that comes out\"; \"No Digital Twin is to be built for it\"",
+      "gold_action": "EXECUTE",
+      "group": null,
+      "regex": "out of scope",
+      "semantic_in_scope_in_seeds": [
+        11,
+        12,
+        13
+      ],
+      "semantic_out_of_scope_in_seeds": []
+    },
+    "ft3-r0042": {
+      "category": "load_balancing_compositional",
+      "evidence": "\"doing far more work than the rest\" and \"the plan should even that out across the field even if the round takes longer\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0046": {
+      "category": "streaming_view",
+      "evidence": "\"Open a streaming connection\" and \"keep a live picture of every reading as it arrives\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0047": {
+      "category": "restart_after_completion",
+      "evidence": "\"Keep topo300_seed0 collecting for 50 collections in sequence, beginning each new one immediately when its predecessor finishes\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0052": {
+      "category": "device_control_precedes_bad_channel_value",
+      "evidence": "\"transfer the resulting timetable to the physical sensors, and issue their start-sampling command\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0053": {
+      "category": "device_control_precedes_bad_channel_value",
+      "evidence": "\"upload it to the deployed sensors and command them to begin sampling\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0054": {
+      "category": "runtime_rerouting_with_invalid_range",
+      "evidence": "\"rework the routes on the fly as link quality shifts during the round\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0056": {
+      "category": "network_lifetime_objective_compositional",
+      "evidence": "\"keeps the whole field reporting for as long as it can\" and \"pushing the first node failure as far out in time as possible\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0057": {
+      "category": "per_transmission_charge_accounting",
+      "evidence": "\"per-transmission charge balances for all nodes, deducting the costs of sending and receiving\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "names the capability",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0058": {
+      "category": "energy_aware_scheduling",
+      "evidence": "\"with energy awareness built in\" and \"weakest batteries carry as little transmission work as possible\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "names the capability",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0060": {
+      "category": "past_continuous_collection_context",
+      "evidence": "\"plan a single collection\"; \"Continuous collection describes the previous campaign only\"",
+      "gold_action": "EXECUTE",
+      "group": null,
+      "regex": "out of scope",
+      "semantic_in_scope_in_seeds": [
+        11,
+        12,
+        13
+      ],
+      "semantic_out_of_scope_in_seeds": []
+    },
+    "ft3-r0063": {
+      "category": "minimize_channel_usage_objective",
+      "evidence": "\"optimize for the fewest channels actually used, with no latency optimization criterion\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0066": {
+      "category": "runtime_adaptation",
+      "evidence": "\"have the plan adapt itself whenever a node drops off or a new link comes up during the collection\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "names the capability",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0068": {
+      "category": "charge_constrained_latency",
+      "evidence": "\"leaves every node with no less than 30 percent of the charge it had before collection\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "names the capability",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0071": {
+      "category": "periodic_rounds",
+      "evidence": "\"A hundred consecutive aggregation rounds\" and \"one in each working period\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0072": {
+      "category": "minimize_transmission_total",
+      "evidence": "\"minimum total transmission count as its only optimization criterion\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0073": {
+      "category": "minimize_channel_usage_objective",
+      "evidence": "\"uses as few channels as possible\" and \"latency is not an optimization criterion\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0076": {
+      "category": "live_route_replacement",
+      "evidence": "\"replace a forwarding route during execution whenever its link becomes unavailable\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0079": {
+      "category": "replan_on_node_departure",
+      "evidence": "\"recalculate the remaining aggregation plan whenever a node disappears during the run\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0081": {
+      "category": "charge_constrained_latency",
+      "evidence": "\"subject to each node retaining at least 30 percent of its initial charge after the collection\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "names the capability",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0082": {
+      "category": "replan_on_node_departure",
+      "evidence": "\"During a run\" and \"a disappearing node should trigger recalculation of the unfinished aggregation plan\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0083": {
+      "category": "digital_twin_explicitly_excluded",
+      "evidence": "\"Prepare the default ANEX plan for topo150_seed0 directly from the static network. Do not use a Digital Twin.\"",
+      "gold_action": "EXECUTE",
+      "group": null,
+      "regex": "out of scope",
+      "semantic_in_scope_in_seeds": [
+        11,
+        12,
+        13
+      ],
+      "semantic_out_of_scope_in_seeds": []
+    },
+    "ft3-r0084": {
+      "category": "per_transmission_charge_accounting",
+      "evidence": "\"give each node a charge balance after every transmission by subtracting its sending and receiving costs\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "names the capability",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0085": {
+      "category": "continuous_state_alignment_compositional_mixed",
+      "evidence": "\"keep it lined up with whatever the field nodes report as their state shifts through the day\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0086": {
+      "category": "repeating_pull_compositional",
+      "evidence": "\"keep pulling a fresh set of readings\" and \"every ten slots, from now until we stop it\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0094": {
+      "category": "minimax_sender_load",
+      "evidence": "\"minimize the busiest node's number of transmissions first; among plans tied on that count, choose the one with the lowest elapsed latency\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0101": {
+      "category": "packet_level_network_emulation",
+      "evidence": "\"Create a software replica of topo50_seed0\" and \"virtual nodes exchange packets according to the aggregation timetable, and record the packet events\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0104": {
+      "category": "software_replica_compositional",
+      "evidence": "\"Bring up a virtual copy of topo250_seed0 that behaves the way the real deployment does\" and \"let the collection play out on it\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0105": {
+      "category": "past_continuous_collection_context",
+      "evidence": "\"today's job is just one collection on topo300_seed0. Produce its ANEX schedule\"",
+      "gold_action": "EXECUTE",
+      "group": null,
+      "regex": "out of scope",
+      "semantic_in_scope_in_seeds": [
+        11,
+        12,
+        13
+      ],
+      "semantic_out_of_scope_in_seeds": []
+    },
+    "ft3-r0107": {
+      "category": "minimize_transmission_count",
+      "evidence": "\"cut the total number of transmissions as far down as it will go, even if the collection ends up slower\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0108": {
+      "category": "energy_aware_scheduling",
+      "evidence": "\"Produce an energy-aware schedule\" and \"spares the nodes whose batteries have run lowest\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "names the capability",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0109": {
+      "category": "charge_driven_forwarding_compositional",
+      "evidence": "\"run off small solar cells\", \"hold very different amounts of charge\", and \"the forwarding choices should lean on whichever node has the most at the time\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "names the capability",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0111": {
+      "category": "integrate_joining_nodes",
+      "evidence": "\"As the topo250_seed0 collection executes\" and \"add any nodes that join to the remaining collection schedule\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0116": {
+      "category": "continuous_state_alignment_compositional_mixed",
+      "evidence": "\"hold it in step with the state the field nodes keep reporting as the day goes on\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0118": {
+      "category": "digital_twin_explicitly_excluded",
+      "evidence": "The request rules out the out-of-scope capability rather than asking for it: \"No Digital Twin should be used\"; it asks to \"apply ANEX to the static topo150_seed0 network with its default configuration.\"",
+      "gold_action": "EXECUTE",
+      "group": null,
+      "regex": "out of scope",
+      "semantic_in_scope_in_seeds": [
+        11,
+        12,
+        13
+      ],
+      "semantic_out_of_scope_in_seeds": []
+    },
+    "ft3-r0120": {
+      "category": "repeating_pull_compositional",
+      "evidence": "\"deliver a complete new set of readings every ten slots, again and again, until we shut it down\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0123": {
+      "category": "load_balancing_compositional",
+      "evidence": "\"spread that load more evenly across the field, longer round or not\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0126": {
+      "category": "mid_round_reparenting_compositional",
+      "evidence": "\"may go quiet mid-round\" and \"nodes it served need fresh parents worked out there and then\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0127": {
+      "category": "mid_round_reparenting_compositional",
+      "evidence": "\"If one of the relays ... stops answering halfway through\" and \"nodes behind it should be handed to new parents on the spot\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0128": {
+      "category": "explicit_streaming_mirror",
+      "evidence": "\"Connect topo250_seed0 to a streaming feed\" and \"continuously synchronize a software copy of its sensor readings with that feed\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "names the capability",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0129": {
+      "category": "residual_battery_evolution_mixed",
+      "evidence": "\"a transmission-by-transmission account of the charge remaining on each node\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "names the capability",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0131": {
+      "category": "restart_after_completion",
+      "evidence": "\"start a fresh collection as soon as the previous collection completes\" and \"keep doing so until 50 collections have finished\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0132": {
+      "category": "self_repeating_schedule_compositional_mixed",
+      "evidence": "\"have it restart on completion\" and \"keeping the readings at the sink less than a minute old\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0134": {
+      "category": "streaming_view",
+      "evidence": "\"live streamed view\"; \"refreshed continuously as each one lands\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "names the capability",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0135": {
+      "category": "packet_level_network_emulation",
+      "evidence": "\"reproduce the nodes in software, make them exchange packets on the aggregation timetable, and return a record of those packet events\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0137": {
+      "category": "minimize_transmission_total",
+      "evidence": "\"optimize the aggregation plan solely for the smallest total number of transmissions\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0139": {
+      "category": "software_replica_compositional",
+      "evidence": "\"run the collection on a software replica that imitates how the real nodes behave\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0140": {
+      "category": "delivery_reliability_compositional",
+      "evidence": "\"pick the plan that gives the best chance of every packet arriving, trading slots for that where it helps\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0143": {
+      "category": "live_state_updates_after_schedule",
+      "evidence": "\"keep its stored sensor-state view updated whenever a reading arrives from the deployment\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    },
+    "ft3-r0144": {
+      "category": "integrate_joining_nodes",
+      "evidence": "\"incorporate newly joining nodes into the unfinished collection while the schedule is running\"",
+      "gold_action": "UNSUPPORTED",
+      "group": "composes it from ordinary words",
+      "regex": "in scope",
+      "semantic_out_of_scope_in_seeds": [
+        11,
+        12,
+        13
+      ]
+    }
+  },
+  "semantic_detector": {
+    "flagged_reject_or_clarify": {
+      "max": 0.0,
+      "mean": 0.0,
+      "min": 0.0,
+      "per_seed": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "flagged_total": {
+      "max": 73.0,
+      "mean": 72.6667,
+      "min": 72.0,
+      "per_seed": [
+        73.0,
+        73.0,
+        72.0
+      ]
+    },
+    "over_blocked_execute": {
+      "max": 1.0,
+      "mean": 0.6667,
+      "min": 0.0,
+      "per_seed": [
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    "recall_composes": {
+      "max": 46.0,
+      "mean": 46.0,
+      "min": 46.0,
+      "per_seed": [
+        46.0,
+        46.0,
+        46.0
+      ]
+    },
+    "recall_names": {
+      "max": 26.0,
+      "mean": 26.0,
+      "min": 26.0,
+      "per_seed": [
+        26.0,
+        26.0,
+        26.0
+      ]
+    },
+    "recall_unsupported": {
+      "max": 72.0,
+      "mean": 72.0,
+      "min": 72.0,
+      "per_seed": [
+        72.0,
+        72.0,
+        72.0
+      ]
+    }
+  },
+  "semantic_detector_per_seed": [
+    {
+      "flagged_reject_or_clarify": 0,
+      "flagged_total": 73,
+      "ledger": "semantic_scope_seed11.jsonl",
+      "over_blocked_execute": 1,
+      "recall_composes": 46,
+      "recall_names": 26,
+      "recall_unsupported": 72,
+      "seed": 11,
+      "unanswered_requests": []
+    },
+    {
+      "flagged_reject_or_clarify": 0,
+      "flagged_total": 73,
+      "ledger": "semantic_scope_seed12.jsonl",
+      "over_blocked_execute": 1,
+      "recall_composes": 46,
+      "recall_names": 26,
+      "recall_unsupported": 72,
+      "seed": 12,
+      "unanswered_requests": []
+    },
+    {
+      "flagged_reject_or_clarify": 0,
+      "flagged_total": 72,
+      "ledger": "semantic_scope_seed13.jsonl",
+      "over_blocked_execute": 0,
+      "recall_composes": 46,
+      "recall_names": 26,
+      "recall_unsupported": 72,
+      "seed": 13,
+      "unanswered_requests": []
+    }
+  ],
+  "ungated_frontier_agent_from_figure_3": {
+    "recall_composes": 44.67,
+    "recall_names": 26.0
+  }
+}
