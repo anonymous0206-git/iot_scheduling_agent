@@ -167,6 +167,11 @@ of the 7 gold-`EXECUTE` requests the regex blocks --- all seven of which it read
 correctly in every repeat. Its own single over-block is `ft3-r0034`, a latency
 target read as an unsupported objective, in two repeats of three.
 
+`prompt.txt` in that directory is the question as rendered, with the response
+schema and the exact model snapshot; the three ledgers carry one verdict per
+request per repeat, the regex verdict on the same text beside it, and the token
+and latency metadata of every call.
+
 Two things make the comparison fair rather than flattering, and both are in the
 runner: the question put to the model is generated from `_RULES` in
 `scope_policy.py`, so the two detectors are aimed at the same taxonomy by
