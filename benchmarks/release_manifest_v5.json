@@ -699,7 +699,7 @@
     "scripts/render_holdout_prompts.py": "27cde2184dc2e7a1b5503cc5845e0967589fd31b0b0836c32841123539a1d9a9",
     "scripts/render_holdout_revision_request.py": "a2c7fd706e1742ce2900c77eda2588002f2becef93e24201bae3cfb8026c5649",
     "scripts/render_holdout_table.py": "aab734cf80840d3c50d73c6af9b9949e628d04da33e1088d1107c7f4e866097b",
-    "scripts/render_results_tables.py": "4d7c68d3c2af3b5c738ffe1868a4846c97f0b8bd3a3202e27635a0d5974c4992",
+    "scripts/render_results_tables.py": "16fe704345e23fe560f02b3cde11a5340184184785c72996e0ac696b4f8164f2",
     "scripts/replay_locked_policy.py": "d9ca46e7bcc5915e602658920e02ab5ac6719579e25fa533439dca59ba319e0a",
     "scripts/run_direct_generation_baseline.py": "733baf481e5053efb0b0866af5fffe6e0979a10e9f33b4c391f890eb3bce7428",
     "scripts/run_experiments.py": "017b6bf77744d0e5adaab14b8387e79ca16b7f2980333c1b30ade491b8a56545",

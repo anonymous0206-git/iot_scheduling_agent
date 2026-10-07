@@ -103,8 +103,12 @@ def metric_rows(arms: Mapping[str, Mapping[str, Any]]) -> list[tuple[str, list[s
                       a["joint_intent_success"]["items"]) for a in arms.values()]))
     rows.append(("False acceptance /144", [
         _mean_count(a["false_acceptance"], "count") for a in arms.values()]))
+    # `consistent_groups` is already a rounded mean, so reading it directly
+    # printed 68 where the repeats were 68, 65 and 70 --- an integer the caption
+    # promises only when the repeats agree. Every other count row goes through a
+    # mean formatter; this one did not.
     rows.append(("Paraphrase consistency /72", [
-        _fraction(a["paraphrase_consistency"]["consistent_groups"],
+        _fraction(_mean_only(a["paraphrase_consistency"], "consistent_groups"),
                   a["paraphrase_consistency"]["groups"]) for a in arms.values()]))
     rows.append(("Model calls", [
         str(a["overhead"]["model_calls"]) for a in arms.values()]))
