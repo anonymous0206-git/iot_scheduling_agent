@@ -161,10 +161,10 @@ python scripts/analyze_semantic_scope_detector.py \
 ```
 
 The second command calls no model and reproduces the summary from the shipped
-ledgers. Over three repeats the semantic detector refuses all 72 unsupported
-requests, 46 of 46 where the capability is composed, and over-blocks a mean 0.67
-of the 7 gold-`EXECUTE` requests the regex blocks --- all seven of which it reads
-correctly in every repeat. Its own single over-block is `ft3-r0034`, a latency
+ledgers. Across three repeats the semantic detector refuses all 72 unsupported
+requests, 46 of 46 where the capability is composed, correctly accepts all seven
+executable requests blocked by the regex gate, and over-blocks a mean 0.67 of the
+44 gold-`EXECUTE` requests. Its own single over-block is `ft3-r0034`, a latency
 target read as an unsupported objective, in two repeats of three.
 
 `prompt.txt` in that directory is the question as rendered, with the response
