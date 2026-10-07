@@ -66,7 +66,7 @@ file detail.
 predates v3. The v3 authoring lock and every lock after it pin the current bytes,
 which is why the sealed v3 files verify.
 
-**2. The pipeline repair of Section 5.4 and the scope-mode parameter of Sections
+**2. The pipeline repair of Section 5.3 and the scope-mode parameter of Sections
 5.2 and 5.3** --- `src/agentic_anex/orchestration.py` and `experiments.py`, changed
 on 2026-09-21, and `scripts/run_scope_gate_ablation.py` with them. The repair
 makes a strict structured-output mode's nulls mean "not stated" for the four
@@ -152,6 +152,20 @@ Everything else a lock covers is here. The earlier locks reach further back ---
 `evaluation_lock_v2` covers the frozen-test-v2 benchmark, which this release
 does not carry --- and `lock_covered_files_not_shipped` in the manifest names
 those too, each with the hash the repository holds.
+
+## One stale pointer, left stale on purpose
+
+`docs/holdout_v4_protocol.md` says "Section 4.4 of the paper discloses this". That
+was the disclosure subsection's number when the protocol was written, on
+2026-09-27, before any holdout request existed. The submission later merged several
+one-paragraph subsections and the disclosure became Section 4.2.
+
+The protocol is a pre-registration. Its own section 2 says it is superseded rather
+than edited, and editing a dated commitment so that a cross-reference into a
+document written afterwards still resolves is the kind of quiet retrofit the lock
+discipline exists to prevent. So the pointer stays as written and is recorded here
+instead: read it as the paper's disclosure subsection, Section 4.2 in the current
+build. Nothing the protocol commits to has changed.
 
 ## The anonymous archive
 

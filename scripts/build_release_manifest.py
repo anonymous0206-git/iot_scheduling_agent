@@ -65,7 +65,7 @@ LOCK_CHAIN = (
 # this manifest is what pins those.
 DIVERGENCES: Mapping[str, Mapping[str, Any]] = {
     "src/agentic_anex/orchestration.py": {
-        "revision": "2026-09-21, the pipeline repair of Section 5.4 and the "
+        "revision": "2026-09-21, the pipeline repair of Section 5.3 and the "
                     "scope-mode parameter of Section 5.2",
         "reason":
             "Two changes, both reported in the paper. The repair: a strict "

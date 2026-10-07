@@ -100,7 +100,7 @@ INCLUDE = (
     # tests need neither, but a lock that covers it and an archive that omits
     # it is one more absence to explain for 83 KB.
     "uv.lock",
-    # The post-freeze holdout batch of Section 5.5, which the first build of
+    # The post-freeze holdout batch of Section 5.4, which the first build of
     # this archive shipped none of: it was packaged the day the batch was
     # sealed and before any of it was run. Table 2 is generated from these
     # files, so without them the archive could not check the paper's newest

@@ -29,7 +29,7 @@
   "built_at": "2026-10-07",
   "divergences_from_the_lock_chain": {
     "README.md": {
-      "current_sha256": "f76452cdb832a9c5cd4a14c8e33394cf3d944d487794dc37dfa742b2be22bf9a",
+      "current_sha256": "a7ea2f42ac08f9a9cfe7b7608ca63dd914031d5df175a53dc6ddec3bdd608d9f",
       "diverges_from": {
         "benchmarks/frozen_test_v3_authoring_lock.json": {
           "lock_issued": "2026-09-14",
@@ -188,7 +188,7 @@
       },
       "reason": "Two changes, both reported in the paper. The repair: a strict structured-output mode cannot omit a property, so a field the user did not state arrives as null, and the orchestrator now reads null as 'not stated' for the four fields that carry a contract default and tolerates a null clarification list. That is what made the CLARIFY capability measurable --- before it, four requests failed for every model we tested because our own contract discarded the answer. The ablation: stage 1's authority became a parameter (enforcing, advisory, off) so that the arms of Section 5.2 run one pipeline with one component moved rather than three pipelines. The detector itself is unchanged; only what the orchestrator does with its finding moves.",
       "released": true,
-      "revision": "2026-09-21, the pipeline repair of Section 5.4 and the scope-mode parameter of Section 5.2",
+      "revision": "2026-09-21, the pipeline repair of Section 5.3 and the scope-mode parameter of Section 5.2",
       "state": "changed",
       "superseded_by": "benchmarks/evaluation_lock_v4_holdout.json"
     },
@@ -374,7 +374,7 @@
     ".gitignore": "5d834f27a805f7f423a7020000ca1bd6ae2c1866506294468e290076c1476bac",
     "Model-A blind review of Batch B v3.json": "78d2d00a67da7df6e976faefa8f63e9a41a00fbafecda53d068bcf470540da7a",
     "Model-B blind review of Batch A v3.json": "c2eb69c94bae7f75d6b666c2b4a74a4f7ccf402c2d8a242ec4520d456f1e77c2",
-    "README.md": "f76452cdb832a9c5cd4a14c8e33394cf3d944d487794dc37dfa742b2be22bf9a",
+    "README.md": "a7ea2f42ac08f9a9cfe7b7608ca63dd914031d5df175a53dc6ddec3bdd608d9f",
     "benchmark_model_A_v3.json": "d6fdb19f283151ba17e767bf4fdc3d0e67a49e413ec3521d3b68a6815a6655ca",
     "benchmark_model_B_v3.json": "1ca7a8974ee2bd1b30f51f370cb802aae118d6418cb4fbb0119920efac2b10df",
     "benchmarks/evaluation_lock_v1.json": "747c6f768b2950252685a4372c320ff75f8a5a169c8a32ce2c28408eacde967c",
@@ -436,7 +436,7 @@
     "benchmarks/topologies/fixed_area100_r20/topo300_seed0.json": "6b39ff460b3173c789af2124cf5a96255bc8bd36ba031286798adb1a772febc8",
     "benchmarks/topologies/fixed_area100_r20/topo50_seed0.json": "25dc562618c9232713dcca81d9f18d1c9685e075b6610c797dc2e632279e3426",
     "benchmarks/topologies/frozen_test_v3_llm_catalogue.json": "6ae387b99b81aed16fa25a559fc814984a2014460a449faf560d370785826917",
-    "docs/artifact_provenance.md": "626c01ad884a2fd7310d9c9b15ccbc4e8d1f023708298cdb4102d6c889b0d379",
+    "docs/artifact_provenance.md": "822ae45edd1b48674a532d76a86510477cd8f61272685b3d70f68815612179a7",
     "docs/development_notes.md": "b45d8712d0d0e4c8b3baa4ea86ce83995c023161a9f0ccd77f99d858a72c4aae",
     "docs/frozen_test_v2_evaluation.md": "88b3d19027e7426fcf75db1ca16b68833c1d05ff8e7d37bea1b61c05ba0f8ce1",
     "docs/frozen_test_v2_pipeline.md": "191d44488f2227a9926aee9fede36b4bec882bd1fcbd963798464c220eddfd5d",
@@ -679,8 +679,8 @@
     "scripts/analyze_semantic_scope_detector.py": "6abe007f333efdcb6ea42a6ea36d63f64461041eb28489f69fb6b461aa29f8ea",
     "scripts/apply_holdout_revision.py": "4777afde818d3f8acdd001f34f7a6859eeb35b47df57c8cf139768395236ba01",
     "scripts/audit_ledger_tables.py": "5ec0c662b373666c67ef71df8c706df33bf64f0cbcb1ee9ba70dbc4f392d8c82",
-    "scripts/build_release_manifest.py": "81793aa31341fc37723203c971f773eefbad3cdc4354194ff0e9c353336688f4",
-    "scripts/build_supplementary.py": "5f30ff22fd9f0cf6581cbff90a802520576d2b6ddb0358d317dd55f86a355667",
+    "scripts/build_release_manifest.py": "f9c3f495a89936d4334622fdc356669e545d405fdae1ea51451f5a4fe5b1aa59",
+    "scripts/build_supplementary.py": "759551244051f61953c288fbcfba6937aa30a9f11c9af9b2b6f091abcda7e1f7",
     "scripts/build_topology_catalogue.py": "2eaa4cba1f583f2c73bf7f904fad7f6f59d0f09a68450334c11bd53bb9e3c6d7",
     "scripts/compare_experiments.py": "37f9c7a07c5c6689d7104ed171ae8911b7298d1627d3f05e49e1976b924fb724",
     "scripts/create_source_zip.py": "196f1536e47682fa03eb2fe7960dce428b28485477b22b089869a6dee33d024a",
