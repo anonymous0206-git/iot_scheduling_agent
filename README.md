@@ -52,7 +52,7 @@ over all eight arms, and is what the paper's table is generated from.
 | --- | --- |
 | Table 1, every arm and metric | `results/frozen_test_v3/analysis_v37/summary.json`, rendered by `scripts/render_results_tables.py` |
 | Joint intent success, and the per-field and bound-field rates | the same `summary.json`, key `joint_intent_success` |
-| Scope-gate ablation, 14B and frontier | `results/frozen_test_v3/analysis_abl_phi4_final/`, `analysis_abl_gpt_final/` |
+| Scope-gate ablation, 14B and frontier | `results/frozen_test_v3/analysis_advisory_phi4/`, `analysis_advisory_gpt/` --- these carry the three-seed post-repair contrasts the paper quotes ($+0.0208$ and $+0.0671$). `analysis_abl_phi4_final/` and `analysis_abl_gpt_final/` are the earlier single-run campaign over the `v31` ledgers and give $+0.0208$ and $+0.0556$; they are superseded and kept only as the record of that campaign |
 | Advisory gate, all four intervals | `analysis_advisory_phi4/`, `analysis_advisory_phi4_vs_off/`, `analysis_advisory_gpt/`, `analysis_advisory_gpt_vs_off/` |
 | Sensitivity to the contested gold labels | `results/frozen_test_v3/sensitivity_labels/summary.md`, produced by `scripts/sensitivity_gold_labels.py` |
 | 945 validator mutants, 0 survivors | `results/validator_mutation/mutation.json`, produced by `scripts/run_validator_mutation_test.py` |
