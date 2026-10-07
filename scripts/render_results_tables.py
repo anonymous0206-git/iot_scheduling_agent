@@ -170,7 +170,7 @@ def abbreviate_models(models: Sequence[str]) -> tuple[list[str], str]:
         shown.append("---" if model == "---" else escape(short))
     if not pinned:
         return shown, ""
-    # The caption does not restore the snapshot: Section 4.4 prints every model
+    # The caption does not restore the snapshot: Section 4.2 prints every model
     # id in full, and a table* caption line costs two lines of body text.
     return shown, ""
 

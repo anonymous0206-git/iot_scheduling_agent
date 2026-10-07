@@ -65,8 +65,8 @@ LOCK_CHAIN = (
 # this manifest is what pins those.
 DIVERGENCES: Mapping[str, Mapping[str, Any]] = {
     "src/agentic_anex/orchestration.py": {
-        "revision": "2026-09-21, the pipeline repair of Section 5.5 and the "
-                    "scope-mode parameter of Sections 5.2 and 5.3",
+        "revision": "2026-09-21, the pipeline repair of Section 5.4 and the "
+                    "scope-mode parameter of Section 5.2",
         "reason":
             "Two changes, both reported in the paper. The repair: a strict "
             "structured-output mode cannot omit a property, so a field the user "
@@ -76,8 +76,8 @@ DIVERGENCES: Mapping[str, Mapping[str, Any]] = {
             "CLARIFY capability measurable --- before it, four requests failed "
             "for every model we tested because our own contract discarded the "
             "answer. The ablation: stage 1's authority became a parameter "
-            "(enforcing, advisory, off) so that the arms of Sections 5.2 and "
-            "5.3 run one pipeline with one component moved rather than three "
+            "(enforcing, advisory, off) so that the arms of Section 5.2 run "
+            "one pipeline with one component moved rather than three "
             "pipelines. The detector itself is unchanged; only what the "
             "orchestrator does with its finding moves.",
         "superseded_by": "benchmarks/evaluation_lock_v4_holdout.json",
@@ -88,7 +88,7 @@ DIVERGENCES: Mapping[str, Mapping[str, Any]] = {
             "Carries the scope mode through to the arms and names each mode's "
             "ledger, so a ledger says which configuration produced it without "
             "a separate note. It also puts the rule baseline behind the same "
-            "stage-1 gate the agent runs, which is why Section 4.5 calls that "
+            "stage-1 gate the agent runs, which is why Section 4.3 calls that "
             "arm the pipeline without its model rather than a different "
             "pipeline. No scheduling, validation or scoring code is touched.",
         "superseded_by": "benchmarks/evaluation_lock_v4_holdout.json",

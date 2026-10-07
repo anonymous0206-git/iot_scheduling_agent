@@ -14,7 +14,7 @@ actions, and so no new arm and no change to `orchestration.py`: this measures a
 detector against a detector, which is what the phrasing claim is about. A
 pipeline arm would also have to be sealed under a new lock and reported beside
 the existing ones, and it would answer a different question --- what the gate is
-worth --- which Sections 5.2 and 5.3 already answer for the detector we shipped.
+worth --- which Section 5.2 already answers for the detector we shipped.
 
 The question put to the model is built from `_RULES` in `scope_policy.py`, so the
 two detectors are aimed at the same closed taxonomy by construction and the
@@ -190,7 +190,7 @@ def main() -> int:
     parser.add_argument("--base-url", default=None)
     parser.add_argument("--api-key-env", default="OPENAI_API_KEY")
     # The frontier model rejects anything but 1 at the transport layer, which is
-    # why its arms sample where the local arms do not (Section 4.6).
+    # why its arms sample where the local arms do not (Section 4.3).
     parser.add_argument("--temperature", type=float, default=1.0)
     parser.add_argument("--timeout-seconds", type=float, default=60.0)
     parser.add_argument("--seeds", type=int, nargs="+", default=[11, 12, 13])

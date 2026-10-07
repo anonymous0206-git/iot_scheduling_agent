@@ -66,7 +66,7 @@ file detail.
 predates v3. The v3 authoring lock and every lock after it pin the current bytes,
 which is why the sealed v3 files verify.
 
-**2. The pipeline repair of Section 5.5 and the scope-mode parameter of Sections
+**2. The pipeline repair of Section 5.4 and the scope-mode parameter of Sections
 5.2 and 5.3** --- `src/agentic_anex/orchestration.py` and `experiments.py`, changed
 on 2026-09-21, and `scripts/run_scope_gate_ablation.py` with them. The repair
 makes a strict structured-output mode's nulls mean "not stated" for the four

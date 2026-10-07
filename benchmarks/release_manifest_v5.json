@@ -29,7 +29,7 @@
   "built_at": "2026-10-07",
   "divergences_from_the_lock_chain": {
     "README.md": {
-      "current_sha256": "22d114d1f7dc89495548c7b22a03f169482836d7acc26f3ec751cca5c2f7fb5f",
+      "current_sha256": "f76452cdb832a9c5cd4a14c8e33394cf3d944d487794dc37dfa742b2be22bf9a",
       "diverges_from": {
         "benchmarks/frozen_test_v3_authoring_lock.json": {
           "lock_issued": "2026-09-14",
@@ -152,7 +152,7 @@
           "locked_sha256": "23dc9433af62236805eb51d40f2e3180510e7ced6e438a647cbb51dfb3dcfaf8"
         }
       },
-      "reason": "Carries the scope mode through to the arms and names each mode's ledger, so a ledger says which configuration produced it without a separate note. It also puts the rule baseline behind the same stage-1 gate the agent runs, which is why Section 4.5 calls that arm the pipeline without its model rather than a different pipeline. No scheduling, validation or scoring code is touched.",
+      "reason": "Carries the scope mode through to the arms and names each mode's ledger, so a ledger says which configuration produced it without a separate note. It also puts the rule baseline behind the same stage-1 gate the agent runs, which is why Section 4.3 calls that arm the pipeline without its model rather than a different pipeline. No scheduling, validation or scoring code is touched.",
       "released": true,
       "revision": "2026-09-21, alongside the orchestration change above",
       "state": "changed",
@@ -186,9 +186,9 @@
           "locked_sha256": "abb0f75c6334827ef06da11e784189951511cfeb39362bfe0981677927486b60"
         }
       },
-      "reason": "Two changes, both reported in the paper. The repair: a strict structured-output mode cannot omit a property, so a field the user did not state arrives as null, and the orchestrator now reads null as 'not stated' for the four fields that carry a contract default and tolerates a null clarification list. That is what made the CLARIFY capability measurable --- before it, four requests failed for every model we tested because our own contract discarded the answer. The ablation: stage 1's authority became a parameter (enforcing, advisory, off) so that the arms of Sections 5.2 and 5.3 run one pipeline with one component moved rather than three pipelines. The detector itself is unchanged; only what the orchestrator does with its finding moves.",
+      "reason": "Two changes, both reported in the paper. The repair: a strict structured-output mode cannot omit a property, so a field the user did not state arrives as null, and the orchestrator now reads null as 'not stated' for the four fields that carry a contract default and tolerates a null clarification list. That is what made the CLARIFY capability measurable --- before it, four requests failed for every model we tested because our own contract discarded the answer. The ablation: stage 1's authority became a parameter (enforcing, advisory, off) so that the arms of Section 5.2 run one pipeline with one component moved rather than three pipelines. The detector itself is unchanged; only what the orchestrator does with its finding moves.",
       "released": true,
-      "revision": "2026-09-21, the pipeline repair of Section 5.5 and the scope-mode parameter of Sections 5.2 and 5.3",
+      "revision": "2026-09-21, the pipeline repair of Section 5.4 and the scope-mode parameter of Section 5.2",
       "state": "changed",
       "superseded_by": "benchmarks/evaluation_lock_v4_holdout.json"
     },
@@ -374,7 +374,7 @@
     ".gitignore": "5d834f27a805f7f423a7020000ca1bd6ae2c1866506294468e290076c1476bac",
     "Model-A blind review of Batch B v3.json": "78d2d00a67da7df6e976faefa8f63e9a41a00fbafecda53d068bcf470540da7a",
     "Model-B blind review of Batch A v3.json": "c2eb69c94bae7f75d6b666c2b4a74a4f7ccf402c2d8a242ec4520d456f1e77c2",
-    "README.md": "22d114d1f7dc89495548c7b22a03f169482836d7acc26f3ec751cca5c2f7fb5f",
+    "README.md": "f76452cdb832a9c5cd4a14c8e33394cf3d944d487794dc37dfa742b2be22bf9a",
     "benchmark_model_A_v3.json": "d6fdb19f283151ba17e767bf4fdc3d0e67a49e413ec3521d3b68a6815a6655ca",
     "benchmark_model_B_v3.json": "1ca7a8974ee2bd1b30f51f370cb802aae118d6418cb4fbb0119920efac2b10df",
     "benchmarks/evaluation_lock_v1.json": "747c6f768b2950252685a4372c320ff75f8a5a169c8a32ce2c28408eacde967c",
@@ -436,7 +436,7 @@
     "benchmarks/topologies/fixed_area100_r20/topo300_seed0.json": "6b39ff460b3173c789af2124cf5a96255bc8bd36ba031286798adb1a772febc8",
     "benchmarks/topologies/fixed_area100_r20/topo50_seed0.json": "25dc562618c9232713dcca81d9f18d1c9685e075b6610c797dc2e632279e3426",
     "benchmarks/topologies/frozen_test_v3_llm_catalogue.json": "6ae387b99b81aed16fa25a559fc814984a2014460a449faf560d370785826917",
-    "docs/artifact_provenance.md": "0ddf0193727047c9513df4b2a989f8178fcdc62e35574cf2369d8325ea101076",
+    "docs/artifact_provenance.md": "626c01ad884a2fd7310d9c9b15ccbc4e8d1f023708298cdb4102d6c889b0d379",
     "docs/development_notes.md": "b45d8712d0d0e4c8b3baa4ea86ce83995c023161a9f0ccd77f99d858a72c4aae",
     "docs/frozen_test_v2_evaluation.md": "88b3d19027e7426fcf75db1ca16b68833c1d05ff8e7d37bea1b61c05ba0f8ce1",
     "docs/frozen_test_v2_pipeline.md": "191d44488f2227a9926aee9fede36b4bec882bd1fcbd963798464c220eddfd5d",
@@ -679,12 +679,12 @@
     "scripts/analyze_semantic_scope_detector.py": "6abe007f333efdcb6ea42a6ea36d63f64461041eb28489f69fb6b461aa29f8ea",
     "scripts/apply_holdout_revision.py": "4777afde818d3f8acdd001f34f7a6859eeb35b47df57c8cf139768395236ba01",
     "scripts/audit_ledger_tables.py": "5ec0c662b373666c67ef71df8c706df33bf64f0cbcb1ee9ba70dbc4f392d8c82",
-    "scripts/build_release_manifest.py": "5d580e8f6059db4c7b7fff5cbac6e70d62a2b2be01f8ddccc2e010232db8aee1",
-    "scripts/build_supplementary.py": "c2bfe269d9629931af9355a0ae0389a05bb5c6e721a9c0555111d43bf9fefb56",
+    "scripts/build_release_manifest.py": "81793aa31341fc37723203c971f773eefbad3cdc4354194ff0e9c353336688f4",
+    "scripts/build_supplementary.py": "5f30ff22fd9f0cf6581cbff90a802520576d2b6ddb0358d317dd55f86a355667",
     "scripts/build_topology_catalogue.py": "2eaa4cba1f583f2c73bf7f904fad7f6f59d0f09a68450334c11bd53bb9e3c6d7",
     "scripts/compare_experiments.py": "37f9c7a07c5c6689d7104ed171ae8911b7298d1627d3f05e49e1976b924fb724",
     "scripts/create_source_zip.py": "196f1536e47682fa03eb2fe7960dce428b28485477b22b089869a6dee33d024a",
-    "scripts/demo_agent.py": "7543393133d9cca03be45c59f7dcc666c0131a6f8a175fd6bda40a7e076678cb",
+    "scripts/demo_agent.py": "308afd79ac130e84eb19b7d0d1a12e2bc8c546e2739ef28c68e7442601caadb3",
     "scripts/evaluate_agent.py": "5b4efa6ee1065db10a67c4359bff1d7c2947d975d9a5a4ed4214285948f6bbef",
     "scripts/export_experiment_trace.py": "0d4913848f77d8be160a5acf1a3cf5e1f5ef8bfcf2448cc6e44358b25a7bf548",
     "scripts/export_figure_data.py": "ebcc6df18f20516e055ca7ff691af870e3db9ee3cf6dc8863793efbbecac0921",
@@ -699,14 +699,14 @@
     "scripts/render_holdout_prompts.py": "27cde2184dc2e7a1b5503cc5845e0967589fd31b0b0836c32841123539a1d9a9",
     "scripts/render_holdout_revision_request.py": "a2c7fd706e1742ce2900c77eda2588002f2becef93e24201bae3cfb8026c5649",
     "scripts/render_holdout_table.py": "aab734cf80840d3c50d73c6af9b9949e628d04da33e1088d1107c7f4e866097b",
-    "scripts/render_results_tables.py": "16fe704345e23fe560f02b3cde11a5340184184785c72996e0ac696b4f8164f2",
+    "scripts/render_results_tables.py": "d86489cba31fad45b9067849d14cc7b4dda26d0b28a65c570a0b36f5cc75c357",
     "scripts/replay_locked_policy.py": "d9ca46e7bcc5915e602658920e02ab5ac6719579e25fa533439dca59ba319e0a",
     "scripts/run_direct_generation_baseline.py": "733baf481e5053efb0b0866af5fffe6e0979a10e9f33b4c391f890eb3bce7428",
     "scripts/run_experiments.py": "017b6bf77744d0e5adaab14b8387e79ca16b7f2980333c1b30ade491b8a56545",
     "scripts/run_frozen_test_v3_experiments.py": "20400a116d083975e16f03647fc02738612c32816a967976bdf2aab0ac52d53e",
     "scripts/run_frozen_test_v3_seed_campaign.py": "9b9661657be853a9f75018cca8fb145be56f869fe98aa91b11ea5f3d0c4bfe33",
     "scripts/run_scope_gate_ablation.py": "d7a4774e2bb9924191b5900ae0397c7d68fc3023e4e90e6326af1da9d1a5cce2",
-    "scripts/run_semantic_scope_detector.py": "86057083c4ff6c551c22cdf6e83c27985d3bfedd686b97f078dabb26baa22f26",
+    "scripts/run_semantic_scope_detector.py": "87b7caf4dc49c933371076e6fcd3abd1cc5e9359d0d341b9126b220cd6ae4244",
     "scripts/run_topology_scaling_experiment.py": "b1dc1100d50e6e8cd1e11431b667e50abba9ad844b59c558f6389592eb117def",
     "scripts/run_validator_mutation_test.py": "5e121e9532e43e98ce4bb58062623550d789720c4ff78aa9ca89693f6fac5c3c",
     "scripts/sensitivity_gold_labels.py": "2e154dc3d75efa3a9e844a6f827b1d853f072cf579cc513168d445a5f4b7b4d7",

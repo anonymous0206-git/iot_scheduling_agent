@@ -79,7 +79,7 @@ request existed: `docs/holdout_v4_protocol.md` states what would be run, what
 would be counted, and, in section 6, what counts in advance as replication and
 what counts as a negative result.
 
-It is reported in Section 5.7 of the paper and in Table 2, beside the sealed
+It is reported in Section 5.5 of the paper and in Table 2, beside the sealed
 benchmark rather than in place of it.
 
 | In the holdout | In this repository |
@@ -206,7 +206,7 @@ half of that record. It pins every file this release ships --- including the
 covered --- and states every divergence from every lock: the two hashes, the
 dated revision, the reason, and the lock that pins the current bytes where one
 does. Fourteen files diverge, for four reasons: the frozen-test-v3 sealing
-pipeline, the Section 5.5 repair and the scope-mode parameter of Sections 5.2
+pipeline, the Section 5.4 repair and the scope-mode parameter of Sections 5.2
 and 5.3, runners and analysis that cannot reach a recorded run, and
 documentation. Three of the fourteen are reached by no lock, and this manifest
 is what pins them.
@@ -236,11 +236,11 @@ detector matched, the parsed contract fields, the schedule and whether the
 independent validator accepted it. The stage is read from evidence --- whether
 the model was called at all, and the error code --- rather than guessed from the
 action, because an `UNSUPPORTED` answer from the gate and one from the model look
-identical in the answer alone, and telling them apart is what Section 5.5 is
+identical in the answer alone, and telling them apart is what Section 5.4 is
 about.
 
 `:mode off` and `:mode advisory` move the gate's authority mid-session, which
-runs the ablation of Sections 5.2 and 5.3 by hand on whatever you just typed.
+runs the ablation of Section 5.2 by hand on whatever you just typed.
 `:examples` lists requests that reach each outcome, including two the gate misses
 because they describe an out-of-scope capability without naming it. `--visualize
 DIR` writes an interactive HTML schedule for each successful run, and `--open`

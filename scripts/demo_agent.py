@@ -23,7 +23,7 @@ it is invisible in the answer alone.
         --provider openai --model gpt-5.5-2026-04-23
 
 `:mode off` and `:mode advisory` move the gate's authority during a session,
-which is the ablation of Sections 5.2 and 5.3 run by hand: the same request,
+which is the ablation of Section 5.2 run by hand: the same request,
 the same detector, a different decision about who may act on it.
 """
 
@@ -380,7 +380,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--scope-mode", default="enforcing",
                         choices=("enforcing", "advisory", "off"),
-                        help="the gate's authority; the ablation of Sections 5.2 and 5.3")
+                        help="the gate's authority; the ablation of Section 5.2")
     parser.add_argument("--catalogue", default=str(DEFAULT_CATALOGUE))
     parser.add_argument("--catalogue-dir", default=str(ROOT),
                         help="base directory for relative catalogue paths")
