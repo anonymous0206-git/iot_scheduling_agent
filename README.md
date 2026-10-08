@@ -10,16 +10,17 @@ supplementary archive describes; no line of executed code was altered.
 ## Start here
 
 ```bash
-python -m pytest tests -q                    # 497 passed, 4 xfailed, 141 subtests
+python -m pytest tests -q                    # 506 passed, 2 skipped, 4 xfailed
 python scripts/verify_release_manifest.py    # valid: true
 ```
 
 The first runs the deterministic core, the validator, the scope policy, the
 sealing pipeline and the analysis scripts. It needs Python 3.10+ and NumPy, and
-it calls no language model. In the anonymous archive it reports `497 passed, 2
-skipped, 4 xfailed, 139 subtests`: the two skips are the 180-topology catalogue,
-which is 18 MB and stays out of a 25 MB archive, and the tests name it rather
-than assuming it.
+it calls no language model. In full it reports `506 passed, 2 skipped, 4 xfailed,
+139 subtests passed`. The two skips are the 180-topology catalogue, which ships in
+neither the archive nor this repository (*What is not here*): two tests name
+it rather than assuming it, and skip when it is absent. Where it is present they
+pass, for `506 passed, 4 xfailed, 141 subtests passed` and no skips.
 
 The second checks the artefact against itself: every file this release ships
 hashes to what `benchmarks/release_manifest_v5.json` records, no lock in the
@@ -258,9 +259,18 @@ A request binds a topology only by naming its catalogue identifier exactly, as a
 whole word (Section 4.1), so `:topologies` is worth reading first. The default
 catalogue is the benchmark's seven, and those seven topology files are here.
 `--catalogue benchmarks/topologies/fixed_area100_r20/catalogue.json` offers all
-180, thirty seeds at each of six sizes, and that directory is 18 MB, so it is in
-the repository and not in the anonymous archive; `scripts/build_topology_catalogue.py`
-regenerates it from the seeds.
+180, thirty seeds at each of six sizes, but that directory is 18 MB and ships in
+neither the archive nor the repository. `scripts/build_topology_catalogue.py`
+regenerates it from the seeds, on its defaults, into an empty output directory:
+
+```bash
+python scripts/build_topology_catalogue.py \
+    --output-dir benchmarks/topologies/fixed_area100_r20_regenerated
+```
+
+Generation is deterministic, so the seven shipped topologies reappear among the
+180 with the same bytes. The output directory has to be a new one: the script
+refuses to overwrite a topology file that already exists.
 
 One practical note for a live demo: `phi4:14b` reliably misreads the two-digit
 seed in an identifier like `topo50_seed10` as a request for `seed=10` and refuses
@@ -310,5 +320,9 @@ paper/        the figure data behind Figures 2 and 3
 No PDF of the paper, in either build: a supplement may carry experimental
 detail and proofs, not an extended version of the submission. Also absent are
 model weights, API keys, and the parts of the ANEX source tree the agent does
-not import. `docs/development_notes.md` keeps the earlier
+not import. The 180-topology catalogue
+`benchmarks/topologies/fixed_area100_r20/` is 18 MB and ships in neither the
+archive nor the repository; the benchmark's own seven topologies are here, and
+`scripts/build_topology_catalogue.py` regenerates the rest (*Trying it by
+hand*). `docs/development_notes.md` keeps the earlier
 milestone notes; where they disagree with the paper, the paper is current.

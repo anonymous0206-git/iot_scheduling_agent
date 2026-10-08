@@ -26,10 +26,10 @@
     }
   },
   "anonymity_note": "The hashes under sha256 are the repository's own bytes. The anonymous archive rewrites an absolute path that carries a username, and in the legacy scheduler sources a docstring naming its programmer; `anonymity` gives both hashes for each such file, so the archive verifies as the archive and the repository as the repository. Files that carry that path and whose hash a lock publishes are omitted from the archive instead of rewritten, and are listed under withheld_from_the_anonymous_archive.",
-  "built_at": "2026-10-08",
+  "built_at": "2026-10-09",
   "divergences_from_the_lock_chain": {
     "README.md": {
-      "current_sha256": "84afe7fc2f2718f146012f493acd738b9cdde3c2491bbe2adf6ee7c5183d86ef",
+      "current_sha256": "03ee83432a3a88f93591db9fb3807a7b1950d7e7a6a083cc49c297adb9e6e823",
       "diverges_from": {
         "benchmarks/frozen_test_v3_authoring_lock.json": {
           "lock_issued": "2026-09-14",
@@ -374,7 +374,7 @@
     ".gitignore": "5d834f27a805f7f423a7020000ca1bd6ae2c1866506294468e290076c1476bac",
     "Model-A blind review of Batch B v3.json": "78d2d00a67da7df6e976faefa8f63e9a41a00fbafecda53d068bcf470540da7a",
     "Model-B blind review of Batch A v3.json": "c2eb69c94bae7f75d6b666c2b4a74a4f7ccf402c2d8a242ec4520d456f1e77c2",
-    "README.md": "84afe7fc2f2718f146012f493acd738b9cdde3c2491bbe2adf6ee7c5183d86ef",
+    "README.md": "03ee83432a3a88f93591db9fb3807a7b1950d7e7a6a083cc49c297adb9e6e823",
     "benchmark_model_A_v3.json": "d6fdb19f283151ba17e767bf4fdc3d0e67a49e413ec3521d3b68a6815a6655ca",
     "benchmark_model_B_v3.json": "1ca7a8974ee2bd1b30f51f370cb802aae118d6418cb4fbb0119920efac2b10df",
     "benchmarks/evaluation_lock_v1.json": "747c6f768b2950252685a4372c320ff75f8a5a169c8a32ce2c28408eacde967c",
