@@ -100,8 +100,6 @@ def render(main: Mapping[str, Any], ablations: Mapping[str, Mapping[str, Any]]) 
         r"\texttt{analysis\_holdout\_all/\allowbreak summary.json}.}",
         r"\label{tab:holdout}",
         r"\small",
-        r"\setlength{\tabcolsep}{4pt}",
-        r"\renewcommand{\arraystretch}{0.95}",
         r"\begin{tabular}{@{}lrrrl@{}}",
         r"\toprule",
         r"Arm & Action acc. & False acc. & Joint & Ablation vs.\ enforcing \\",

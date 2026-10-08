@@ -1,0 +1,100 @@
+{
+  "gpt55_gated": {
+    "arm": "gpt55_gated",
+    "by_batch": {
+      "frontier-model-a": {
+        "correct": 59,
+        "items": 72
+      },
+      "frontier-model-b": {
+        "correct": 63,
+        "items": 72
+      }
+    },
+    "widest_gap": 4
+  },
+  "gpt55_no_gate": {
+    "arm": "gpt55_no_gate",
+    "by_batch": {
+      "frontier-model-a": {
+        "correct": 64,
+        "items": 72
+      },
+      "frontier-model-b": {
+        "correct": 66,
+        "items": 72
+      }
+    },
+    "widest_gap": 2
+  },
+  "phi4_advisory": {
+    "arm": "phi4_advisory",
+    "by_batch": {
+      "frontier-model-a": {
+        "correct": 33,
+        "items": 72
+      },
+      "frontier-model-b": {
+        "correct": 36,
+        "items": 72
+      }
+    },
+    "widest_gap": 3
+  },
+  "phi4_gated": {
+    "arm": "phi4_gated",
+    "by_batch": {
+      "frontier-model-a": {
+        "correct": 30,
+        "items": 72
+      },
+      "frontier-model-b": {
+        "correct": 34,
+        "items": 72
+      }
+    },
+    "widest_gap": 4
+  },
+  "phi4_no_gate": {
+    "arm": "phi4_no_gate",
+    "by_batch": {
+      "frontier-model-a": {
+        "correct": 32,
+        "items": 72
+      },
+      "frontier-model-b": {
+        "correct": 35,
+        "items": 72
+      }
+    },
+    "widest_gap": 3
+  },
+  "qwen25": {
+    "arm": "qwen25",
+    "by_batch": {
+      "frontier-model-a": {
+        "correct": 28,
+        "items": 72
+      },
+      "frontier-model-b": {
+        "correct": 26,
+        "items": 72
+      }
+    },
+    "widest_gap": 2
+  },
+  "rule_based": {
+    "arm": "rule_based",
+    "by_batch": {
+      "frontier-model-a": {
+        "correct": 28,
+        "items": 72
+      },
+      "frontier-model-b": {
+        "correct": 27,
+        "items": 72
+      }
+    },
+    "widest_gap": 1
+  }
+}

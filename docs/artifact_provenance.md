@@ -153,6 +153,34 @@ Everything else a lock covers is here. The earlier locks reach further back ---
 does not carry --- and `lock_covered_files_not_shipped` in the manifest names
 those too, each with the hash the repository holds.
 
+## The audit's advisory row, corrected in v34
+
+`scripts/audit_ledger_tables.py` names the stage that decided each request, which
+is the machinery behind Section 5.3's attribution. Its classifier read a matched
+scope policy as a gate termination:
+
+```python
+scope = record.get("scope_policy") or {}
+if scope.get("supported") is False:
+    return "scope_gate"
+```
+
+Under `enforcing` that is right --- the match short-circuits the run, and the
+record carries an `UNSUPPORTED_*` code. Under `advisory` it is wrong: the same
+match becomes a notice, the model is still called, and the model still decides.
+The 18 matched requests in the advisory arm carry `error_code: null` and
+`model_calls` of at least one, and the classifier credited every one of them to
+the gate.
+
+So `audit_v33/audit.md` put the advisory arm at 31 pre-model decisions with 7
+errors forced. The ledger says 13 and 5, the same as the ungated arm, which is
+what it should be: in neither configuration does the gate terminate anything.
+
+`audit_v34/` is the corrected table, from a classifier that reads the model call
+before the match. Every other row is unchanged, including the rule baseline, whose
+arm has no model to call. `audit_v33/` is kept as the record of the campaign it was
+written for; read v34.
+
 ## Two historical artefacts that use superseded wording
 
 `results/validator_mutation/mutation.json` labels the validity conditions it

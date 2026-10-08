@@ -67,6 +67,7 @@ over all eight arms, and is what the paper's table is generated from.
 | The pipeline repair, before and after | pre-repair `gpt55_policy_v2_seed1.jsonl` and `gpt55_no_scope_gate_seed1.jsonl`; post-repair `*_seed11`, `*_seed12`, `*_seed13` |
 | Serving device per timed run | `results/frozen_test_v3/*.device.json` |
 | Table 2, the post-freeze holdout | `results/holdout_v4/analysis_holdout_all/summary.json`, rendered by `scripts/render_holdout_table.py` |
+| Which stage decided each request, per arm | `results/frozen_test_v3/audit_v34/audit.md`, from `scripts/audit_ledger_tables.py`. Use v34: `audit_v33/` misattributed the advisory arm, crediting the gate with all 18 matched requests when under `advisory` the gate only annotates and the model still decides |
 | Section 5.2, the semantic detector against the regex gate | `results/frozen_test_v3/semantic_scope/summary.json`, from `scripts/run_semantic_scope_detector.py` and `analyze_semantic_scope_detector.py` |
 
 ## The post-freeze holdout batch

@@ -82,26 +82,33 @@ MODEL_SYSTEMS = ("llm_agent",)
 
 
 def terminating_stage(record: Mapping[str, Any]) -> str:
-    """Name the stage that decided this request, or say it cannot be named."""
-    scope = record.get("scope_policy") or {}
-    if scope.get("supported") is False:
-        return "scope_gate"
+    """Name the stage that decided this request, or say it cannot be named.
+
+    A matched scope policy only *terminates* the run where the gate enforces.
+    Under `advisory` the same match becomes a notice, the model is still called
+    and the model still decides, so the call has to be read before the match is.
+    Reading the match first credited the gate with all 18 matched requests in the
+    advisory arm and put its pre-model count at 31 where the ledger says 13.
+    """
+    if (record.get("model_calls") or 0) > 0:
+        return "model"
     code = record.get("error_code")
-    called_model = (record.get("model_calls") or 0) > 0
-    if not called_model:
-        if isinstance(code, str) and code.startswith("INVALID_"):
-            return "parameter_check"
-        if code == "MISSING_TOPOLOGY":
-            return "topology_gate"
-        if code is not None:
-            # An arm with no model behind it, refusing under its own rules. An
-            # arm that has a model and did not call it, refusing under a code
-            # no deterministic stage raises, is something we cannot name.
-            system = str(record.get("system") or "")
-            has_model = system.startswith(MODEL_SYSTEMS)
-            return "unclassified" if has_model else "baseline_filter"
-        return "none"
-    return "model"
+    scope = record.get("scope_policy") or {}
+    if (scope.get("supported") is False and isinstance(code, str)
+            and code.startswith("UNSUPPORTED_")):
+        return "scope_gate"
+    if isinstance(code, str) and code.startswith("INVALID_"):
+        return "parameter_check"
+    if code == "MISSING_TOPOLOGY":
+        return "topology_gate"
+    if code is not None:
+        # An arm with no model behind it, refusing under its own rules. An arm
+        # that has a model and did not call it, refusing under a code no
+        # deterministic stage raises, is something we cannot name.
+        system = str(record.get("system") or "")
+        has_model = system.startswith(MODEL_SYSTEMS)
+        return "unclassified" if has_model else "baseline_filter"
+    return "none"
 
 
 def _certified(record: Mapping[str, Any]) -> bool:

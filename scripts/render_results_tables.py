@@ -194,12 +194,12 @@ def render_main(arms: Mapping[str, Mapping[str, Any]], labels: Mapping[str, str]
     shown_models, snapshot_note = abbreviate_models(config["model"])
     lines = [r"\begin{table*}[t]", f"\\caption{{{caption}{snapshot_note}}}",
              f"\\label{{{label}}}",
-             r"\small", # 4pt rather than 5: the row labels now carry their units, and nine columns
-        # of 1pt each way is what buys the width back without shrinking type.
-        r"\setlength{\tabcolsep}{4pt}",
-             # 8pt type in rows 5 per cent tighter reads better than 7pt type
-             # in loose ones, and the pair costs one line rather than ten.
-             r"\renewcommand{\arraystretch}{0.95}",
+             # Nine columns at the class's own column padding overrun the text
+             # width at \small. The type size of a float is a table-formatting
+             # choice, and the paper's other tables are already \footnotesize;
+             # the alternative would be setting \tabcolsep, which the template
+             # forbids.
+             r"\footnotesize",
              r"\begin{tabular}{@{}l" + "r" * len(names) + r"@{}}",
              r"\toprule", f"Arm & {header} \\\\",
              f"\\quad model & " + " & ".join(shown_models) + r" \\",
