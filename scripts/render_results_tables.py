@@ -110,8 +110,12 @@ def metric_rows(arms: Mapping[str, Mapping[str, Any]]) -> list[tuple[str, list[s
     rows.append(("Paraphrase consistency /72", [
         _fraction(_mean_only(a["paraphrase_consistency"], "consistent_groups"),
                   a["paraphrase_consistency"]["groups"]) for a in arms.values()]))
+    # Same trap as the paraphrase row: `model_calls` is already a rounded mean,
+    # so reading it directly printed 128 where the repeats were 126, 128 and 131,
+    # and 145 where they were 146, 145 and 143. The caption promises an integer
+    # only when the repeats agree.
     rows.append(("Model calls", [
-        str(a["overhead"]["model_calls"]) for a in arms.values()]))
+        _mean_only(a["overhead"], "model_calls") for a in arms.values()]))
     rows.append(("Mean seconds", [
         f"{float(a['overhead']['mean_wall_seconds']):.2f}" for a in arms.values()]))
     return rows

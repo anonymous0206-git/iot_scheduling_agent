@@ -53,13 +53,13 @@ over all eight arms, and is what the paper's table is generated from.
 | Table 1, every arm and metric | `results/frozen_test_v3/analysis_v37/summary.json`, rendered by `scripts/render_results_tables.py` |
 | Joint intent success, and the per-field and bound-field rates | the same `summary.json`, key `joint_intent_success` |
 | Scope-gate ablation, 14B and frontier | `results/frozen_test_v3/analysis_advisory_phi4/`, `analysis_advisory_gpt/` --- these carry the three-seed post-repair contrasts the paper quotes ($+0.0208$ and $+0.0671$). `analysis_abl_phi4_final/` and `analysis_abl_gpt_final/` are the earlier single-run campaign over the `v31` ledgers and give $+0.0208$ and $+0.0556$; they are superseded and kept only as the record of that campaign |
-| Advisory gate, all four intervals | `analysis_advisory_phi4/`, `analysis_advisory_phi4_vs_off/`, `analysis_advisory_gpt/`, `analysis_advisory_gpt_vs_off/` |
+| Advisory gate, all four intervals | `analysis_advisory_phi4/`, `analysis_advisory_phi4_vs_off/`, `analysis_advisory_gpt/`, `analysis_advisory_gpt_vs_off/`. These are the source of the paired contrasts and their intervals, and of nothing else: they predate joint intent success and the bound-field fix, so read every per-arm metric from `analysis_v37/summary.json` instead |
 | Sensitivity to the contested gold labels | `results/frozen_test_v3/sensitivity_labels/summary.md`, produced by `scripts/sensitivity_gold_labels.py` |
 | 945 validator mutants, 0 survivors | `results/validator_mutation/mutation.json`, produced by `scripts/run_validator_mutation_test.py` |
 | Direct generation, 11 of 23 valid, 789× | `results/frozen_test_v3/analysis_b2/direct_generation.json` over `b2_direct_generation.jsonl`; run by `scripts/run_direct_generation_baseline.py` |
 | Deterministic core at 30–300 nodes | `results/topology_scaling/` |
-| Figure 2, one request end to end | `paper/aamas2027/figure_data/fig6_trace.json` |
-| Figure 3, recall split by phrasing | `paper/aamas2027/figure_data/fig2_phrasing.json` |
+| Figure 2, recall split by phrasing | `paper/aamas2027/figure_data/fig2_phrasing.json` |
+| The worked trace of one request, a figure in the unabridged build only | `paper/aamas2027/figure_data/fig6_trace.json` |
 | The seven unsupported capabilities and their patterns | `src/agentic_anex/scope_policy.py` |
 | The seven contract fields and their defaults | `DEFAULT_FIELDS` in `src/frozen_test_v2/contract.py` |
 | The benchmark, its gold labels and its hashes | `benchmarks/frozen_test_v3/` and `benchmarks/evaluation_lock_v3*.json` |

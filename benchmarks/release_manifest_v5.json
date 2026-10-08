@@ -26,10 +26,10 @@
     }
   },
   "anonymity_note": "The hashes under sha256 are the repository's own bytes. The anonymous archive rewrites an absolute path that carries a username, and in the legacy scheduler sources a docstring naming its programmer; `anonymity` gives both hashes for each such file, so the archive verifies as the archive and the repository as the repository. Files that carry that path and whose hash a lock publishes are omitted from the archive instead of rewritten, and are listed under withheld_from_the_anonymous_archive.",
-  "built_at": "2026-10-07",
+  "built_at": "2026-10-08",
   "divergences_from_the_lock_chain": {
     "README.md": {
-      "current_sha256": "a7ea2f42ac08f9a9cfe7b7608ca63dd914031d5df175a53dc6ddec3bdd608d9f",
+      "current_sha256": "bd5540f6b76677e903a0610bcae32361bf4a2e16b566676748fe40516f33843d",
       "diverges_from": {
         "benchmarks/frozen_test_v3_authoring_lock.json": {
           "lock_issued": "2026-09-14",
@@ -374,7 +374,7 @@
     ".gitignore": "5d834f27a805f7f423a7020000ca1bd6ae2c1866506294468e290076c1476bac",
     "Model-A blind review of Batch B v3.json": "78d2d00a67da7df6e976faefa8f63e9a41a00fbafecda53d068bcf470540da7a",
     "Model-B blind review of Batch A v3.json": "c2eb69c94bae7f75d6b666c2b4a74a4f7ccf402c2d8a242ec4520d456f1e77c2",
-    "README.md": "a7ea2f42ac08f9a9cfe7b7608ca63dd914031d5df175a53dc6ddec3bdd608d9f",
+    "README.md": "bd5540f6b76677e903a0610bcae32361bf4a2e16b566676748fe40516f33843d",
     "benchmark_model_A_v3.json": "d6fdb19f283151ba17e767bf4fdc3d0e67a49e413ec3521d3b68a6815a6655ca",
     "benchmark_model_B_v3.json": "1ca7a8974ee2bd1b30f51f370cb802aae118d6418cb4fbb0119920efac2b10df",
     "benchmarks/evaluation_lock_v1.json": "747c6f768b2950252685a4372c320ff75f8a5a169c8a32ce2c28408eacde967c",
@@ -436,7 +436,7 @@
     "benchmarks/topologies/fixed_area100_r20/topo300_seed0.json": "6b39ff460b3173c789af2124cf5a96255bc8bd36ba031286798adb1a772febc8",
     "benchmarks/topologies/fixed_area100_r20/topo50_seed0.json": "25dc562618c9232713dcca81d9f18d1c9685e075b6610c797dc2e632279e3426",
     "benchmarks/topologies/frozen_test_v3_llm_catalogue.json": "6ae387b99b81aed16fa25a559fc814984a2014460a449faf560d370785826917",
-    "docs/artifact_provenance.md": "822ae45edd1b48674a532d76a86510477cd8f61272685b3d70f68815612179a7",
+    "docs/artifact_provenance.md": "e012da71645203f0954149537127ea516523abe44132b40ce10fe27440c796e0",
     "docs/development_notes.md": "b45d8712d0d0e4c8b3baa4ea86ce83995c023161a9f0ccd77f99d858a72c4aae",
     "docs/frozen_test_v2_evaluation.md": "88b3d19027e7426fcf75db1ca16b68833c1d05ff8e7d37bea1b61c05ba0f8ce1",
     "docs/frozen_test_v2_pipeline.md": "191d44488f2227a9926aee9fede36b4bec882bd1fcbd963798464c220eddfd5d",
@@ -699,7 +699,7 @@
     "scripts/render_holdout_prompts.py": "27cde2184dc2e7a1b5503cc5845e0967589fd31b0b0836c32841123539a1d9a9",
     "scripts/render_holdout_revision_request.py": "a2c7fd706e1742ce2900c77eda2588002f2becef93e24201bae3cfb8026c5649",
     "scripts/render_holdout_table.py": "aab734cf80840d3c50d73c6af9b9949e628d04da33e1088d1107c7f4e866097b",
-    "scripts/render_results_tables.py": "d86489cba31fad45b9067849d14cc7b4dda26d0b28a65c570a0b36f5cc75c357",
+    "scripts/render_results_tables.py": "39d04ba52484c9499ae76735775a002a6cfc2f5cfc354fc07e02b04297d39180",
     "scripts/replay_locked_policy.py": "d9ca46e7bcc5915e602658920e02ab5ac6719579e25fa533439dca59ba319e0a",
     "scripts/run_direct_generation_baseline.py": "733baf481e5053efb0b0866af5fffe6e0979a10e9f33b4c391f890eb3bce7428",
     "scripts/run_experiments.py": "017b6bf77744d0e5adaab14b8387e79ca16b7f2980333c1b30ade491b8a56545",

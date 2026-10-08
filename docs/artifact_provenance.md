@@ -153,6 +153,33 @@ Everything else a lock covers is here. The earlier locks reach further back ---
 does not carry --- and `lock_covered_files_not_shipped` in the manifest names
 those too, each with the hash the repository holds.
 
+## Two historical artefacts that use superseded wording
+
+`results/validator_mutation/mutation.json` labels the validity conditions it
+attacks `(i)` to `(v)`, from a numbering Section 3.1 no longer uses. That section
+was rewritten because the old list did not match the validator: a primary
+collision ignores the channel, half-duplex and receiver-activity were missing, and
+the cross-link test is not "transmitters neighbouring a common receiver". The
+mutation artefact is the record of a run and is not re-issued, so the mapping is
+here instead:
+
+| In `mutation.json` | In the current Section 3.1 |
+| --- | --- |
+| `(i)` every non-sink node transmits exactly once | unchanged |
+| `(ii)` a transmission uses a communication link | `{v, p(v)} in E` |
+| `(iii)` the sink never transmits | unchanged |
+| `(iv)` no two transmissions sharing a slot *and a channel* collide | split in two: simultaneous transmissions may not share a receiver whatever their channels, and on any channel in any slot no two links `u→v`, `x→y` with `v ≠ y` satisfy `{u,y} in E` or `{x,v} in E` |
+| `(v)` a node transmits only after every node it receives from | `t(u) < t(v)` whenever `p(u) = v` and `v != r` |
+| --- | half-duplex and receiver-activity, which the validator always checked and the old list omitted |
+
+The twelve mutation operators and the 945 mutants are unaffected: they target the
+validator's checks, not the paper's description of them.
+
+The four `analysis_advisory_*` summaries are the other one. They are the source of
+the paired contrasts and their intervals, which are what the paper quotes from
+them, and they predate joint intent success and the bound-field fix, so their
+per-arm metric blocks are stale. Read those from `analysis_v37/summary.json`.
+
 ## One stale pointer, left stale on purpose
 
 `docs/holdout_v4_protocol.md` says "Section 4.4 of the paper discloses this". That
