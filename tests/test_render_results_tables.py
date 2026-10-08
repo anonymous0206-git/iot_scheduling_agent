@@ -88,14 +88,14 @@ class RenderTablesTests(unittest.TestCase):
         # rides in the row label instead, so a reader can tell a count from a
         # rate without inspecting the cells.
         _, _, text = self.render("--label", "gpt55_gated=GPT")
-        self.assertIn(r"Action accuracy /144 & 122 \\", text)
+        self.assertIn(r"Correct actions /144 & 122 \\", text)
         self.assertIn(r"Field exact match (rate) & 0.549 \\", text)
         self.assertIn("20/44", text)
 
     def test_each_row_label_says_whether_the_cells_are_counts_or_rates(self):
         # Without this a reader tells them apart by looking for a decimal point.
         _, _, text = self.render("--label", "gpt55_gated=GPT")
-        for label in ("Action accuracy /144", "Field exact match (rate)",
+        for label in ("Correct actions /144", "Field exact match (rate)",
                       "False acceptance /144", "Paraphrase consistency /72"):
             with self.subTest(label=label):
                 self.assertIn(label, text)

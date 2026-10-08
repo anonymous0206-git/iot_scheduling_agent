@@ -99,10 +99,14 @@ def render(main: Mapping[str, Any], ablations: Mapping[str, Mapping[str, Any]]) 
         r"groups, against the prespecified criterion that it be positive. From "
         r"\texttt{analysis\_holdout\_all/\allowbreak summary.json}.}",
         r"\label{tab:holdout}",
-        r"\small",
+        # Five columns in one column of text; \footnotesize is what the other
+        # tables use, and the alternative was setting \tabcolsep, which the
+        # template forbids.
+        r"\footnotesize",
         r"\begin{tabular}{@{}lrrrl@{}}",
         r"\toprule",
-        r"Arm & Action acc. & False acc. & Joint & Ablation vs.\ enforcing \\",
+        # The caption defines Ablation, so the header carries only denominators.
+        r"Arm & Correct /72 & False acc. /72 & Joint /24 & Ablation \\",
         r"\midrule",
         *[f"{label} & {accuracy(name)} & {false_acceptance(name)} & "
           f"{joint(name)} & {both(name, family, baseline)} \\\\"

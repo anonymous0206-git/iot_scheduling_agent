@@ -79,7 +79,7 @@ def _mean_count(entry: Mapping[str, Any], leaf: str) -> str:
 def metric_rows(arms: Mapping[str, Mapping[str, Any]]) -> list[tuple[str, list[str]]]:
     """The rows of the main table, in the order the paper reads them."""
     rows: list[tuple[str, list[str]]] = []
-    rows.append(("Action accuracy /144", [
+    rows.append(("Correct actions /144", [
         _mean_count(a["action_accuracy"], "correct") for a in arms.values()]))
     for action in ACTIONS:
         rows.append((f"\\quad \\textsc{{{action.lower()}}}", [
@@ -116,7 +116,7 @@ def metric_rows(arms: Mapping[str, Mapping[str, Any]]) -> list[tuple[str, list[s
     # only when the repeats agree.
     rows.append(("Model calls", [
         _mean_only(a["overhead"], "model_calls") for a in arms.values()]))
-    rows.append(("Mean seconds", [
+    rows.append(("Mean wall seconds / request", [
         f"{float(a['overhead']['mean_wall_seconds']):.2f}" for a in arms.values()]))
     return rows
 
